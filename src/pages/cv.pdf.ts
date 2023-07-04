@@ -3,6 +3,7 @@ import ReactPDF from "@react-pdf/renderer";
 import TestPdf from "../components/cv/TestPdf"
 
 export const get: APIRoute = async function get ({params, request}) {
+    // TODO: Move this implementation to function 'renderToBuffer' when it's implemented in Typescript in the library.
     const pdfStream = await ReactPDF.renderToStream(TestPdf())
 
     // Reading the stream
