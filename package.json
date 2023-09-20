@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.2.0",
     "@astrojs/react": "^3.0.2",
     "@react-pdf/renderer": "^3.1.12",
     "@types/react": "^18.2.22",
