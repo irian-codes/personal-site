@@ -10,7 +10,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
   return (
     <View style={[styles.container, props.containerStyle]}>
       <Text style={{fontWeight: 'bold', fontSize: 12}}>Lorem</Text>
-      <Text style={{fontSize: 12}}>Lorem ipsum</Text>
+      <Text style={{fontSize: 10}}>Lorem ipsum</Text>
     </View>
   );
 };

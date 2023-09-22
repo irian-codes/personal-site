@@ -6,7 +6,7 @@ type HeaderProps = {};
 export const Header = (props: HeaderProps) => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={{flex: 2}}>
         <Image
           // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
           // We have to do it like this because the library doesn't accept local images easily.
@@ -15,11 +15,21 @@ export const Header = (props: HeaderProps) => {
         />
       </View>
       <View style={styles.centerColumnContainer}>
-        <View style={{marginTop: '1cm'}}>
+        <View>
           <Text style={styles.name}>John Doe</Text>
         </View>
-        <View style={{flexDirection: 'row'}}>
-          {['email', 'linkedin', 'github', 'location'].map((item) => (
+        {/* Using 2 rows because it's visually better */}
+        <View style={styles.contactDetailsRow}>
+          {['email', 'linkedin'].map((item) => (
+            <ContactDetail
+              key={item}
+              type={item as ContactType}
+              containerStyle={styles.contactDetailContainer}
+            />
+          ))}
+        </View>
+        <View style={styles.contactDetailsRow}>
+          {['github', 'location'].map((item) => (
             <ContactDetail
               key={item}
               type={item as ContactType}
@@ -28,7 +38,7 @@ export const Header = (props: HeaderProps) => {
           ))}
         </View>
       </View>
-      <View>
+      <View style={{flex: 2}}>
         <Text>MY WEBSITE QR</Text>
       </View>
     </View>
@@ -45,16 +55,23 @@ const styles = StyleSheet.create({
   },
   centerColumnContainer: {
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
+    flex: 6,
+  },
+  contactDetailsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: '0.5cm',
   },
   contactDetailContainer: {
-    marginLeft: '1cm',
+    marginHorizontal: '0.5cm',
   },
   name: {
     fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: '0.5cm',
   },
   applicantPhoto: {
     height: '4cm',
