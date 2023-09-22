@@ -1,19 +1,18 @@
-import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {ContactDetail, type ContactType} from './ContactDetail';
 
 type HeaderProps = {};
 
 export const Header = (props: HeaderProps) => {
   return (
-    <View
-      style={{
-        backgroundColor: 'gray',
-        color: 'black',
-        flexDirection: 'row',
-      }}
-    >
+    <View style={styles.container}>
       <View>
-        <Text>MY PHOTO</Text>
+        <Image
+          // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
+          // We have to do it like this because the library doesn't accept local images easily.
+          src={'http://localhost:4321/assets/images/dummy-cv-image.jpg'}
+          style={styles.applicantPhoto}
+        />
       </View>
       <View style={{flexDirection: 'column'}}>
         <View>
@@ -37,6 +36,11 @@ export const Header = (props: HeaderProps) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'gray',
+    color: 'black',
+    flexDirection: 'row',
+  },
   contactDetailContainer: {
     marginLeft: '1cm',
   },
@@ -44,5 +48,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: '0.3cm',
+  },
+  applicantPhoto: {
+    height: '4cm',
+    width: '4cm',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    margin: '0.4cm',
   },
 });
