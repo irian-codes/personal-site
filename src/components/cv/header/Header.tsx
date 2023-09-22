@@ -39,7 +39,12 @@ export const Header = (props: HeaderProps) => {
         </View>
       </View>
       <View style={{flex: 2}}>
-        <Text>MY WEBSITE QR</Text>
+        <Image
+          // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
+          // We have to do it like this because the library doesn't accept local images easily.
+          src={'http://localhost:4321/assets/images/qr-code.png'}
+          style={styles.applicantPhoto}
+        />
       </View>
     </View>
   );
