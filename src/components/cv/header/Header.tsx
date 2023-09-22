@@ -22,6 +22,7 @@ export const Header = (props: HeaderProps) => {
         <View style={{flexDirection: 'row'}}>
           {['email', 'linkedin', 'github', 'location'].map((item) => (
             <ContactDetail
+              key={item}
               type={item as ContactType}
               containerStyle={styles.contactDetailContainer}
             />
