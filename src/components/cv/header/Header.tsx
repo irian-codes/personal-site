@@ -6,7 +6,7 @@ type HeaderProps = {};
 export const Header = (props: HeaderProps) => {
   return (
     <View style={styles.container}>
-      <View style={{flex: 2}}>
+      <View>
         <Image
           // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
           // We have to do it like this because the library doesn't accept local images easily.
@@ -38,7 +38,7 @@ export const Header = (props: HeaderProps) => {
           ))}
         </View>
       </View>
-      <View style={{flex: 2}}>
+      <View>
         <Image
           // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
           // We have to do it like this because the library doesn't accept local images easily.
@@ -55,6 +55,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     color: 'black',
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: '0.5cm',
     height: '5cm',
   },
@@ -62,7 +64,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 6,
   },
   contactDetailsRow: {
     flexDirection: 'row',
