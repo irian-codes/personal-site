@@ -1,7 +1,7 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {Header} from './header/Header';
 
-export default function TestPdf() {
+export function TestPdf() {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
