@@ -1,9 +1,38 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {ContactDetail, type ContactType} from './ContactDetail';
 
 export default function TestPdf() {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
+        <View
+          style={{
+            backgroundColor: 'gray',
+            color: 'black',
+            flexDirection: 'row',
+          }}
+        >
+          <View>
+            <Text>MY PHOTO</Text>
+          </View>
+          <View style={{flexDirection: 'column'}}>
+            <View>
+              <Text style={styles.name}>John Doe</Text>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+              {['email', 'linkedin', 'github', 'location'].map((item) => (
+                <ContactDetail
+                  type={item as ContactType}
+                  containerStyle={styles.contactDetailContainer}
+                />
+              ))}
+            </View>
+          </View>
+          <View>
+            <Text>MY WEBSITE QR</Text>
+          </View>
+        </View>
+
         <View style={styles.section}>
           <Text style={styles.name}>John Doe</Text>
           <Text style={styles.content}>Web Developer</Text>
@@ -86,5 +115,8 @@ const styles = StyleSheet.create({
   content: {
     fontSize: 12,
     marginBottom: '0.2cm',
+  },
+  contactDetailContainer: {
+    marginLeft: '1cm',
   },
 });
