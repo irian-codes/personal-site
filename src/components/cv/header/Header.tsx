@@ -14,8 +14,8 @@ export const Header = (props: HeaderProps) => {
           style={styles.applicantPhoto}
         />
       </View>
-      <View style={{flexDirection: 'column'}}>
-        <View>
+      <View style={styles.centerColumnContainer}>
+        <View style={{marginTop: '1cm'}}>
           <Text style={styles.name}>John Doe</Text>
         </View>
         <View style={{flexDirection: 'row'}}>
@@ -40,14 +40,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     color: 'black',
     flexDirection: 'row',
+    padding: '0.5cm',
+    height: '5cm',
+  },
+  centerColumnContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   contactDetailContainer: {
     marginLeft: '1cm',
   },
   name: {
-    fontSize: 20,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: '0.3cm',
+    textAlign: 'center',
   },
   applicantPhoto: {
     height: '4cm',
@@ -56,6 +63,5 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
-    margin: '0.4cm',
   },
 });
