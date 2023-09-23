@@ -8,10 +8,6 @@ export function CvPdf() {
         <Header />
 
         <View style={styles.section}>
-          <Text style={styles.content}>Web Developer</Text>
-        </View>
-
-        <View style={styles.section}>
           <Text style={styles.heading}>Summary</Text>
           <Text style={styles.content}>
             Highly skilled web developer with 5 years of experience in building
@@ -68,6 +64,8 @@ export function CvPdf() {
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
     backgroundColor: '#ffffff',
     padding: '1cm',
   },
