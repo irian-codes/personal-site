@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginBottom: '0.5cm',
   },
   contactDetailContainer: {
-    marginHorizontal: '0.5cm',
+    width: '4cm',
   },
   name: {
     fontSize: 28,
