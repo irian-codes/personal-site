@@ -38,13 +38,14 @@ export const Header = (props: HeaderProps) => {
           ))}
         </View>
       </View>
-      <View>
+      <View style={styles.qrContainer}>
         <Image
           // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
           // We have to do it like this because the library doesn't accept local images easily.
           src={'http://localhost:4321/assets/images/qr-code.png'}
           style={styles.qrImage}
         />
+        <Text style={styles.websiteText}>website.com</Text>
       </View>
     </View>
   );
@@ -87,8 +88,19 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
+  qrContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   qrImage: {
-    height: '4cm',
-    width: '4cm',
+    height: '3.5cm',
+    width: '3.5cm',
+  },
+  websiteText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: '0.1cm',
   },
 });
