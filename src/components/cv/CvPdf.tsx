@@ -8,13 +8,22 @@ export function CvPdf() {
         <Header />
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Summary</Text>
+          <Text style={styles.heading}>About me</Text>
           <Text style={styles.content}>
             Highly skilled web developer with 5 years of experience in building
             responsive and user-friendly websites. Proficient in HTML, CSS,
             JavaScript, and React. Strong problem-solving and communication
             skills.
           </Text>
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.heading}>Skills</Text>
+          <Text style={styles.content}>
+            - HTML5, CSS3, JavaScript, React, Node.js
+          </Text>
+          <Text style={styles.content}>- Responsive Web Design</Text>
+          <Text style={styles.content}>- Version Control (Git)</Text>
         </View>
 
         <View style={styles.section}>
@@ -26,7 +35,7 @@ export function CvPdf() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Experience</Text>
+          <Text style={styles.heading}>Work Experience</Text>
           <Text style={styles.content}>
             Web Developer, ABC Company (2016 - Present)
           </Text>
@@ -37,15 +46,6 @@ export function CvPdf() {
             - Collaborated with cross-functional teams to deliver high-quality
             projects
           </Text>
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.heading}>Skills</Text>
-          <Text style={styles.content}>
-            - HTML5, CSS3, JavaScript, React, Node.js
-          </Text>
-          <Text style={styles.content}>- Responsive Web Design</Text>
-          <Text style={styles.content}>- Version Control (Git)</Text>
         </View>
 
         <View style={styles.section}>
