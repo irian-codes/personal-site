@@ -1,5 +1,6 @@
 import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {ContactDetail, type ContactType} from './ContactDetail';
+import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
 type HeaderProps = {};
 
@@ -53,12 +54,12 @@ export const Header = (props: HeaderProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'gray',
-    color: 'black',
+    backgroundColor: headerGlobalStyles.colors.background,
+    color: headerGlobalStyles.text.colors.primary,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '0.5cm',
+    padding: headerGlobalStyles.spacing.small,
     height: '5cm',
   },
   centerColumnContainer: {
@@ -69,16 +70,16 @@ const styles = StyleSheet.create({
   contactDetailsRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: '0.5cm',
+    marginBottom: headerGlobalStyles.spacing.small,
   },
   contactDetailContainer: {
     width: '4cm',
   },
   name: {
-    fontSize: 28,
+    fontSize: headerGlobalStyles.text.fontSize.name,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: '0.5cm',
+    marginBottom: headerGlobalStyles.spacing.small,
   },
   applicantPhoto: {
     height: '4cm',
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
     width: '3.5cm',
   },
   websiteText: {
-    fontSize: 14,
+    fontSize: headerGlobalStyles.text.fontSize.large,
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: '0.1cm',

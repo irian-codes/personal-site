@@ -1,4 +1,5 @@
 import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
 export type ContactType = 'email' | 'location' | 'linkedin' | 'github';
 type ContactDetailProps = {
@@ -29,16 +30,16 @@ const styles = StyleSheet.create({
   icon: {
     width: '1cm',
     height: '1cm',
-    marginRight: '0.3cm',
+    marginRight: headerGlobalStyles.spacing.smallest,
   },
   textContainer: {
     flex: 1,
   },
   label: {
     fontWeight: 'bold',
-    fontSize: 12,
+    fontSize: headerGlobalStyles.text.fontSize.medium,
   },
   text: {
-    fontSize: 10,
+    fontSize: headerGlobalStyles.text.fontSize.smallest,
   },
 });
