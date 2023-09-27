@@ -1,4 +1,11 @@
-import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {
+  Document,
+  Image,
+  Page,
+  StyleSheet,
+  Text,
+  View,
+} from '@react-pdf/renderer';
 import {Header} from './header/Header';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
@@ -9,7 +16,7 @@ export function CvPdf() {
         <Header />
 
         <View style={styles.section}>
-          <Text style={styles.heading}>About me</Text>
+          <Text style={styles.h1}>About me</Text>
           <Text style={styles.content}>
             Highly skilled web developer with 5 years of experience in building
             responsive and user-friendly websites. Proficient in HTML, CSS,
@@ -19,7 +26,7 @@ export function CvPdf() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Skills</Text>
+          <Text style={styles.h1}>Skills</Text>
           <Text style={styles.content}>
             - HTML5, CSS3, JavaScript, React, Node.js
           </Text>
@@ -28,7 +35,7 @@ export function CvPdf() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Education</Text>
+          <Text style={styles.h1}>Education</Text>
           <Text style={styles.content}>
             Bachelor of Science in Computer Science, XYZ University
           </Text>
@@ -36,10 +43,35 @@ export function CvPdf() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Work Experience</Text>
-          <Text style={styles.content}>
-            Web Developer, ABC Company (2016 - Present)
-          </Text>
+          <Text style={styles.h1}>Work Experience</Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-start',
+            }}
+          >
+            <Image
+              // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
+              // We have to do it like this because the library doesn't accept local images easily.
+              src={'http://localhost:4321/assets/images/qr-code.png'}
+              style={{
+                height: '0.5cm',
+                width: '0.5cm',
+              }}
+            />
+            <View
+              style={{
+                borderLeft: '1px solid black',
+                marginBottom: cvGlobalStyles.text.spacing.headingMarginBottom,
+                marginLeft: '0.3cm',
+              }}
+            >
+              <Text style={styles.h2WithGraphic}>
+                Web Developer, ABC Company (2016 - Present)
+              </Text>
+            </View>
+          </View>
           <Text style={styles.content}>
             - Developed and maintained company websites using React and Node.js
           </Text>
@@ -50,7 +82,7 @@ export function CvPdf() {
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>Other</Text>
+          <Text style={styles.h1}>Other</Text>
           <Text style={styles.content}>Languages Spoken: English, Spanish</Text>
           <Text style={styles.content}>Driving License: Yes</Text>
           <Text style={styles.content}>
@@ -73,8 +105,12 @@ const styles = StyleSheet.create({
   section: {
     marginBottom: '0.5cm',
   },
-  heading: {
-    ...cvGlobalStyles.text.headings.sectionHeading,
+  h1: {...cvGlobalStyles.text.headings.h1},
+  h2WithGraphic: {
+    ...cvGlobalStyles.text.headings.h2,
+    marginBottom: '0.1cm',
+    marginLeft: '0.2cm',
+    transform: 'skew(-10deg, 0)', // For whatever reason 'fontStyle' is not working.
   },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.medium,

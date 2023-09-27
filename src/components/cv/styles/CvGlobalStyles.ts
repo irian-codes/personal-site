@@ -11,16 +11,22 @@ const textStyles = {
   spacing: {
     headingMarginBottom: '0.3cm',
     lineSpacing: '0.2cm',
+    smallest: '0.1cm',
   },
 };
 
 const headingStyles = {
-  sectionHeading: {
+  h1: {
     fontSize: textStyles.fontSize.large,
     fontWeight: 'bold' as const,
     marginBottom: textStyles.spacing.headingMarginBottom,
     textDecoration: 'underline' as const,
     color: textStyles.colors.secondary,
+  },
+  h2: {
+    fontSize: textStyles.fontSize.medium,
+    marginBottom: textStyles.spacing.lineSpacing,
+    color: textStyles.colors.primary,
   },
 };
 
