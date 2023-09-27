@@ -8,7 +8,6 @@ export const headerGlobalStyles = {
     },
     colors: {
       primary: 'black',
-      titles: 'green',
     },
   },
   spacing: {
