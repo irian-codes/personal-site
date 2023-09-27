@@ -1,5 +1,6 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {Header} from './header/Header';
+import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
 export function CvPdf() {
   return (
@@ -73,13 +74,10 @@ const styles = StyleSheet.create({
     marginBottom: '0.5cm',
   },
   heading: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginBottom: '0.3cm',
-    textDecoration: 'underline',
+    ...cvGlobalStyles.text.headings.sectionHeading,
   },
   content: {
-    fontSize: 12,
-    marginBottom: '0.2cm',
+    fontSize: cvGlobalStyles.text.fontSize.medium,
+    marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
 });
