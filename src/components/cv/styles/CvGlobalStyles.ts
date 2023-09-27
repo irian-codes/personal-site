@@ -30,9 +30,18 @@ const headingStyles = {
   },
 };
 
+const sectionsStyles = {
+  spacing: {
+    smallest: '0.25cm',
+    small: '0.5cm',
+    medium: '1cm',
+  },
+};
+
 export const cvGlobalStyles = {
   text: {
     ...textStyles,
     headings: headingStyles,
+    sections: sectionsStyles,
   },
 };

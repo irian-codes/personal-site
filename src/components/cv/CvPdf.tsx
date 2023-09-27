@@ -1,12 +1,6 @@
-import {
-  Document,
-  Image,
-  Page,
-  StyleSheet,
-  Text,
-  View,
-} from '@react-pdf/renderer';
+import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {Header} from './header/Header';
+import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
 export function CvPdf() {
@@ -42,44 +36,7 @@ export function CvPdf() {
           <Text style={styles.content}>Graduated in 2015</Text>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.h1}>Work Experience</Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'flex-start',
-              justifyContent: 'flex-start',
-            }}
-          >
-            <Image
-              // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-              // We have to do it like this because the library doesn't accept local images easily.
-              src={'http://localhost:4321/assets/images/qr-code.png'}
-              style={{
-                height: '0.5cm',
-                width: '0.5cm',
-              }}
-            />
-            <View
-              style={{
-                borderLeft: '1px solid black',
-                marginBottom: cvGlobalStyles.text.spacing.headingMarginBottom,
-                marginLeft: '0.3cm',
-              }}
-            >
-              <Text style={styles.h2WithGraphic}>
-                Web Developer, ABC Company (2016 - Present)
-              </Text>
-            </View>
-          </View>
-          <Text style={styles.content}>
-            - Developed and maintained company websites using React and Node.js
-          </Text>
-          <Text style={styles.content}>
-            - Collaborated with cross-functional teams to deliver high-quality
-            projects
-          </Text>
-        </View>
+        <WorkExperienceSection containerStyle={styles.section} />
 
         <View style={styles.section}>
           <Text style={styles.h1}>Other</Text>
@@ -106,7 +63,7 @@ const styles = StyleSheet.create({
     marginBottom: '0.5cm',
   },
   h1: {...cvGlobalStyles.text.headings.h1},
-  h2WithGraphic: {
+  h2WithIcon: {
     ...cvGlobalStyles.text.headings.h2,
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
