@@ -20,6 +20,7 @@ const headingStyles = {
     fontWeight: 'bold' as const,
     marginBottom: textStyles.spacing.headingMarginBottom,
     textDecoration: 'underline' as const,
+    color: textStyles.colors.secondary,
   },
 };
 
