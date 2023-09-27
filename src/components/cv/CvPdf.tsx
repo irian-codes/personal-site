@@ -1,5 +1,6 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {Header} from './header/Header';
+import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
@@ -28,14 +29,7 @@ export function CvPdf() {
           <Text style={styles.content}>- Version Control (Git)</Text>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.h1}>Education</Text>
-          <Text style={styles.content}>
-            Bachelor of Science in Computer Science, XYZ University
-          </Text>
-          <Text style={styles.content}>Graduated in 2015</Text>
-        </View>
-
+        <EducationSection containerStyle={styles.section} />
         <WorkExperienceSection containerStyle={styles.section} />
 
         <View style={styles.section}>
