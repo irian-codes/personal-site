@@ -1,8 +1,8 @@
 const textStyles = {
   fontSize: {
-    smallest: 10,
-    medium: 12,
-    large: 14,
+    smallest: 12,
+    medium: 14,
+    large: 16,
   },
   colors: {
     primary: 'black',

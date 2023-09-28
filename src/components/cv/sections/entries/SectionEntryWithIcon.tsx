@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     transform: 'skew(-10deg, 0)', // For whatever reason 'fontStyle' is not working.
   },
   content: {
-    fontSize: cvGlobalStyles.text.fontSize.medium,
+    fontSize: cvGlobalStyles.text.fontSize.smallest,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
 });
