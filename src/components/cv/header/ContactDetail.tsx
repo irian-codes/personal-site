@@ -21,6 +21,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
         src={'http://localhost:4321/assets/images/dummy-cv-image.jpg'}
         style={styles.icon}
       />
+      {/* TODO: Load the correct image and data here */}
       <View style={styles.textContainer}>
         <Text style={styles.label}>Lorem</Text>
         <Text style={styles.text}>Lorem ipsum</Text>
