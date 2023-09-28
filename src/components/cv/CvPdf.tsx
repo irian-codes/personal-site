@@ -11,16 +11,18 @@ export function CvPdf() {
         <Header />
 
         <View style={styles.main}>
+          {/* About me section */}
           <View style={styles.section}>
             <Text style={styles.h1}>About me</Text>
             <Text style={styles.content}>
-            Highly skilled web developer with 5 years of experience in building
-            responsive and user-friendly websites. Proficient in HTML, CSS,
-            JavaScript, and React. Strong problem-solving and communication
-            skills.
+              Highly skilled web developer with 5 years of experience in
+              building responsive and user-friendly websites. Proficient in
+              HTML, CSS, JavaScript, and React. Strong problem-solving and
+              communication skills.
             </Text>
           </View>
 
+          {/* Skills section */}
           <View style={styles.section}>
             <Text style={styles.h1}>Skills</Text>
             <Text style={styles.content}>
@@ -33,9 +35,12 @@ export function CvPdf() {
           <EducationSection containerStyle={styles.section} />
           <WorkExperienceSection containerStyle={styles.section} />
 
+          {/* Other section */}
           <View style={styles.section}>
             <Text style={styles.h1}>Other</Text>
-          <Text style={styles.content}>Languages Spoken: English, Spanish</Text>
+            <Text style={styles.content}>
+              Languages Spoken: English, Spanish
+            </Text>
             <Text style={styles.content}>Driving License: Yes</Text>
             <Text style={styles.content}>
               Invented Award: Outstanding Innovator of the Year
