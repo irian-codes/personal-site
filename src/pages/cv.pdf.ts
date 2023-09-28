@@ -1,10 +1,10 @@
 import ReactPDF from '@react-pdf/renderer';
 import type {APIRoute} from 'astro';
-import TestPdf from '../components/cv/TestPdf';
+import {CvPdf} from '../components/cv/CvPdf';
 
 export const GET: APIRoute = async function (context) {
   // TODO: Move this implementation to function 'renderToBuffer' when it's implemented in Typescript in the library.
-  const pdfStream = await ReactPDF.renderToStream(TestPdf());
+  const pdfStream = await ReactPDF.renderToStream(CvPdf());
 
   // Reading the stream
   const chunks = [];
