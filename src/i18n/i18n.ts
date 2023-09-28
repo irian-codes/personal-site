@@ -1,4 +1,6 @@
-import cvEn from './cv/en.json';
+import caJson from './ca.json';
+import enJson from './en.json';
+import esJson from './es.json';
 
 export type Languages = {
   en: string;
@@ -6,7 +8,7 @@ export type Languages = {
   ca: string;
 };
 
-export type LanguageTags = keyof Languages;
+export type LanguageTag = keyof Languages;
 
 export const languages: Languages = {
   en: 'English',
@@ -14,16 +16,16 @@ export const languages: Languages = {
   ca: 'Català',
 };
 
-export const defaultLanguage = 'en';
+export const defaultLanguageTag = 'en';
 
 export const translations = {
   en: {
-    cv: cvEn,
+    ...enJson,
   },
   es: {
-    cv: undefined,
+    ...esJson,
   },
   ca: {
-    cv: undefined,
+    ...caJson,
   },
 } as const;

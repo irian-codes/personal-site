@@ -1,10 +1,14 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {LanguageTag} from '../../i18n/i18n';
+import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
-export function CvPdf() {
+export function CvPdf(lang: LanguageTag) {
+  const t = useTranslations(lang);
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -13,12 +17,9 @@ export function CvPdf() {
         <View style={styles.main}>
           {/* About me section */}
           <View style={styles.section}>
-            <Text style={styles.h1}>About me</Text>
+            <Text style={styles.h1}>{t('cv.main.sections.about-me')}</Text>
             <Text style={styles.content}>
-              Highly skilled web developer with 5 years of experience in
-              building responsive and user-friendly websites. Proficient in
-              HTML, CSS, JavaScript, and React. Strong problem-solving and
-              communication skills.
+              {t('cv.main.sections.about-me.description')}
             </Text>
           </View>
 
