@@ -1,4 +1,7 @@
 {
-  "cv.main.sections.about-me": "Sobre mi",
-  "cv.main.sections.about-me.description": "Em dic {name}, tinc {age} anys. Sóc un desenvolupador web altament qualificat amb 5 anys d'experiència en la construcció de llocs web responsius i fàcils d'utilitzar. Competent en HTML, CSS, JavaScript i React. Fortes habilitats per resoldre problemes i comunicar-se."
+  "cv.main.section.title.about-me": "Sobre mi",
+  "cv.main.section.title.skills": "Habilitats",
+  "cv.main.section.title.work-experience": "Experiència Laboral",
+  "cv.main.section.title.education": "Educació",
+  "cv.main.section.title.other": "Altres"
 }

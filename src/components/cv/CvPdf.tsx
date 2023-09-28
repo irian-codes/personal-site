@@ -21,15 +21,15 @@ export function CvPdf(langTag: LanguageTag) {
           <View style={styles.main}>
             {/* About me section */}
             <View style={styles.section}>
-              <Text style={styles.h1}>{t('cv.main.sections.about-me')}</Text>
-              <Text style={styles.content}>
-                {t('cv.main.sections.about-me.description')}
+              <Text style={styles.h1}>
+                {t('cv.main.section.title.about-me')}
               </Text>
+              <Text style={styles.content}>EMPTY</Text>
             </View>
 
             {/* Skills section */}
             <View style={styles.section}>
-              <Text style={styles.h1}>Skills</Text>
+              <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
               <Text style={styles.content}>
                 - HTML5, CSS3, JavaScript, React, Node.js
               </Text>
@@ -42,7 +42,7 @@ export function CvPdf(langTag: LanguageTag) {
 
             {/* Other section */}
             <View style={styles.section}>
-              <Text style={styles.h1}>Other</Text>
+              <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
               <Text style={styles.content}>
                 Languages Spoken: English, Spanish
               </Text>

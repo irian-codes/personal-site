@@ -1,4 +1,7 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import {useContext} from 'react';
+import {useTranslations} from '../../../i18n/i18nUtils';
+import {LanguageContext} from '../CvPdf';
 import {cvGlobalStyles} from '../styles/CvGlobalStyles';
 import {SectionEntryWithIcon} from './entries/SectionEntryWithIcon';
 
@@ -29,9 +32,14 @@ type WorkExperienceSectionProps = {
 };
 
 export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
+  const langTag = useContext(LanguageContext);
+  const t = useTranslations(langTag);
+
   return (
     <View style={props.containerStyle}>
-      <Text style={styles.h1}>Work Experience</Text>
+      <Text style={styles.h1}>
+        {t('cv.main.section.title.work-experience')}
+      </Text>
       {dummyData.map((entry) => (
         <SectionEntryWithIcon
           key={entry.title}

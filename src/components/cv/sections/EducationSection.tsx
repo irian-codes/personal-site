@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
+import {useTranslations} from '../../../i18n/i18nUtils';
 import {LanguageContext} from '../CvPdf';
 import {cvGlobalStyles} from '../styles/CvGlobalStyles';
 import {SectionEntryWithIcon} from './entries/SectionEntryWithIcon';
@@ -30,10 +31,11 @@ type EducationSectionProps = {
 
 export const EducationSection = (props: EducationSectionProps) => {
   const langTag = useContext(LanguageContext);
+  const t = useTranslations(langTag);
 
   return (
     <View style={props.containerStyle}>
-      <Text style={styles.h1}>Education</Text>
+      <Text style={styles.h1}>{t('cv.main.section.title.education')}</Text>
       {dummyData.map((entry) => (
         <SectionEntryWithIcon
           key={entry.title}

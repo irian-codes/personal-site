@@ -1,4 +1,7 @@
 {
-  "cv.main.sections.about-me": "About me",
-  "cv.main.sections.about-me.description": "My name is {name}, I am {age} years old. I'm a highly skilled web developer with 5 years of experience in building responsive and user-friendly websites. Proficient in HTML, CSS, JavaScript, and React. Strong problem-solving and communication skills."
+  "cv.main.section.title.about-me": "About me",
+  "cv.main.section.title.skills": "Skills",
+  "cv.main.section.title.work-experience": "Work Experience",
+  "cv.main.section.title.education": "Education",
+  "cv.main.section.title.other": "Other"
 }
