@@ -1,5 +1,6 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {createContext} from 'react';
+import {cvData} from '../../data/cv/CvData';
 import type {LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
@@ -11,6 +12,7 @@ export const LanguageContext = createContext<LanguageTag>('en');
 
 export function CvPdf(langTag: LanguageTag) {
   const t = useTranslations(langTag);
+  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
   return (
     <LanguageContext.Provider value={langTag}>
@@ -24,17 +26,20 @@ export function CvPdf(langTag: LanguageTag) {
               <Text style={styles.h1}>
                 {t('cv.main.section.title.about-me')}
               </Text>
-              <Text style={styles.content}>EMPTY</Text>
+              <Text style={styles.content}>
+                {data.content.aboutSection.lines.map((line) => line)}
+              </Text>
             </View>
 
             {/* Skills section */}
             <View style={styles.section}>
               <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
-              <Text style={styles.content}>
-                - HTML5, CSS3, JavaScript, React, Node.js
-              </Text>
-              <Text style={styles.content}>- Responsive Web Design</Text>
-              <Text style={styles.content}>- Version Control (Git)</Text>
+              {data.content.skillsSection.lines.map((line) => (
+                // A bit dirty way to get the key but eh, it should work except in edge cases
+                <Text key={line.substring(0, 10)} style={styles.content}>
+                  {line}
+                </Text>
+              ))}
             </View>
 
             <EducationSection />
@@ -43,13 +48,11 @@ export function CvPdf(langTag: LanguageTag) {
             {/* Other section */}
             <View style={styles.section}>
               <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
-              <Text style={styles.content}>
-                Languages Spoken: English, Spanish
-              </Text>
-              <Text style={styles.content}>Driving License: Yes</Text>
-              <Text style={styles.content}>
-                Invented Award: Outstanding Innovator of the Year
-              </Text>
+              {data.content.otherSection.lines.map((line) => (
+                <Text key={line.substring(0, 10)} style={styles.content}>
+                  {line}
+                </Text>
+              ))}
             </View>
           </View>
         </Page>

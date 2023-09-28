@@ -1,52 +1,58 @@
 import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {useContext} from 'react';
+import {cvData} from '../../../data/cv/CvData';
+import {LanguageContext} from '../CvPdf';
 import {ContactDetail, type ContactType} from './ContactDetail';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
 type HeaderProps = {};
 
 export const Header = (props: HeaderProps) => {
+  const langTag = useContext(LanguageContext);
+  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+
   return (
     <View style={styles.container}>
       <View>
         <Image
-          // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-          // We have to do it like this because the library doesn't accept local images easily.
-          src={'http://localhost:4321/assets/images/dummy-cv-image.jpg'}
+          src={data.content.header.photoSrc}
           style={styles.applicantPhoto}
         />
       </View>
       <View style={styles.centerColumnContainer}>
         <View>
-          <Text style={styles.name}>John Doe</Text>
+          <Text style={styles.name}>{data.content.header.name}</Text>
         </View>
         {/* Using 2 rows because it's visually better */}
         <View style={styles.contactDetailsRow}>
-          {['email', 'linkedin'].map((item) => (
-            <ContactDetail
-              key={item}
-              type={item as ContactType}
-              containerStyle={styles.contactDetailContainer}
-            />
-          ))}
+          {[data.content.header.email, data.content.header.linkedin].map(
+            (item) => (
+              <ContactDetail
+                key={item}
+                type={item as ContactType}
+                containerStyle={styles.contactDetailContainer}
+              />
+            )
+          )}
         </View>
         <View style={styles.contactDetailsRow}>
-          {['github', 'location'].map((item) => (
-            <ContactDetail
-              key={item}
-              type={item as ContactType}
-              containerStyle={styles.contactDetailContainer}
-            />
-          ))}
+          {[data.content.header.phone, data.content.header.location].map(
+            (item) => (
+              <ContactDetail
+                key={item}
+                type={item as ContactType}
+                containerStyle={styles.contactDetailContainer}
+              />
+            )
+          )}
         </View>
       </View>
       <View style={styles.qrContainer}>
         <Image
-          // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-          // We have to do it like this because the library doesn't accept local images easily.
-          src={'http://localhost:4321/assets/images/qr-code.png'}
+          src={data.content.header.websiteQrImageSrc}
           style={styles.qrImage}
         />
-        <Text style={styles.websiteText}>website.com</Text>
+        <Text style={styles.websiteText}>{data.content.header.websiteUrl}</Text>
       </View>
     </View>
   );

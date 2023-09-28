@@ -1,31 +1,10 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
+import {cvData} from '../../../data/cv/CvData';
 import {useTranslations} from '../../../i18n/i18nUtils';
 import {LanguageContext} from '../CvPdf';
 import {cvGlobalStyles} from '../styles/CvGlobalStyles';
 import {SectionEntryWithIcon} from './entries/SectionEntryWithIcon';
-
-// TODO: Replace with real data
-const dummyData = [
-  {
-    title: 'Web Developer, ABC Company (2016 - Present)',
-    lines: [
-      '- Developed and maintained company websites using React and Node.js',
-      '- Collaborated with cross-functional teams to deliver high-quality projects',
-      '- Invented Award: Outstanding Innovator of the Year',
-    ],
-    iconSrc: 'http://localhost:4321/assets/images/qr-code.png',
-  },
-  {
-    title: 'Web Developer, XYZ Company (2015 - 2016)',
-    lines: [
-      '- Developed and maintained company websites using React and Node.js',
-      '- Collaborated with cross-functional teams to deliver high-quality projects',
-      '- Invented Award: Outstanding Innovator of the Year',
-    ],
-    iconSrc: 'http://localhost:4321/assets/images/qr-code.png',
-  },
-];
 
 type WorkExperienceSectionProps = {
   containerStyle?: any;
@@ -34,13 +13,14 @@ type WorkExperienceSectionProps = {
 export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
   const langTag = useContext(LanguageContext);
   const t = useTranslations(langTag);
+  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>
         {t('cv.main.section.title.work-experience')}
       </Text>
-      {dummyData.map((entry) => (
+      {data.content.workExperienceSection.entries.map((entry) => (
         <SectionEntryWithIcon
           key={entry.title}
           title={entry.title}
