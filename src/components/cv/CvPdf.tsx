@@ -32,8 +32,8 @@ export function CvPdf() {
             <Text style={styles.content}>- Version Control (Git)</Text>
           </View>
 
-          <EducationSection containerStyle={styles.section} />
-          <WorkExperienceSection containerStyle={styles.section} />
+          <EducationSection />
+          <WorkExperienceSection />
 
           {/* Other section */}
           <View style={styles.section}>
