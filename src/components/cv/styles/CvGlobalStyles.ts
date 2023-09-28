@@ -32,9 +32,7 @@ const headingStyles = {
 
 const sectionsStyles = {
   spacing: {
-    smallest: '0.25cm',
     small: '0.5cm',
-    medium: '1cm',
   },
 };
 
