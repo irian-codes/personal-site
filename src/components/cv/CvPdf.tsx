@@ -10,35 +10,37 @@ export function CvPdf() {
       <Page size="A4" style={styles.page}>
         <Header />
 
-        <View style={styles.section}>
-          <Text style={styles.h1}>About me</Text>
-          <Text style={styles.content}>
+        <View style={styles.main}>
+          <View style={styles.section}>
+            <Text style={styles.h1}>About me</Text>
+            <Text style={styles.content}>
             Highly skilled web developer with 5 years of experience in building
             responsive and user-friendly websites. Proficient in HTML, CSS,
             JavaScript, and React. Strong problem-solving and communication
             skills.
-          </Text>
-        </View>
+            </Text>
+          </View>
 
-        <View style={styles.section}>
-          <Text style={styles.h1}>Skills</Text>
-          <Text style={styles.content}>
-            - HTML5, CSS3, JavaScript, React, Node.js
-          </Text>
-          <Text style={styles.content}>- Responsive Web Design</Text>
-          <Text style={styles.content}>- Version Control (Git)</Text>
-        </View>
+          <View style={styles.section}>
+            <Text style={styles.h1}>Skills</Text>
+            <Text style={styles.content}>
+              - HTML5, CSS3, JavaScript, React, Node.js
+            </Text>
+            <Text style={styles.content}>- Responsive Web Design</Text>
+            <Text style={styles.content}>- Version Control (Git)</Text>
+          </View>
 
-        <EducationSection containerStyle={styles.section} />
-        <WorkExperienceSection containerStyle={styles.section} />
+          <EducationSection containerStyle={styles.section} />
+          <WorkExperienceSection containerStyle={styles.section} />
 
-        <View style={styles.section}>
-          <Text style={styles.h1}>Other</Text>
+          <View style={styles.section}>
+            <Text style={styles.h1}>Other</Text>
           <Text style={styles.content}>Languages Spoken: English, Spanish</Text>
-          <Text style={styles.content}>Driving License: Yes</Text>
-          <Text style={styles.content}>
-            Invented Award: Outstanding Innovator of the Year
-          </Text>
+            <Text style={styles.content}>Driving License: Yes</Text>
+            <Text style={styles.content}>
+              Invented Award: Outstanding Innovator of the Year
+            </Text>
+          </View>
         </View>
       </Page>
     </Document>
@@ -52,6 +54,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#ffffff',
     padding: '1cm',
+  },
+  main: {
+    marginTop: '1cm',
   },
   section: {
     marginBottom: '0.5cm',
