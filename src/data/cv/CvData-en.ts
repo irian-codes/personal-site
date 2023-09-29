@@ -1,3 +1,4 @@
+import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
   CvData,
@@ -9,12 +10,12 @@ import type {
 } from './types/CvData';
 
 const header: Header = {
-  name: 'John Doe',
-  age: 30,
-  // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-  // We have to do it like this because the library doesn't accept local images easily.
+  name: 'Irian Montón',
+  birthdate: '1993-12-10T00:00:00+01:00',
+  // TODO: Set the correct URL on deployment.
   photoSrc: 'http://localhost:4321/assets/images/dummy-cv-image.jpg',
   websiteUrl: 'https://johndoe.com',
+  // TODO: Set the correct URL on deployment.
   websiteQrImageSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
   location: 'XYZ City, XYZ Country',
   email: 'johndoe@example.com',
@@ -25,7 +26,9 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `My name is ${header.name}, I am ${header.age} years old. I'm a highly skilled web developer with 5 years of experience in building responsive and user-friendly websites. Proficient in HTML, CSS, JavaScript, and React. Strong problem-solving and communication skills.`,
+    `My name is ${header.name}, I am ${calculateAge(
+      header.birthdate
+    )} years old. I'm a highly skilled web developer with 5 years of experience in building responsive and user-friendly websites. Proficient in HTML, CSS, JavaScript, and React. Strong problem-solving and communication skills.`,
   ],
 };
 

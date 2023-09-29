@@ -1,6 +1,6 @@
 export type Header = {
   name: string;
-  age: number;
+  birthdate: string;
   photoSrc: string;
   websiteUrl: string;
   websiteQrImageSrc: string;

@@ -1,3 +1,4 @@
+import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
   CvData,
@@ -10,9 +11,11 @@ import type {
 
 const header: Header = {
   name: 'Joan Pérez',
-  age: 30,
+  birthdate: '1993-12-10T00:00:00+01:00',
+  // TODO: Set the correct URL on deployment.
   photoSrc: 'http://localhost:4321/assets/images/dummy-cv-image.jpg',
   websiteUrl: 'https://johndoe.com',
+  // TODO: Set the correct URL on deployment.
   websiteQrImageSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
   location: 'Ciutat XYZ, País XYZ',
   email: 'johndoe@example.com',
@@ -23,7 +26,9 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `Em dic ${header.name}, tinc ${header.age} anys. Sóc un desenvolupador web altament qualificat amb 5 anys d'experiència en la creació de llocs web responsius i fàcils d'utilitzar. Competent en HTML, CSS, JavaScript i React. Fortes habilitats per resoldre problemes i comunicar-se.`,
+    `Em dic ${header.name}, tinc ${calculateAge(
+      header.birthdate
+    )} anys. Sóc un desenvolupador web altament qualificat amb 5 anys d'experiència en la creació de llocs web responsius i fàcils d'utilitzar. Competent en HTML, CSS, JavaScript i React. Fortes habilitats per resoldre problemes i comunicar-se.`,
   ],
 };
 
