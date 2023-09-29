@@ -1,54 +1,63 @@
 import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {createContext} from 'react';
+import {cvData} from '../../data/cv/CvData';
+import type {LanguageTag} from '../../i18n/i18n';
+import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
-export function CvPdf() {
+export const LanguageContext = createContext<LanguageTag>('en');
+
+export function CvPdf(langTag: LanguageTag) {
+  const t = useTranslations(langTag);
+  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+
   return (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <Header />
+    <LanguageContext.Provider value={langTag}>
+      <Document>
+        <Page size="A4" style={styles.page}>
+          <Header />
 
-        <View style={styles.main}>
-          {/* About me section */}
-          <View style={styles.section}>
-            <Text style={styles.h1}>About me</Text>
-            <Text style={styles.content}>
-              Highly skilled web developer with 5 years of experience in
-              building responsive and user-friendly websites. Proficient in
-              HTML, CSS, JavaScript, and React. Strong problem-solving and
-              communication skills.
-            </Text>
+          <View style={styles.main}>
+            {/* About me section */}
+            <View style={styles.section}>
+              <Text style={styles.h1}>
+                {t('cv.main.section.title.about-me')}
+              </Text>
+              <Text style={styles.content}>
+                {data.content.aboutSection.lines.map((line) => line)}
+              </Text>
+            </View>
+
+            {/* Skills section */}
+            <View style={styles.section}>
+              <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
+              {data.content.skillsSection.lines.map((line) => (
+                // A bit dirty way to get the key but eh, it should work except in edge cases
+                <Text key={line.substring(0, 10)} style={styles.content}>
+                  {line}
+                </Text>
+              ))}
+            </View>
+
+            <EducationSection />
+            <WorkExperienceSection />
+
+            {/* Other section */}
+            <View style={styles.section}>
+              <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
+              {data.content.otherSection.lines.map((line) => (
+                <Text key={line.substring(0, 10)} style={styles.content}>
+                  {line}
+                </Text>
+              ))}
+            </View>
           </View>
-
-          {/* Skills section */}
-          <View style={styles.section}>
-            <Text style={styles.h1}>Skills</Text>
-            <Text style={styles.content}>
-              - HTML5, CSS3, JavaScript, React, Node.js
-            </Text>
-            <Text style={styles.content}>- Responsive Web Design</Text>
-            <Text style={styles.content}>- Version Control (Git)</Text>
-          </View>
-
-          <EducationSection />
-          <WorkExperienceSection />
-
-          {/* Other section */}
-          <View style={styles.section}>
-            <Text style={styles.h1}>Other</Text>
-            <Text style={styles.content}>
-              Languages Spoken: English, Spanish
-            </Text>
-            <Text style={styles.content}>Driving License: Yes</Text>
-            <Text style={styles.content}>
-              Invented Award: Outstanding Innovator of the Year
-            </Text>
-          </View>
-        </View>
-      </Page>
-    </Document>
+        </Page>
+      </Document>
+    </LanguageContext.Provider>
   );
 }
 
