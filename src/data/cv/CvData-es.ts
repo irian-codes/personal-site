@@ -15,10 +15,10 @@ const header: Header = {
   websiteUrl: 'https://johndoe.com',
   websiteQrImageSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
   location: 'Ciudad XYZ, País XYZ',
-  email: '3lK3S@example.com',
+  email: 'johndoe@example.com',
   phone: '+1 (123) 456-7890',
-  linkedin: 'https://www.linkedin.com/in/juan-perez/',
-  repository: 'https://github.com/juanperez',
+  linkedin: 'linkedin.com/in/juan-perez-56463b0',
+  repository: 'github.com/juanperez',
 };
 
 const aboutSection: AboutSection = {
