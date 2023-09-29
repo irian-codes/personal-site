@@ -24,7 +24,9 @@ export const Header = (props: HeaderProps) => {
       </View>
       <View style={styles.centerColumnContainer}>
         <View>
-          <Text style={styles.name}>{data.content.header.name}</Text>
+          <Text style={styles.name}>
+            {data.content.header.name + ' ' + data.content.header.surnames}
+          </Text>
         </View>
         {/* Using 2 rows because it's visually better */}
         <View style={styles.contactDetailsRow}>
