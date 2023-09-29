@@ -13,10 +13,10 @@ const header: Header = {
   name: 'Irian Montón',
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
-  photoSrc: 'http://localhost:4321/assets/images/dummy-cv-image.jpg',
+  photoSrc: 'http://localhost:4321/assets/images/cv/dummy-cv-image.jpg',
   websiteUrl: 'https://johndoe.com',
   // TODO: Set the correct URL on deployment.
-  websiteQrImageSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+  websiteQrImageSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
   location: 'XYZ City, XYZ Country',
   email: 'johndoe@example.com',
   phone: '+1 (123) 456-7890',
@@ -48,7 +48,7 @@ const educationSection: EducationSection = {
         '- Studied Computer Science with a focus on Artificial Intelligence',
         '- Invented Award: Outstanding Innovator of the Year',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
       title: 'CS Bachelors Degree, University of XYZ (2015 - 2016)',
@@ -56,7 +56,7 @@ const educationSection: EducationSection = {
         '- Studied Computer Science with a focus on Artificial Intelligence',
         '- Invented Award: Outstanding Innovator of the Year',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
   ],
 };
@@ -73,7 +73,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Collaborated with cross-functional teams to deliver high-quality projects',
         '- Invented Award: Outstanding Innovator of the Year',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
       title: 'Web Developer',
@@ -85,7 +85,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Collaborated with cross-functional teams to deliver high-quality projects',
         '- Invented Award: Outstanding Innovator of the Year',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
   ],
 };

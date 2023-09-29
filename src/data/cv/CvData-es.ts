@@ -13,10 +13,10 @@ const header: Header = {
   name: 'Juan Perez',
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
-  photoSrc: 'http://localhost:4321/assets/images/dummy-cv-image.jpg',
+  photoSrc: 'http://localhost:4321/assets/images/cv/dummy-cv-image.jpg',
   websiteUrl: 'https://johndoe.com',
   // TODO: Set the correct URL on deployment.
-  websiteQrImageSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+  websiteQrImageSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
   location: 'Ciudad XYZ, País XYZ',
   email: 'johndoe@example.com',
   phone: '+1 (123) 456-7890',
@@ -49,7 +49,7 @@ const educationSection: EducationSection = {
         '- Estudié Ciencias de la Computación con un enfoque en Inteligencia Artificial',
         '- Premio Inventado: Innovador Sobresaliente del Año',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
       title:
@@ -58,7 +58,7 @@ const educationSection: EducationSection = {
         '- Estudié Ciencias de la Computación con un enfoque en Inteligencia Artificial',
         '- Premio Inventado: Innovador Sobresaliente del Año',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
   ],
 };
@@ -75,7 +75,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Colaboré con equipos interfuncionales para entregar proyectos de alta calidad',
         '- Premio Inventado: Innovador Sobresaliente del Año',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
       title: 'Desarrollador Web',
@@ -87,7 +87,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Colaboré con equipos interfuncionales para entregar proyectos de alta calidad',
         '- Premio Inventado: Innovador Sobresaliente del Año',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
   ],
 };

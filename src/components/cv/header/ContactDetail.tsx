@@ -36,7 +36,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
     <View style={[styles.container, props.containerStyle]}>
       <Image
         // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-        src={'http://localhost:4321/assets/images/dummy-cv-image.jpg'}
+        src={'http://localhost:4321/assets/images/cv/dummy-cv-image.jpg'}
         style={styles.icon}
       />
       <View style={styles.textContainer}>
