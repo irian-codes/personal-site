@@ -14,9 +14,10 @@ const header: Header = {
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
   photoSrc: 'http://localhost:4321/assets/images/cv/irian-cv-image_2022.jpeg',
-  websiteUrl: 'https://johndoe.com',
+  websiteUrl: 'irian.codes',
   // TODO: Set the correct URL on deployment.
-  websiteQrImageSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+  websiteQrImageSrc:
+    'http://localhost:4321/assets/images/cv/irian-codes-qr.png',
   location: 'Ciutat XYZ, País XYZ',
   email: 'johndoe@example.com',
   phone: '+1 (123) 456-7890',
