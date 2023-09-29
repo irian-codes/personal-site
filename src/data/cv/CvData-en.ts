@@ -18,11 +18,11 @@ const header: Header = {
   // TODO: Set the correct URL on deployment.
   websiteQrImageSrc:
     'http://localhost:4321/assets/images/cv/irian-codes-qr.png',
-  location: 'XYZ City, XYZ Country',
-  email: 'johndoe@example.com',
-  phone: '+1 (123) 456-7890',
-  linkedin: 'linkedin.com/in/john-doe-56463b0',
-  repository: 'github.com/johndoe-coder',
+  location: 'Spain',
+  email: 'irian@irian.codes',
+  phone: '',
+  linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
+  repository: 'github.com/irian-codes',
 };
 
 const aboutSection: AboutSection = {
