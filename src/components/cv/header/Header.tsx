@@ -11,6 +11,9 @@ export const Header = (props: HeaderProps) => {
   const langTag = useContext(LanguageContext);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
+  const contactDetailsRowOne: ContactType[] = ['email', 'linkedin'];
+  const contactDetailsRowTwo: ContactType[] = ['repository', 'location'];
+
   return (
     <View style={styles.container}>
       <View>
@@ -25,26 +28,22 @@ export const Header = (props: HeaderProps) => {
         </View>
         {/* Using 2 rows because it's visually better */}
         <View style={styles.contactDetailsRow}>
-          {[data.content.header.email, data.content.header.linkedin].map(
-            (item) => (
-              <ContactDetail
-                key={item}
-                type={item as ContactType}
-                containerStyle={styles.contactDetailContainer}
-              />
-            )
-          )}
+          {contactDetailsRowOne.map((item) => (
+            <ContactDetail
+              key={item}
+              type={item as ContactType}
+              containerStyle={styles.contactDetailContainer}
+            />
+          ))}
         </View>
         <View style={styles.contactDetailsRow}>
-          {[data.content.header.phone, data.content.header.location].map(
-            (item) => (
-              <ContactDetail
-                key={item}
-                type={item as ContactType}
-                containerStyle={styles.contactDetailContainer}
-              />
-            )
-          )}
+          {contactDetailsRowTwo.map((item) => (
+            <ContactDetail
+              key={item}
+              type={item as ContactType}
+              containerStyle={styles.contactDetailContainer}
+            />
+          ))}
         </View>
       </View>
       <View style={styles.qrContainer}>

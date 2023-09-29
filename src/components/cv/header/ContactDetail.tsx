@@ -1,10 +1,11 @@
 import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
 import {cvData} from '../../../data/cv/CvData';
+import {useTranslations} from '../../../i18n/i18nUtils';
 import {LanguageContext} from '../CvPdf';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
-export type ContactType = 'email' | 'location' | 'linkedin' | 'github';
+export type ContactType = 'email' | 'linkedin' | 'repository' | 'location';
 type ContactDetailProps = {
   type: ContactType;
   containerStyle: any;
@@ -12,6 +13,7 @@ type ContactDetailProps = {
 
 export const ContactDetail = (props: ContactDetailProps) => {
   const langTag = useContext(LanguageContext);
+  const t = useTranslations(langTag);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
   return (
@@ -21,10 +23,11 @@ export const ContactDetail = (props: ContactDetailProps) => {
         src={'http://localhost:4321/assets/images/dummy-cv-image.jpg'}
         style={styles.icon}
       />
-      {/* TODO: Load the correct image and data here */}
       <View style={styles.textContainer}>
-        <Text style={styles.label}>Lorem</Text>
-        <Text style={styles.text}>Lorem ipsum</Text>
+        <Text style={styles.label}>
+          {t(`cv.header.contact-details.${props.type}.title`)}
+        </Text>
+        <Text style={styles.text}>{data.content.header[props.type]}</Text>
       </View>
     </View>
   );
