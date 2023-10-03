@@ -4,6 +4,7 @@ import type {
   CvData,
   EducationSection,
   Header,
+  InterestsSection,
   OtherSection,
   SkillsSection,
   WorkExperienceSection,
@@ -92,6 +93,14 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
+const interestsSection: InterestsSection = {
+  lines: [
+    "- Membre d'una associació de jocs de taula i rol",
+    '- Salut, mindfullness i nutrició',
+    '- Fusteria',
+  ],
+};
+
 const otherSection: OtherSection = {
   lines: [
     '- Idiomes Parlat: Català, Castellà, Anglès',
@@ -106,5 +115,6 @@ export const cvData_ca: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
+  interestsSection,
   otherSection,
 };
