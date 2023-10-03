@@ -42,8 +42,8 @@ export function CvPdf(langTag: LanguageTag) {
               ))}
             </View>
 
-            <EducationSection />
             <WorkExperienceSection />
+            <EducationSection />
 
             {/* Interests section */}
             <View style={styles.section}>
