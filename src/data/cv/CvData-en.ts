@@ -37,9 +37,11 @@ const aboutSection: AboutSection = {
 
 const skillsSection: SkillsSection = {
   lines: [
-    '- HTML5, CSS3, JavaScript, React, Node.js',
-    '- Responsive Web Design',
-    '- Version Control (Git)',
+    '- Programming languages: Typescript, Javascript, JSON, HTML, JSX, CSS, C#, AutoHotkey, Markdown',
+    '- Coding libraries/frameworks: React, React Native, Astro, Expo EAS, Axios, Material UI (MUI), React Native Elements, React Router, MobX, Redux Toolkit, i18next, Firebase, MongoDB, Express, NestJS',
+    '- Development tools: CI/CD, Expo EAS, Google Cloud, Git, Gitlab, Github, Docker, Wordpress, REST API, Postman, lambda functions, Linux, WSL, Github Copilot, Codeium',
+    '- Other tools: Figma, Todoist, Trello, Teams, Slack, OBS, Upwork, Google Drive, OneDrive, Word, Excel, Power Point',
+    '- Other and soft skills: Remote team collaboration, project management, SMART goals, prioritization, team leadership, working independently, self-driven active learning, code ownership, app release and update publishing, app design, UX/UI, business needs understanding, mentoring/training interns, code review, adaptability to new technologies, agile, work ethic, attention to detail.',
   ],
 };
 
