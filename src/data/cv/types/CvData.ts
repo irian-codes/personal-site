@@ -47,11 +47,16 @@ export type OtherSection = {
   lines: string[];
 };
 
+export type InterestsSection = {
+  lines: string[];
+};
+
 export type CvData = {
   header: Header;
   aboutSection: AboutSection;
   skillsSection: SkillsSection;
   educationSection: EducationSection;
   workExperienceSection: WorkExperienceSection;
+  interestsSection: InterestsSection;
   otherSection: OtherSection;
 };

@@ -4,6 +4,7 @@ import type {
   CvData,
   EducationSection,
   Header,
+  InterestsSection,
   OtherSection,
   SkillsSection,
   WorkExperienceSection,
@@ -92,6 +93,14 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
+const interestsSection: InterestsSection = {
+  lines: [
+    '- Member of a local board and roleplaying games club',
+    '- Health, mindfulness and nutrition',
+    '- Woodworking',
+  ],
+};
+
 const otherSection: OtherSection = {
   lines: [
     '- Languages Spoken: English, Spanish',
@@ -106,5 +115,6 @@ export const cvData_en: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
+  interestsSection,
   otherSection,
 };
