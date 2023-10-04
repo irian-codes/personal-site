@@ -46,8 +46,10 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
-      title:
-        'Màster en Ciències de la Computació, Universitat de XYZ (2016 - Present)',
+      title: 'Màster en Ciències de la Computació',
+      institution: 'Universitat ABC',
+      location: 'Ciutat XYZ, País XYZ',
+      period: '2016 - Present',
       lines: [
         '- Vaig estudiar Ciències de la Computació amb un enfocament en Intel·ligència Artificial',
         "- Premi Inventat: Innovador Destacat de l'Any",
@@ -55,8 +57,10 @@ const educationSection: EducationSection = {
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
-      title:
-        'Llicenciatura en Ciències de la Computació, Universitat de XYZ (2015 - 2016)',
+      title: 'Llicenciatura en Ciències de la Computació',
+      institution: 'Universitat XYZ',
+      location: 'Ciutat XYZ, País XYZ',
+      period: '2015 - 2016',
       lines: [
         '- Vaig estudiar Ciències de la Computació amb un enfocament en Intel·ligència Artificial',
         "- Premi Inventat: Innovador Destacat de l'Any",

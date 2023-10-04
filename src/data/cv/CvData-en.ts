@@ -48,7 +48,10 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
-      title: 'Masters in Mobile App Development, UOC (Feb 2020  - Jan 2022)',
+      title: 'Masters in Mobile App Development',
+      institution: 'UOC',
+      location: 'Remote, Spain',
+      period: 'Feb 2020 - Jan 2022',
       lines: [
         '-	Developed final project with a real company (Studio by Caigo)',
         '-	Learned mobile app development with Android, Flutter and React Native',
@@ -59,8 +62,10 @@ const educationSection: EducationSection = {
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/uoc.jpg',
     },
     {
-      title:
-        "Tourism and Hospitality Bachelor's Degree, URV (Sept 2013  - Jun 2017)",
+      title: "Tourism and Hospitality Bachelor's Degree",
+      institution: 'URV',
+      location: 'Tarragona, Spain',
+      period: 'Sept 2013 - Jun 2017',
       lines: [
         '-	Learned business needs identification and management',
         '-	Learned business marketing and business planning',

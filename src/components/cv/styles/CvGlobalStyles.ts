@@ -28,6 +28,11 @@ const headingStyles = {
     marginBottom: textStyles.spacing.lineSpacing,
     color: textStyles.colors.primary,
   },
+  h3: {
+    fontSize: textStyles.fontSize.smallest,
+    marginBottom: textStyles.spacing.lineSpacing,
+    color: textStyles.colors.primary,
+  },
 };
 
 const sectionsStyles = {

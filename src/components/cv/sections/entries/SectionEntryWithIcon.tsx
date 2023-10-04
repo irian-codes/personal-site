@@ -3,6 +3,7 @@ import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
 
 type SectionEntryWithIconProps = {
   title: string;
+  subtitle?: string;
   lines: string[];
   iconSrc: string;
   containerStyle?: any;
@@ -34,7 +35,10 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
             marginLeft: '0.3cm',
           }}
         >
-          <Text style={styles.h2WithIcon}>{props.title}</Text>
+          <View style={{flexDirection: 'column'}}>
+            <Text style={styles.h2WithIcon}>{props.title}</Text>
+            <Text style={styles.h3WithIcon}>{props.subtitle}</Text>
+          </View>
         </View>
       </View>
       {props.lines.map((line) => (
@@ -53,6 +57,11 @@ const styles = StyleSheet.create({
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
     transform: 'skew(-10deg, 0)', // For whatever reason 'fontStyle' is not working.
+  },
+  h3WithIcon: {
+    ...cvGlobalStyles.text.headings.h3,
+    marginBottom: '0.1cm',
+    marginLeft: '0.2cm',
   },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,

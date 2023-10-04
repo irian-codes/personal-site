@@ -22,6 +22,9 @@ export type SkillsSection = {
 
 export type EducationEntry = {
   title: string;
+  institution: string;
+  location: string;
+  period: string;
   lines: string[];
   iconSrc: string;
 };
