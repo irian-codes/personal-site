@@ -27,7 +27,7 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
       {props.lines.map((line) => (
         // A bit dirty way to get the key but eh, it should work except in edge cases
         <Text key={line.substring(0, 10)} style={styles.content}>
-          {line}
+          {'- ' + line}
         </Text>
       ))}
     </View>
