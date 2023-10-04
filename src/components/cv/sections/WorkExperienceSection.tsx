@@ -23,9 +23,10 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
       {data.content.workExperienceSection.entries.map((entry) => (
         <SectionEntryWithIcon
           key={entry.title}
-          title={entry.title}
-          lines={entry.lines}
+          title={`${entry.title} (${entry.period})`}
+          subtitle={entry.company}
           iconSrc={entry.iconSrc}
+          lines={entry.lines}
           containerStyle={{
             marginBottom: cvGlobalStyles.text.sections.spacing.small,
           }}

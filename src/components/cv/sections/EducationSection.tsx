@@ -21,9 +21,10 @@ export const EducationSection = (props: EducationSectionProps) => {
       {data.content.educationSection.entries.map((entry) => (
         <SectionEntryWithIcon
           key={entry.title}
-          title={entry.title}
-          lines={entry.lines}
+          title={`${entry.title}, (${entry.period})`}
+          subtitle={entry.institution}
           iconSrc={entry.iconSrc}
+          lines={entry.lines}
           containerStyle={{
             marginBottom: cvGlobalStyles.text.sections.spacing.small,
           }}

@@ -41,7 +41,7 @@ export function CvPdf(langTag: LanguageTag) {
                   <Text key={line.substring(0, 10)} style={styles.content}>
                     {/* TODO: Instead of underline, use a bold font, since 'fontWeight' doesn't work */}
                     <Text style={{textDecoration: 'underline'}}>
-                      {firstPart}
+                      {'- ' + firstPart}
                     </Text>
                     :{secondPart}
                   </Text>
@@ -59,7 +59,7 @@ export function CvPdf(langTag: LanguageTag) {
               </Text>
               {data.content.interestsSection.lines.map((line) => (
                 <Text key={line.substring(0, 10)} style={styles.content}>
-                  {line}
+                  {'- ' + line}
                 </Text>
               ))}
             </View>
@@ -69,7 +69,7 @@ export function CvPdf(langTag: LanguageTag) {
               <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
               {data.content.otherSection.lines.map((line) => (
                 <Text key={line.substring(0, 10)} style={styles.content}>
-                  {line}
+                  {'- ' + line}
                 </Text>
               ))}
             </View>
@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
     ...cvGlobalStyles.text.headings.h2,
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
-    transform: 'skew(-10deg, 0)', // For whatever reason 'fontStyle' is not working.
+    // TODO: Instead of skew, use italics font, since 'fontStyle' doesn't work
+    transform: 'skew(-10deg, 0)',
   },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
