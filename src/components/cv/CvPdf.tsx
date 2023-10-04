@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
     ...cvGlobalStyles.text.headings.h2,
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
-    transform: 'skew(-10deg, 0)', // For whatever reason 'fontStyle' is not working.
+    // TODO: Instead of skew, use italics font, since 'fontStyle' doesn't work
+    transform: 'skew(-10deg, 0)',
   },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
