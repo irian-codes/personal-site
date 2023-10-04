@@ -13,12 +13,7 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
   return (
     <View style={props.containerStyle}>
       <View style={styles.titleRowContainer}>
-        <Image
-          // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-          // We have to do it like this because the library doesn't accept local images easily.
-          src={props.iconSrc}
-          style={styles.icon}
-        />
+        <Image src={props.iconSrc} style={styles.icon} />
         <View style={styles.titleContainer}>
           <Text style={styles.h2WithIcon}>{props.title}</Text>
           <Text style={styles.h3WithIcon}>{props.subtitle}</Text>
