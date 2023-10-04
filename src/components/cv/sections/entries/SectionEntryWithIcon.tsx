@@ -12,13 +12,7 @@ type SectionEntryWithIconProps = {
 export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
   return (
     <View style={props.containerStyle}>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-        }}
-      >
+      <View style={styles.titleRowContainer}>
         <Image
           // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
           // We have to do it like this because the library doesn't accept local images easily.
@@ -28,17 +22,9 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
             width: '0.5cm',
           }}
         />
-        <View
-          style={{
-            borderLeft: '1px solid black',
-            marginBottom: cvGlobalStyles.text.spacing.headingMarginBottom,
-            marginLeft: '0.3cm',
-          }}
-        >
-          <View style={{flexDirection: 'column'}}>
-            <Text style={styles.h2WithIcon}>{props.title}</Text>
-            <Text style={styles.h3WithIcon}>{props.subtitle}</Text>
-          </View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.h2WithIcon}>{props.title}</Text>
+          <Text style={styles.h3WithIcon}>{props.subtitle}</Text>
         </View>
       </View>
       {props.lines.map((line) => (
@@ -66,5 +52,18 @@ const styles = StyleSheet.create({
   content: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
+  },
+  titleRowContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+  titleContainer: {
+    borderLeft: '1px solid black',
+    marginBottom: cvGlobalStyles.text.spacing.headingMarginBottom,
+    marginLeft: '0.3cm',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
   },
 });
