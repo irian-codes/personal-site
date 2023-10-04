@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
   icon: {
     height: '1cm',
     width: '1cm',
-    marginBottom: '0.3cm',
     borderRadius: '50%',
   },
   content: {
@@ -58,12 +57,12 @@ const styles = StyleSheet.create({
   },
   titleRowContainer: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },
   titleContainer: {
     borderLeft: '1px solid black',
-    marginBottom: cvGlobalStyles.text.spacing.headingMarginBottom,
+    marginBottom: '0.5cm',
     marginLeft: '0.3cm',
     flexDirection: 'column',
     alignItems: 'flex-start',
