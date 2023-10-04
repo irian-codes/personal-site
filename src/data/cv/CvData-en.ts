@@ -48,18 +48,23 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
-      title: "CS Master's Degree, University of XYZ (2016 - Present)",
+      title: 'Masters in Mobile App Development, UOC (Feb 2020  - Jan 2022)',
       lines: [
-        '- Studied Computer Science with a focus on Artificial Intelligence',
-        '- Invented Award: Outstanding Innovator of the Year',
+        '-	Developed final project with a real company (Studio by Caigo)',
+        '-	Learned mobile app development with Android, Flutter and React Native',
+        '-	Learned web development with Angular, Typescript and HTML/CSS',
+        '-	Learned designing apps with Figma and other customer analysis techniques like Customer Journey Map and User Persona.',
+        '-	Learned computer science basics with C',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
-      title: 'CS Bachelors Degree, University of XYZ (2015 - 2016)',
+      title:
+        "Tourism and Hospitality Bachelor's Degree, URV (Sept 2013  - Jun 2017)",
       lines: [
-        '- Studied Computer Science with a focus on Artificial Intelligence',
-        '- Invented Award: Outstanding Innovator of the Year',
+        '-	Learned business needs identification and management',
+        '-	Learned business marketing and business planning',
+        '-	Specialized in financial management of companies',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
@@ -69,26 +74,54 @@ const educationSection: EducationSection = {
 const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
-      title: 'Web Developer',
-      company: 'ABC Company',
-      location: 'XYZ City, XYZ Country',
-      period: '2016 - Present',
+      title: 'Lead frontend developer',
+      company: 'Studio by Caigo',
+      location: 'Remote, Spain',
+      period: 'Aug 2022 - May 2023',
       lines: [
-        '- Developed and maintained company websites using React and Node.js',
-        '- Collaborated with cross-functional teams to deliver high-quality projects',
-        '- Invented Award: Outstanding Innovator of the Year',
+        '- Led the development team on my latest projects done with React and React Native.',
+        '- Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project’s requirements and ensured it was delivered within a reasonable timeframe.',
+        '- Created project documentation for the development team.',
+        '- Hired developers and did job interviews.',
+        '- Mentored interns and guided them to be useful for themselves and the company.',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
-      title: 'Web Developer',
-      company: 'XYZ Company',
-      location: 'XYZ City, XYZ Country',
-      period: '2015 - 2016',
+      title: 'Frontend app developer',
+      company: 'Studio by Caigo',
+      location: 'Remote, Spain',
+      period: 'Jul 2021 - Aug 2022',
       lines: [
-        '- Developed and maintained company websites using React and Node.js',
-        '- Collaborated with cross-functional teams to deliver high-quality projects',
-        '- Invented Award: Outstanding Innovator of the Year',
+        '- Developed the frontend part of several apps with React and React Native.',
+        '- Communicated with the backend team to ensure the frontend worked well with their backend.',
+        '- Configured the backend of several projects with Firebase, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
+        '- Handled the release and updates of apps with Expo EAS for Android and iOS.',
+        '- Learned to work with Gitlab and Google Cloud hosting solutions.',
+      ],
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+    },
+    {
+      title: 'Unity 3D VR developer',
+      company: 'Ekisolid',
+      location: 'Remote, Spain',
+      period: 'Nov 2017 - Dec 2019',
+      lines: [
+        '- Developed many scripts in C# to add functionality to the project made by the game design team. Including networking between different headsets, how to handle user head movement including jumping and hand movement handling and game management and optimization.',
+        '- Integrated Unity with external devices like a Bluetooth controlled fan by an Arduino and a racing simulator cockpit with SimTools.',
+        '- Applied physics theorems to simulate 3D objects collisions and movements.',
+        '- Ensured projects were delivered on time since customers were showcasing them at different events with a very strict date.',
+      ],
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+    },
+    {
+      title: 'Wordpress website developer',
+      company: 'Digital Media Empresas',
+      location: 'Remote, Spain',
+      period: 'Jun 2016 - Nov 2016',
+      lines: [
+        '- Designed and developed websites in Wordpress using Divi.',
+        '- Learned HTML/CSS and Wordpress.',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
@@ -99,16 +132,12 @@ const interestsSection: InterestsSection = {
   lines: [
     '- Member of a local board and roleplaying games club',
     '- Health, mindfulness and nutrition',
-    '- Woodworking',
+    '- Woodworking and paper crafts',
   ],
 };
 
 const otherSection: OtherSection = {
-  lines: [
-    '- Languages Spoken: English, Spanish',
-    '- Driving License: Yes',
-    '- Invented Award: Outstanding Innovator of the Year',
-  ],
+  lines: ['- Languages: English, Spanish, Catalan', '- Driving License: Yes'],
 };
 
 export const cvData_en: CvData = {
