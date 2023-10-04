@@ -49,7 +49,7 @@ const educationSection: EducationSection = {
   entries: [
     {
       title: 'Masters in Mobile App Development',
-      institution: 'UOC',
+      institution: 'Universitat Oberta de Catalunya',
       location: 'Remote, Spain',
       period: 'Feb 2020 - Jan 2022',
       lines: [
@@ -63,7 +63,7 @@ const educationSection: EducationSection = {
     },
     {
       title: "Tourism and Hospitality Bachelor's Degree",
-      institution: 'URV',
+      institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Spain',
       period: 'Sept 2013 - Jun 2017',
       lines: [
