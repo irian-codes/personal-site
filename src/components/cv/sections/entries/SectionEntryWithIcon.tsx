@@ -47,9 +47,10 @@ const styles = StyleSheet.create({
     marginLeft: '0.2cm',
   },
   icon: {
-    height: '0.5cm',
-    width: '0.5cm',
+    height: '1cm',
+    width: '1cm',
     marginBottom: '0.3cm',
+    borderRadius: '50%',
   },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
