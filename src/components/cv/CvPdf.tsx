@@ -34,16 +34,23 @@ export function CvPdf(langTag: LanguageTag) {
             {/* Skills section */}
             <View style={styles.section}>
               <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
-              {data.content.skillsSection.lines.map((line) => (
-                // A bit dirty way to get the key but eh, it should work except in edge cases
-                <Text key={line.substring(0, 10)} style={styles.content}>
-                  {line}
-                </Text>
-              ))}
+              {data.content.skillsSection.lines.map((line) => {
+                const [firstPart, secondPart] = line.split(':');
+                return (
+                  // A bit dirty way to get the key but eh, it should work except in edge cases
+                  <Text key={line.substring(0, 10)} style={styles.content}>
+                    {/* TODO: Instead of underline, use a bold font, since 'fontWeight' doesn't work */}
+                    <Text style={{textDecoration: 'underline'}}>
+                      {firstPart}
+                    </Text>
+                    :{secondPart}
+                  </Text>
+                );
+              })}
             </View>
 
-            <EducationSection />
             <WorkExperienceSection />
+            <EducationSection />
 
             {/* Interests section */}
             <View style={styles.section}>

@@ -11,13 +11,15 @@ import type {
 } from './types/CvData';
 
 const header: Header = {
-  name: 'Joan Pérez',
+  name: 'Joan',
+  surnames: 'Pérez',
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
-  photoSrc: 'http://localhost:4321/assets/images/dummy-cv-image.jpg',
-  websiteUrl: 'https://johndoe.com',
+  photoSrc: 'http://localhost:4321/assets/images/cv/irian-cv-image_2022.jpeg',
+  websiteUrl: 'irian.codes',
   // TODO: Set the correct URL on deployment.
-  websiteQrImageSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+  websiteQrImageSrc:
+    'http://localhost:4321/assets/images/cv/irian-codes-qr.png',
   location: 'Ciutat XYZ, País XYZ',
   email: 'johndoe@example.com',
   phone: '+1 (123) 456-7890',
@@ -50,7 +52,7 @@ const educationSection: EducationSection = {
         '- Vaig estudiar Ciències de la Computació amb un enfocament en Intel·ligència Artificial',
         "- Premi Inventat: Innovador Destacat de l'Any",
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
       title:
@@ -59,7 +61,7 @@ const educationSection: EducationSection = {
         '- Vaig estudiar Ciències de la Computació amb un enfocament en Intel·ligència Artificial',
         "- Premi Inventat: Innovador Destacat de l'Any",
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
   ],
 };
@@ -76,7 +78,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Vaig col·laborar amb equips interfuncionals per lliurar projectes de alta qualitat',
         "- Premi Inventat: Innovador Destacat de l'Any",
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
       title: 'Desenvolupador Web',
@@ -88,7 +90,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Vaig col·laborar amb equips interfuncionals per lliurar projectes de alta qualitat',
         "- Premi Inventat: Innovador Destacat de l'Any",
       ],
-      iconSrc: 'http://localhost:4321/assets/images/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
   ],
 };
