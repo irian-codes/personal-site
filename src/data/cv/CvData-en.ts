@@ -56,7 +56,7 @@ const educationSection: EducationSection = {
         '-	Learned designing apps with Figma and other customer analysis techniques like Customer Journey Map and User Persona.',
         '-	Learned computer science basics with C',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/logos/uoc.jpg',
     },
     {
       title:
@@ -66,7 +66,7 @@ const educationSection: EducationSection = {
         '-	Learned business marketing and business planning',
         '-	Specialized in financial management of companies',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/logos/urv.jpg',
     },
   ],
 };
@@ -85,7 +85,8 @@ const workExperienceSection: WorkExperienceSection = {
         '- Hired developers and did job interviews.',
         '- Mentored interns and guided them to be useful for themselves and the company.',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+      iconSrc:
+        'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       title: 'Frontend app developer',
@@ -99,7 +100,8 @@ const workExperienceSection: WorkExperienceSection = {
         '- Handled the release and updates of apps with Expo EAS for Android and iOS.',
         '- Learned to work with Gitlab and Google Cloud hosting solutions.',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+      iconSrc:
+        'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       title: 'Unity 3D VR developer',
@@ -112,7 +114,7 @@ const workExperienceSection: WorkExperienceSection = {
         '- Applied physics theorems to simulate 3D objects collisions and movements.',
         '- Ensured projects were delivered on time since customers were showcasing them at different events with a very strict date.',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+      iconSrc: 'http://localhost:4321/assets/images/cv/logos/ekisolid.jpg',
     },
     {
       title: 'Wordpress website developer',
@@ -123,7 +125,8 @@ const workExperienceSection: WorkExperienceSection = {
         '- Designed and developed websites in Wordpress using Divi.',
         '- Learned HTML/CSS and Wordpress.',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
+      iconSrc:
+        'http://localhost:4321/assets/images/cv/logos/digital-media-empresas.jpg',
     },
   ],
 };
