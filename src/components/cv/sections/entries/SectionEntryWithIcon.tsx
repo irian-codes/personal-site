@@ -17,10 +17,7 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
           // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
           // We have to do it like this because the library doesn't accept local images easily.
           src={props.iconSrc}
-          style={{
-            height: '0.5cm',
-            width: '0.5cm',
-          }}
+          style={styles.icon}
         />
         <View style={styles.titleContainer}>
           <Text style={styles.h2WithIcon}>{props.title}</Text>
@@ -49,13 +46,18 @@ const styles = StyleSheet.create({
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
   },
+  icon: {
+    height: '0.5cm',
+    width: '0.5cm',
+    marginBottom: '0.3cm',
+  },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
   titleRowContainer: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'flex-start',
   },
   titleContainer: {
