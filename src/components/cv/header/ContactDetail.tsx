@@ -65,8 +65,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   label: {
-    fontWeight: 'bold',
     fontSize: headerGlobalStyles.text.fontSize.medium,
+    fontFamily: headerGlobalStyles.text.fontFamily.contactDetailsHeader,
+    fontWeight: 500,
   },
   text: {
     fontSize: headerGlobalStyles.text.fontSize.smallest,

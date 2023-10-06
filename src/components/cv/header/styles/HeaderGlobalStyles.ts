@@ -9,6 +9,10 @@ export const headerGlobalStyles = {
     colors: {
       primary: 'black',
     },
+    fontFamily: {
+      name: 'Poppins',
+      contactDetailsHeader: 'Poppins',
+    },
   },
   spacing: {
     smallest: '0.25cm',
