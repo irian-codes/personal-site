@@ -6,6 +6,7 @@ import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
+import {SkillChip} from './sections/components/SkillChip';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
 export const LanguageContext = createContext<LanguageTag>('en');
@@ -35,7 +36,11 @@ export function CvPdf(langTag: LanguageTag) {
             <View style={styles.section}>
               <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
               {data.content.skillsSection.skills.map((skill) => (
-                <Text style={{fontSize: 10}}>{skill.name}</Text>
+                <SkillChip
+                  key={skill.id}
+                  value={skill.name}
+                  skillLevel={skill.level}
+                />
               ))}
             </View>
 
