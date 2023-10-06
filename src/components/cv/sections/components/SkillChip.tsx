@@ -11,7 +11,7 @@ type SkillChip = {
 
 export const SkillChip = (props: SkillChip) => {
   const skillChipBaseColor = useMemo(
-    () => new Color('blue'),
+    () => new Color(cvGlobalStyles.colors.secondary),
     [props.skillLevel]
   );
 
