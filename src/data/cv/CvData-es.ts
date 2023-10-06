@@ -51,6 +51,7 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
+      id: 0,
       title: 'Master en Ciencias de la Computación',
       institution: 'Universidad de XYZ',
       location: 'Ciudad XYZ, País XYZ',
@@ -62,6 +63,7 @@ const educationSection: EducationSection = {
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
+      id: 1,
       title: 'Grado en Ciencias de la Computación',
       institution: 'Universidad de XYZ',
       location: 'Ciudad XYZ, País XYZ',
@@ -78,6 +80,7 @@ const educationSection: EducationSection = {
 const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
+      id: 0,
       title: 'Desarrollador Web',
       company: 'Compañía ABC',
       location: 'Ciudad XYZ, País XYZ',
@@ -90,6 +93,7 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc: 'http://localhost:4321/assets/images/cv/dummy-qr-code.png',
     },
     {
+      id: 1,
       title: 'Desarrollador Web',
       company: 'Compañía XYZ',
       location: 'Ciudad XYZ, País XYZ',

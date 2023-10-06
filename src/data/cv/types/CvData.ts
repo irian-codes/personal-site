@@ -37,6 +37,7 @@ export type SkillsSection = {
 };
 
 export type EducationEntry = {
+  id: number;
   title: string;
   institution: string;
   location: string;
@@ -50,6 +51,7 @@ export type EducationSection = {
 };
 
 export type WorkExperienceEntry = {
+  id: number;
   title: string;
   company: string;
   location: string;
