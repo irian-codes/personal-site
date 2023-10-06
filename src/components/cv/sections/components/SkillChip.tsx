@@ -69,5 +69,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
+    fontFamily: cvGlobalStyles.text.fontFamily.monospace,
   },
 });
