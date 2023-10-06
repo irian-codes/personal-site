@@ -1,4 +1,6 @@
 import {StyleSheet, Text} from '@react-pdf/renderer';
+import Color from 'colorjs.io';
+import {useMemo} from 'react';
 import type {Skill} from '../../../../data/cv/types/CvData';
 import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
 
@@ -8,23 +10,43 @@ type SkillChip = {
 };
 
 export const SkillChip = (props: SkillChip) => {
+  const skillChipBaseColor = useMemo(
+    () => new Color('blue'),
+    [props.skillLevel]
+  );
+
   function getSkillColor(): {
     bgColor: string;
     textColor: string;
   } {
     switch (props.skillLevel) {
       case 'beginner':
-        return {bgColor: '#b3b3ff', textColor: 'black'};
+        return {
+          bgColor: skillChipBaseColor
+            .range('white', {space: 'srgb'})(0.8)
+            .toString(),
+          textColor: 'black',
+        };
 
       case 'intermediate':
-        return {bgColor: '#6666ff', textColor: 'white'};
+        return {
+          bgColor: skillChipBaseColor
+            .range('white', {space: 'srgb'})(0.5)
+            .toString(),
+          textColor: 'white',
+        };
 
       case 'proficient':
-        return {bgColor: '#0000ff', textColor: 'white'};
+        return {bgColor: skillChipBaseColor.toString(), textColor: 'white'};
 
       case 'expert':
       default:
-        return {bgColor: '#00008b', textColor: 'white'};
+        return {
+          bgColor: skillChipBaseColor
+            .range('black', {space: 'srgb'})(0.5)
+            .toString(),
+          textColor: 'white',
+        };
     }
   }
 
