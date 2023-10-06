@@ -1,6 +1,8 @@
 const textStyles = {
   fontSize: {
-    smallest: 12,
+    smallest: 8,
+    tiny: 10,
+    small: 12,
     medium: 14,
     large: 16,
   },
@@ -29,7 +31,7 @@ const headingStyles = {
     color: textStyles.colors.primary,
   },
   h3: {
-    fontSize: textStyles.fontSize.smallest,
+    fontSize: textStyles.fontSize.small,
     marginBottom: textStyles.spacing.lineSpacing,
     color: textStyles.colors.primary,
   },

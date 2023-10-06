@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: '50%',
   },
   content: {
-    fontSize: cvGlobalStyles.text.fontSize.smallest,
+    fontSize: cvGlobalStyles.text.fontSize.small,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
   titleRowContainer: {

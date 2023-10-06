@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     transform: 'skew(-10deg, 0)',
   },
   content: {
-    fontSize: cvGlobalStyles.text.fontSize.smallest,
+    fontSize: cvGlobalStyles.text.fontSize.small,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
 });
