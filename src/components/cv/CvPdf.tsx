@@ -35,13 +35,15 @@ export function CvPdf(langTag: LanguageTag) {
             {/* Skills section */}
             <View style={styles.section}>
               <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
-              {data.content.skillsSection.skills.map((skill) => (
-                <SkillChip
-                  key={skill.id}
-                  value={skill.name}
-                  skillLevel={skill.level}
-                />
-              ))}
+              <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+                {data.content.skillsSection.skills.map((skill) => (
+                  <SkillChip
+                    key={skill.id}
+                    value={skill.name}
+                    skillLevel={skill.level}
+                  />
+                ))}
+              </View>
             </View>
 
             <WorkExperienceSection />

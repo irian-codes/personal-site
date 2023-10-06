@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import {StyleSheet, Text} from '@react-pdf/renderer';
 import type {Skill} from '../../../../data/cv/types/CvData';
 import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
 
@@ -29,21 +29,21 @@ export const SkillChip = (props: SkillChip) => {
   }
 
   return (
-    <View
+    <Text
       style={[{backgroundColor: getSkillColor().bgColor}, styles.container]}
     >
       <Text style={[{color: getSkillColor().textColor}, styles.text]}>
         {props.value}
       </Text>
-    </View>
+    </Text>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: '1cm',
     borderRadius: '20%',
     margin: '0.1cm',
+    padding: '0.1cm',
   },
   text: {
     fontSize: cvGlobalStyles.text.fontSize.smallest,
