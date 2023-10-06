@@ -16,8 +16,24 @@ export type AboutSection = {
   lines: string[];
 };
 
+export type Skill = {
+  id: number;
+  name: string;
+  iconSrc?: string;
+  level: 'beginner' | 'intermediate' | 'proficient' | 'expert';
+  category:
+    | 'language'
+    | 'database'
+    | 'library-framework'
+    | 'dev-tool'
+    | 'ai-tool'
+    | 'tool'
+    | 'other'
+    | 'soft-skill';
+};
+
 export type SkillsSection = {
-  lines: string[];
+  skills: Skill[];
 };
 
 export type EducationEntry = {

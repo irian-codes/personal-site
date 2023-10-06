@@ -10,6 +10,8 @@ import type {
   WorkExperienceSection,
 } from './types/CvData';
 
+// TODO: DUMMY DATA: Translate the data from English file.
+
 const header: Header = {
   name: 'Juan',
   surnames: 'Perez',
@@ -36,10 +38,13 @@ const aboutSection: AboutSection = {
 };
 
 const skillsSection: SkillsSection = {
-  lines: [
-    '- HTML5, CSS3, JavaScript, React, Node.js',
-    '- Diseño web receptivo',
-    '- Control de versiones (Git)',
+  skills: [
+    {
+      id: 0,
+      name: 'Typescript',
+      level: 'proficient',
+      category: 'language',
+    },
   ],
 };
 
