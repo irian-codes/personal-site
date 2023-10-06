@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#ffffff',
     padding: '1cm',
+    fontFamily: cvGlobalStyles.text.fontFamily.body,
   },
   main: {
     marginTop: '1cm',
