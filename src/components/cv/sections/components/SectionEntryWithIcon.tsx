@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
     ...cvGlobalStyles.text.headings.h2,
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
-    // TODO: Instead of skew, use italics font, since 'fontStyle' doesn't work
-    transform: 'skew(-10deg, 0)',
+    fontStyle: 'italic',
   },
   h3WithIcon: {
     ...cvGlobalStyles.text.headings.h3,
