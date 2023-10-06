@@ -22,7 +22,7 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
       </Text>
       {data.content.workExperienceSection.entries.map((entry) => (
         <SectionEntryWithIcon
-          key={entry.title}
+          key={entry.id}
           title={`${entry.title} (${entry.period})`}
           subtitle={entry.company}
           iconSrc={entry.iconSrc}

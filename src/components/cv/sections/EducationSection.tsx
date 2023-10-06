@@ -20,7 +20,7 @@ export const EducationSection = (props: EducationSectionProps) => {
       <Text style={styles.h1}>{t('cv.main.section.title.education')}</Text>
       {data.content.educationSection.entries.map((entry) => (
         <SectionEntryWithIcon
-          key={entry.title}
+          key={entry.id}
           title={`${entry.title}, (${entry.period})`}
           subtitle={entry.institution}
           iconSrc={entry.iconSrc}

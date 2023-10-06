@@ -445,6 +445,7 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
+      id: 0,
       title: 'Masters in Mobile App Development',
       institution: 'Universitat Oberta de Catalunya',
       location: 'Remote, Spain',
@@ -459,6 +460,7 @@ const educationSection: EducationSection = {
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/uoc.jpg',
     },
     {
+      id: 1,
       title: "Tourism and Hospitality Bachelor's Degree",
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Spain',
@@ -476,6 +478,7 @@ const educationSection: EducationSection = {
 const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
+      id: 0,
       title: 'Lead frontend developer',
       company: 'Studio by Caigo',
       location: 'Remote, Spain',
@@ -491,6 +494,7 @@ const workExperienceSection: WorkExperienceSection = {
         'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
+      id: 1,
       title: 'Frontend app developer',
       company: 'Studio by Caigo',
       location: 'Remote, Spain',
@@ -506,6 +510,7 @@ const workExperienceSection: WorkExperienceSection = {
         'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
+      id: 2,
       title: 'Unity 3D VR developer',
       company: 'Ekisolid',
       location: 'Remote, Spain',
@@ -519,6 +524,7 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/ekisolid.jpg',
     },
     {
+      id: 3,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
       location: 'Remote, Spain',
