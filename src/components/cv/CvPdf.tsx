@@ -8,7 +8,9 @@ import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {SkillChip} from './sections/components/SkillChip';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
+import {registerFonts} from './utils/Fonts';
 
+registerFonts();
 export const LanguageContext = createContext<LanguageTag>('en');
 
 export function CvPdf(langTag: LanguageTag) {

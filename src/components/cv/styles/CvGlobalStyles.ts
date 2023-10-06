@@ -16,17 +16,24 @@ const textStyles = {
     lineSpacing: '0.2cm',
     smallest: '0.1cm',
   },
+  fontFamily: {
+    headers: 'Poppins',
+    body: 'Source Sans Pro',
+    monospace: 'Roboto Mono',
+  },
 };
 
 const headingStyles = {
   h1: {
+    fontFamily: textStyles.fontFamily.headers,
+    fontWeight: 600,
     fontSize: textStyles.fontSize.large,
-    fontWeight: 'bold' as const,
     marginBottom: textStyles.spacing.headingMarginBottom,
     textDecoration: 'underline' as const,
     color: colors.secondary,
   },
   h2: {
+    fontFamily: textStyles.fontFamily.headers,
     fontSize: textStyles.fontSize.medium,
     marginBottom: textStyles.spacing.lineSpacing,
     color: colors.primary,
