@@ -54,7 +54,7 @@ export function registerFonts() {
   });
 
   Font.register({
-    family: 'Poppins',
+    family: 'Roboto Mono',
     fonts: [
       {
         src: 'http://localhost:4321/assets/fonts/roboto-mono-latin-400-normal.woff',
