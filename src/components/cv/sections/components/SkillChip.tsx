@@ -22,30 +22,30 @@ export const SkillChip = (props: SkillChip) => {
     switch (props.skillLevel) {
       case 'beginner':
         return {
+          textColor: 'black',
           bgColor: skillChipBaseColor
             .range('white', {space: 'srgb'})(0.8)
             .toString(),
-          textColor: 'black',
         };
 
       case 'intermediate':
         return {
+          textColor: 'white',
           bgColor: skillChipBaseColor
             .range('white', {space: 'srgb'})(0.5)
             .toString(),
-          textColor: 'white',
         };
 
       case 'proficient':
-        return {bgColor: skillChipBaseColor.toString(), textColor: 'white'};
+        return {textColor: 'white', bgColor: skillChipBaseColor.toString()};
 
       case 'expert':
       default:
         return {
+          textColor: 'white',
           bgColor: skillChipBaseColor
             .range('black', {space: 'srgb'})(0.5)
             .toString(),
-          textColor: 'white',
         };
     }
   }
