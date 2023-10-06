@@ -1,12 +1,15 @@
+const colors = {
+  primary: 'black',
+  secondary: 'blue',
+};
+
 const textStyles = {
   fontSize: {
-    smallest: 12,
+    smallest: 8,
+    tiny: 10,
+    small: 12,
     medium: 14,
     large: 16,
-  },
-  colors: {
-    primary: 'black',
-    secondary: 'blue',
   },
   spacing: {
     headingMarginBottom: '0.3cm',
@@ -21,17 +24,17 @@ const headingStyles = {
     fontWeight: 'bold' as const,
     marginBottom: textStyles.spacing.headingMarginBottom,
     textDecoration: 'underline' as const,
-    color: textStyles.colors.secondary,
+    color: colors.secondary,
   },
   h2: {
     fontSize: textStyles.fontSize.medium,
     marginBottom: textStyles.spacing.lineSpacing,
-    color: textStyles.colors.primary,
+    color: colors.primary,
   },
   h3: {
-    fontSize: textStyles.fontSize.smallest,
+    fontSize: textStyles.fontSize.small,
     marginBottom: textStyles.spacing.lineSpacing,
-    color: textStyles.colors.primary,
+    color: colors.primary,
   },
 };
 
@@ -42,6 +45,7 @@ const sectionsStyles = {
 };
 
 export const cvGlobalStyles = {
+  colors,
   text: {
     ...textStyles,
     headings: headingStyles,

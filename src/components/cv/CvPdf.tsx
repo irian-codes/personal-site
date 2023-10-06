@@ -6,6 +6,7 @@ import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
+import {SkillChip} from './sections/components/SkillChip';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 
 export const LanguageContext = createContext<LanguageTag>('en');
@@ -34,19 +35,15 @@ export function CvPdf(langTag: LanguageTag) {
             {/* Skills section */}
             <View style={styles.section}>
               <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
-              {data.content.skillsSection.lines.map((line) => {
-                const [firstPart, secondPart] = line.split(':');
-                return (
-                  // A bit dirty way to get the key but eh, it should work except in edge cases
-                  <Text key={line.substring(0, 10)} style={styles.content}>
-                    {/* TODO: Instead of underline, use a bold font, since 'fontWeight' doesn't work */}
-                    <Text style={{textDecoration: 'underline'}}>
-                      {'- ' + firstPart}
-                    </Text>
-                    :{secondPart}
-                  </Text>
-                );
-              })}
+              <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+                {data.content.skillsSection.skills.map((skill) => (
+                  <SkillChip
+                    key={skill.id}
+                    value={skill.name}
+                    skillLevel={skill.level}
+                  />
+                ))}
+              </View>
             </View>
 
             <WorkExperienceSection />
@@ -103,7 +100,7 @@ const styles = StyleSheet.create({
     transform: 'skew(-10deg, 0)',
   },
   content: {
-    fontSize: cvGlobalStyles.text.fontSize.smallest,
+    fontSize: cvGlobalStyles.text.fontSize.small,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
 });

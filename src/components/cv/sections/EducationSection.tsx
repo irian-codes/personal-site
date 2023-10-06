@@ -4,7 +4,7 @@ import {cvData} from '../../../data/cv/CvData';
 import {useTranslations} from '../../../i18n/i18nUtils';
 import {LanguageContext} from '../CvPdf';
 import {cvGlobalStyles} from '../styles/CvGlobalStyles';
-import {SectionEntryWithIcon} from './entries/SectionEntryWithIcon';
+import {SectionEntryWithIcon} from './components/SectionEntryWithIcon';
 
 type EducationSectionProps = {
   containerStyle?: any;
