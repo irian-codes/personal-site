@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     width: '0.75cm',
     height: '0.75cm',
     marginRight: headerGlobalStyles.spacing.smallest,
+    marginTop: '0.15cm',
   },
   textContainer: {
     flex: 1,
