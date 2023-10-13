@@ -24,6 +24,7 @@ export const Header = (props: HeaderProps) => {
           <Text style={styles.name}>
             {data.content.header.name + ' ' + data.content.header.surnames}
           </Text>
+          <Text style={styles.position}>{data.content.header.position}</Text>
         </View>
         <View style={styles.qrContainer}>
           <Image
@@ -84,6 +85,13 @@ const styles = StyleSheet.create({
     fontSize: headerGlobalStyles.text.fontSize.name,
     fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: headerGlobalStyles.text.fontFamily.name,
+  },
+  position: {
+    fontSize: 18,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginTop: '-0.2cm',
     marginBottom: headerGlobalStyles.spacing.small,
     fontFamily: headerGlobalStyles.text.fontFamily.name,
   },

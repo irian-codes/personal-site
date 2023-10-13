@@ -13,6 +13,7 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
+  position: 'App/Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
   photoSrc: 'http://localhost:4321/assets/images/cv/irian-cv-image_2022.jpeg',
