@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: headerGlobalStyles.spacing.small,
+    fontFamily: headerGlobalStyles.text.fontFamily.name,
   },
   applicantPhoto: {
     height: '4cm',

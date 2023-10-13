@@ -8,7 +8,9 @@ import {EducationSection} from './sections/EducationSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {SkillChip} from './sections/components/SkillChip';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
+import {registerFonts} from './utils/Fonts';
 
+registerFonts();
 export const LanguageContext = createContext<LanguageTag>('en');
 
 export function CvPdf(langTag: LanguageTag) {
@@ -84,6 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#ffffff',
     padding: '1cm',
+    fontFamily: cvGlobalStyles.text.fontFamily.body,
   },
   main: {
     marginTop: '1cm',
@@ -92,13 +95,6 @@ const styles = StyleSheet.create({
     marginBottom: '0.5cm',
   },
   h1: {...cvGlobalStyles.text.headings.h1},
-  h2WithIcon: {
-    ...cvGlobalStyles.text.headings.h2,
-    marginBottom: '0.1cm',
-    marginLeft: '0.2cm',
-    // TODO: Instead of skew, use italics font, since 'fontStyle' doesn't work
-    transform: 'skew(-10deg, 0)',
-  },
   content: {
     fontSize: cvGlobalStyles.text.fontSize.small,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
