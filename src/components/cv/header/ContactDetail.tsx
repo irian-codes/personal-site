@@ -19,13 +19,11 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
   function getSplitDataByType(data: string): string {
     switch (props.type) {
-      case 'email':
-        return splitStringAtLastOccurrence(data, '@', true);
-
       case 'linkedin':
       case 'repository':
         return splitStringAtLastOccurrence(data, '/');
 
+      case 'email':
       case 'location':
       default:
         return data;
