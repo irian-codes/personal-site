@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    width: '1cm',
-    height: '1cm',
+    width: '0.75cm',
+    height: '0.75cm',
     marginRight: headerGlobalStyles.spacing.smallest,
   },
   textContainer: {

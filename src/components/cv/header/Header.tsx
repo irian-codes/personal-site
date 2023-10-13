@@ -2,7 +2,7 @@ import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
 import {cvData} from '../../../data/cv/CvData';
 import {LanguageContext} from '../CvPdf';
-import {ContactDetail, type ContactType} from './ContactDetail';
+import {ContactDetail} from './ContactDetail';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
 type HeaderProps = {};
@@ -10,13 +10,6 @@ type HeaderProps = {};
 export const Header = (props: HeaderProps) => {
   const langTag = useContext(LanguageContext);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
-
-  const contactDetailsRow: ContactType[] = [
-    'email',
-    'linkedin',
-    'repository',
-    'location',
-  ];
 
   return (
     <View style={styles.container}>
@@ -47,13 +40,13 @@ export const Header = (props: HeaderProps) => {
       <View style={{height: headerGlobalStyles.spacing.smallest}} />
 
       <View style={styles.secondRowContainer}>
-        {contactDetailsRow.map((item) => (
-          <ContactDetail
-            key={item}
-            type={item as ContactType}
-            containerStyle={styles.contactDetailContainer}
-          />
-        ))}
+        <ContactDetail type={'email'} containerStyle={{width: '5cm'}} />
+        <ContactDetail type={'linkedin'} containerStyle={{width: '6cm'}} />
+        <ContactDetail
+          type={'repository'}
+          containerStyle={{width: '5cm', marginLeft: '0.25cm'}}
+        />
+        <ContactDetail type={'location'} containerStyle={{width: '5cm'}} />
       </View>
     </View>
   );
@@ -65,7 +58,7 @@ const styles = StyleSheet.create({
     color: headerGlobalStyles.text.colors.primary,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     padding: headerGlobalStyles.spacing.small,
   },
   firstRowContainer: {
@@ -82,11 +75,10 @@ const styles = StyleSheet.create({
   secondRowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     width: '100%',
-  },
-  contactDetailContainer: {
-    width: '4cm',
+    // TODO: For whatever reason the content is not centered, this is a quick fix, but I should find a better way to do it.
+    paddingLeft: '1cm',
   },
   name: {
     fontSize: headerGlobalStyles.text.fontSize.name,
