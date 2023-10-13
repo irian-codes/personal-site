@@ -6,10 +6,10 @@ import {splitStringAtLastOccurrence} from '../../../utils/StringUtils';
 import {LanguageContext} from '../CvPdf';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
-export type ContactType = 'email' | 'linkedin' | 'repository' | 'location';
+type ContactType = 'email' | 'linkedin' | 'repository' | 'location';
 type ContactDetailProps = {
   type: ContactType;
-  containerStyle: any;
+  containerStyle?: any;
 };
 
 export const ContactDetail = (props: ContactDetailProps) => {
