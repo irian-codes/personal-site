@@ -2,28 +2,6 @@ import {Font} from '@react-pdf/renderer';
 
 export function registerFonts() {
   Font.register({
-    family: 'Source Sans Pro',
-    fonts: [
-      {
-        src: 'http://localhost:4321/assets/fonts/source-sans-pro-latin-400-normal.woff',
-      },
-      {
-        src: 'http://localhost:4321/assets/fonts/source-sans-pro-latin-400-italic.woff',
-        fontStyle: 'italic',
-      },
-      {
-        src: 'http://localhost:4321/assets/fonts/source-sans-pro-latin-700-normal.woff',
-        fontWeight: 'bold',
-      },
-      {
-        src: 'http://localhost:4321/assets/fonts/source-sans-pro-latin-700-italic.woff',
-        fontWeight: 'bold',
-        fontStyle: 'italic',
-      },
-    ],
-  });
-
-  Font.register({
     family: 'Poppins',
     fonts: [
       {
@@ -58,6 +36,28 @@ export function registerFonts() {
     fonts: [
       {
         src: 'http://localhost:4321/assets/fonts/roboto-mono-latin-400-normal.woff',
+      },
+    ],
+  });
+
+  Font.register({
+    family: 'Roboto',
+    fonts: [
+      {
+        src: 'http://localhost:4321/assets/fonts/roboto-latin-400-normal.woff',
+      },
+      {
+        src: 'http://localhost:4321/assets/fonts/roboto-latin-400-italic.woff',
+        fontStyle: 'italic',
+      },
+      {
+        src: 'http://localhost:4321/assets/fonts/roboto-latin-700-normal.woff',
+        fontWeight: 'bold',
+      },
+      {
+        src: 'http://localhost:4321/assets/fonts/roboto-latin-700-italic.woff',
+        fontWeight: 'bold',
+        fontStyle: 'italic',
       },
     ],
   });

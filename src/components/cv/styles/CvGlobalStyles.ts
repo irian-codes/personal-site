@@ -18,7 +18,7 @@ const textStyles = {
   },
   fontFamily: {
     headers: 'Poppins',
-    body: 'Source Sans Pro',
+    body: 'Roboto',
     monospace: 'Roboto Mono',
   },
 };
