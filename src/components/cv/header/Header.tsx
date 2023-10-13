@@ -11,49 +11,49 @@ export const Header = (props: HeaderProps) => {
   const langTag = useContext(LanguageContext);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
-  const contactDetailsRowOne: ContactType[] = ['email', 'linkedin'];
-  const contactDetailsRowTwo: ContactType[] = ['repository', 'location'];
+  const contactDetailsRow: ContactType[] = [
+    'email',
+    'linkedin',
+    'repository',
+    'location',
+  ];
 
   return (
     <View style={styles.container}>
-      <View>
-        <Image
-          src={data.content.header.photoSrc}
-          style={styles.applicantPhoto}
-        />
-      </View>
-      <View style={styles.centerColumnContainer}>
+      <View style={styles.firstRowContainer}>
+        <View>
+          <Image
+            src={data.content.header.photoSrc}
+            style={styles.applicantPhoto}
+          />
+        </View>
         <View>
           <Text style={styles.name}>
             {data.content.header.name + ' ' + data.content.header.surnames}
           </Text>
         </View>
-        {/* Using 2 rows because it's visually better */}
-        <View style={styles.contactDetailsRow}>
-          {contactDetailsRowOne.map((item) => (
-            <ContactDetail
-              key={item}
-              type={item as ContactType}
-              containerStyle={styles.contactDetailContainer}
-            />
-          ))}
-        </View>
-        <View style={styles.contactDetailsRow}>
-          {contactDetailsRowTwo.map((item) => (
-            <ContactDetail
-              key={item}
-              type={item as ContactType}
-              containerStyle={styles.contactDetailContainer}
-            />
-          ))}
+        <View style={styles.qrContainer}>
+          <Image
+            src={data.content.header.websiteQrImageSrc}
+            style={styles.qrImage}
+          />
+          <Text style={styles.websiteText}>
+            {data.content.header.websiteUrl}
+          </Text>
         </View>
       </View>
-      <View style={styles.qrContainer}>
-        <Image
-          src={data.content.header.websiteQrImageSrc}
-          style={styles.qrImage}
-        />
-        <Text style={styles.websiteText}>{data.content.header.websiteUrl}</Text>
+
+      {/* spacer */}
+      <View style={{height: headerGlobalStyles.spacing.smallest}} />
+
+      <View style={styles.secondRowContainer}>
+        {contactDetailsRow.map((item) => (
+          <ContactDetail
+            key={item}
+            type={item as ContactType}
+            containerStyle={styles.contactDetailContainer}
+          />
+        ))}
       </View>
     </View>
   );
@@ -63,21 +63,27 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: headerGlobalStyles.colors.background,
     color: headerGlobalStyles.text.colors.primary,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: headerGlobalStyles.spacing.small,
-    height: '5cm',
+  },
+  firstRowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
   },
   centerColumnContainer: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  contactDetailsRow: {
+  secondRowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: headerGlobalStyles.spacing.small,
+    alignItems: 'center',
+    width: '100%',
   },
   contactDetailContainer: {
     width: '4cm',
