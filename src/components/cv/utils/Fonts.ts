@@ -1,6 +1,8 @@
 import {Font} from '@react-pdf/renderer';
 
 export function registerFonts() {
+  Font.registerHyphenationCallback((word) => [word]);
+
   Font.register({
     family: 'Poppins',
     fonts: [
