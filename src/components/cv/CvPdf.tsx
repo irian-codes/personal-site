@@ -5,8 +5,8 @@ import type {LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
+import {SkillsSection} from './sections/SkillsSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
-import {SkillChip} from './sections/components/SkillChip';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
 import {registerFonts} from './utils/Fonts';
 
@@ -34,20 +34,7 @@ export function CvPdf(langTag: LanguageTag) {
               </Text>
             </View>
 
-            {/* Skills section */}
-            <View style={styles.section}>
-              <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
-              <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-                {data.content.skillsSection.skills.map((skill) => (
-                  <SkillChip
-                    key={skill.id}
-                    value={skill.name}
-                    skillLevel={skill.level}
-                  />
-                ))}
-              </View>
-            </View>
-
+            <SkillsSection containerStyle={styles.section} />
             <WorkExperienceSection />
             <EducationSection />
 
