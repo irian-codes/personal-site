@@ -24,7 +24,7 @@ const header: Header = {
   location: 'Spain',
   email: 'irian@irian.codes',
   phone: '',
-  linkedin: 'linkedin.com/in/irian-montón-0b58358a',
+  linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
   repository: 'github.com/irian-codes',
 };
 

@@ -21,7 +21,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
     switch (props.type) {
       case 'linkedin':
       case 'repository':
-        return splitStringAtLastOccurrence(data, '/');
+        return splitStringAtLastOccurrence(decodeURIComponent(data), '/');
 
       case 'email':
       case 'location':
