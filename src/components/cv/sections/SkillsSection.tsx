@@ -52,7 +52,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
           />
           {/* Label */}
           <Text style={{fontSize: cvGlobalStyles.text.fontSize.tiny}}>
-            {color[0]}
+            {color[0].charAt(0).toUpperCase() + color[0].slice(1)}
           </Text>
         </View>
       ))}
