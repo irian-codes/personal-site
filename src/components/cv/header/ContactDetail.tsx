@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {Image, Link, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
 import {cvData} from '../../../data/cv/CvData';
 import {useTranslations} from '../../../i18n/i18nUtils';
@@ -30,6 +30,35 @@ export const ContactDetail = (props: ContactDetailProps) => {
     }
   }
 
+  function getURLByType(data: string): string {
+    switch (props.type) {
+      case 'linkedin':
+      case 'repository':
+        return 'https://' + data;
+
+      case 'email':
+        return 'mailto:' + data;
+
+      case 'location':
+      default:
+        return '#';
+    }
+  }
+
+  function getLinkOrTextElement(data: string) {
+    const url = getURLByType(data);
+
+    if (url === '#') {
+      return <Text style={styles.text}>{getSplitDataByType(data)}</Text>;
+    } else {
+      return (
+        <Link src={url} style={styles.link}>
+          {getSplitDataByType(data)}
+        </Link>
+      );
+    }
+  }
+
   return (
     <View style={[styles.container, props.containerStyle]}>
       <Image
@@ -43,9 +72,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
         <Text style={styles.label}>
           {t(`cv.header.contact-details.${props.type}.title`)}
         </Text>
-        <Text style={styles.text}>
-          {getSplitDataByType(data.content.header[props.type])}
-        </Text>
+        {getLinkOrTextElement(data.content.header[props.type])}
       </View>
     </View>
   );
@@ -72,5 +99,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: headerGlobalStyles.text.fontSize.smallest,
+  },
+  link: {
+    fontSize: headerGlobalStyles.text.fontSize.smallest,
+    color: headerGlobalStyles.text.colors.primary,
+    textDecoration: 'none',
   },
 });
