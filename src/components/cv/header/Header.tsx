@@ -14,12 +14,10 @@ export const Header = (props: HeaderProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.firstRowContainer}>
-        <View>
-          <Image
-            src={data.content.header.photoSrc}
-            style={styles.applicantPhoto}
-          />
-        </View>
+        <Image
+          src={data.content.header.photoSrc}
+          style={styles.applicantPhoto}
+        />
         <View>
           <Text style={styles.name}>
             {data.content.header.name + ' ' + data.content.header.surnames}
@@ -102,11 +100,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
+    alignSelf: 'flex-start',
   },
   qrContainer: {
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignSelf: 'flex-start',
   },
   qrImage: {
     height: '3.5cm',
@@ -116,6 +116,6 @@ const styles = StyleSheet.create({
     fontSize: headerGlobalStyles.text.fontSize.large,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: '0.1cm',
+    marginTop: '0.2cm',
   },
 });
