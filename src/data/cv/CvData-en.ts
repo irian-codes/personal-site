@@ -416,9 +416,7 @@ const workExperienceSection: WorkExperienceSection = {
       lines: [
         'Led the development team on my latest projects done with React and React Native.',
         "Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project's requirements and ensured it was delivered within a reasonable timeframe.",
-        'Created project documentation for the development team.',
-        'Hired developers and did job interviews.',
-        'Mentored interns and guided them to be useful for themselves and the company.',
+        'Interviewed, hired and onboarded developers and interns for the team.',
       ],
       iconSrc:
         'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -430,11 +428,10 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Remote, Spain',
       period: 'Jul 2021 - Aug 2022',
       lines: [
-        'Developed the frontend part of several apps with React and React Native.',
-        'Communicated with the backend team to ensure the frontend worked well with their backend.',
-        'Configured the backend of several projects with Firebase, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
-        'Handled the release and updates of apps with Expo EAS for Android and iOS.',
-        'Learned to work with Gitlab and Google Cloud hosting solutions.',
+        'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
+        'Worked with the backend team to ensure the frontend worked well with their REST API backend.',
+        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
+        'Handled the release, versioning and updates of apps with Expo EAS for Android and iOS.',
       ],
       iconSrc:
         'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -446,10 +443,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Remote, Spain',
       period: 'Nov 2017 - Dec 2019',
       lines: [
-        'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking between different headsets, how to handle user head movement including jumping and hand movement handling and game management and optimization.',
-        'Integrated Unity with external devices like a Bluetooth controlled fan by an Arduino and a racing simulator cockpit with SimTools.',
-        'Applied physics theorems to simulate 3D objects collisions and movements.',
-        'Ensured projects were delivered on time since customers were showcasing them at different events with a very strict date.',
+        'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking, VR headset physics, game management and optimization.',
+        'Integrated Unity with devices like a BT controlled fan by an Arduino and a racing simulator cockpit.',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/ekisolid.jpg',
     },
@@ -460,8 +455,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Remote, Spain',
       period: 'Jun 2016 - Nov 2016',
       lines: [
-        'Designed and developed websites in Wordpress using Divi.',
-        'Learned HTML/CSS and Wordpress.',
+        'Designed and developed websites in Wordpress using Divi, making adjustments with CSS.',
       ],
       iconSrc:
         'http://localhost:4321/assets/images/cv/logos/digital-media-empresas.jpg',
