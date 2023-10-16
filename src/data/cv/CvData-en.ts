@@ -30,9 +30,9 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `My name is ${header.name}, I am ${calculateAge(
+    `Hello! I'm ${header.name}, a ${calculateAge(
       header.birthdate
-    )} years old. I'm a highly skilled web developer with 5 years of experience in building responsive and user-friendly websites. Proficient in HTML, CSS, JavaScript, and React. Strong problem-solving and communication skills.`,
+    )} year old frontend app developer with +4 years of programming experience working from home. I have built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Now I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I want to learn and grow as a developer, because what matters to me is building software that really matters and feel I could be a part of that alongside talented and inspiring colleagues.`,
   ],
 };
 
@@ -486,7 +486,7 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Aug 2022 - May 2023',
       lines: [
         'Led the development team on my latest projects done with React and React Native.',
-        'Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project’s requirements and ensured it was delivered within a reasonable timeframe.',
+        "Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project's requirements and ensured it was delivered within a reasonable timeframe.",
         'Created project documentation for the development team.',
         'Hired developers and did job interviews.',
         'Mentored interns and guided them to be useful for themselves and the company.',
