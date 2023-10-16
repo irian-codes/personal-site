@@ -75,12 +75,6 @@ const skillsSection: SkillsSection = {
       category: 'language',
     },
     {
-      id: 6,
-      name: 'AutoHotKey',
-      level: 'beginner',
-      category: 'language',
-    },
-    {
       id: 8,
       name: 'React',
       level: 'proficient',
@@ -101,12 +95,6 @@ const skillsSection: SkillsSection = {
     {
       id: 11,
       name: 'Expo',
-      level: 'proficient',
-      category: 'library-framework',
-    },
-    {
-      id: 12,
-      name: 'Axios',
       level: 'proficient',
       category: 'library-framework',
     },
@@ -225,36 +213,6 @@ const skillsSection: SkillsSection = {
       category: 'dev-tool',
     },
     {
-      id: 32,
-      name: 'Postman',
-      level: 'intermediate',
-      category: 'dev-tool',
-    },
-    {
-      id: 33,
-      name: 'Linux',
-      level: 'intermediate',
-      category: 'tool',
-    },
-    {
-      id: 34,
-      name: 'Windows',
-      level: 'intermediate',
-      category: 'tool',
-    },
-    {
-      id: 50,
-      name: 'Mac OS',
-      level: 'beginner',
-      category: 'tool',
-    },
-    {
-      id: 35,
-      name: 'WSL',
-      level: 'intermediate',
-      category: 'dev-tool',
-    },
-    {
       id: 36,
       name: 'Github Copilot',
       level: 'intermediate',
@@ -285,12 +243,6 @@ const skillsSection: SkillsSection = {
       category: 'tool',
     },
     {
-      id: 41,
-      name: 'Teams',
-      level: 'intermediate',
-      category: 'tool',
-    },
-    {
       id: 42,
       name: 'Slack',
       level: 'proficient',
@@ -313,12 +265,6 @@ const skillsSection: SkillsSection = {
       name: 'Phind',
       level: 'intermediate',
       category: 'ai-tool',
-    },
-    {
-      id: 46,
-      name: 'OBS',
-      level: 'intermediate',
-      category: 'tool',
     },
     {
       id: 47,
@@ -370,7 +316,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 59,
-      name: 'Self-driven active learning',
+      name: 'Self-driven learning',
       level: 'proficient',
       category: 'soft-skill',
     },
@@ -382,13 +328,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 61,
-      name: 'App release and update publishing',
-      level: 'intermediate',
-      category: 'soft-skill',
-    },
-    {
-      id: 62,
-      name: 'App design',
+      name: 'App release cycle',
       level: 'intermediate',
       category: 'soft-skill',
     },
@@ -431,12 +371,6 @@ const skillsSection: SkillsSection = {
     {
       id: 69,
       name: 'Work ethic',
-      level: 'proficient',
-      category: 'soft-skill',
-    },
-    {
-      id: 70,
-      name: 'Attention to detail',
       level: 'proficient',
       category: 'soft-skill',
     },
