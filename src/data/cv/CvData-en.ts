@@ -4,7 +4,6 @@ import type {
   CvData,
   EducationSection,
   Header,
-  InterestsSection,
   OtherSection,
   SkillsSection,
   WorkExperienceSection,
@@ -30,9 +29,9 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `My name is ${header.name}, I am ${calculateAge(
+    `Hello! I'm ${header.name}, a ${calculateAge(
       header.birthdate
-    )} years old. I'm a highly skilled web developer with 5 years of experience in building responsive and user-friendly websites. Proficient in HTML, CSS, JavaScript, and React. Strong problem-solving and communication skills.`,
+    )} year old frontend app developer with +4 years of programming experience working from home. I have built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Now I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I want to learn and grow as a developer, because what matters to me is building software that really matters and feel I could be a part of that alongside talented and inspiring colleagues.`,
   ],
 };
 
@@ -75,12 +74,6 @@ const skillsSection: SkillsSection = {
       category: 'language',
     },
     {
-      id: 6,
-      name: 'AutoHotKey',
-      level: 'beginner',
-      category: 'language',
-    },
-    {
       id: 8,
       name: 'React',
       level: 'proficient',
@@ -101,12 +94,6 @@ const skillsSection: SkillsSection = {
     {
       id: 11,
       name: 'Expo',
-      level: 'proficient',
-      category: 'library-framework',
-    },
-    {
-      id: 12,
-      name: 'Axios',
       level: 'proficient',
       category: 'library-framework',
     },
@@ -225,36 +212,6 @@ const skillsSection: SkillsSection = {
       category: 'dev-tool',
     },
     {
-      id: 32,
-      name: 'Postman',
-      level: 'intermediate',
-      category: 'dev-tool',
-    },
-    {
-      id: 33,
-      name: 'Linux',
-      level: 'intermediate',
-      category: 'tool',
-    },
-    {
-      id: 34,
-      name: 'Windows',
-      level: 'intermediate',
-      category: 'tool',
-    },
-    {
-      id: 50,
-      name: 'Mac OS',
-      level: 'beginner',
-      category: 'tool',
-    },
-    {
-      id: 35,
-      name: 'WSL',
-      level: 'intermediate',
-      category: 'dev-tool',
-    },
-    {
       id: 36,
       name: 'Github Copilot',
       level: 'intermediate',
@@ -285,12 +242,6 @@ const skillsSection: SkillsSection = {
       category: 'tool',
     },
     {
-      id: 41,
-      name: 'Teams',
-      level: 'intermediate',
-      category: 'tool',
-    },
-    {
       id: 42,
       name: 'Slack',
       level: 'proficient',
@@ -313,12 +264,6 @@ const skillsSection: SkillsSection = {
       name: 'Phind',
       level: 'intermediate',
       category: 'ai-tool',
-    },
-    {
-      id: 46,
-      name: 'OBS',
-      level: 'intermediate',
-      category: 'tool',
     },
     {
       id: 47,
@@ -370,7 +315,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 59,
-      name: 'Self-driven active learning',
+      name: 'Self-driven learning',
       level: 'proficient',
       category: 'soft-skill',
     },
@@ -382,13 +327,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 61,
-      name: 'App release and update publishing',
-      level: 'intermediate',
-      category: 'soft-skill',
-    },
-    {
-      id: 62,
-      name: 'App design',
+      name: 'App release cycle',
       level: 'intermediate',
       category: 'soft-skill',
     },
@@ -434,12 +373,6 @@ const skillsSection: SkillsSection = {
       level: 'proficient',
       category: 'soft-skill',
     },
-    {
-      id: 70,
-      name: 'Attention to detail',
-      level: 'proficient',
-      category: 'soft-skill',
-    },
   ],
 };
 
@@ -452,11 +385,10 @@ const educationSection: EducationSection = {
       location: 'Remote, Spain',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Developed final project with a real company (Studio by Caigo)',
-        'Learned mobile app development with Android, Flutter and React Native',
-        'Learned web development with Angular, Typescript and HTML/CSS',
+        'Developed final project with a real company (Studio by Caigo).',
+        'Learned mobile/web app development with Angular, Android Studio, Flutter and React Native.',
         'Learned designing apps with Figma and other customer analysis techniques like Customer Journey Map and User Persona.',
-        'Learned computer science basics with C',
+        'Learned computer science basics with C.',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/uoc.jpg',
     },
@@ -466,11 +398,7 @@ const educationSection: EducationSection = {
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Spain',
       period: 'Sept 2013 - Jun 2017',
-      lines: [
-        'Learned business needs identification and management',
-        'Learned business marketing and business planning',
-        'Specialized in financial management of companies',
-      ],
+      lines: ['Learned business management, marketing and business planning.'],
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/urv.jpg',
     },
   ],
@@ -486,10 +414,9 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Aug 2022 - May 2023',
       lines: [
         'Led the development team on my latest projects done with React and React Native.',
-        'Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project’s requirements and ensured it was delivered within a reasonable timeframe.',
-        'Created project documentation for the development team.',
-        'Hired developers and did job interviews.',
-        'Mentored interns and guided them to be useful for themselves and the company.',
+        "Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project's requirements and ensured it was delivered within a reasonable timeframe.",
+        'Created extensive project and onboarding documentation for the development team.',
+        'Interviewed, hired and onboarded developers and interns for the team.',
       ],
       iconSrc:
         'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -501,11 +428,10 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Remote, Spain',
       period: 'Jul 2021 - Aug 2022',
       lines: [
-        'Developed the frontend part of several apps with React and React Native.',
-        'Communicated with the backend team to ensure the frontend worked well with their backend.',
-        'Configured the backend of several projects with Firebase, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
-        'Handled the release and updates of apps with Expo EAS for Android and iOS.',
-        'Learned to work with Gitlab and Google Cloud hosting solutions.',
+        'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
+        'Worked with the backend team to ensure the frontend worked well with their REST API backend.',
+        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
+        'Handled the release, versioning and updates of apps with Expo EAS for Android and iOS.',
       ],
       iconSrc:
         'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -517,10 +443,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Remote, Spain',
       period: 'Nov 2017 - Dec 2019',
       lines: [
-        'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking between different headsets, how to handle user head movement including jumping and hand movement handling and game management and optimization.',
-        'Integrated Unity with external devices like a Bluetooth controlled fan by an Arduino and a racing simulator cockpit with SimTools.',
-        'Applied physics theorems to simulate 3D objects collisions and movements.',
-        'Ensured projects were delivered on time since customers were showcasing them at different events with a very strict date.',
+        'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking, VR headset physics, game management and optimization.',
+        'Integrated Unity with devices like a BT controlled fan by an Arduino and a racing simulator cockpit.',
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/ekisolid.jpg',
     },
@@ -531,8 +455,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Remote, Spain',
       period: 'Jun 2016 - Nov 2016',
       lines: [
-        'Designed and developed websites in Wordpress using Divi.',
-        'Learned HTML/CSS and Wordpress.',
+        'Designed and developed websites in Wordpress using Divi, making adjustments with CSS.',
       ],
       iconSrc:
         'http://localhost:4321/assets/images/cv/logos/digital-media-empresas.jpg',
@@ -540,16 +463,13 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
-const interestsSection: InterestsSection = {
-  lines: [
-    'Member of a local board and roleplaying games club',
-    'Health, mindfulness and nutrition',
-    'Woodworking and paper crafts',
-  ],
-};
-
 const otherSection: OtherSection = {
-  lines: ['Languages: English, Spanish, Catalan', 'Driving License: Yes'],
+  lines: [
+    'Languages: English, Spanish, Catalan.',
+    'Member of a local board and roleplaying games club.',
+    'Woodworking, paper crafts and mindfulness.',
+    'Driving License: Yes.',
+  ],
 };
 
 export const cvData_en: CvData = {
@@ -558,6 +478,5 @@ export const cvData_en: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
-  interestsSection,
   otherSection,
 };
