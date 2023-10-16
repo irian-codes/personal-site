@@ -4,7 +4,6 @@ import type {
   CvData,
   EducationSection,
   Header,
-  InterestsSection,
   OtherSection,
   SkillsSection,
   WorkExperienceSection,
@@ -109,19 +108,13 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
-const interestsSection: InterestsSection = {
-  lines: [
-    '- Miembro de una asociación local de juegos de mesa y rol',
-    '- Salud, mindfullness y nutrición',
-    '- Carpintería',
-  ],
-};
-
 const otherSection: OtherSection = {
   lines: [
     '- Idiomas Hablados: Inglés, Español',
     '- Licencia de Conducir: Sí',
-    '- Premio Inventado: Innovador Sobresaliente del Año',
+    '- Miembro de una asociación local de juegos de mesa y rol',
+    '- Salud, mindfullness y nutrición',
+    '- Carpintería',
   ],
 };
 
@@ -131,6 +124,5 @@ export const cvData_es: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
-  interestsSection,
   otherSection,
 };
