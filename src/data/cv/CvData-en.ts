@@ -415,6 +415,7 @@ const workExperienceSection: WorkExperienceSection = {
       lines: [
         'Led the development team on my latest projects done with React and React Native.',
         "Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project's requirements and ensured it was delivered within a reasonable timeframe.",
+        'Created extensive project and onboarding documentation for the development team.',
         'Interviewed, hired and onboarded developers and interns for the team.',
       ],
       iconSrc:
