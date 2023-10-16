@@ -2,7 +2,7 @@ import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
 import {cvData} from '../../../data/cv/CvData';
 import {LanguageContext} from '../CvPdf';
-import {ContactDetail, type ContactType} from './ContactDetail';
+import {ContactDetail} from './ContactDetail';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
 type HeaderProps = {};
@@ -11,49 +11,41 @@ export const Header = (props: HeaderProps) => {
   const langTag = useContext(LanguageContext);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
-  const contactDetailsRowOne: ContactType[] = ['email', 'linkedin'];
-  const contactDetailsRowTwo: ContactType[] = ['repository', 'location'];
-
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.firstRowContainer}>
         <Image
           src={data.content.header.photoSrc}
           style={styles.applicantPhoto}
         />
-      </View>
-      <View style={styles.centerColumnContainer}>
         <View>
           <Text style={styles.name}>
             {data.content.header.name + ' ' + data.content.header.surnames}
           </Text>
+          <Text style={styles.position}>{data.content.header.position}</Text>
         </View>
-        {/* Using 2 rows because it's visually better */}
-        <View style={styles.contactDetailsRow}>
-          {contactDetailsRowOne.map((item) => (
-            <ContactDetail
-              key={item}
-              type={item as ContactType}
-              containerStyle={styles.contactDetailContainer}
-            />
-          ))}
-        </View>
-        <View style={styles.contactDetailsRow}>
-          {contactDetailsRowTwo.map((item) => (
-            <ContactDetail
-              key={item}
-              type={item as ContactType}
-              containerStyle={styles.contactDetailContainer}
-            />
-          ))}
+        <View style={styles.qrContainer}>
+          <Image
+            src={data.content.header.websiteQrImageSrc}
+            style={styles.qrImage}
+          />
+          <Text style={styles.websiteText}>
+            {data.content.header.websiteUrl}
+          </Text>
         </View>
       </View>
-      <View style={styles.qrContainer}>
-        <Image
-          src={data.content.header.websiteQrImageSrc}
-          style={styles.qrImage}
+
+      {/* spacer */}
+      <View style={{height: headerGlobalStyles.spacing.small}} />
+
+      <View style={styles.secondRowContainer}>
+        <ContactDetail type={'email'} containerStyle={{width: '5cm'}} />
+        <ContactDetail type={'linkedin'} containerStyle={{width: '6cm'}} />
+        <ContactDetail
+          type={'repository'}
+          containerStyle={{width: '5cm', marginLeft: '0.25cm'}}
         />
-        <Text style={styles.websiteText}>{data.content.header.websiteUrl}</Text>
+        <ContactDetail type={'location'} containerStyle={{width: '5cm'}} />
       </View>
     </View>
   );
@@ -63,29 +55,41 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: headerGlobalStyles.colors.background,
     color: headerGlobalStyles.text.colors.primary,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    padding: headerGlobalStyles.spacing.small,
+  },
+  firstRowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: headerGlobalStyles.spacing.small,
-    height: '5cm',
+    width: '100%',
   },
   centerColumnContainer: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  contactDetailsRow: {
+  secondRowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: headerGlobalStyles.spacing.small,
-  },
-  contactDetailContainer: {
-    width: '4cm',
+    alignItems: 'flex-start',
+    width: '100%',
+    // TODO: For whatever reason the content is not centered, this is a quick fix, but I should find a better way to do it.
+    paddingLeft: '1cm',
   },
   name: {
     fontSize: headerGlobalStyles.text.fontSize.name,
     fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: headerGlobalStyles.text.fontFamily.name,
+  },
+  position: {
+    fontSize: 18,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginTop: '-0.2cm',
     marginBottom: headerGlobalStyles.spacing.small,
     fontFamily: headerGlobalStyles.text.fontFamily.name,
   },
@@ -96,11 +100,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
+    alignSelf: 'flex-start',
   },
   qrContainer: {
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignSelf: 'flex-start',
   },
   qrImage: {
     height: '3.5cm',
@@ -110,6 +116,6 @@ const styles = StyleSheet.create({
     fontSize: headerGlobalStyles.text.fontSize.large,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: '0.1cm',
+    marginTop: '0.2cm',
   },
 });
