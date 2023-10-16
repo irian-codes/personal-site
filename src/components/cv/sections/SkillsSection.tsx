@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
-import {useContext} from 'react';
+import Color from 'colorjs.io';
+import {useContext, useMemo} from 'react';
 import {cvData} from '../../../data/cv/CvData';
 import {useTranslations} from '../../../i18n/i18nUtils';
 import {LanguageContext} from '../CvPdf';
@@ -15,10 +16,30 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   const t = useTranslations(langTag);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
+  const skillChipBaseColor = useMemo(
+    () => new Color(cvGlobalStyles.colors.secondary),
+    []
+  );
+
   const skillColors = {
-    beginner: 'black',
-    intermediate: 'yellow',
-    proficient: 'red',
+    beginner: {
+      textColor: 'black',
+      bgColor: skillChipBaseColor
+        .range('white', {space: 'srgb'})(0.8)
+        .toString(),
+    },
+    intermediate: {
+      textColor: 'white',
+      bgColor: skillChipBaseColor
+        .range('white', {space: 'srgb'})(0.5)
+        .toString(),
+    },
+    proficient: {
+      textColor: 'white',
+      bgColor: skillChipBaseColor
+        .range('black', {space: 'srgb'})(0.5)
+        .toString(),
+    },
   };
 
   const SkillsLegend = (props: any) => (
@@ -26,7 +47,9 @@ export const SkillsSection = (props: SkillsSectionProps) => {
       {Object.entries(skillColors).map((color) => (
         <View key={color[0]} style={styles.skillLegendItemContainer}>
           {/* Color square */}
-          <View style={[styles.legendColor, {backgroundColor: color[1]}]} />
+          <View
+            style={[styles.legendColor, {backgroundColor: color[1].bgColor}]}
+          />
           {/* Label */}
           <Text style={{fontSize: cvGlobalStyles.text.fontSize.tiny}}>
             {color[0]}
@@ -47,7 +70,8 @@ export const SkillsSection = (props: SkillsSectionProps) => {
           <SkillChip
             key={skill.id}
             value={skill.name}
-            skillLevel={skill.level}
+            bgColor={skillColors[skill.level].bgColor}
+            textColor={skillColors[skill.level].textColor}
           />
         ))}
       </View>

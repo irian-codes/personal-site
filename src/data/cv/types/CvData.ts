@@ -21,7 +21,7 @@ export type Skill = {
   id: number;
   name: string;
   iconSrc?: string;
-  level: 'beginner' | 'intermediate' | 'proficient' | 'expert';
+  level: 'beginner' | 'intermediate' | 'proficient';
   category:
     | 'language'
     | 'database'
