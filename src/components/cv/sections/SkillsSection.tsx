@@ -15,9 +15,33 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   const t = useTranslations(langTag);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
+  const skillColors = {
+    beginner: 'black',
+    intermediate: 'yellow',
+    proficient: 'red',
+  };
+
+  const SkillsLegend = (props: any) => (
+    <View style={styles.skillsLegendContainer}>
+      {Object.entries(skillColors).map((color) => (
+        <View key={color[0]} style={styles.skillLegendItemContainer}>
+          {/* Color square */}
+          <View style={[styles.legendColor, {backgroundColor: color[1]}]} />
+          {/* Label */}
+          <Text style={{fontSize: cvGlobalStyles.text.fontSize.tiny}}>
+            {color[0]}
+          </Text>
+        </View>
+      ))}
+    </View>
+  );
+
   return (
     <View style={props.containerStyle}>
-      <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
+      <View style={styles.skillsLegendAndTitleContainer}>
+        <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
+        <SkillsLegend />
+      </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
         {data.content.skillsSection.skills.map((skill) => (
           <SkillChip
@@ -33,4 +57,27 @@ export const SkillsSection = (props: SkillsSectionProps) => {
 
 const styles = StyleSheet.create({
   h1: {...cvGlobalStyles.text.headings.h1},
+  legendColor: {
+    width: 8,
+    height: 8,
+    marginRight: 4,
+    marginLeft: 8,
+  },
+  skillsLegendAndTitleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  skillsLegendContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
+    flexShrink: 1,
+  },
+  skillLegendItemContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
