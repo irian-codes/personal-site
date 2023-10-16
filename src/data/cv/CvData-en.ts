@@ -464,11 +464,10 @@ const workExperienceSection: WorkExperienceSection = {
 
 const otherSection: OtherSection = {
   lines: [
-    'Languages: English, Spanish, Catalan',
-    'Member of a local board and roleplaying games club',
-    'Health, mindfulness and nutrition',
-    'Woodworking and paper crafts',
-    'Driving License: Yes',
+    'Languages: English, Spanish, Catalan.',
+    'Member of a local board and roleplaying games club.',
+    'Woodworking, paper crafts and mindfulness.',
+    'Driving License: Yes.',
   ],
 };
 
