@@ -66,7 +66,10 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
   return (
     <View style={[styles.container, props.containerStyle]}>
-      <Image src={colorizeImage(imageUrl, '#000', 'red')} style={styles.icon} />
+      <Image
+        src={colorizeImage(imageUrl, '#000', headerGlobalStyles.colors.icons)}
+        style={styles.icon}
+      />
       <View style={styles.textContainer}>
         <Text style={styles.label}>
           {t(`cv.header.contact-details.${props.type}.title`)}

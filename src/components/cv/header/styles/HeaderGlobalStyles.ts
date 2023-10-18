@@ -23,6 +23,7 @@ export const headerGlobalStyles = {
     medium: '1cm',
   },
   colors: {
+    icons: cvGlobalStyles.colors.secondary,
     border: cvGlobalStyles.colors.secondary,
     background: new Color(cvGlobalStyles.colors.secondary)
       .range('white', {space: 'srgb'})(0.9)
