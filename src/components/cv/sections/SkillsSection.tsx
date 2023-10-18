@@ -31,13 +31,13 @@ export const SkillsSection = (props: SkillsSectionProps) => {
     intermediate: {
       textColor: 'white',
       bgColor: skillChipBaseColor
-        .range('white', {space: 'srgb'})(0.5)
+        .range('white', {space: 'srgb'})(0.4)
         .toString(),
     },
     proficient: {
       textColor: 'white',
       bgColor: skillChipBaseColor
-        .range('black', {space: 'srgb'})(0.5)
+        .range('black', {space: 'srgb'})(0.2)
         .toString(),
     },
   };
