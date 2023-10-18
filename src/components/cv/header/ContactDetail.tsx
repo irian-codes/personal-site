@@ -2,6 +2,7 @@ import {Image, Link, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
 import {cvData} from '../../../data/cv/CvData';
 import {useTranslations} from '../../../i18n/i18nUtils';
+import {changeImageHue} from '../../../utils/ImageUtils';
 import {splitStringAtLastOccurrence} from '../../../utils/StringUtils';
 import {LanguageContext} from '../CvPdf';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
@@ -16,6 +17,10 @@ export const ContactDetail = (props: ContactDetailProps) => {
   const langTag = useContext(LanguageContext);
   const t = useTranslations(langTag);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+
+  // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
+  const imageUrl =
+    'http://localhost:4321/assets/images/cv/icons/' + props.type + '.png';
 
   function getSplitDataByType(data: string): string {
     switch (props.type) {
@@ -61,13 +66,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
   return (
     <View style={[styles.container, props.containerStyle]}>
-      <Image
-        // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
-        src={
-          'http://localhost:4321/assets/images/cv/icons/' + props.type + '.png'
-        }
-        style={styles.icon}
-      />
+      <Image src={changeImageHue(imageUrl, 90)} style={styles.icon} />
       <View style={styles.textContainer}>
         <Text style={styles.label}>
           {t(`cv.header.contact-details.${props.type}.title`)}
