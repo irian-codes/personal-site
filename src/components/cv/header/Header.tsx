@@ -53,12 +53,15 @@ export const Header = (props: HeaderProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: headerGlobalStyles.colors.background,
     color: headerGlobalStyles.text.colors.primary,
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     padding: headerGlobalStyles.spacing.small,
+    backgroundColor: headerGlobalStyles.colors.background,
+    borderColor: headerGlobalStyles.colors.border,
+    borderWidth: 2,
+    borderRadius: 10,
   },
   firstRowContainer: {
     flexDirection: 'row',

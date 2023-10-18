@@ -1,6 +1,6 @@
 const colors = {
   primary: 'black',
-  secondary: 'blue',
+  secondary: '#dd2222',
 };
 
 const textStyles = {
