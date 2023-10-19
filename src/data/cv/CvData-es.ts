@@ -24,7 +24,7 @@ const header: Header = {
     'http://localhost:4321/assets/images/cv/irian-codes-qr.png',
   location: 'Ciudad XYZ, País XYZ',
   email: 'johndoe@example.com',
-  phone: '+1 (123) 456-7890',
+  phone: '+34611082305',
   linkedin: 'linkedin.com/in/juan-perez-56463b0',
   repository: 'github.com/juanperez',
 };
