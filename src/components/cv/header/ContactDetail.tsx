@@ -22,11 +22,16 @@ export const ContactDetail = (props: ContactDetailProps) => {
   const imageUrl =
     'http://localhost:4321/assets/images/cv/icons/' + props.type + '.png';
 
-  function getSplitDataByType(data: string): string {
+  function formatData(data: string): string {
     switch (props.type) {
       case 'linkedin':
       case 'repository':
+        // Splitting the URL because it's too long
         return splitStringAtLastOccurrence(decodeURIComponent(data), '/');
+
+      case 'phone':
+        // Add spaces between the country code and then the numbers in groups of 3
+        return data.replace(/^(\+\d{2})(\d{3})(\d{3})(\d{3})$/, '$1 $2 $3 $4');
 
       default:
         return data;
@@ -54,11 +59,11 @@ export const ContactDetail = (props: ContactDetailProps) => {
     const url = getURLByType(data);
 
     if (url === '#') {
-      return <Text style={styles.text}>{getSplitDataByType(data)}</Text>;
+      return <Text style={styles.text}>{formatData(data)}</Text>;
     } else {
       return (
         <Link src={url} style={styles.link}>
-          {getSplitDataByType(data)}
+          {formatData(data)}
         </Link>
       );
     }
