@@ -30,7 +30,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
         return splitStringAtLastOccurrence(decodeURIComponent(data), '/');
 
       case 'phone':
-        // Add spaces between the country code and then the numbers in groups of 3
+        // Add a space between the country code and the numbers
         return data.replace(/^(\+\d{2})(\d{9})$/, '$1 $2');
 
       default:
