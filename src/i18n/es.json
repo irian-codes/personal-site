@@ -7,5 +7,6 @@
   "cv.header.contact-details.email.title": "Email",
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Ubicación",
-  "cv.header.contact-details.repository.title": "Repositorio"
+  "cv.header.contact-details.repository.title": "Repositorio",
+  "cv.header.contact-details.phone.title": "Teléfono"
 }

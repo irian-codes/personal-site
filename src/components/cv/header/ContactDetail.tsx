@@ -7,7 +7,7 @@ import {splitStringAtLastOccurrence} from '../../../utils/StringUtils';
 import {LanguageContext} from '../CvPdf';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
-type ContactType = 'email' | 'linkedin' | 'repository' | 'location';
+type ContactType = 'email' | 'linkedin' | 'repository' | 'location' | 'phone';
 type ContactDetailProps = {
   type: ContactType;
   containerStyle?: any;
@@ -22,14 +22,17 @@ export const ContactDetail = (props: ContactDetailProps) => {
   const imageUrl =
     'http://localhost:4321/assets/images/cv/icons/' + props.type + '.png';
 
-  function getSplitDataByType(data: string): string {
+  function formatData(data: string): string {
     switch (props.type) {
       case 'linkedin':
       case 'repository':
+        // Splitting the URL because it's too long
         return splitStringAtLastOccurrence(decodeURIComponent(data), '/');
 
-      case 'email':
-      case 'location':
+      case 'phone':
+        // Add a space between the country code and the numbers
+        return data.replace(/^(\+\d{2})(\d{9})$/, '$1 $2');
+
       default:
         return data;
     }
@@ -44,7 +47,9 @@ export const ContactDetail = (props: ContactDetailProps) => {
       case 'email':
         return 'mailto:' + data;
 
-      case 'location':
+      case 'phone':
+        return 'tel:' + data;
+
       default:
         return '#';
     }
@@ -54,11 +59,11 @@ export const ContactDetail = (props: ContactDetailProps) => {
     const url = getURLByType(data);
 
     if (url === '#') {
-      return <Text style={styles.text}>{getSplitDataByType(data)}</Text>;
+      return <Text style={styles.text}>{formatData(data)}</Text>;
     } else {
       return (
         <Link src={url} style={styles.link}>
-          {getSplitDataByType(data)}
+          {formatData(data)}
         </Link>
       );
     }
@@ -86,8 +91,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   icon: {
-    width: '0.75cm',
-    height: '0.75cm',
+    width: '0.6cm',
+    height: '0.6cm',
     marginRight: headerGlobalStyles.spacing.smallest,
     marginTop: '0.15cm',
   },

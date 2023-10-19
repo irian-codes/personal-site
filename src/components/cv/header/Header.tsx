@@ -39,13 +39,14 @@ export const Header = (props: HeaderProps) => {
       <View style={{height: headerGlobalStyles.spacing.small}} />
 
       <View style={styles.secondRowContainer}>
-        <ContactDetail type={'email'} containerStyle={{width: '5cm'}} />
+        <ContactDetail type={'email'} containerStyle={{width: '5.75cm'}} />
+        <ContactDetail type={'phone'} containerStyle={{width: '5.5cm'}} />
         <ContactDetail type={'linkedin'} containerStyle={{width: '6cm'}} />
         <ContactDetail
           type={'repository'}
-          containerStyle={{width: '5cm', marginLeft: '0.25cm'}}
+          containerStyle={{width: '5.5cm', marginLeft: '0.25cm'}}
         />
-        <ContactDetail type={'location'} containerStyle={{width: '5cm'}} />
+        <ContactDetail type={'location'} containerStyle={{width: '4.5cm'}} />
       </View>
     </View>
   );
@@ -79,8 +80,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     width: '100%',
-    // TODO: For whatever reason the content is not centered, this is a quick fix, but I should find a better way to do it.
-    paddingLeft: '1cm',
   },
   name: {
     fontSize: headerGlobalStyles.text.fontSize.name,
