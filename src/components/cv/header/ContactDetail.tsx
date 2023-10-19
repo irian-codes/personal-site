@@ -31,7 +31,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
       case 'phone':
         // Add spaces between the country code and then the numbers in groups of 3
-        return data.replace(/^(\+\d{2})(\d{3})(\d{3})(\d{3})$/, '$1 $2 $3 $4');
+        return data.replace(/^(\+\d{2})(\d{9})$/, '$1 $2');
 
       default:
         return data;
@@ -91,8 +91,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   icon: {
-    width: '0.75cm',
-    height: '0.75cm',
+    width: '0.6cm',
+    height: '0.6cm',
     marginRight: headerGlobalStyles.spacing.smallest,
     marginTop: '0.15cm',
   },
