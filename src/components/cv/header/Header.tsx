@@ -40,6 +40,7 @@ export const Header = (props: HeaderProps) => {
 
       <View style={styles.secondRowContainer}>
         <ContactDetail type={'email'} containerStyle={{width: '5cm'}} />
+        <ContactDetail type={'phone'} containerStyle={{width: '5cm'}} />
         <ContactDetail type={'linkedin'} containerStyle={{width: '6cm'}} />
         <ContactDetail
           type={'repository'}

@@ -7,7 +7,7 @@ import {splitStringAtLastOccurrence} from '../../../utils/StringUtils';
 import {LanguageContext} from '../CvPdf';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
-type ContactType = 'email' | 'linkedin' | 'repository' | 'location';
+type ContactType = 'email' | 'linkedin' | 'repository' | 'location' | 'phone';
 type ContactDetailProps = {
   type: ContactType;
   containerStyle?: any;
@@ -28,8 +28,6 @@ export const ContactDetail = (props: ContactDetailProps) => {
       case 'repository':
         return splitStringAtLastOccurrence(decodeURIComponent(data), '/');
 
-      case 'email':
-      case 'location':
       default:
         return data;
     }
@@ -44,7 +42,9 @@ export const ContactDetail = (props: ContactDetailProps) => {
       case 'email':
         return 'mailto:' + data;
 
-      case 'location':
+      case 'phone':
+        return 'tel:' + data;
+
       default:
         return '#';
     }
