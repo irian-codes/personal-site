@@ -98,6 +98,18 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 71,
+      name: 'Angular',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
+      id: 72,
+      name: 'Flutter',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
       id: 13,
       name: 'Material UI (MUI)',
       level: 'intermediate',
@@ -140,6 +152,18 @@ const skillsSection: SkillsSection = {
       category: 'dev-tool',
     },
     {
+      id: 70,
+      name: 'Yarn',
+      level: 'beginner',
+      category: 'dev-tool',
+    },
+    {
+      id: 62,
+      name: 'NPM',
+      level: 'proficient',
+      category: 'dev-tool',
+    },
+    {
       id: 20,
       name: 'MongoDB',
       level: 'beginner',
@@ -154,6 +178,18 @@ const skillsSection: SkillsSection = {
     {
       id: 22,
       name: 'NestJS',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
+      id: 32,
+      name: 'Jest',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
+      id: 33,
+      name: 'Mocha',
       level: 'beginner',
       category: 'library-framework',
     },
@@ -182,14 +218,14 @@ const skillsSection: SkillsSection = {
       category: 'dev-tool',
     },
     {
-      id: 27,
-      name: 'Expo EAS',
+      id: 28,
+      name: 'Github',
       level: 'intermediate',
       category: 'dev-tool',
     },
     {
-      id: 28,
-      name: 'Github',
+      id: 27,
+      name: 'Expo EAS',
       level: 'intermediate',
       category: 'dev-tool',
     },
@@ -254,12 +290,6 @@ const skillsSection: SkillsSection = {
       category: 'ai-tool',
     },
     {
-      id: 44,
-      name: 'Bard',
-      level: 'intermediate',
-      category: 'ai-tool',
-    },
-    {
       id: 45,
       name: 'Phind',
       level: 'intermediate',
@@ -315,7 +345,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 59,
-      name: 'Self-driven learning',
+      name: 'Active learning',
       level: 'proficient',
       category: 'soft-skill',
     },
@@ -327,13 +357,13 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 61,
-      name: 'App release cycle',
+      name: 'Debugging',
       level: 'intermediate',
       category: 'soft-skill',
     },
     {
       id: 63,
-      name: 'UX/UI',
+      name: 'UI/UX',
       level: 'intermediate',
       category: 'soft-skill',
     },
@@ -345,7 +375,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 65,
-      name: 'Mentoring/training interns',
+      name: 'Mentoring interns',
       level: 'intermediate',
       category: 'soft-skill',
     },
@@ -357,7 +387,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 67,
-      name: 'Adaptability to new technologies',
+      name: 'Flexible work schedule',
       level: 'proficient',
       category: 'soft-skill',
     },
