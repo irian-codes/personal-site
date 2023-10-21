@@ -158,6 +158,18 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 32,
+      name: 'Jest',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
+      id: 33,
+      name: 'Mocha',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
       id: 23,
       name: 'CI/CD',
       level: 'beginner',
