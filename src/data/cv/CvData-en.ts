@@ -338,12 +338,6 @@ const skillsSection: SkillsSection = {
       category: 'soft-skill',
     },
     {
-      id: 61,
-      name: 'App release cycle',
-      level: 'intermediate',
-      category: 'soft-skill',
-    },
-    {
       id: 63,
       name: 'UX/UI',
       level: 'intermediate',
@@ -357,7 +351,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 65,
-      name: 'Mentoring/training interns',
+      name: 'Mentoring interns',
       level: 'intermediate',
       category: 'soft-skill',
     },
