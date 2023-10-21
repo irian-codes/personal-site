@@ -338,6 +338,12 @@ const skillsSection: SkillsSection = {
       category: 'soft-skill',
     },
     {
+      id: 61,
+      name: 'Debugging',
+      level: 'intermediate',
+      category: 'soft-skill',
+    },
+    {
       id: 63,
       name: 'UX/UI',
       level: 'intermediate',
