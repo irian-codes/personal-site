@@ -363,7 +363,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 63,
-      name: 'UX/UI',
+      name: 'UI/UX',
       level: 'intermediate',
       category: 'soft-skill',
     },
