@@ -31,7 +31,7 @@ const aboutSection: AboutSection = {
   lines: [
     `Bones! Em dic ${
       header.name
-    }, sóc un desenvolupador d'apps frontend de ${calculateAge(
+    }, soc un desenvolupador d'apps frontend de ${calculateAge(
       header.birthdate
     )} anys i més de 4 anys d'experiència en programació, treballant des de casa. Faig apps per web, Android i iOS amb React i React Native amb Typescript, incloses algunes on he estat desenvolupador lead. Estic buscant una feina on poder créixer i treballar en projectes més complexos, perquè fins ara he estat treballant en apps per a petites empreses. Vull aprendre i créixer com a desenvolupador, perquè el que m'importa és crear software realment útil, i sentir que he sigut part del procés al costat de companys inspiradors i amb talent.`,
   ],
@@ -371,7 +371,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 64,
-      name: 'Comprensió del negoci',
+      name: 'Comprensió del model de negoci',
       level: 'intermediate',
       category: 'soft-skill',
     },
@@ -389,7 +389,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 67,
-      name: 'Flexibilitat horaria',
+      name: 'Flexibilitat horària',
       level: 'proficient',
       category: 'soft-skill',
     },
@@ -425,7 +425,7 @@ const educationSection: EducationSection = {
       location: 'Tarragona, Espanya',
       period: 'Set 2013 - Jun 2017',
       lines: [
-        "Estudis en gestió d'empreses turístiques, marketing i business plan.",
+        "Estudis en gestió d'empreses turístiques, màrqueting i business plan.",
       ],
       iconSrc: 'http://localhost:4321/assets/images/cv/logos/urv.jpg',
     },
@@ -466,10 +466,10 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 2,
-      title: 'Unity 3D VR developer',
+      title: 'Desenvolupador Unity 3D VR',
       company: 'Ekisolid',
-      location: 'Remote, Spain',
-      period: 'Nov 2017 - Dec 2019',
+      location: 'Remot, Espanya',
+      period: 'Nov 2017 - Des 2019',
       lines: [
         "Vaig desenvolupar molts scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
         'Integrar Unity amb dispositius IoT com un ventilador controlat per Bluetooth per un Arduino i un simulador de moviment de cotxe.',
@@ -478,9 +478,9 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
-      title: 'Wordpress website developer',
+      title: 'Desenvolupador web amb Wordpress',
       company: 'Digital Media Empresas',
-      location: 'Remote, Spain',
+      location: 'Remot, Espanya',
       period: 'Jun 2016 - Nov 2016',
       lines: [
         'Dissenyar i desenvolupar pàgines web en Wordpress utilitzant Divi, fent ajustos amb CSS.',
