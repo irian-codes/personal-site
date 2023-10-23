@@ -370,7 +370,7 @@ const skillsSection: SkillsSection = {
     {
       id: 64,
       name: 'Business needs understanding',
-      level: 'beginner',
+      level: 'intermediate',
       category: 'soft-skill',
     },
     {
