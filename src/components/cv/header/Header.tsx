@@ -18,7 +18,7 @@ export const Header = (props: HeaderProps) => {
           src={data.content.header.photoSrc}
           style={styles.applicantPhoto}
         />
-        <View>
+        <View style={styles.nameTitleContainer}>
           <Text style={styles.name}>
             {data.content.header.name + ' ' + data.content.header.surnames}
           </Text>
@@ -81,6 +81,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     width: '100%',
   },
+  nameTitleContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   name: {
     fontSize: headerGlobalStyles.text.fontSize.name,
     fontWeight: 'bold',
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
     width: '3.5cm',
   },
   websiteText: {
-    fontSize: headerGlobalStyles.text.fontSize.large,
+    fontSize: headerGlobalStyles.text.fontSize.medium,
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: '0.2cm',
