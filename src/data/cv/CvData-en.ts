@@ -31,7 +31,7 @@ const aboutSection: AboutSection = {
   lines: [
     `Hello! I'm ${header.name}, a ${calculateAge(
       header.birthdate
-    )} year old frontend app developer with +4 years of programming experience working from home. I have built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Now I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I want to learn and grow as a developer, because what matters to me is building software that really matters and feel I could be a part of that alongside talented and inspiring colleagues.`,
+    )} year old frontend app developer with +4 years of programming experience working from home. I've built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Now I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I want to learn and grow as a developer, because what matters to me is building software that really matters and feel I could be a part of that alongside talented and inspiring colleagues.`,
   ],
 };
 
@@ -370,7 +370,7 @@ const skillsSection: SkillsSection = {
     {
       id: 64,
       name: 'Business needs understanding',
-      level: 'beginner',
+      level: 'intermediate',
       category: 'soft-skill',
     },
     {
