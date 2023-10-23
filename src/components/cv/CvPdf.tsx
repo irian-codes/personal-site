@@ -39,7 +39,7 @@ export function CvPdf(langTag: LanguageTag) {
             <EducationSection />
 
             {/* Other section */}
-            <View style={styles.section}>
+            <View style={[styles.section, {marginBottom: 0}]}>
               <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
               {data.content.otherSection.lines.map((line) => (
                 <Text key={line.substring(0, 10)} style={styles.content}>
