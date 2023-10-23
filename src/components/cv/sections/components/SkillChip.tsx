@@ -18,7 +18,7 @@ export const SkillChip = (props: SkillChip) => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: '20%',
-    margin: '0.1cm',
+    margin: '0.08cm',
     padding: '0.1cm',
   },
   text: {
