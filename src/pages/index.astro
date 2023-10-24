@@ -54,6 +54,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-style: solid;
     padding: 2rem;
     background-color: #191b20;
+    overflow: hidden;
+    position: relative;
+  }
+  header:after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -140px;
+    width: 10rem;
+    height: 20rem;
+    opacity: 1;
+    transform: rotate(45deg);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.15) 77%,
+      rgba(255, 255, 255, 0.6) 92%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
   #person-picture {
     width: 200px;
