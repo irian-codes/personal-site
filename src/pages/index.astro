@@ -1,10 +1,22 @@
 ---
+import {Image} from 'astro:assets';
+import personPicture from '../assets/images/irian-cv-image_2022.jpeg';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="CV">
+  <header>
+    <div>
+      <h1>Hello! I'm Irian</h1>
+      <h2>Web and mobile app developer</h2>
+    </div>
+    <Image
+      class="person-picture"
+      src={personPicture}
+      alt="Irian Montón picture"
+    />
+  </header>
   <main>
-    <h1>Hello World</h1>
     <ul>
       <li>
         <a href="/irian-cv-en.pdf">Curriculum ENGLISH</a>
@@ -19,4 +31,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </main>
 </BaseLayout>
 
-<style></style>
+<style>
+  :root {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 1200px;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .person-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 4rem;
+  }
+</style>
