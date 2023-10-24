@@ -12,11 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h1>Hello! I'm Irian</h1>
       <h2>Web and mobile app developer</h2>
     </div>
-    <Image
-      class="person-picture"
-      src={personPicture}
-      alt="Irian Montón picture"
-    />
+    <Image id="person-picture" src={personPicture} alt="Irian Montón picture" />
   </header>
   <main>
     <ul>
@@ -57,7 +53,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding: 2rem;
     background-color: #191b20;
   }
-  .person-picture {
+  #person-picture {
     width: 200px;
     height: 200px;
     border-radius: 50%;
