@@ -1,0 +1,29 @@
+<div class="glow-bar"></div>
+
+<style>
+  .glow-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300vw;
+    height: 20px;
+    background-color: violet;
+    box-shadow: 0 0 5px 5px rgba(148, 0, 211, 0.5);
+    animation: glowBar 500ms linear 100ms 1 running;
+    transform: rotate(-45deg) translateX(-50%);
+    transform-origin: top left;
+    /* We don't want it on top of the content */
+    z-index: -1;
+  }
+
+  @keyframes glowBar {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    100% {
+      top: 100%;
+      left: 100%;
+    }
+  }
+</style>
