@@ -1,22 +1,78 @@
 ---
+import {Image} from 'astro:assets';
+import personPicture from '../assets/images/irian-cv-image_2022.jpeg';
+import CvButton from '../components/website/CvButton.astro';
+import GlowBar from '../components/website/GlowBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="CV">
+  <GlowBar />
   <main>
-    <h1>Hello World</h1>
-    <ul>
-      <li>
-        <a href="/irian-cv-en.pdf">Curriculum ENGLISH</a>
-      </li>
-      <li>
-        <a href="/irian-cv-es.pdf">Curriculum CASTELLANO</a>
-      </li>
-      <li>
-        <a href="/irian-cv-ca.pdf">Curriculum CATALÀ</a>
-      </li>
-    </ul>
+    <div>
+      <!-- TODO: Implement i18n -->
+      <h1>
+        Hello! I'm <span id="name-word">Irian</span>
+      </h1>
+      <h2>
+        Web and mobile app developer <br />
+         with React and React Native
+      </h2>
+      <CvButton />
+    </div>
+    <Image id="person-picture" src={personPicture} alt="Irian Montón picture" />
   </main>
 </BaseLayout>
 
-<style></style>
+<style>
+  :root {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 1200px;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border-color: rgb(var(--accent-color-1));
+    border-width: 3px;
+    border-style: solid;
+    padding: 2rem;
+    background-color: #191b20;
+    overflow: hidden;
+    position: relative;
+  }
+  /* Light reflection CSS effect */
+  main:before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -170px;
+    width: 10rem;
+    height: 20rem;
+    opacity: 1;
+    transform: rotate(45deg);
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.15) 77%,
+      rgba(255, 255, 255, 0.6) 92%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  #person-picture {
+    width: 200px;
+    height: 200px;
+    margin-left: 4rem;
+    border-color: rgb(var(--accent-color-1));
+    border-width: 2px;
+    border-radius: 50%;
+    border-style: solid;
+  }
+  #name-word {
+    color: rgb(var(--accent-color-1));
+    text-shadow: 2px 2px 6px rgba(var(--accent-color-1), 0.7);
+  }
+</style>
