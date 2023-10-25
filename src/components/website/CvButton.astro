@@ -1,0 +1,21 @@
+<button id="cv-button" type="button">See my CV</button>
+
+<script>
+  const button = document.getElementById('cv-button');
+  button?.addEventListener('click', () => {
+    window.location.href = '/irian-cv-en.pdf';
+  });
+</script>
+
+<style>
+  #cv-button {
+    background-color: rgb(var(--accent-color-1));
+    color: rgb(var(--text-color));
+    border-color: rgb(var(--accent-color-1));
+    border-style: solid;
+    border-radius: 3px;
+    font-size: large;
+    padding: 0.5rem;
+    margin-top: 2rem;
+  }
+</style>
