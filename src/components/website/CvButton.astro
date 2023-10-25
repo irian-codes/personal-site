@@ -8,10 +8,10 @@
   }
 
   button?.addEventListener('click', animateButton);
-  button?.addEventListener(
-    'click',
-    () => (window.location.href = '/irian-cv-en.pdf')
-  );
+  button?.addEventListener('click', () => {
+    // TODO: Make this link change when we implement i18n to the website
+    window.location.href = '/irian-cv-en.pdf';
+  });
 </script>
 
 <style>
