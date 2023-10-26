@@ -12,7 +12,7 @@ const supportedLocales = Object.keys(translations);
   }
 
   // Sometimes the locale tag is in long format like 'en-GB' and we need to convert it to short format
-  const userLanguage = window.navigator.language
+  const userLanguage = (window.navigator.language || 'en')
     .substring(0, 2)
     .toLowerCase()
     .trim();
