@@ -23,17 +23,22 @@ const t = useTranslations(locale);
   <GlowBar />
   <main>
     <div>
-      <!-- TODO: Implement i18n -->
       <h1>
-        Hello! I'm <span id="name-word">Irian</span>
+        {t('website.home.title.first-part') + ' '}
+        <span id="name-word">{t('website.home.title.second-part')}</span>
       </h1>
       <h2>
-        Web and mobile app developer <br />
-         with React and React Native
+        {t('website.home.subtitle.first-part')}
+        <br />
+        {t('website.home.subtitle.second-part')}
       </h2>
       <CvButton />
     </div>
-    <Image id="person-picture" src={personPicture} alt="Irian Montón picture" />
+    <Image
+      id="person-picture"
+      src={personPicture}
+      alt={t('website.home.person-image.alt-attribute')}
+    />
   </main>
 </BaseLayout>
 

@@ -8,5 +8,11 @@
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Ubicació",
   "cv.header.contact-details.repository.title": "Repositori",
-  "cv.header.contact-details.phone.title": "Telèfon"
+  "cv.header.contact-details.phone.title": "Telèfon",
+  "website.home.title.first-part": "Bones! Sóc",
+  "website.home.title.second-part": "Irian",
+  "website.home.subtitle.first-part": "Desenvolupador web i mòbil",
+  "website.home.subtitle.second-part": "amb React i React Native",
+  "website.home.cv-button.label": "Veure el meu CV",
+  "website.home.person-image.alt-attribute": "Imatge de Irian Montón"
 }

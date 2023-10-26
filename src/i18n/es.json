@@ -8,5 +8,11 @@
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Ubicación",
   "cv.header.contact-details.repository.title": "Repositorio",
-  "cv.header.contact-details.phone.title": "Teléfono"
+  "cv.header.contact-details.phone.title": "Teléfono",
+  "website.home.title.first-part": "Buenas! Soy",
+  "website.home.title.second-part": "Irian",
+  "website.home.subtitle.first-part": "Desarrollador web y móvil",
+  "website.home.subtitle.second-part": "con React y React Native",
+  "website.home.cv-button.label": "Ver mi CV",
+  "website.home.person-image.alt-attribute": "Imagen de Irian Montón"
 }
