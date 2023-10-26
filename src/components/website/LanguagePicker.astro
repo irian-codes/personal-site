@@ -11,67 +11,59 @@ const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 
-<ul>
-  {
-    Object.entries(languages).map(([langTag, value]) => (
-      <li>
-        <a href={switchUrlLang(Astro.url, langTag as LanguageTag)}>
-          <Image
-            class="flag"
-            src={value.flagImage}
-            alt={t('common.language-picker.flag-image-alt') + ' ' + langTag}
-          />
-          <span class="hover-text">{value.label}</span>
-        </a>
-      </li>
-    ))
-  }
-</ul>
+<div>
+  <ul>
+    {
+      Object.entries(languages).map(([langTag, value]) => (
+        <li>
+          <a href={switchUrlLang(Astro.url, langTag as LanguageTag)}>
+            <Image
+              class="flag"
+              src={value.flagImage}
+              alt={t('common.language-picker.flag-image-alt') + ' ' + langTag}
+              title={value.label}
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
 
 <style>
-  ul {
+  div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     appearance: none;
     list-style-type: none;
-    padding: 0;
-    background-color: rgb(var(--background-color));
-  }
-
-  li {
-    margin-bottom: 10px;
-    margin-right: 5px;
+    padding: 0.5rem;
+    background-color: rgb(var(--light-background-color));
+    border: 1px solid rgb(var(--accent-color-1));
+    border-bottom: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   a {
     display: block;
-    padding: 10px;
-    background-color: #f2f2f2;
-    text-decoration: none;
-    color: #333;
-    border-radius: 5px;
+    padding: 0.3rem;
   }
 
   .flag {
-    height: 12px;
+    height: 1.2rem;
     width: auto;
   }
 
-  .hover-text {
-    display: none;
-  }
-
   a:hover .flag {
-    display: none;
-  }
-
-  a:hover .hover-text {
-    display: block;
-  }
-
-  a:hover {
-    background-color: #ddd;
+    transform: scale(1.1);
+    transition: transform ease-in-out 0.15s;
   }
 </style>
