@@ -1,4 +1,5 @@
 ---
+import LanguagePicker from '../components/website/LanguagePicker.astro';
 import {getLangFromUrl} from '../i18n/i18nUtils';
 
 export interface Props {
@@ -19,6 +20,9 @@ const locale = getLangFromUrl(Astro.url);
     <title>{title}</title>
   </head>
   <body>
+    <nav>
+      <LanguagePicker />
+    </nav>
     <slot />
   </body>
 </html>

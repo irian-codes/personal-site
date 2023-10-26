@@ -26,3 +26,18 @@ export function getLangFromUrl(url: URL): LanguageTag {
 
   return langTag in translations ? langTag : defaultLanguageTag;
 }
+
+/**
+ * Generates a new URL with the language switched to the new 'lang' parameter.
+ *
+ * @param {URL} url - The original URL.
+ * @param {LanguageTag} lang - The new language tag.
+ * @return {URL} The new URL with the language switched.
+ */
+export function switchUrlLang(url: URL, lang: LanguageTag): URL {
+  const pathSegments = url.pathname.split('/');
+  pathSegments[1] = lang;
+  const newUrl = new URL(url.origin + pathSegments.join('/'));
+
+  return newUrl;
+}
