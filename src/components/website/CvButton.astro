@@ -1,6 +1,14 @@
-<button id="cv-button" type="button">See my CV</button>
+---
+import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
-<script>
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<button id="cv-button" type="button">{t('website.home.cv-button.label')}</button
+>
+
+<script define:vars={{locale}}>
   const button = document.getElementById('cv-button');
   function animateButton() {
     button?.classList.add('jello-horizontal');
@@ -9,8 +17,7 @@
 
   button?.addEventListener('click', animateButton);
   button?.addEventListener('click', () => {
-    // TODO: Make this link change when we implement i18n to the website
-    window.location.href = '/irian-cv-en.pdf';
+    window.location.href = `/irian-cv-${locale}.pdf`;
   });
 </script>
 

@@ -1,13 +1,17 @@
 ---
+import LanguagePicker from '../components/website/LanguagePicker.astro';
+import {getLangFromUrl} from '../i18n/i18nUtils';
+
 export interface Props {
   title: string;
 }
 
 const {title} = Astro.props;
+const locale = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -16,6 +20,9 @@ const {title} = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <nav>
+      <LanguagePicker />
+    </nav>
     <slot />
   </body>
 </html>
@@ -25,6 +32,7 @@ const {title} = Astro.props;
     --accent-color-1: 124, 58, 237;
     --accent-color-2: 27, 154, 170;
     --background-color: 0, 0, 0;
+    --light-background-color: 25, 27, 32;
     --text-color: 247, 247, 255;
     --heading-color-1: 247, 247, 255;
     --heading-color-2: 230, 230, 230;

@@ -8,5 +8,12 @@
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Location",
   "cv.header.contact-details.repository.title": "Repository",
-  "cv.header.contact-details.phone.title": "Phone"
+  "cv.header.contact-details.phone.title": "Phone",
+  "website.home.title.first-part": "Hello! I'm",
+  "website.home.title.second-part": "Irian",
+  "website.home.subtitle.first-part": "Web and mobile app developer",
+  "website.home.subtitle.second-part": "with React and React Native",
+  "website.home.cv-button.label": "See my resume",
+  "website.home.person-image.alt-attribute": "Irian Montón picture",
+  "common.language-picker.flag-image-alt": "Flag of language code:"
 }
