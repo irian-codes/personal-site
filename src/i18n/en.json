@@ -14,5 +14,6 @@
   "website.home.subtitle.first-part": "Web and mobile app developer",
   "website.home.subtitle.second-part": "with React and React Native",
   "website.home.cv-button.label": "See my resume",
-  "website.home.person-image.alt-attribute": "Irian Montón picture"
+  "website.home.person-image.alt-attribute": "Irian Montón picture",
+  "common.language-picker.flag-image-alt": "Flag of language code:"
 }

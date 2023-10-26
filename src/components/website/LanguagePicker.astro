@@ -1,13 +1,28 @@
 ---
+import {Image} from 'astro:assets';
 import {languages, type LanguageTag} from '../../i18n/i18n';
-import {switchUrlLang} from '../../i18n/i18nUtils';
+import {
+  getLangFromUrl,
+  switchUrlLang,
+  useTranslations,
+} from '../../i18n/i18nUtils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <ul>
   {
-    Object.entries(languages).map(([langTag, label]) => (
+    Object.entries(languages).map(([langTag, value]) => (
       <li>
-        <a href={switchUrlLang(Astro.url, langTag as LanguageTag)}>{label}</a>
+        <a href={switchUrlLang(Astro.url, langTag as LanguageTag)}>
+          <Image
+            class="flag"
+            src={value.flagImage}
+            alt={t('common.language-picker.flag-image-alt') + ' ' + langTag}
+          />
+          <span class="hover-text">{value.label}</span>
+        </a>
       </li>
     ))
   }
@@ -15,12 +30,19 @@ import {switchUrlLang} from '../../i18n/i18nUtils';
 
 <style>
   ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    appearance: none;
     list-style-type: none;
     padding: 0;
+    background-color: rgb(var(--background-color));
   }
 
   li {
     margin-bottom: 10px;
+    margin-right: 5px;
   }
 
   a {
@@ -30,6 +52,23 @@ import {switchUrlLang} from '../../i18n/i18nUtils';
     text-decoration: none;
     color: #333;
     border-radius: 5px;
+  }
+
+  .flag {
+    height: 12px;
+    width: auto;
+  }
+
+  .hover-text {
+    display: none;
+  }
+
+  a:hover .flag {
+    display: none;
+  }
+
+  a:hover .hover-text {
+    display: block;
   }
 
   a:hover {
