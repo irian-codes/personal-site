@@ -2,17 +2,19 @@
 import {Image} from 'astro:assets';
 import medwayImg1 from '../../assets/images/projects/medway/medway-1.png';
 import mtlImg1 from '../../assets/images/projects/mtl/mobile-app/mtl-1.png';
+
+const projectImages = [medwayImg1, mtlImg1, medwayImg1, medwayImg1, medwayImg1];
 ---
 
 <div id="projects-section-container">
   <h2>My projects</h2>
   <!-- Create a CSS grid for the projects that shows on desktop 2 projects in each row and on mobile all in one column -->
   <div class="projects-grid">
-    <Image class="project-image" src={medwayImg1} alt="" />
-    <Image class="project-image" src={mtlImg1} alt="" />
-    <Image class="project-image" src={medwayImg1} alt="" />
-    <Image class="project-image" src={medwayImg1} alt="" />
-    <Image class="project-image" src={medwayImg1} alt="" />
+    {
+      projectImages.map((src) => (
+        <Image class="project-image" src={src} alt="" />
+      ))
+    }
   </div>
 </div>
 
