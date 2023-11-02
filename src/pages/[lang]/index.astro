@@ -22,23 +22,25 @@ const t = useTranslations(locale);
 <BaseLayout title="CV">
   <GlowBar />
   <main>
-    <div>
-      <h1>
-        {t('website.home.title.first-part') + ' '}
-        <span id="name-word">{t('website.home.title.second-part')}</span>
-      </h1>
-      <h2>
-        {t('website.home.subtitle.first-part')}
-        <br />
-        {t('website.home.subtitle.second-part')}
-      </h2>
-      <CvButton />
+    <div id="top-section-container">
+      <div>
+        <h1>
+          {t('website.home.title.first-part') + ' '}
+          <span id="name-word">{t('website.home.title.second-part')}</span>
+        </h1>
+        <h2>
+          {t('website.home.subtitle.first-part')}
+          <br />
+          {t('website.home.subtitle.second-part')}
+        </h2>
+        <CvButton />
+      </div>
+      <Image
+        id="person-picture"
+        src={personPicture}
+        alt={t('website.home.person-image.alt-attribute')}
+      />
     </div>
-    <Image
-      id="person-picture"
-      src={personPicture}
-      alt={t('website.home.person-image.alt-attribute')}
-    />
   </main>
 </BaseLayout>
 
@@ -48,7 +50,7 @@ const t = useTranslations(locale);
     padding: 1.5rem;
     max-width: 1200px;
   }
-  main {
+  #top-section-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,7 +65,7 @@ const t = useTranslations(locale);
     position: relative;
   }
   /* Light reflection CSS effect */
-  main:before {
+  #top-section-container:before {
     content: '';
     position: absolute;
     top: -100px;
