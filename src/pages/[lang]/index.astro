@@ -4,6 +4,7 @@ import {Image} from 'astro:assets';
 import personPicture from '../../assets/images/irian-cv-image_2022.jpeg';
 import CvButton from '../../components/website/CvButton.astro';
 import GlowBar from '../../components/website/GlowBar.astro';
+import ProjectsSection from '../../components/website/ProjectsSection.astro';
 import {languages, type LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -28,11 +29,11 @@ const t = useTranslations(locale);
           {t('website.home.title.first-part') + ' '}
           <span id="name-word">{t('website.home.title.second-part')}</span>
         </h1>
-        <h2>
+        <div class="subheading">
           {t('website.home.subtitle.first-part')}
           <br />
           {t('website.home.subtitle.second-part')}
-        </h2>
+        </div>
         <CvButton />
       </div>
       <Image
@@ -41,6 +42,7 @@ const t = useTranslations(locale);
         alt={t('website.home.person-image.alt-attribute')}
       />
     </div>
+    <ProjectsSection />
   </main>
 </BaseLayout>
 
