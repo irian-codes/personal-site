@@ -1,3 +1,40 @@
+---
+import {Image} from 'astro:assets';
+import medwayImg1 from '../../assets/images/projects/medway/medway-1.png';
+import mtlImg1 from '../../assets/images/projects/mtl/mobile-app/mtl-1.png';
+---
+
 <div id="projects-section-container">
   <h2>My projects</h2>
+  <!-- Create a CSS grid for the projects that shows on desktop 2 projects in each row and on mobile all in one column -->
+  <div class="projects-grid">
+    <Image class="project-image" src={medwayImg1} alt="" />
+    <Image class="project-image" src={mtlImg1} alt="" />
+    <Image class="project-image" src={medwayImg1} alt="" />
+    <Image class="project-image" src={medwayImg1} alt="" />
+    <Image class="project-image" src={medwayImg1} alt="" />
+  </div>
 </div>
+
+<style>
+  #projects-section-container {
+    margin-top: 2rem;
+  }
+  h2 {
+    text-align: center;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .project-image {
+    width: auto;
+    height: 30rem;
+    border-radius: 10px;
+    image-rendering: optimizeQuality;
+    object-position: center;
+    object-fit: cover;
+    margin: auto;
+  }
+</style>
