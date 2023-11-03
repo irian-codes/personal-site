@@ -15,17 +15,17 @@ const projectImages = [
   <div class="projects-grid">
     {
       projectImages.map((src) => (
-        <div class="image-container">
+        <div class="project-container">
           <Image class="project-image" src={src} alt="" />
-          <div class="image-overlay">
-            <h3 class="image-title">Medway App</h3>
-            <div class="image-description-container">
+          <div class="project-overlay">
+            <h3 class="project-title">Medway App</h3>
+            <div class="project-description-container">
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Officia natus libero voluptas, eum corporis iste.
               </p>
-              <div class="image-technologies-container">
-                <div class="image-technology-container">
+              <div class="project-technologies-container">
+                <div class="project-technology-container">
                   <div style="margin-right: 5px;">React Native</div>
                   <Image src={reactLogoSvg} alt="React (Native) logo" />
                 </div>
@@ -58,11 +58,11 @@ const projectImages = [
     object-position: center;
     object-fit: cover;
   }
-  .image-container {
+  .project-container {
     margin: auto;
     position: relative;
   }
-  .image-overlay {
+  .project-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -72,10 +72,10 @@ const projectImages = [
     color: white;
     text-align: left;
   }
-  .image-title {
+  .project-title {
     margin: 0.6rem 0 0 0;
   }
-  .image-description-container {
+  .project-description-container {
     visibility: hidden;
     height: 0px;
     opacity: 0;
@@ -83,17 +83,17 @@ const projectImages = [
       height 0.6s,
       opacity 0.6s 0.3s;
   }
-  .image-container:hover .image-description-container {
+  .project-container:hover .project-description-container {
     visibility: unset;
     opacity: 1;
     height: 5rem;
   }
-  .image-technologies-container {
+  .project-technologies-container {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .image-technology-container {
+  .project-technology-container {
     display: flex;
     flex-direction: row;
     align-items: center;
