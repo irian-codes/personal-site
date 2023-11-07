@@ -21,10 +21,13 @@ const projects = projectsData.data.find(
                 {project.technologies.map((technology) => (
                   <div class="project-technology-container">
                     <div style="margin-right: 5px;">{technology.name}</div>
-                    <Image
-                      src={technology.icon}
-                      alt={`${technology.name} logo`}
-                    />
+                    <div class="project-technology-icon-container">
+                      <Image
+                        class="project-technology-icon"
+                        src={technology.icon}
+                        alt={`${technology.name} logo`}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -118,5 +121,18 @@ const projects = projectsData.data.find(
     flex-direction: row;
     align-items: center;
     margin-right: 15px;
+  }
+  .project-technology-icon-container {
+    height: 2rem;
+    width: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-technology-icon {
+    width: 1rem;
+    height: auto;
   }
 </style>
