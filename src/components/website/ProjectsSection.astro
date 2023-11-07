@@ -46,7 +46,10 @@ const projects = projectsData.data.find(
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
+    grid-auto-flow: row;
     gap: 1rem;
+    justify-content: center;
+    align-content: center;
   }
   .project-image {
     max-width: 100%;
