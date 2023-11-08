@@ -20,14 +20,12 @@ const projects = projectsData.data.find(
               <div class="project-technologies-container">
                 {project.technologies.map((technology) => (
                   <div class="project-technology-container">
-                    <div style="margin-right: 5px;">{technology.name}</div>
-                    <div class="project-technology-icon-container">
-                      <Image
-                        class="project-technology-icon"
-                        src={technology.icon}
-                        alt={`${technology.name} logo`}
-                      />
-                    </div>
+                    <div class="project-technology-name">{technology.name}</div>
+                    <Image
+                      class="project-technology-icon"
+                      src={technology.icon}
+                      alt={`${technology.name} logo`}
+                    />
                   </div>
                 ))}
               </div>
@@ -109,30 +107,32 @@ const projects = projectsData.data.find(
   .project-container:hover .project-description-container {
     visibility: unset;
     opacity: 1;
-    height: 5rem;
+    height: 8rem;
   }
   .project-technologies-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    overflow-x: scroll;
   }
   .project-technology-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 15px;
-  }
-  .project-technology-icon-container {
-    height: 2rem;
-    width: 2rem;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    margin-right: 15px;
+    background-color: rgb(var(--heading-color-2));
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+  }
+  .project-technology-name {
+    margin-right: 5px;
+    white-space: nowrap;
   }
   .project-technology-icon {
-    width: 1rem;
-    height: auto;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
   }
 </style>
