@@ -2,10 +2,14 @@
 import {Image} from 'astro:assets';
 import {projectsData} from '../../data/website/ProjectsData';
 import WebsiteButton from './WebsiteButton.astro';
+import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
 const projects = projectsData.data.find(
   (project) => project.langTag === 'en'
 )!.content;
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <div id="projects-section-container">
@@ -40,10 +44,12 @@ const projects = projectsData.data.find(
     projects.length > 3 && (
       <div>
         <div id="view-more-button" class="projects-button">
-          <WebsiteButton label="View more projects" />
+          <WebsiteButton
+            label={t('website.home.projects-button-view-more.label')}
+          />
         </div>
         <div id="hide-button" class="projects-button">
-          <WebsiteButton label="Hide projects" />
+          <WebsiteButton label={t('website.home.projects-button-hide.label')} />
         </div>
       </div>
     )
