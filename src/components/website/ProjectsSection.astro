@@ -1,6 +1,7 @@
 ---
 import {Image} from 'astro:assets';
 import {projectsData} from '../../data/website/ProjectsData';
+import WebsiteButton from './WebsiteButton.astro';
 
 const projects = projectsData.data.find(
   (project) => project.langTag === 'en'
@@ -38,8 +39,12 @@ const projects = projectsData.data.find(
   {
     projects.length > 3 && (
       <div>
-        <button id="view-more-button">View more</button>
-        <button id="hide-button">Hide projects</button>
+        <div id="view-more-button" class="projects-button">
+          <WebsiteButton label="View more projects" />
+        </div>
+        <div id="hide-button" class="projects-button">
+          <WebsiteButton label="Hide projects" />
+        </div>
       </div>
     )
   }
@@ -194,5 +199,10 @@ const projects = projectsData.data.find(
     width: 2rem;
     height: 2rem;
     object-fit: contain;
+  }
+  .projects-button {
+    display: flow-root;
+    text-align: center;
+    margin: 2rem auto;
   }
 </style>
