@@ -19,7 +19,7 @@ export const projectsData_en: Projects = [
     id: 0,
     name: 'Caumma',
     description:
-      'App for a psychology clinic to help the therapists manage their patients. Also, the patients had an account so they could log in their homework tasks.',
+      'Mobile app for a psychology clinic to help therapists manage their patients. Also, the patients had an account so they could log their homework tasks.',
     image: caummaMobileAppImg,
     technologies: [
       {
