@@ -14,7 +14,6 @@ import type {Projects} from './types/ProjectData';
 
 export const projectsData_en: Projects = [
   // TODO: Add more real projects
-  // TODO: Complete the missing information replacing dummy text
   {
     id: 0,
     name: 'Caumma',
@@ -52,7 +51,7 @@ export const projectsData_en: Projects = [
     id: 1,
     name: 'Mediterranean Way',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia natus libero voluptas, eum corporis iste.',
+      'Mobile app for managing tourist apartments, where reservations and room status can be visualized, and each cleaning round can be registered and recorded with photos of any incidents. It also has functionality to calculate the revenue per room for the hotel manager.',
     image: medwayMobileAppImg,
     technologies: [
       {
@@ -60,12 +59,20 @@ export const projectsData_en: Projects = [
         icon: reactLogoSvg,
       },
       {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Rest API',
+        icon: restApiLogoSvg,
+      },
+      {
         name: 'Android',
-        icon: reactLogoSvg,
+        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: reactLogoSvg,
+        icon: iosLogoSvg,
       },
     ],
   },
@@ -73,7 +80,7 @@ export const projectsData_en: Projects = [
     id: 2,
     name: 'Assistant Drivers',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia natus libero voluptas, eum corporis iste.',
+      'Mobile app to serve an Uber-like business. Customers can hire a driver by the hour or by trip distance and get billed in the app for the exact amount. The client requested one app for users and another for his drivers.',
     image: assistantDriversAppImg,
     technologies: [
       {
@@ -81,16 +88,20 @@ export const projectsData_en: Projects = [
         icon: reactLogoSvg,
       },
       {
+        name: 'Expo',
+        icon: expoLogoSvg,
+      },
+      {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
         name: 'Firebase',
         icon: firebaseLogoSvg,
       },
       {
         name: 'Android',
-        icon: reactLogoSvg,
-      },
-      {
-        name: 'iOS',
-        icon: reactLogoSvg,
+        icon: androidLogoSvg,
       },
     ],
   },
@@ -98,7 +109,7 @@ export const projectsData_en: Projects = [
     id: 3,
     name: 'Delivery Kings',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia natus libero voluptas, eum corporis iste.',
+      'Mobile app for on-demand delivery and errand services. Users could buy almost any item, from food, medication or even a custom order with specific instructions. They could also send a package to another user after filling a form including photos.',
     image: deliveryKingsMobileAppImg,
     technologies: [
       {
@@ -106,12 +117,20 @@ export const projectsData_en: Projects = [
         icon: reactLogoSvg,
       },
       {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Rest API',
+        icon: restApiLogoSvg,
+      },
+      {
         name: 'Android',
-        icon: reactLogoSvg,
+        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: reactLogoSvg,
+        icon: iosLogoSvg,
       },
     ],
   },
@@ -119,7 +138,7 @@ export const projectsData_en: Projects = [
     id: 4,
     name: 'Córdoba Viva',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia natus libero voluptas, eum corporis iste.',
+      'Mobile app for users to check the catalogue of tourist guided tours in the city of Córdoba, Spain. The client was a travel agency. Users could check updated dates and times of all events and make a reservation.',
     image: cordobaVivaMobileAppImg,
     technologies: [
       {
@@ -127,12 +146,20 @@ export const projectsData_en: Projects = [
         icon: reactLogoSvg,
       },
       {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Rest API',
+        icon: restApiLogoSvg,
+      },
+      {
         name: 'Android',
-        icon: reactLogoSvg,
+        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: reactLogoSvg,
+        icon: iosLogoSvg,
       },
     ],
   },
