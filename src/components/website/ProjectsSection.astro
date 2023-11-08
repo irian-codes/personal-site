@@ -10,8 +10,8 @@ const projects = projectsData.data.find(
 <div id="projects-section-container">
   <div class="projects-grid">
     {
-      projects.map((project) => (
-        <div class="project-container">
+      projects.map((project, index) => (
+        <div class:list={{'project-container': true, hidden: index > 2}}>
           <Image class="project-image" src={project.image} alt="" />
           <div class="project-overlay">
             <h3 class="project-title">{project.name}</h3>
@@ -35,11 +35,65 @@ const projects = projectsData.data.find(
       ))
     }
   </div>
+  {
+    projects.length > 3 && (
+      <div>
+        <button id="view-more-button">View more</button>
+        <button id="hide-button">Hide projects</button>
+      </div>
+    )
+  }
 </div>
+
+<script>
+  (function viewHideProjectsButtonOnClick() {
+    const viewMoreButton = document.getElementById('view-more-button');
+    const hideButton = document.getElementById('hide-button');
+    const visibleProjectsAmount = 3;
+
+    if (viewMoreButton == null || hideButton == null) {
+      return;
+    }
+
+    hideButton.style.display = 'none';
+
+    function showMoreProjects() {
+      const projects = Array.from(
+        document.querySelectorAll('.project-container')
+      );
+
+      projects.forEach((pr) => pr.classList.remove('hidden'));
+
+      viewMoreButton!.style.display = 'none';
+      hideButton!.style.display = 'block';
+    }
+
+    function hideProjects() {
+      const projects = Array.from(
+        document.querySelectorAll('.project-container')
+      );
+
+      projects.forEach((pr, index) => {
+        if (index >= visibleProjectsAmount) {
+          pr.classList.add('hidden');
+        }
+      });
+
+      hideButton!.style.display = 'none';
+      viewMoreButton!.style.display = 'block';
+    }
+
+    viewMoreButton.addEventListener('click', showMoreProjects);
+    hideButton.addEventListener('click', hideProjects);
+  })();
+</script>
 
 <style>
   #projects-section-container {
     margin-top: 2rem;
+  }
+  .hidden {
+    display: none;
   }
   h2 {
     text-align: center;
