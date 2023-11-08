@@ -1,0 +1,32 @@
+---
+interface Props {
+  label: string;
+}
+
+const {label} = Astro.props;
+---
+
+<button class="website-button" type="button">
+  {label}
+</button>
+
+<style>
+  button {
+    appearance: none;
+    background-color: rgb(var(--accent-color-1));
+    color: rgb(var(--text-color));
+    border-color: rgb(var(--accent-color-1));
+    border-style: solid;
+    border-radius: 3px;
+    font-size: large;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: transform ease-in-out 0.1s;
+  }
+
+  button:hover,
+  button:focus,
+  button:active {
+    transform: scale(1.1);
+  }
+</style>
