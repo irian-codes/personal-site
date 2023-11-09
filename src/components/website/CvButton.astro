@@ -1,12 +1,14 @@
 ---
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
+import WebsiteButton from './WebsiteButton.astro';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 
-<button id="cv-button" type="button">{t('website.home.cv-button.label')}</button
->
+<div id="cv-button">
+  <WebsiteButton label={t('website.home.cv-button.label')} />
+</div>
 
 <script define:vars={{locale}}>
   const button = document.getElementById('cv-button');
@@ -23,26 +25,9 @@ const t = useTranslations(locale);
 
 <style>
   #cv-button {
-    appearance: none;
-    background-color: rgb(var(--accent-color-1));
-    color: rgb(var(--text-color));
-    border-color: rgb(var(--accent-color-1));
-    border-style: solid;
-    border-radius: 3px;
-    font-size: large;
-    padding: 0.5rem;
+    display: inline-block;
     margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: transform ease-in-out 0.1s;
   }
-
-  #cv-button:hover,
-  #cv-button:focus,
-  #cv-button:active {
-    transform: scale(1.1);
-  }
-
   #cv-button:before,
   #cv-button:after {
     display: block;

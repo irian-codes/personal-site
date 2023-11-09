@@ -1,0 +1,200 @@
+---
+import {Image} from 'astro:assets';
+import {projectsData} from '../../data/website/ProjectsData';
+import WebsiteButton from './WebsiteButton.astro';
+import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
+
+const locale = getLangFromUrl(Astro.url);
+
+const projects = projectsData.data.find(
+  (project) => project.langTag === locale
+)!.content;
+
+const t = useTranslations(locale);
+---
+
+<div id="projects-section-container">
+  <div class="projects-grid">
+    {
+      projects.map((project, index) => (
+        <div
+          class:list={{
+            'project-container': true,
+            hidden: index > 2,
+          }}
+        >
+          <Image class="project-image" src={project.image} alt="" />
+          <div class="project-overlay">
+            <h3 class="project-title">{project.name}</h3>
+            <div class="project-description-container">
+              <p>{project.description}</p>
+              <div class="project-technologies-container">
+                {project.technologies.map((technology) => (
+                  <div class="project-technology-container">
+                    <div class="project-technology-name">{technology.name}</div>
+                    <Image
+                      class="project-technology-icon"
+                      src={technology.icon}
+                      alt={`${technology.name} logo`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  {
+    projects.length > 3 && (
+      <div id="view-more-button" class="projects-button">
+        <WebsiteButton
+          label={t('website.home.projects-button-view-more.label')}
+        />
+      </div>
+    )
+  }
+</div>
+
+<script>
+  (function viewHideProjectsButtonOnClick() {
+    const viewMoreButton = document.getElementById('view-more-button');
+
+    if (viewMoreButton == null) {
+      return;
+    }
+
+    function showMoreProjects() {
+      const projects = Array.from(
+        document.querySelectorAll('.project-container')
+      );
+
+      projects.forEach((pr) => pr.classList.remove('hidden'));
+      viewMoreButton!.style.display = 'none';
+    }
+
+    viewMoreButton.addEventListener('click', showMoreProjects);
+  })();
+</script>
+
+<style>
+  #projects-section-container {
+    margin-top: 2rem;
+  }
+  #view-more-button {
+    margin-top: 0;
+  }
+  .hidden {
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+  }
+  h2 {
+    text-align: center;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 2rem;
+    justify-content: center;
+    align-content: center;
+  }
+  .project-container {
+    margin: auto;
+    position: relative;
+    transition: opacity 1s;
+  }
+  /* Selected project glow effect */
+  .project-container::after {
+    content: '';
+    position: absolute;
+    top: 48%;
+    left: 1%;
+    width: 98%;
+    height: 5%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.6s;
+    box-shadow: 0 0 10rem 8rem rgb(var(--accent-color-1));
+    z-index: -1;
+  }
+  /* TODO: Adapt to devices that can't hover, aka touch devices */
+  .project-container:hover::after {
+    opacity: 0.8;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-height: 40rem;
+    border-radius: 10px;
+    image-rendering: optimizeQuality;
+    object-position: center;
+    object-fit: cover;
+  }
+  .project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: left;
+  }
+  .project-title {
+    margin: 0.4rem 0 0.5rem 0;
+  }
+  .project-description-container {
+    visibility: hidden;
+    height: auto;
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto;
+    justify-content: space-between;
+    transition:
+      max-height 0.6s,
+      opacity 0.6s 0.3s;
+  }
+  /* TODO: Adapt to devices that can't hover, aka touch devices */
+  .project-container:hover .project-description-container {
+    visibility: unset;
+    opacity: 1;
+    max-height: 14rem; /* More than necessary but not too much */
+  }
+  .project-technologies-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .project-technology-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    background-color: rgb(var(--heading-color-2));
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+  }
+  .project-technology-name {
+    margin-right: 5px;
+    white-space: nowrap;
+  }
+  .project-technology-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+  .projects-button {
+    display: flow-root;
+    text-align: center;
+    margin: 2rem auto;
+  }
+</style>
