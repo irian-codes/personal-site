@@ -4,11 +4,12 @@ import {projectsData} from '../../data/website/ProjectsData';
 import WebsiteButton from './WebsiteButton.astro';
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
+const locale = getLangFromUrl(Astro.url);
+
 const projects = projectsData.data.find(
-  (project) => project.langTag === 'en'
+  (project) => project.langTag === locale
 )!.content;
 
-const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 

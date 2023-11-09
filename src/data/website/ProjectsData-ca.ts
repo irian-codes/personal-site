@@ -12,13 +12,13 @@ import deliveryKingsMobileAppImg from '../../assets/images/projects/mobile-apps/
 import medwayMobileAppImg from '../../assets/images/projects/mobile-apps/medway-joined.jpg';
 import type {Projects} from './types/ProjectData';
 
-export const projectsData_en: Projects = [
+export const projectsData_ca: Projects = [
   // TODO: Add more real projects
   {
     id: 0,
     name: 'Caumma',
     description:
-      'Mobile app for a psychology clinic to help therapists manage their patients. Also, the patients have an account so they can log their homework tasks.',
+      "Aplicació mòbil per a una clínica de psicologia per ajudar als terapeutes a gestionar els seus pacients. Els pacients tenen un compte d'usuari perquè puguin registrar des de casa les tasques assignades pel seu terapeuta.",
     image: caummaMobileAppImg,
     technologies: [
       {
@@ -51,7 +51,7 @@ export const projectsData_en: Projects = [
     id: 1,
     name: 'Mediterranean Way',
     description:
-      'Mobile app for managing tourist apartments, where reservations and room status can be visualized, and each cleaning round can be registered and recorded with photos of any incidents. It also has functionality to calculate the revenue per room for the hotel manager.',
+      "Aplicació mòbil per a la gestió d'apartaments turístics, on es poden visualitzar les reserves i l'estat de les habitacions. A més, es pot registrar i gravar cada torn de neteja, incloent fotografies de qualsevol incidència. També disposa de funcionalitat per calcular els ingressos per habitació per al director de l'hotel.",
     image: medwayMobileAppImg,
     technologies: [
       {
@@ -80,7 +80,7 @@ export const projectsData_en: Projects = [
     id: 2,
     name: 'Assistant Drivers',
     description:
-      'Mobile app to serve an Uber-like business. Customers can hire a driver by the hour or by trip distance and get billed in the app for the exact amount. The client requested one app for users and another for his drivers.',
+      "Aplicació mòbil per donar servei a un negoci de tipus Uber. Els clients poden contractar un conductor per hores o segons la distància del viatge, seguidament se'ls factura l’import exacte a través de l'aplicació. El client sol·licitava dues apps, una pels usuaris i una altra pels seus conductors.",
     image: assistantDriversAppImg,
     technologies: [
       {
@@ -109,7 +109,7 @@ export const projectsData_en: Projects = [
     id: 3,
     name: 'Delivery Kings',
     description:
-      'Mobile app for on-demand delivery and errand services. Users can buy almost any item, from food, medication or even a custom order with specific instructions. They can also send a package to another user after filling a form including photos.',
+      "Aplicació mòbil per a serveis de lliurament i recollida sota demanda tipus Glovo. Els usuaris poden comprar gairebé qualsevol article, com ara menjar, medicaments o fins i tot una comanda personalitzada amb instruccions específiques. També poden enviar un paquet a un altre usuari després d'omplir un formulari incloent fotografies.",
     image: deliveryKingsMobileAppImg,
     technologies: [
       {
@@ -138,7 +138,7 @@ export const projectsData_en: Projects = [
     id: 4,
     name: 'Córdoba Viva',
     description:
-      'Mobile app for users to check the catalogue of tourist guided tours in the city of Córdoba, Spain. The client is a travel agency. Users can check updated dates and times of all events and make a reservation.',
+      'Aplicació mòbil perquè els usuaris consultin el catàleg de visites guiades turístiques a la ciutat de Còrdova. El client és una agència de viatges. Els usuaris poden consultar les dates i hores actualitzades de tots els esdeveniments i fer una reserva.',
     image: cordobaVivaMobileAppImg,
     technologies: [
       {

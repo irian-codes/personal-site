@@ -1,7 +1,8 @@
+import {projectsData_ca} from './ProjectsData-ca';
 import {projectsData_en} from './ProjectsData-en';
+import {projectsData_es} from './ProjectsData-es';
 
 export const projectsData = {
-  // TODO: Add translations
   data: [
     {
       langTag: 'en',
@@ -9,11 +10,11 @@ export const projectsData = {
     },
     {
       langTag: 'es',
-      content: projectsData_en,
+      content: projectsData_es,
     },
     {
       langTag: 'ca',
-      content: projectsData_en,
+      content: projectsData_ca,
     },
   ],
 };
