@@ -1,14 +1,73 @@
 ---
+import {Image} from 'astro:assets';
+import restApiLogo from '../../assets/images/icons/rest-api-logo.svg';
+import speechBubblesImg from '../../assets/images/speech-bubbles.png';
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 
-<div>contact</div>
+<div class="contact-section-container">
+  <Image
+    class="image"
+    src={speechBubblesImg}
+    role="presentation"
+    alt="speech bubbles icon"
+  />
+  <div class="contact-options-column">
+    <div class="contact-container">
+      <Image src={restApiLogo} class="contact-icon" alt="Email icon" />
+      <div>Email</div>
+    </div>
+    <div class="contact-container">
+      <Image src={restApiLogo} class="contact-icon" alt="LinkedIn icon" />
+      <div>LinkedIn</div>
+    </div>
+    <div class="contact-container">
+      <Image src={restApiLogo} class="contact-icon" alt="Github icon" />
+      <div>GitHub</div>
+    </div>
+    <div class="contact-container">
+      <Image src={restApiLogo} class="contact-icon" alt="Phone icon" />
+      <div>Phone</div>
+    </div>
+  </div>
+</div>
 
 <style>
-  div {
-    color: white;
+  .contact-section-container {
+    color: rgb(var(--text-color));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /* TODO: Add a better image but for now this is fine */
+  .image {
+    width: 20rem;
+    height: auto;
+  }
+  .contact-options-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    background-color: rgb(var(--light-background-color));
+    border-radius: 10px;
+    border: 2px solid rgb(var(--accent-color-1));
+    padding: 1rem;
+    margin: 0.5rem auto;
+    width: 90%;
+  }
+  .contact-icon {
+    width: 24px;
+    height: 24px;
   }
 </style>
