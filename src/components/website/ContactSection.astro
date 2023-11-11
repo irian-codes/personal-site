@@ -1,0 +1,14 @@
+---
+import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<div>contact</div>
+
+<style>
+  div {
+    color: white;
+  }
+</style>
