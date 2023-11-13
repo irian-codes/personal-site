@@ -1,7 +1,6 @@
 ---
 import {Image} from 'astro:assets';
 import restApiLogo from '../../assets/images/icons/rest-api-logo.svg';
-import speechBubblesImg from '../../assets/images/speech-bubbles.png';
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
 const locale = getLangFromUrl(Astro.url);
@@ -9,28 +8,30 @@ const t = useTranslations(locale);
 ---
 
 <div class="contact-section-container">
-  <Image
-    class="image"
-    src={speechBubblesImg}
-    role="presentation"
-    alt="speech bubbles icon"
-  />
-  <div class="contact-options-column">
+  <div class="contact-options-row">
     <div class="contact-container">
-      <Image src={restApiLogo} class="contact-icon" alt="Email icon" />
-      <div>Email</div>
+      <div class="contact-icon-container">
+        <Image src={restApiLogo} class="contact-icon" alt="Email icon" />
+      </div>
+      <div class="contact-option-title">Email</div>
     </div>
     <div class="contact-container">
-      <Image src={restApiLogo} class="contact-icon" alt="LinkedIn icon" />
-      <div>LinkedIn</div>
+      <div class="contact-icon-container">
+        <Image src={restApiLogo} class="contact-icon" alt="LinkedIn icon" />
+      </div>
+      <div class="contact-option-title">LinkedIn</div>
     </div>
     <div class="contact-container">
-      <Image src={restApiLogo} class="contact-icon" alt="Github icon" />
-      <div>GitHub</div>
+      <div class="contact-icon-container">
+        <Image src={restApiLogo} class="contact-icon" alt="Github icon" />
+      </div>
+      <div class="contact-option-title">GitHub</div>
     </div>
     <div class="contact-container">
-      <Image src={restApiLogo} class="contact-icon" alt="Phone icon" />
-      <div>Phone</div>
+      <div class="contact-icon-container">
+        <Image src={restApiLogo} class="contact-icon" alt="Phone icon" />
+      </div>
+      <div class="contact-option-title">Phone</div>
     </div>
   </div>
 </div>
@@ -42,32 +43,42 @@ const t = useTranslations(locale);
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(var(--light-background-color));
+    border-radius: 10px;
+    padding: 1rem;
   }
-  /* TODO: Add a better image but for now this is fine */
-  .image {
-    width: 20rem;
-    height: auto;
-  }
-  .contact-options-column {
+  .contact-options-row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-content: flex-start;
   }
   .contact-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-content: center;
-    background-color: rgb(var(--light-background-color));
-    border-radius: 10px;
-    border: 2px solid rgb(var(--accent-color-1));
-    padding: 1rem;
-    margin: 0.5rem auto;
-    width: 90%;
+    margin: 0.5rem 1rem;
+  }
+  .contact-icon-container {
+    background-color: rgb(var(--accent-color-1));
+    border-radius: 50%;
+    padding: 10px;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .contact-icon {
-    width: 24px;
-    height: 24px;
+    height: 2rem;
+    width: 2rem;
+  }
+  .contact-option-title {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: rgb(var(--text-color));
   }
 </style>
