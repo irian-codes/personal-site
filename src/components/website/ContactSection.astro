@@ -9,12 +9,14 @@ const t = useTranslations(locale);
 
 <div class="contact-section-container">
   <div class="contact-options-row">
-    <div class="contact-container">
-      <div class="contact-icon-container">
-        <Image src={restApiLogo} class="contact-icon" alt="Email icon" />
+    <a href="#">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Image src={restApiLogo} class="contact-icon" alt="Email icon" />
+        </div>
+        <div class="contact-option-title">Email</div>
       </div>
-      <div class="contact-option-title">Email</div>
-    </div>
+    </a>
     <div class="contact-container">
       <div class="contact-icon-container">
         <Image src={restApiLogo} class="contact-icon" alt="LinkedIn icon" />
@@ -61,6 +63,16 @@ const t = useTranslations(locale);
     justify-content: center;
     align-content: center;
     margin: 0.5rem 1rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    border: 2px solid rgb(var(--accent-color-1));
+    border-radius: 10px;
+  }
+  a:hover .contact-icon-container {
+    background-color: rgb(var(--light-background-color));
   }
   .contact-icon-container {
     background-color: rgb(var(--accent-color-1));
