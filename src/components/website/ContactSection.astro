@@ -72,12 +72,15 @@ const t = useTranslations(locale);
   a {
     text-decoration: none;
   }
-  a:hover .contact-icon-container {
-    background-color: black;
-  }
-  a:hover .contact-icon-container :global(svg) {
-    fill: rgb(var(--accent-color-1));
-    transform: rotate3d(0, 1, 0, 180deg);
+  a:hover,
+  a:focus {
+    .contact-icon-container {
+      background-color: black;
+    }
+    .contact-icon-container :global(svg) {
+      fill: rgb(var(--accent-color-1));
+      transform: rotate3d(0, 1, 0, 180deg);
+    }
   }
   .contact-icon-container {
     background-color: rgb(var(--accent-color-1));
