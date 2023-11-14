@@ -4,11 +4,15 @@ import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
+const mail = 'irian@irian.codes';
+const linkedInUrl = 'https://www.linkedin.com/in/irian-mont%C3%B3n-0b58358a/';
+const respositoryUrl = 'https://github.com/irian-codes';
+const phoneNumber = '+34611082305';
 ---
 
 <div class="contact-section-container">
   <div class="contact-options-row">
-    <a href="#">
+    <a href=`mailto:${mail}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
           <Fragment set:html={restApiLogoRaw} />
@@ -16,7 +20,7 @@ const t = useTranslations(locale);
         <div class="contact-option-title">Email</div>
       </div>
     </a>
-    <a href="">
+    <a href=`${linkedInUrl}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
           <Fragment set:html={restApiLogoRaw} />
@@ -24,7 +28,7 @@ const t = useTranslations(locale);
         <div class="contact-option-title">LinkedIn</div>
       </div>
     </a>
-    <a href="">
+    <a href=`${respositoryUrl}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
           <Fragment set:html={restApiLogoRaw} />
@@ -32,7 +36,7 @@ const t = useTranslations(locale);
         <div class="contact-option-title">GitHub</div>
       </div>
     </a>
-    <a href="">
+    <a href=`tel:${phoneNumber}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
           <Fragment set:html={restApiLogoRaw} />
