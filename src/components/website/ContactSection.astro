@@ -1,6 +1,5 @@
 ---
-import {Image} from 'astro:assets';
-import restApiLogo from '../../assets/images/icons/rest-api-logo.svg';
+import restApiLogoRaw from '../../assets/images/icons/rest-api-logo.svg?raw';
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
 const locale = getLangFromUrl(Astro.url);
@@ -12,29 +11,35 @@ const t = useTranslations(locale);
     <a href="#">
       <div class="contact-container">
         <div class="contact-icon-container">
-          <Image src={restApiLogo} class="contact-icon" alt="Email icon" />
+          <Fragment set:html={restApiLogoRaw} />
         </div>
         <div class="contact-option-title">Email</div>
       </div>
     </a>
-    <div class="contact-container">
-      <div class="contact-icon-container">
-        <Image src={restApiLogo} class="contact-icon" alt="LinkedIn icon" />
+    <a href="">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={restApiLogoRaw} />
+        </div>
+        <div class="contact-option-title">LinkedIn</div>
       </div>
-      <div class="contact-option-title">LinkedIn</div>
-    </div>
-    <div class="contact-container">
-      <div class="contact-icon-container">
-        <Image src={restApiLogo} class="contact-icon" alt="Github icon" />
+    </a>
+    <a href="">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={restApiLogoRaw} />
+        </div>
+        <div class="contact-option-title">GitHub</div>
       </div>
-      <div class="contact-option-title">GitHub</div>
-    </div>
-    <div class="contact-container">
-      <div class="contact-icon-container">
-        <Image src={restApiLogo} class="contact-icon" alt="Phone icon" />
+    </a>
+    <a href="">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={restApiLogoRaw} />
+        </div>
+        <div class="contact-option-title">Phone</div>
       </div>
-      <div class="contact-option-title">Phone</div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -67,12 +72,12 @@ const t = useTranslations(locale);
   a {
     text-decoration: none;
   }
-  a:hover {
-    border: 2px solid rgb(var(--accent-color-1));
-    border-radius: 10px;
-  }
   a:hover .contact-icon-container {
-    background-color: rgb(var(--light-background-color));
+    background-color: black;
+  }
+  a:hover .contact-icon-container :global(svg) {
+    fill: rgb(var(--accent-color-1));
+    transform: rotate3d(0, 1, 0, 180deg);
   }
   .contact-icon-container {
     background-color: rgb(var(--accent-color-1));
@@ -83,10 +88,13 @@ const t = useTranslations(locale);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.4s;
   }
-  .contact-icon {
+  .contact-icon-container :global(svg) {
     height: 2rem;
     width: 2rem;
+    fill: black;
+    transition: all 0.4s;
   }
   .contact-option-title {
     text-align: center;
