@@ -19,5 +19,9 @@
   "website.home.projects-title": "My projects",
   "website.home.contact-title": "Do you think I could be of help?",
   "website.home.projects-button-view-more.label": "View more projects",
-  "website.home.projects-button-hide.label": "Hide projects"
+  "website.home.projects-button-hide.label": "Hide projects",
+  "website.home.contact-section.email.title": "Email",
+  "website.home.contact-section.github.title": "GitHub",
+  "website.home.contact-section.linkedin.title": "LinkedIn",
+  "website.home.contact-section.phone.title": "Phone"
 }

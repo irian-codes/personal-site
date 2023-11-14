@@ -19,5 +19,9 @@
   "website.home.projects-title": "Projectes",
   "website.home.contact-title": "Creus que encaixo en el teu projecte?",
   "website.home.projects-button-view-more.label": "Veure més projectes",
-  "website.home.projects-button-hide.label": "Amagaer projectes"
+  "website.home.projects-button-hide.label": "Amagar projectes",
+  "website.home.contact-section.email.title": "Email",
+  "website.home.contact-section.github.title": "GitHub",
+  "website.home.contact-section.linkedin.title": "LinkedIn",
+  "website.home.contact-section.phone.title": "Telèfon"
 }
