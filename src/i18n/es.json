@@ -17,6 +17,12 @@
   "website.home.person-image.alt-attribute": "Imagen de Irian Montón",
   "common.language-picker.flag-image-alt": "Bandera del siguiente código de idioma:",
   "website.home.projects-title": "Mis proyectos",
+  "website.home.contact-title.first-part": "Si crees que encajo en tu proyecto",
+  "website.home.contact-title.second-part": "Hablemos!",
   "website.home.projects-button-view-more.label": "Mostrar más proyectos",
-  "website.home.projects-button-hide.label": "Ocultar proyectos"
+  "website.home.projects-button-hide.label": "Ocultar proyectos",
+  "website.home.contact-section.email.title": "Email",
+  "website.home.contact-section.github.title": "GitHub",
+  "website.home.contact-section.linkedin.title": "LinkedIn",
+  "website.home.contact-section.phone.title": "Teléfono"
 }
