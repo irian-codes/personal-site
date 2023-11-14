@@ -28,7 +28,9 @@ const t = useTranslations(locale);
       <div>
         <h1>
           {t('website.home.title.first-part') + ' '}
-          <span id="name-word">{t('website.home.title.second-part')}</span>
+          <span class="title-highlight"
+            >{t('website.home.title.second-part')}</span
+          >
         </h1>
         <div class="subheading">
           {t('website.home.subtitle.first-part')}
@@ -46,7 +48,12 @@ const t = useTranslations(locale);
     <h2>{t('website.home.projects-title')}</h2>
     <div class="heading-underline" role="presentation"></div>
     <ProjectsSection />
-    <h2>{t('website.home.contact-title')}</h2>
+    <h2 id="contact-title-first-part">
+      {t('website.home.contact-title.first-part') + '... '}
+      <span id="contact-title-second-part" class="title-highlight"
+        >{t('website.home.contact-title.second-part')}</span
+      >
+    </h2>
     <div class="heading-underline" role="presentation"></div>
     <ContactSection />
   </main>
@@ -57,6 +64,10 @@ const t = useTranslations(locale);
     margin: auto;
     padding: 1.5rem;
     max-width: 1200px;
+  }
+  #contact-title-first-part {
+    color: rgb(var(--heading-color-1));
+    text-shadow: none;
   }
   #top-section-container {
     display: flex;
@@ -99,8 +110,9 @@ const t = useTranslations(locale);
     border-radius: 50%;
     border-style: solid;
   }
-  #name-word {
+  .title-highlight {
     color: rgb(var(--accent-color-1));
     text-shadow: 2px 2px 6px rgba(var(--accent-color-1), 0.7);
+    font-weight: 800;
   }
 </style>
