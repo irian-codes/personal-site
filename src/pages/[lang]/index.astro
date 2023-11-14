@@ -19,6 +19,32 @@ export const getStaticPaths = (() => {
 
 const locale = Astro.params.lang as LanguageTag;
 const t = useTranslations(locale);
+
+// Finds the right media query to make the contact title
+// letters look nice on all screen widths.
+const contactHeadingBrMediaQuery = (() => {
+  const [min, max] = (() => {
+    switch (locale) {
+      case 'ca':
+        return [705, 935];
+
+      case 'es':
+        return [603, 845];
+
+      case 'en':
+      default:
+        return [668, 1025];
+    }
+  })();
+
+  // NOTE: This CSS needs more specificity than the one Astro bundles
+  // to get correctly applied.
+  return `@media (min-width: ${min}px) and (max-width: ${max}px) {
+        #contact-title-first-part br.heading-break {
+          display: none;
+        }
+      }`;
+})();
 ---
 
 <BaseLayout title="CV">
@@ -50,14 +76,26 @@ const t = useTranslations(locale);
     <ProjectsSection />
     <h2 id="contact-title-first-part">
       {t('website.home.contact-title.first-part') + '... '}
+      <br class="heading-break" />
       <span id="contact-title-second-part" class="title-highlight"
         >{t('website.home.contact-title.second-part')}</span
       >
     </h2>
-    <div class="heading-underline" role="presentation"></div>
     <ContactSection />
   </main>
 </BaseLayout>
+
+<!-- This style steps out of Astro's bundling. This is necessary
+  because variables don't work on media queries by default. And
+  we don't know the media query at build time because we don't
+  know the language the user we'll be rendering the page in.
+  And since the pages are dynamically created at built time we
+  can only use raw CSS because code fencing variables don't work
+  in this specific type of CSS media query statements.
+  NOTE: If <h2 id="contact-title-first-part"> text changes in i18n
+  then you'll need to edit these values again.
+Source: https://docs.astro.build/en/guides/styling/#raw-css-imports -->
+<style is:inline set:html={contactHeadingBrMediaQuery}></style>
 
 <style>
   :root {
@@ -68,6 +106,8 @@ const t = useTranslations(locale);
   #contact-title-first-part {
     color: rgb(var(--heading-color-1));
     text-shadow: none;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
   }
   #top-section-container {
     display: flex;
@@ -114,5 +154,8 @@ const t = useTranslations(locale);
     color: rgb(var(--accent-color-1));
     text-shadow: 2px 2px 6px rgba(var(--accent-color-1), 0.7);
     font-weight: 800;
+  }
+  .heading-break {
+    display: block;
   }
 </style>
