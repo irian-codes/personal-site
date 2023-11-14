@@ -1,5 +1,8 @@
 ---
-import restApiLogoRaw from '../../assets/images/icons/rest-api-logo.svg?raw';
+import emailIconRaw from '../../assets/images/icons/email.svg?raw';
+import githubIconRaw from '../../assets/images/icons/github.svg?raw';
+import linkedinIconRaw from '../../assets/images/icons/linkedin.svg?raw';
+import phoneIconRaw from '../../assets/images/icons/phone.svg?raw';
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
 
 const locale = getLangFromUrl(Astro.url);
@@ -15,7 +18,7 @@ const phoneNumber = '+34611082305';
     <a href=`mailto:${mail}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
-          <Fragment set:html={restApiLogoRaw} />
+          <Fragment set:html={emailIconRaw} />
         </div>
         <div class="contact-option-title">Email</div>
       </div>
@@ -23,7 +26,7 @@ const phoneNumber = '+34611082305';
     <a href=`${linkedInUrl}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
-          <Fragment set:html={restApiLogoRaw} />
+          <Fragment set:html={linkedinIconRaw} />
         </div>
         <div class="contact-option-title">LinkedIn</div>
       </div>
@@ -31,7 +34,7 @@ const phoneNumber = '+34611082305';
     <a href=`${respositoryUrl}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
-          <Fragment set:html={restApiLogoRaw} />
+          <Fragment set:html={githubIconRaw} />
         </div>
         <div class="contact-option-title">GitHub</div>
       </div>
@@ -39,7 +42,7 @@ const phoneNumber = '+34611082305';
     <a href=`tel:${phoneNumber}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
-          <Fragment set:html={restApiLogoRaw} />
+          <Fragment set:html={phoneIconRaw} />
         </div>
         <div class="contact-option-title">Phone</div>
       </div>
@@ -80,10 +83,12 @@ const phoneNumber = '+34611082305';
   a:focus {
     .contact-icon-container {
       background-color: black;
-    }
-    .contact-icon-container :global(svg) {
-      fill: rgb(var(--accent-color-1));
-      transform: rotate3d(0, 1, 0, 180deg);
+      :global(svg) {
+        transform: rotate3d(0, 1, 0, 180deg);
+        :global(#icon-color) {
+          fill: rgb(var(--accent-color-1));
+        }
+      }
     }
   }
   .contact-icon-container {
@@ -96,12 +101,14 @@ const phoneNumber = '+34611082305';
     justify-content: center;
     align-items: center;
     transition: all 0.4s;
-  }
-  .contact-icon-container :global(svg) {
-    height: 2rem;
-    width: 2rem;
-    fill: black;
-    transition: all 0.4s;
+    :global(svg) {
+      height: 2rem;
+      width: 2rem;
+      transition: all 0.4s;
+      :global(#icon-color) {
+        fill: black;
+      }
+    }
   }
   .contact-option-title {
     text-align: center;
