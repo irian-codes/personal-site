@@ -28,7 +28,7 @@ const t = useTranslations(locale);
             <div class="project-title-container">
               <h3 class="project-title">{project.name}</h3>
               <button class="close-button hidden" type="button">
-                X
+                &times;
               </button>
             </div>
             <div class="project-description-container">
@@ -267,5 +267,30 @@ const t = useTranslations(locale);
     display: flow-root;
     text-align: center;
     margin: 2rem auto;
+  }
+  .close-button {
+    appearance: none;
+    background-color: rgb(var(--heading-color-2));
+    color: rgb(var(--light-background-color));
+    border-color: rgb(var(--heading-color-2));
+    border-style: solid;
+    border-radius: 3px;
+    font-size: large;
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+    font-size: 20pt;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform ease-in-out 0.1s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.1);
+    }
   }
 </style>
