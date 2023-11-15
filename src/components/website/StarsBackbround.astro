@@ -22,7 +22,12 @@
     const randomDuration =
       Math.floor(Math.random() * animationMaxDurationInSeconds) + 1;
     clonedStarNode.style.animationDuration = `${randomDuration}s`;
-    clonedStarNode.style.left = `${Math.floor(Math.random() * 100)}%`;
+
+    // Setting a min 10% since otherwise it's not seen by the user
+    clonedStarNode.style.left = `${Math.max(
+      10,
+      Math.floor(Math.random() * 100) + 1
+    )}%`;
 
     // Removing node so it doesn't saturate the DOM
     clonedStarNode.addEventListener('animationend', () => {
