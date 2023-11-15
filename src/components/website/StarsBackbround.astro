@@ -10,6 +10,7 @@
 
 <script>
   import setRandomInterval from 'set-random-interval';
+  import {getRandomInt} from '../../utils/MathUtils';
 
   function spawnShootingStar() {
     const bgContainer = document.getElementById('stars-bg-container')!;
@@ -26,20 +27,14 @@
       Math.floor(Math.random() * animationMaxDurationInSeconds) + 1
     }s`;
 
-    clonedStarNode.style.height = `${Math.max(
-      3,
-      Math.floor(Math.random() * 6) + 1
-    )}px`;
+    clonedStarNode.style.height = `${getRandomInt(3, 6)}px`;
     clonedStarNode.style.width = clonedStarNode.style.height;
     clonedStarTail.style.height = `${Math.round(
       parseInt(clonedStarNode.style.height) / 2
     )}px`;
 
     // Setting a min 10% since otherwise it's not seen by the user
-    clonedStarNode.style.left = `${Math.max(
-      10,
-      Math.floor(Math.random() * 100) + 1
-    )}%`;
+    clonedStarNode.style.left = `${getRandomInt(10, 100)}%`;
 
     // Removing node so it doesn't saturate the DOM
     clonedStarNode.addEventListener('animationend', () => {
