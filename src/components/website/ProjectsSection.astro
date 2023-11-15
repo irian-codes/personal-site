@@ -21,12 +21,16 @@ const t = useTranslations(locale);
           class:list={{
             'project-container': true,
             hidden: index > 2,
-            closed: true,
           }}
         >
           <Image class="project-image" src={project.image} alt="" />
           <div class="project-overlay">
-            <h3 class="project-title">{project.name}</h3>
+            <div class="project-title-container">
+              <h3 class="project-title">{project.name}</h3>
+              <button class="close-button hidden" type="button">
+                X
+              </button>
+            </div>
             <div class="project-description-container">
               <p>{project.description}</p>
               <div class="project-technologies-container">
@@ -89,6 +93,8 @@ const t = useTranslations(locale);
       document.querySelectorAll('.project-container')
     );
 
+    const closeButtons = Array.from(document.querySelectorAll('.close-button'));
+
     projects.forEach((pr) => {
       pr.addEventListener('click', () => {
         // If the project is already active it means we clicked on the same one a second time
@@ -99,11 +105,33 @@ const t = useTranslations(locale);
         // Closing all projects
         projects.forEach((pr) => {
           pr.classList.remove('active');
-          pr.classList.add('closed');
+
+          closeButtons.forEach((cb) => {
+            cb.classList.add('hidden');
+          });
         });
 
-        pr.classList.remove('closed');
+        // Opening the clicked project
         pr.classList.add('active');
+        pr.querySelector('.close-button')?.classList.remove('hidden');
+      });
+    });
+  })();
+
+  (function closeIconOnClickHandler() {
+    const closeButtons = Array.from(document.querySelectorAll('.close-button'));
+
+    closeButtons.forEach((cb) => {
+      cb.addEventListener('click', (event) => {
+        // Needed so projectOnClickHandler() doesn't add 'active' the class back
+        event?.stopPropagation();
+
+        const activeProject = document.querySelector(
+          '.project-container.active'
+        );
+
+        activeProject?.classList.remove('active');
+        cb.classList.add('hidden');
       });
     });
   })();
@@ -162,6 +190,12 @@ const t = useTranslations(locale);
     &.active {
       cursor: default;
     }
+  }
+  .project-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .project-image {
     width: 100%;
