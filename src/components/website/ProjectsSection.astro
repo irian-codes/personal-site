@@ -21,6 +21,7 @@ const t = useTranslations(locale);
           class:list={{
             'project-container': true,
             hidden: index > 2,
+            closed: true,
           }}
         >
           <Image class="project-image" src={project.image} alt="" />
@@ -76,6 +77,36 @@ const t = useTranslations(locale);
 
     viewMoreButton.addEventListener('click', showMoreProjects);
   })();
+
+  /**
+   * Handles clicking on a project.
+   * Clicking on a project opens it by adding 'active' class.
+   * Clicking on the same project again ignores the click. To
+   * close the project the user needs to click on the cross icon.
+   */
+  (function projectOnClickHandler() {
+    const projects = Array.from(
+      document.querySelectorAll('.project-container')
+    );
+
+    projects.forEach((pr) => {
+      pr.addEventListener('click', () => {
+        // If the project is already active it means we clicked on the same one a second time
+        if (pr.classList.contains('active')) {
+          return;
+        }
+
+        // Closing all projects
+        projects.forEach((pr) => {
+          pr.classList.remove('active');
+          pr.classList.add('closed');
+        });
+
+        pr.classList.remove('closed');
+        pr.classList.add('active');
+      });
+    });
+  })();
 </script>
 
 <style>
@@ -106,25 +137,30 @@ const t = useTranslations(locale);
     margin: auto;
     position: relative;
     transition: opacity 1s;
+    cursor: pointer;
 
-  /* Selected project glow effect */
+    /* Selected project glow effect */
     &::after {
-    content: '';
-    position: absolute;
-    top: 48%;
-    left: 1%;
-    width: 98%;
-    height: 5%;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.6s;
-    box-shadow: 0 0 10rem 8rem rgb(var(--accent-color-1));
-    z-index: -1;
-  }
+      content: '';
+      position: absolute;
+      top: 48%;
+      left: 1%;
+      width: 98%;
+      height: 5%;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.6s;
+      box-shadow: 0 0 10rem 8rem rgb(var(--accent-color-1));
+      z-index: -1;
+    }
 
-  /* TODO: Adapt to devices that can't hover, aka touch devices */
+    /* TODO: Adapt to devices that can't hover, aka touch devices */
     &:hover::after {
-    opacity: 0.8;
+      opacity: 0.8;
+    }
+
+    &.active {
+      cursor: default;
     }
   }
   .project-image {
@@ -163,8 +199,7 @@ const t = useTranslations(locale);
       max-height 0.6s,
       opacity 0.6s 0.3s;
   }
-  /* TODO: Adapt to devices that can't hover, aka touch devices */
-  .project-container:hover .project-description-container {
+  .project-container.active .project-description-container {
     visibility: unset;
     opacity: 1;
     max-height: 14rem; /* More than necessary but not too much */
