@@ -21,7 +21,8 @@
     "colorjs.io": "^0.4.5",
     "jimp": "^0.22.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "set-random-interval": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "^20.6.3",

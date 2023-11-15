@@ -7,6 +7,8 @@
 </div>
 
 <script>
+  import setRandomInterval from 'set-random-interval';
+
   function spawnShootingStar() {
     const bgContainer = document.getElementById('stars-bg-container')!;
     const clonedStarNode = document
@@ -31,7 +33,7 @@
   }
 
   // Call spawnShootingStar function randomly
-  setInterval(spawnShootingStar, 1000);
+  setRandomInterval(spawnShootingStar, 1 * 1000, 8 * 1000);
 </script>
 
 <style>
