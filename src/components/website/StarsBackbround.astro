@@ -3,7 +3,9 @@
   <div id="stars-far"></div>
   <div id="stars-close"></div>
   <!-- Inspired by https://codepen.io/delroyprithvi/pen/LYyJROR -->
-  <div id="shooting-star-model" class="shooting-star"></div>
+  <div id="shooting-star-model" class="shooting-star">
+    <div class="shooting-star-tail"></div>
+  </div>
 </div>
 
 <script>
@@ -15,6 +17,7 @@
       .getElementById('shooting-star-model')
       ?.cloneNode(true) as HTMLElement;
     clonedStarNode.id = '';
+    const clonedStarTail = clonedStarNode.firstChild as HTMLElement;
 
     const animationMaxDurationInSeconds = 10;
 
@@ -22,6 +25,15 @@
     const randomDuration =
       Math.floor(Math.random() * animationMaxDurationInSeconds) + 1;
     clonedStarNode.style.animationDuration = `${randomDuration}s`;
+
+    clonedStarNode.style.height = `${Math.max(
+      3,
+      Math.floor(Math.random() * 6) + 1
+    )}px`;
+    clonedStarNode.style.width = clonedStarNode.style.height;
+    clonedStarTail.style.height = `${Math.round(
+      parseInt(clonedStarNode.style.height) / 2
+    )}px`;
 
     // Setting a min 10% since otherwise it's not seen by the user
     clonedStarNode.style.left = `${Math.max(
@@ -388,20 +400,19 @@
       0 0 0 8px rgba(var(--heading-color-2), 0.1),
       0 0 20px rgba(var(--heading-color-2), 0.1);
     animation: shootingStarAnimation 3s linear;
+  }
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 300px;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        rgb(var(--heading-color-2)),
-        transparent
-      );
-    }
+  .shooting-star-tail {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgb(var(--heading-color-2)),
+      transparent
+    );
   }
 
   /* ANIMATIONS */
