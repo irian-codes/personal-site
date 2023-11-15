@@ -6,6 +6,7 @@ import ContactSection from '../../components/website/ContactSection.astro';
 import CvButton from '../../components/website/CvButton.astro';
 import GlowBar from '../../components/website/GlowBar.astro';
 import ProjectsSection from '../../components/website/ProjectsSection.astro';
+import StarsBackbround from '../../components/website/StarsBackbround.astro';
 import {languages, type LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -48,6 +49,7 @@ const contactHeadingBrMediaQuery = (() => {
 ---
 
 <BaseLayout title="Irian's website">
+  <StarsBackbround />
   <GlowBar />
   <main>
     <div id="top-section-container">
