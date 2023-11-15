@@ -48,35 +48,6 @@ export const projectsData_es: Projects = [
     ],
   },
   {
-    id: 1,
-    name: 'Mediterranean Way',
-    description:
-      'Aplicación móvil para la gestión de apartamentos turísticos, donde se pueden visualizar las reservas y el estado de las habitaciones. Además, se puede registrar cada ronda de limpieza y registrarla con fotos de cualquier incidencia. También tiene funcionalidad para calcular los ingresos por habitación para el gerente del hotel.',
-    image: medwayMobileAppImg,
-    technologies: [
-      {
-        name: 'React Native',
-        icon: reactLogoSvg,
-      },
-      {
-        name: 'Typescript',
-        icon: tsLogoSvg,
-      },
-      {
-        name: 'Rest API',
-        icon: restApiLogoSvg,
-      },
-      {
-        name: 'Android',
-        icon: androidLogoSvg,
-      },
-      {
-        name: 'iOS',
-        icon: iosLogoSvg,
-      },
-    ],
-  },
-  {
     id: 2,
     name: 'Assistant Drivers',
     description:
@@ -102,6 +73,35 @@ export const projectsData_es: Projects = [
       {
         name: 'Android',
         icon: androidLogoSvg,
+      },
+    ],
+  },
+  {
+    id: 1,
+    name: 'Mediterranean Way',
+    description:
+      'Aplicación móvil para la gestión de apartamentos turísticos, donde se pueden visualizar las reservas y el estado de las habitaciones. Además, se puede registrar cada ronda de limpieza y registrarla con fotos de cualquier incidencia. También tiene funcionalidad para calcular los ingresos por habitación para el gerente del hotel.',
+    image: medwayMobileAppImg,
+    technologies: [
+      {
+        name: 'React Native',
+        icon: reactLogoSvg,
+      },
+      {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Rest API',
+        icon: restApiLogoSvg,
+      },
+      {
+        name: 'Android',
+        icon: androidLogoSvg,
+      },
+      {
+        name: 'iOS',
+        icon: iosLogoSvg,
       },
     ],
   },

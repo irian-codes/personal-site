@@ -48,35 +48,6 @@ export const projectsData_en: Projects = [
     ],
   },
   {
-    id: 1,
-    name: 'Mediterranean Way',
-    description:
-      'Mobile app for managing tourist apartments, where reservations and room status can be visualized, and each cleaning round can be registered and recorded with photos of any incidents. It also has functionality to calculate the revenue per room for the hotel manager.',
-    image: medwayMobileAppImg,
-    technologies: [
-      {
-        name: 'React Native',
-        icon: reactLogoSvg,
-      },
-      {
-        name: 'Typescript',
-        icon: tsLogoSvg,
-      },
-      {
-        name: 'Rest API',
-        icon: restApiLogoSvg,
-      },
-      {
-        name: 'Android',
-        icon: androidLogoSvg,
-      },
-      {
-        name: 'iOS',
-        icon: iosLogoSvg,
-      },
-    ],
-  },
-  {
     id: 2,
     name: 'Assistant Drivers',
     description:
@@ -102,6 +73,35 @@ export const projectsData_en: Projects = [
       {
         name: 'Android',
         icon: androidLogoSvg,
+      },
+    ],
+  },
+  {
+    id: 1,
+    name: 'Mediterranean Way',
+    description:
+      'Mobile app for managing tourist apartments, where reservations and room status can be visualized, and each cleaning round can be registered and recorded with photos of any incidents. It also has functionality to calculate the revenue per room for the hotel manager.',
+    image: medwayMobileAppImg,
+    technologies: [
+      {
+        name: 'React Native',
+        icon: reactLogoSvg,
+      },
+      {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Rest API',
+        icon: restApiLogoSvg,
+      },
+      {
+        name: 'Android',
+        icon: androidLogoSvg,
+      },
+      {
+        name: 'iOS',
+        icon: iosLogoSvg,
       },
     ],
   },

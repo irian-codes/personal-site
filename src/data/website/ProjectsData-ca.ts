@@ -48,35 +48,6 @@ export const projectsData_ca: Projects = [
     ],
   },
   {
-    id: 1,
-    name: 'Mediterranean Way',
-    description:
-      "Aplicació mòbil per a la gestió d'apartaments turístics, on es poden visualitzar les reserves i l'estat de les habitacions. A més, es pot registrar i gravar cada torn de neteja, incloent fotografies de qualsevol incidència. També disposa de funcionalitat per calcular els ingressos per habitació per al director de l'hotel.",
-    image: medwayMobileAppImg,
-    technologies: [
-      {
-        name: 'React Native',
-        icon: reactLogoSvg,
-      },
-      {
-        name: 'Typescript',
-        icon: tsLogoSvg,
-      },
-      {
-        name: 'Rest API',
-        icon: restApiLogoSvg,
-      },
-      {
-        name: 'Android',
-        icon: androidLogoSvg,
-      },
-      {
-        name: 'iOS',
-        icon: iosLogoSvg,
-      },
-    ],
-  },
-  {
     id: 2,
     name: 'Assistant Drivers',
     description:
@@ -102,6 +73,35 @@ export const projectsData_ca: Projects = [
       {
         name: 'Android',
         icon: androidLogoSvg,
+      },
+    ],
+  },
+  {
+    id: 1,
+    name: 'Mediterranean Way',
+    description:
+      "Aplicació mòbil per a la gestió d'apartaments turístics, on es poden visualitzar les reserves i l'estat de les habitacions. A més, es pot registrar i gravar cada torn de neteja, incloent fotografies de qualsevol incidència. També disposa de funcionalitat per calcular els ingressos per habitació per al director de l'hotel.",
+    image: medwayMobileAppImg,
+    technologies: [
+      {
+        name: 'React Native',
+        icon: reactLogoSvg,
+      },
+      {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Rest API',
+        icon: restApiLogoSvg,
+      },
+      {
+        name: 'Android',
+        icon: androidLogoSvg,
+      },
+      {
+        name: 'iOS',
+        icon: iosLogoSvg,
       },
     ],
   },
