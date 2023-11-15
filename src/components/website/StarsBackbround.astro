@@ -22,9 +22,9 @@
     const animationMaxDurationInSeconds = 10;
 
     clonedStarNode.style.display = 'block';
-    const randomDuration =
-      Math.floor(Math.random() * animationMaxDurationInSeconds) + 1;
-    clonedStarNode.style.animationDuration = `${randomDuration}s`;
+    clonedStarNode.style.animationDuration = `${
+      Math.floor(Math.random() * animationMaxDurationInSeconds) + 1
+    }s`;
 
     clonedStarNode.style.height = `${Math.max(
       3,
