@@ -106,9 +106,9 @@ const t = useTranslations(locale);
     margin: auto;
     position: relative;
     transition: opacity 1s;
-  }
+
   /* Selected project glow effect */
-  .project-container::after {
+    &::after {
     content: '';
     position: absolute;
     top: 48%;
@@ -121,9 +121,11 @@ const t = useTranslations(locale);
     box-shadow: 0 0 10rem 8rem rgb(var(--accent-color-1));
     z-index: -1;
   }
+
   /* TODO: Adapt to devices that can't hover, aka touch devices */
-  .project-container:hover::after {
+    &:hover::after {
     opacity: 0.8;
+    }
   }
   .project-image {
     width: 100%;
