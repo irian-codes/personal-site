@@ -1,11 +1,41 @@
-<!-- Inspired by https://codepen.io/mattmarble/pen/qBdamQz -->
-<div class="bg-container">
+<div id="stars-bg-container">
+  <!-- Inspired by https://codepen.io/mattmarble/pen/qBdamQz -->
   <div id="stars-far"></div>
   <div id="stars-close"></div>
+  <!-- Inspired by https://codepen.io/delroyprithvi/pen/LYyJROR -->
+  <div id="shooting-star-model" class="shooting-star"></div>
 </div>
 
+<script>
+  function spawnShootingStar() {
+    const bgContainer = document.getElementById('stars-bg-container')!;
+    const clonedStarNode = document
+      .getElementById('shooting-star-model')
+      ?.cloneNode(true) as HTMLElement;
+    clonedStarNode.id = '';
+
+    const animationMaxDurationInSeconds = 10;
+
+    clonedStarNode.style.display = 'block';
+    const randomDuration =
+      Math.floor(Math.random() * animationMaxDurationInSeconds) + 1;
+    clonedStarNode.style.animationDuration = `${randomDuration}s`;
+    clonedStarNode.style.left = `${Math.floor(Math.random() * 100)}%`;
+
+    // Removing node so it doesn't saturate the DOM
+    clonedStarNode.addEventListener('animationend', () => {
+      clonedStarNode.remove();
+    });
+
+    bgContainer.appendChild(clonedStarNode);
+  }
+
+  // Call spawnShootingStar function randomly
+  setInterval(spawnShootingStar, 1000);
+</script>
+
 <style>
-  .bg-container {
+  #stars-bg-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,6 +47,7 @@
     z-index: -10;
   }
 
+  /* STARRY BACKGROUND */
   #stars-close {
     width: 3px;
     height: 3px;
@@ -122,7 +153,7 @@
       1193px 1421px rgb(var(--heading-color-2)),
       564px 455px rgb(var(--heading-color-2)),
       1675px 589px rgb(var(--heading-color-2));
-    animation: animStar 100s linear infinite;
+    animation: bgAnimation 100s linear infinite;
   }
 
   #stars-far {
@@ -330,15 +361,63 @@
       1060px 444px rgb(var(--heading-color-2)),
       323px 1676px rgb(var(--heading-color-2)),
       1593px 1616px rgb(var(--heading-color-2));
-    animation: animStar 150s linear infinite;
+    animation: bgAnimation 150s linear infinite;
   }
 
-  @keyframes animStar {
+  /* SHOOTING STARS */
+  #shooting-star-model {
+    display: none;
+  }
+
+  .shooting-star {
+    position: fixed;
+    top: 0%;
+    width: 4px;
+    height: 4px;
+    background: rgb(var(--heading-color-2));
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 4px rgba(var(--heading-color-2), 0.1),
+      0 0 0 8px rgba(var(--heading-color-2), 0.1),
+      0 0 20px rgba(var(--heading-color-2), 0.1);
+    animation: shootingStarAnimation 3s linear;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        rgb(var(--heading-color-2)),
+        transparent
+      );
+    }
+  }
+
+  /* ANIMATIONS */
+  @keyframes bgAnimation {
     from {
       transform: translateY(0px);
     }
     to {
       transform: translateY(-2000px);
+    }
+  }
+
+  @keyframes shootingStarAnimation {
+    0% {
+      transform: rotate(315deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(315deg) translateX(-2000px);
+      opacity: 0;
     }
   }
 </style>
