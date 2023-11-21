@@ -17,12 +17,14 @@ const {texts, period = 200, cursorColor = '#fff', loop = false} = Astro.props;
 </typewriter-text>
 
 <script>
+  type TypingState = 'deleting' | 'deleted' | 'typing' | 'finished' | 'stopped';
+
   // Inspired on https://css-tricks.com/snippets/css/typewriter-effect/
   class TypewriterText extends HTMLElement {
-    private loopNum: number = 0;
     private toRotate: string[] = [];
+    private loopNum: number = 0;
     private currentTxt: string = '';
-    private isDeleting: boolean = false;
+    private state: TypingState = 'typing';
     private loop: boolean = false;
     private period: number = 200;
 
@@ -38,45 +40,77 @@ const {texts, period = 200, cursorColor = '#fff', loop = false} = Astro.props;
       this.tick();
     }
 
+    private getDelta() {
+      switch (this.state) {
+        // Deleting speed is faster than typing when a person does it
+        case 'deleting':
+          return (this.period - Math.random() * 100) / 2;
+
+        // To simulate a pause between going into the next text
+        case 'deleted':
+          return this.period * 3;
+
+        case 'finished':
+          return this.period;
+
+        // Normal typing speed with some randomness to give it realism
+        case 'typing':
+        default:
+          return this.period - Math.random() * 100;
+      }
+    }
+
+    private updateState() {
+      const fullTxt = this.toRotate[this.loopNum % this.toRotate.length];
+      let newState = this.state;
+
+      // When we've typed the current text
+      if (this.state === 'typing' && this.currentTxt === fullTxt) {
+        newState = 'finished';
+      }
+      // When we've deleted the current text
+      else if (this.state === 'deleting' && this.currentTxt === '') {
+        newState = 'deleted';
+        this.loopNum++;
+      } else if (this.state === 'deleted') {
+        newState = 'typing';
+      } else if (this.state === 'finished') {
+        // We stop if we have typed all the texts in the array and the 'loop' variable is false
+        if (
+          this.currentTxt === this.toRotate[this.toRotate.length - 1] &&
+          !this.loop
+        ) {
+          newState = 'stopped';
+        } else {
+          newState = 'deleting';
+        }
+      } else {
+        // Don't change state
+      }
+
+      this.state = newState;
+    }
+
     public tick(): void {
+      if (this.state === 'stopped') {
+        return;
+      }
+
       const i = this.loopNum % this.toRotate.length;
       const fullTxt = this.toRotate[i];
 
-      if (this.isDeleting) {
-        this.currentTxt = fullTxt.substring(0, this.currentTxt.length - 1);
-      } else {
+      if (this.state === 'typing') {
         this.currentTxt = fullTxt.substring(0, this.currentTxt.length + 1);
+      } else if (this.state === 'deleting') {
+        this.currentTxt = fullTxt.substring(0, this.currentTxt.length - 1);
       }
 
       this.textContent = this.currentTxt;
 
-      let delta = this.period - Math.random() * 100;
-
-      // Deletion speed is usually faster so we imitate it
-      if (this.isDeleting) {
-        delta /= 2;
-      }
-
-      // Stop if we shouldn't loop and we have shown all the texts
-      if (
-        this.currentTxt === this.toRotate[this.toRotate.length - 1] &&
-        !this.loop
-      ) {
-        return;
-      }
-
-      if (!this.isDeleting && this.currentTxt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-      } else if (this.isDeleting && this.currentTxt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-      }
-
       setTimeout(() => {
+        this.updateState();
         this.tick();
-      }, delta);
+      }, this.getDelta());
     }
   }
 
