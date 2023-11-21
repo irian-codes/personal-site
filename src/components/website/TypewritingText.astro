@@ -9,35 +9,33 @@ type Props = {
 const {texts, period = 200, cursorColor = '#fff', loop = false} = Astro.props;
 ---
 
-<span
-  class="typewrite-text"
+<typewriter-text
   data-period={period}
   data-texts={texts}
   data-loop={loop ? 'true' : 'false'}
 >
-</span>
+</typewriter-text>
 
 <script>
   // Inspired on https://css-tricks.com/snippets/css/typewriter-effect/
-  class TxtType {
+  class TypewriterText extends HTMLElement {
     private loopNum: number = 0;
     private toRotate: string[] = [];
     private currentTxt: string = '';
-    private el: HTMLElement = document.createElement('div');
     private isDeleting: boolean = false;
     private loop: boolean = false;
     private period: number = 200;
 
-    constructor(
-      toRotate: string[],
-      el: HTMLElement,
-      period: number = 200,
-      loop: boolean = false
-    ) {
-      this.toRotate = toRotate;
-      this.el = el;
+    constructor() {
+      super();
+
+      const period = parseInt(this.dataset.period ?? 'NaN');
       this.period = isNaN(period) ? 200 : period;
-      this.loop = loop;
+
+      this.toRotate = (this.dataset.texts ?? '').split(',');
+      this.loop = this.dataset.loop === 'true';
+
+      this.tick();
     }
 
     public tick(): void {
@@ -50,7 +48,7 @@ const {texts, period = 200, cursorColor = '#fff', loop = false} = Astro.props;
         this.currentTxt = fullTxt.substring(0, this.currentTxt.length + 1);
       }
 
-      this.el.textContent = this.currentTxt;
+      this.textContent = this.currentTxt;
 
       let delta = this.period - Math.random() * 100;
 
@@ -82,28 +80,11 @@ const {texts, period = 200, cursorColor = '#fff', loop = false} = Astro.props;
     }
   }
 
-  (function startTypewriteEffect() {
-    const element = (document.querySelector('.typewrite-text') ??
-      null) as HTMLElement | null;
-
-    if (element == null) {
-      return;
-    }
-
-    let toRotate = (element.getAttribute('data-texts') ?? '').split(',');
-    const period = parseInt(element.getAttribute('data-period') ?? 'NaN', 10);
-    const loop = element.getAttribute('data-loop') === 'true';
-
-    if (toRotate.length === 0) {
-      return;
-    }
-
-    new TxtType(toRotate, element, period, loop).tick();
-  })();
+  customElements.define('typewriter-text', TypewriterText);
 </script>
 
 <style define:vars={{cursorColor}}>
-  .typewrite-text {
+  typewriter-text {
     border-right: 0.08em solid var(--cursorColor);
   }
 </style>
