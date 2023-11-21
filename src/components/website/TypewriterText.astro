@@ -1,0 +1,70 @@
+---
+type Props = {
+  animationSteps: number;
+  durationInSeconds: number;
+  delayInSeconds?: number;
+};
+
+const {animationSteps, durationInSeconds, delayInSeconds = 0} = Astro.props;
+const durationString = `${durationInSeconds}s`;
+const delayString = `${delayInSeconds}s`;
+---
+
+<span class="typewriter-text">
+  <span class="cursor">
+    <slot />
+  </span>
+</span>
+
+<script>
+  // Component inspired by https://codepen.io/blackfrom80s/pen/ogoxLw
+  (function () {
+    const typewriterTextEls = document.querySelectorAll('.typewriter-text');
+
+    typewriterTextEls.forEach((typewriterTextEl) => {
+      typewriterTextEl.addEventListener('animationend', () => {
+        const cursor = typewriterTextEl.querySelector(
+          '.cursor'
+        ) as HTMLElement | null;
+
+        if (cursor != null) {
+          cursor.style.border = 'none';
+        }
+      });
+    });
+  })();
+</script>
+
+<style define:vars={{animationSteps, durationString, delayString}}>
+  span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter var(--durationString) steps(var(--animationSteps))
+      var(--delayString) 1 normal;
+  }
+
+  .cursor {
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    animation: blinkTextCursor 500ms steps(20) infinite normal;
+  }
+
+  /* Animation */
+  @keyframes typewriter {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+</style>

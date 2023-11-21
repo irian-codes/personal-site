@@ -7,6 +7,7 @@ import CvButton from '../../components/website/CvButton.astro';
 import GlowBar from '../../components/website/GlowBar.astro';
 import ProjectsSection from '../../components/website/ProjectsSection.astro';
 import StarsBackbround from '../../components/website/StarsBackbround.astro';
+import TypewriterText from '../../components/website/TypewriterText.astro';
 import {languages, type LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -54,17 +55,24 @@ const contactHeadingBrMediaQuery = (() => {
   <main>
     <div id="top-section-container">
       <div>
-        <h1>
-          {t('website.home.title.first-part') + ' '}
-          <span class="title-highlight"
-            >{t('website.home.title.second-part')}</span
-          >
-        </h1>
-        <div class="subheading">
-          {t('website.home.subtitle.first-part')}
-          <br />
-          {t('website.home.subtitle.second-part')}
-        </div>
+        <TypewriterText durationInSeconds={0.8} animationSteps={12}>
+          <h1>
+            {t('website.home.title.first-part') + ' '}
+            <span class="title-highlight"
+              >{t('website.home.title.second-part')}</span
+            >
+          </h1>
+        </TypewriterText>
+        <TypewriterText durationInSeconds={1.2} animationSteps={24}>
+          <div class="subheading">
+            {t('website.home.subtitle.first-part')}
+          </div>
+        </TypewriterText>
+        <TypewriterText durationInSeconds={1.6} animationSteps={24}>
+          <div class="subheading">
+            {t('website.home.subtitle.second-part')}
+          </div>
+        </TypewriterText>
         <CvButton />
       </div>
       <Image
