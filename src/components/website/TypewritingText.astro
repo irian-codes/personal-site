@@ -1,0 +1,109 @@
+---
+type Props = {
+  texts: string[];
+  period?: number;
+  cursorColor?: string;
+  loop?: boolean;
+};
+
+const {texts, period = 200, cursorColor = '#fff', loop = false} = Astro.props;
+---
+
+<span
+  class="typewrite-text"
+  data-period={period}
+  data-texts={texts}
+  data-loop={loop ? 'true' : 'false'}
+>
+</span>
+
+<script>
+  // Inspired on https://css-tricks.com/snippets/css/typewriter-effect/
+  class TxtType {
+    private loopNum: number = 0;
+    private toRotate: string[] = [];
+    private currentTxt: string = '';
+    private el: HTMLElement = document.createElement('div');
+    private isDeleting: boolean = false;
+    private loop: boolean = false;
+    private period: number = 200;
+
+    constructor(
+      toRotate: string[],
+      el: HTMLElement,
+      period: number = 200,
+      loop: boolean = false
+    ) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.period = isNaN(period) ? 200 : period;
+      this.loop = loop;
+    }
+
+    public tick(): void {
+      const i = this.loopNum % this.toRotate.length;
+      const fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.currentTxt = fullTxt.substring(0, this.currentTxt.length - 1);
+      } else {
+        this.currentTxt = fullTxt.substring(0, this.currentTxt.length + 1);
+      }
+
+      this.el.textContent = this.currentTxt;
+
+      let delta = this.period - Math.random() * 100;
+
+      // Deletion speed is usually faster so we imitate it
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+
+      // Stop if we shouldn't loop and we have shown all the texts
+      if (
+        this.currentTxt === this.toRotate[this.toRotate.length - 1] &&
+        !this.loop
+      ) {
+        return;
+      }
+
+      if (!this.isDeleting && this.currentTxt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.currentTxt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(() => {
+        this.tick();
+      }, delta);
+    }
+  }
+
+  (function startTypewriteEffect() {
+    const element = (document.querySelector('.typewrite-text') ??
+      null) as HTMLElement | null;
+
+    if (element == null) {
+      return;
+    }
+
+    let toRotate = (element.getAttribute('data-texts') ?? '').split(',');
+    const period = parseInt(element.getAttribute('data-period') ?? 'NaN', 10);
+    const loop = element.getAttribute('data-loop') === 'true';
+
+    if (toRotate.length === 0) {
+      return;
+    }
+
+    new TxtType(toRotate, element, period, loop).tick();
+  })();
+</script>
+
+<style define:vars={{cursorColor}}>
+  .typewrite-text {
+    border-right: 0.08em solid var(--cursorColor);
+  }
+</style>
