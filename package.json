@@ -13,6 +13,9 @@
   "dependencies": {
     "@astrojs/check": "^0.2.0",
     "@astrojs/react": "^3.0.2",
+    "@fontsource-variable/red-hat-display": "^5.0.18",
+    "@fontsource-variable/rubik": "^5.0.19",
+    "@fontsource/noto-sans": "^5.0.17",
     "@react-pdf/pdfkit": "^3.0.2",
     "@react-pdf/renderer": "^3.1.12",
     "@types/react": "^18.2.22",

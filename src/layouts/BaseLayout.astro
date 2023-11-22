@@ -2,6 +2,12 @@
 import LanguagePicker from '../components/website/LanguagePicker.astro';
 import {getLangFromUrl} from '../i18n/i18nUtils';
 
+// FONTS
+import '@fontsource-variable/red-hat-display';
+import '@fontsource-variable/rubik';
+import '@fontsource/noto-sans/400.css';
+import '@fontsource/noto-sans/700.css';
+
 export interface Props {
   title: string;
 }
@@ -26,6 +32,7 @@ const locale = getLangFromUrl(Astro.url);
     <slot />
   </body>
 </html>
+
 <style is:global>
   :root {
     --base-color: 255, 255, 255;
@@ -38,19 +45,16 @@ const locale = getLangFromUrl(Astro.url);
     --heading-color-2: 230, 230, 230;
   }
   html {
-    font-family: system-ui, sans-serif;
     background-color: rgb(var(--background-color));
+    font-family: 'Noto Sans', system-ui, sans-serif;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Rubik Variable', system-ui, sans-serif;
   }
   h1 {
     font-size: 3rem;
@@ -59,6 +63,7 @@ const locale = getLangFromUrl(Astro.url);
     color: rgb(var(--heading-color-1));
   }
   div.subheading {
+    font-family: 'Red Hat Display Variable', system-ui, sans-serif;
     font-size: 2rem;
     font-weight: 600;
     margin: 0;
