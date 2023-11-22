@@ -7,7 +7,9 @@ const t = useTranslations(locale);
 ---
 
 <div id="cv-button">
-  <WebsiteButton label={t('website.home.cv-button.label')} />
+  <a href=`/irian-cv-${locale}.pdf`>
+    <WebsiteButton label={t('website.home.cv-button.label')} />
+  </a>
 </div>
 
 <script define:vars={{locale}}>
@@ -18,9 +20,6 @@ const t = useTranslations(locale);
   }
 
   button?.addEventListener('click', animateButton);
-  button?.addEventListener('click', () => {
-    window.location.href = `/irian-cv-${locale}.pdf`;
-  });
 </script>
 
 <style>
