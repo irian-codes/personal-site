@@ -28,32 +28,41 @@ const t = useTranslations(locale);
   <GlowBar />
   <main>
     <div id="top-section-container">
-      <div>
-        <TypewriterText durationInSeconds={0.8} animationSteps={12}>
-          <h1>
-            {t('website.home.title.first-part') + ' '}
-            <span class="title-highlight"
-              >{t('website.home.title.second-part')}</span
-            >
-          </h1>
-        </TypewriterText>
-        <TypewriterText durationInSeconds={1.2} animationSteps={24}>
-          <div class="subheading">
-            {t('website.home.subtitle.first-part')}
+      <div id="top-section-text-container">
+        <div>
+          <TypewriterText durationInSeconds={0.8} animationSteps={12}>
+            <h1>
+              {t('website.home.title.first-part') + ' '}
+              <span class="title-highlight"
+                >{t('website.home.title.second-part')}</span
+              >
+            </h1>
+          </TypewriterText>
+          <TypewriterText durationInSeconds={1.2} animationSteps={24}>
+            <div class="subheading">
+              {t('website.home.subtitle.first-part')}
+            </div>
+          </TypewriterText>
+          <TypewriterText durationInSeconds={1.6} animationSteps={24}>
+            <div class="subheading">
+              {t('website.home.subtitle.second-part')}
+            </div>
+          </TypewriterText>
+          <div id="cv-button-container-desktop">
+            <CvButton client:visible />
           </div>
-        </TypewriterText>
-        <TypewriterText durationInSeconds={1.6} animationSteps={24}>
-          <div class="subheading">
-            {t('website.home.subtitle.second-part')}
-          </div>
-        </TypewriterText>
-        <CvButton />
+        </div>
       </div>
-      <Image
-        id="person-picture"
-        src={personPicture}
-        alt={t('website.home.person-image.alt-attribute')}
-      />
+      <div id="person-picture-container">
+        <Image
+          id="person-picture"
+          src={personPicture}
+          alt={t('website.home.person-image.alt-attribute')}
+        />
+      </div>
+      <div id="cv-button-container-mobile">
+        <CvButton client:visible />
+      </div>
     </div>
     <h2>{t('website.home.projects-title')}</h2>
     <div class="heading-underline" role="presentation"></div>
@@ -88,7 +97,8 @@ const t = useTranslations(locale);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     border-radius: 10px;
     border-color: rgb(var(--accent-color-1));
     border-width: 3px;
@@ -116,18 +126,55 @@ const t = useTranslations(locale);
       rgba(var(--accent-color-1), 0) 100%
     );
   }
+  #top-section-text-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    /* This difference between 51rem and 47rem is to account for the margin
+    if we don't respect it the image goes back to the top and we don't want that */
+    @media screen and (max-width: 47rem) {
+      margin: 0;
+    }
+  }
+  #person-picture-container {
+    flex-grow: 1;
+    display: flex;
+    /* This value is when the layout breaks into 2 rows */
+    @media screen and (max-width: 51rem) {
+      margin: 2rem auto;
+    }
+  }
   #person-picture {
     width: 200px;
     height: 200px;
-    margin-left: 4rem;
     border-color: rgb(var(--accent-color-1));
     border-width: 2px;
     border-radius: 50%;
     border-style: solid;
+    @media screen and (max-width: 51rem) {
+      margin: auto;
+    }
   }
   .title-highlight {
     color: rgb(var(--accent-color-1));
     text-shadow: 2px 2px 6px rgba(var(--accent-color-1), 0.7);
     font-weight: 800;
+  }
+  #cv-button-container-desktop {
+    margin-top: 2rem;
+    @media screen and (max-width: 51rem) {
+      display: none;
+    }
+  }
+  #cv-button-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 51rem) {
+      display: none;
+    }
   }
 </style>
