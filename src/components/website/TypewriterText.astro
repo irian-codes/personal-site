@@ -10,23 +10,26 @@ const durationString = `${durationInSeconds}s`;
 const delayString = `${delayInSeconds}s`;
 ---
 
-<span class="typewriter-text">
-  <slot />
-</span>
+<div class="typewriter-container">
+  <span class="typewriter-text">
+    <slot />
+  </span>
+  <div class="typewriter-overlay"></div>
+</div>
 
 <script>
   // Component inspired by https://codepen.io/blackfrom80s/pen/ogoxLw
   (function () {
-    const typewriterTextEls = document.querySelectorAll(
-      '.typewriter-text'
+    const typewriterOverlayEls = document.querySelectorAll(
+      '.typewriter-overlay'
     ) as NodeListOf<HTMLSpanElement>;
 
-    typewriterTextEls.forEach((typewriterTextEl) => {
-      typewriterTextEl.addEventListener('animationend', (ev) => {
+    typewriterOverlayEls.forEach((el) => {
+      el.addEventListener('animationend', (ev) => {
         const animationName = (ev as AnimationEvent).animationName;
 
         if (animationName === 'typewriter') {
-          typewriterTextEl.style.border = 'none';
+          el.style.display = 'none';
         }
       });
     });
@@ -34,11 +37,19 @@ const delayString = `${delayInSeconds}s`;
 </script>
 
 <style define:vars={{animationSteps, durationString, delayString}}>
-  span {
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
+  .typewriter-container {
+    position: relative;
+  }
+
+  .typewriter-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-left: 2px solid rgba(255, 255, 255, 0.75);
+    background-color: rgb(var(--light-background-color));
     animation:
       typewriter var(--durationString) steps(var(--animationSteps))
         var(--delayString) 1 normal,
@@ -48,19 +59,19 @@ const delayString = `${delayInSeconds}s`;
   /* Animation */
   @keyframes typewriter {
     from {
-      width: 0%;
+      left: 0%;
     }
     to {
-      width: 100%;
+      left: 100%;
     }
   }
 
   @keyframes blinkTextCursor {
     from {
-      border-right-color: rgba(255, 255, 255, 0.75);
+      border-left-color: rgba(255, 255, 255, 0.75);
     }
     to {
-      border-right-color: transparent;
+      border-left-color: transparent;
     }
   }
 </style>
