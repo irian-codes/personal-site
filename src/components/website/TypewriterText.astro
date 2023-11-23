@@ -11,24 +11,22 @@ const delayString = `${delayInSeconds}s`;
 ---
 
 <span class="typewriter-text">
-  <span class="cursor">
-    <slot />
-  </span>
+  <slot />
 </span>
 
 <script>
   // Component inspired by https://codepen.io/blackfrom80s/pen/ogoxLw
   (function () {
-    const typewriterTextEls = document.querySelectorAll('.typewriter-text');
+    const typewriterTextEls = document.querySelectorAll(
+      '.typewriter-text'
+    ) as NodeListOf<HTMLSpanElement>;
 
     typewriterTextEls.forEach((typewriterTextEl) => {
-      typewriterTextEl.addEventListener('animationend', () => {
-        const cursor = typewriterTextEl.querySelector(
-          '.cursor'
-        ) as HTMLElement | null;
+      typewriterTextEl.addEventListener('animationend', (ev) => {
+        const animationName = (ev as AnimationEvent).animationName;
 
-        if (cursor != null) {
-          cursor.style.border = 'none';
+        if (animationName === 'typewriter') {
+          typewriterTextEl.style.border = 'none';
         }
       });
     });
@@ -40,13 +38,11 @@ const delayString = `${delayInSeconds}s`;
     display: block;
     overflow: hidden;
     white-space: nowrap;
-    animation: typewriter var(--durationString) steps(var(--animationSteps))
-      var(--delayString) 1 normal;
-  }
-
-  .cursor {
     border-right: 2px solid rgba(255, 255, 255, 0.75);
-    animation: blinkTextCursor 500ms steps(20) infinite normal;
+    animation:
+      typewriter var(--durationString) steps(var(--animationSteps))
+        var(--delayString) 1 normal,
+      blinkTextCursor 500ms steps(20) infinite normal;
   }
 
   /* Animation */
