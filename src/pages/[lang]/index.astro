@@ -21,6 +21,25 @@ export const getStaticPaths = (() => {
 
 const locale = Astro.params.lang as LanguageTag;
 const t = useTranslations(locale);
+
+// CHAINED TYPEWRITER ANIMATION CONFIGURATION
+const firstTypeAnimation = {
+  durationInSeconds: 0.8,
+  animationSteps: 12,
+  delayInSeconds: 0,
+};
+const secondTypeAnimation = {
+  durationInSeconds: 0.8,
+  animationSteps: 24,
+  delayInSeconds: firstTypeAnimation.durationInSeconds,
+};
+const thirdTypeAnimation = {
+  durationInSeconds: 1,
+  animationSteps: 24,
+  delayInSeconds:
+    firstTypeAnimation.durationInSeconds +
+    secondTypeAnimation.durationInSeconds,
+};
 ---
 
 <BaseLayout title="Irian's website">
@@ -30,7 +49,7 @@ const t = useTranslations(locale);
     <div id="top-section-container">
       <div id="top-section-text-container">
         <div>
-          <TypewriterText durationInSeconds={0.8} animationSteps={12}>
+          <TypewriterText {...firstTypeAnimation}>
             <h1>
               {t('website.home.title.first-part') + ' '}
               <span class="title-highlight"
@@ -38,12 +57,12 @@ const t = useTranslations(locale);
               >
             </h1>
           </TypewriterText>
-          <TypewriterText durationInSeconds={1.2} animationSteps={24}>
+          <TypewriterText {...secondTypeAnimation}>
             <div class="subheading">
               {t('website.home.subtitle.first-part')}
             </div>
           </TypewriterText>
-          <TypewriterText durationInSeconds={1.6} animationSteps={24}>
+          <TypewriterText {...thirdTypeAnimation}>
             <div class="subheading">
               {t('website.home.subtitle.second-part')}
             </div>
