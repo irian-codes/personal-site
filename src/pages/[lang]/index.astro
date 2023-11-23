@@ -26,19 +26,22 @@ const t = useTranslations(locale);
 const firstTypeAnimation = {
   durationInSeconds: 0.8,
   animationSteps: 12,
-  delayInSeconds: 0,
+  firstLinedelayInSeconds: 0,
+  secondLinedelayInSeconds: 0.65,
 };
 const secondTypeAnimation = {
   durationInSeconds: 0.8,
   animationSteps: 24,
-  delayInSeconds: firstTypeAnimation.durationInSeconds,
+  firstLinedelayInSeconds: firstTypeAnimation.durationInSeconds,
+  secondLinedelayInSeconds: 0.65,
 };
 const thirdTypeAnimation = {
   durationInSeconds: 1,
   animationSteps: 24,
-  delayInSeconds:
+  firstLinedelayInSeconds:
     firstTypeAnimation.durationInSeconds +
     secondTypeAnimation.durationInSeconds,
+  secondLinedelayInSeconds: 0.85,
 };
 ---
 

@@ -2,10 +2,16 @@
 type Props = {
   animationSteps: number;
   durationInSeconds: number;
-  delayInSeconds?: number;
+  firstLinedelayInSeconds?: number;
+  secondLinedelayInSeconds?: number;
 };
 
-const {animationSteps, durationInSeconds, delayInSeconds = 0} = Astro.props;
+const {
+  animationSteps,
+  durationInSeconds,
+  firstLinedelayInSeconds = 0,
+  secondLinedelayInSeconds = 0,
+} = Astro.props;
 ---
 
 <div class="typewriter-container">
@@ -65,7 +71,8 @@ const {animationSteps, durationInSeconds, delayInSeconds = 0} = Astro.props;
   define:vars={{
     animationSteps,
     durationInSeconds,
-    delayInSeconds,
+    firstLinedelayInSeconds,
+    secondLinedelayInSeconds,
   }}
 >
   .typewriter-container {
@@ -83,17 +90,19 @@ const {animationSteps, durationInSeconds, delayInSeconds = 0} = Astro.props;
     background-color: rgb(var(--light-background-color));
     animation:
       typewriter calc(var(--durationInSeconds) * 1s)
-        steps(var(--animationSteps)) calc(var(--delayInSeconds) * 1s) 1 normal,
-      blinkTextCursor 500ms steps(20) calc(var(--delayInSeconds) * 1s) infinite
-        normal;
-  }
+        steps(var(--animationSteps)) calc(var(--firstLinedelayInSeconds) * 1s) 1
+        normal,
+      blinkTextCursor 500ms steps(20) calc(var(--firstLinedelayInSeconds) * 1s)
+        infinite normal;
 
-  .typewriter-overlay.second {
-    display: none;
-    animation-delay: calc(
-      (var(--delayInSeconds) + var(--durationInSeconds)) * 1s - 0.3s
-    );
-    top: 50%;
+    &.second {
+      display: none;
+      animation-delay: calc(
+        (var(--firstLinedelayInSeconds) + var(--secondLinedelayInSeconds)) * 1s
+      );
+      z-index: 2;
+      top: 50%;
+    }
   }
 
   /* Animation */
