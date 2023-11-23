@@ -6,19 +6,44 @@ type Props = {
 };
 
 const {animationSteps, durationInSeconds, delayInSeconds = 0} = Astro.props;
-const durationString = `${durationInSeconds}s`;
-const delayString = `${delayInSeconds}s`;
 ---
 
 <div class="typewriter-container">
   <span class="typewriter-text">
     <slot />
   </span>
-  <div class="typewriter-overlay"></div>
+  <div class="typewriter-overlay first"></div>
+  <div class="typewriter-overlay second"></div>
 </div>
 
 <script>
   // Component inspired by https://codepen.io/blackfrom80s/pen/ogoxLw
+  (function showSecondLineOverlay() {
+    const typewriterTextEls = document.querySelectorAll(
+      '.typewriter-text'
+    ) as NodeListOf<HTMLElement>;
+
+    typewriterTextEls.forEach((el) => {
+      // Get the element rendered height without line breaks
+      el.style.whiteSpace = 'nowrap';
+      const renderedHeightFirst = el.getBoundingClientRect().height;
+
+      // Get the element rendered height with line breaks
+      el.style.whiteSpace = 'unset';
+      const renderedHeightSecond = el.getBoundingClientRect().height;
+
+      // Text jumped line? If yes we display the second line overlay
+      if (renderedHeightFirst !== renderedHeightSecond) {
+        const container = el.parentElement as HTMLElement;
+        const textOverlaySecond = container.querySelector(
+          '.typewriter-overlay.second'
+        ) as HTMLElement;
+
+        textOverlaySecond.style.display = 'block';
+      }
+    });
+  })();
+
   (function () {
     const typewriterOverlayEls = document.querySelectorAll(
       '.typewriter-overlay'
@@ -36,7 +61,13 @@ const delayString = `${delayInSeconds}s`;
   })();
 </script>
 
-<style define:vars={{animationSteps, durationString, delayString}}>
+<style
+  define:vars={{
+    animationSteps,
+    durationInSeconds,
+    delayInSeconds,
+  }}
+>
   .typewriter-container {
     position: relative;
   }
@@ -48,12 +79,21 @@ const delayString = `${delayInSeconds}s`;
     left: 0;
     right: 0;
     z-index: 1;
-    border-left: 2px solid rgba(255, 255, 255, 0.75);
+    border-left: 2px solid transparent;
     background-color: rgb(var(--light-background-color));
     animation:
-      typewriter var(--durationString) steps(var(--animationSteps))
-        var(--delayString) 1 normal,
-      blinkTextCursor 500ms steps(20) infinite normal;
+      typewriter calc(var(--durationInSeconds) * 1s)
+        steps(var(--animationSteps)) calc(var(--delayInSeconds) * 1s) 1 normal,
+      blinkTextCursor 500ms steps(20) calc(var(--delayInSeconds) * 1s) infinite
+        normal;
+  }
+
+  .typewriter-overlay.second {
+    display: none;
+    animation-delay: calc(
+      (var(--delayInSeconds) + var(--durationInSeconds)) * 1s - 0.3s
+    );
+    top: 50%;
   }
 
   /* Animation */
