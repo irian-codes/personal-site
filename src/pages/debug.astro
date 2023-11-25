@@ -1,0 +1,52 @@
+---
+import {Image} from 'astro:assets';
+import testImg1 from '../assets/images/projects/mobile-apps/assistant-drivers-joined.jpg';
+import testImg2 from '../assets/images/projects/mobile-apps/caumma-joined.jpg';
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+
+const decriptionHtml = `
+<h3>Test title</h3>
+<p>Test description</p>
+`;
+---
+
+<!-- TODO: This works but I actually want 2 behaviour. On desktop I want the gallery to open on a button click (it will be inside the overlay), on mobile the current behaviour is fine. -->
+<div id="lightgallery">
+  <h2>Gallery DEBUG</h2>
+  <div
+    class="item"
+    data-src={testImg1.src}
+    data-lg-size={`${testImg1.width}-${testImg1.height}`}
+    data-sub-html={decriptionHtml}
+    title="img1"
+  >
+    <Image src={testImg1} alt={''} width={100} />
+  </div>
+  <div
+    class="item"
+    data-src={testImg2.src}
+    data-lg-size={`${testImg2.width}-${testImg2.height}`}
+    title="img2"
+  >
+    <Image src={testImg2} alt={''} width={100} />
+  </div>
+</div>
+
+<script>
+  import lightGallery from 'lightgallery';
+  // Lightgallery plugin loading
+  import lgHash from 'lightgallery/plugins/hash';
+  import lgZoom from 'lightgallery/plugins/zoom';
+
+  lightGallery(document.querySelector('#lightgallery')!, {
+    plugins: [lgZoom, lgHash],
+    selector: '.item',
+    download: false,
+    closeOnTap: false,
+    mobileSettings: {
+      showCloseIcon: true,
+      closeOnTap: true,
+    },
+  });
+</script>
