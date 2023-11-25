@@ -89,6 +89,11 @@ const t = useTranslations(locale);
    * close the project the user needs to click on the cross icon.
    */
   (function projectOnClickHandler() {
+    // When images are too small we don't want to open the overlay
+    if (window.matchMedia('(max-width: 42.5em)').matches) {
+      return;
+    }
+
     const projects = Array.from(
       document.querySelectorAll('.project-container')
     );
@@ -138,6 +143,9 @@ const t = useTranslations(locale);
 </script>
 
 <style>
+  /* PostCSS plugin postcss-custom-media */
+  @custom-media --images-too-small screen and (max-width: 42.5em);
+
   #projects-section-container {
     margin-top: 2rem;
   }
@@ -232,6 +240,10 @@ const t = useTranslations(locale);
     transition:
       max-height 0.6s,
       opacity 0.6s 0.3s;
+
+    @media (--images-too-small) {
+      display: none;
+    }
   }
   .project-container.active .project-description-container {
     visibility: unset;
@@ -291,6 +303,10 @@ const t = useTranslations(locale);
     &:focus,
     &:active {
       transform: scale(1.1);
+    }
+
+    @media (--images-too-small) {
+      display: none;
     }
   }
 </style>
