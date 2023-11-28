@@ -1,9 +1,11 @@
 ---
 import {Image} from 'astro:assets';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lightgallery.css';
 import testImg1 from '../assets/images/projects/mobile-apps/assistant-drivers-joined.jpg';
 import testImg2 from '../assets/images/projects/mobile-apps/caumma-joined.jpg';
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
+import LightGalleryPressable from '../components/website/LightGalleryPressable/LightGalleryPressable.astro';
+import WebsiteButton from '../components/website/WebsiteButton.astro';
 
 const decriptionHtml = `
 <h3>Test title</h3>
@@ -12,8 +14,29 @@ const decriptionHtml = `
 ---
 
 <!-- TODO: This works but I actually want 2 behaviour. On desktop I want the gallery to open on a button click (it will be inside the overlay), on mobile the current behaviour is fine. -->
-<div id="lightgallery">
-  <h2>Gallery DEBUG</h2>
+<div>
+  <Image src={testImg1} alt={''} width={300} />
+  <Image src={testImg2} alt={''} width={300} />
+</div>
+
+<LightGalleryPressable
+  entries={[
+    {
+      image: testImg1,
+      title: 'img1',
+      description: 'Test description 1',
+    },
+    {
+      image: testImg2,
+      title: 'img2',
+      description: 'Test description 2',
+    },
+  ]}
+>
+  <WebsiteButton label="See test images" />
+</LightGalleryPressable>
+
+<!-- <div id="lightgallery">
   <div
     class="item"
     data-src={testImg1.src}
@@ -21,7 +44,6 @@ const decriptionHtml = `
     data-sub-html={decriptionHtml}
     title="img1"
   >
-    <Image src={testImg1} alt={''} width={100} />
   </div>
   <div
     class="item"
@@ -29,11 +51,10 @@ const decriptionHtml = `
     data-lg-size={`${testImg2.width}-${testImg2.height}`}
     title="img2"
   >
-    <Image src={testImg2} alt={''} width={100} />
   </div>
-</div>
+</div> -->
 
-<script>
+<!-- <script>
   import lightGallery from 'lightgallery';
   // Lightgallery plugin loading
   import lgHash from 'lightgallery/plugins/hash';
@@ -49,4 +70,4 @@ const decriptionHtml = `
       closeOnTap: true,
     },
   });
-</script>
+</script> -->

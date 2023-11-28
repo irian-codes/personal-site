@@ -1,0 +1,68 @@
+---
+import type {GalleryEntry} from './types';
+
+type Props = {
+  entries: GalleryEntry[];
+};
+
+const {entries} = Astro.props;
+---
+
+<lightgallery-pressable data-entries={JSON.stringify(entries)}>
+  <slot />
+</lightgallery-pressable>
+
+<script>
+  import type {GalleryItem} from 'lightgallery/lg-utils';
+  import type {GalleryEntry} from './types';
+  // Lightgallery
+  import lightGallery from 'lightgallery';
+  import type {LightGallery} from 'lightgallery/lightgallery';
+  import lgHash from 'lightgallery/plugins/hash';
+  import lgZoom from 'lightgallery/plugins/zoom';
+
+  class LightgalleryPressable extends HTMLElement {
+    private entries: GalleryEntry[] = [];
+    private lightgallery: LightGallery;
+
+    constructor() {
+      super();
+
+      const parsedEntries = JSON.parse(this.dataset.entries || '');
+
+      if (parsedEntries == null || Array.from(parsedEntries).length === 0) {
+        throw new Error('HTML data-entries attribute is undefined');
+      }
+
+      this.entries = parsedEntries;
+      const _lightGallery = (this.lightgallery = this.initLightGallery());
+
+      this.addEventListener('click', function () {
+        _lightGallery.openGallery(0);
+      });
+    }
+
+    private initLightGallery() {
+      return lightGallery(this, {
+        plugins: [lgHash, lgZoom],
+        dynamic: true,
+        dynamicEl: this.entries.map(
+          (entry) =>
+            ({
+              src: entry.image.src,
+              thumb: entry.thumbnail?.src,
+              subHtml: `<h4>${entry.title}</h4><p>${entry.description}</p>`,
+            }) satisfies GalleryItem
+        ),
+        download: false,
+        closeOnTap: false,
+        mobileSettings: {
+          showCloseIcon: true,
+          closeOnTap: true,
+        },
+      });
+    }
+  }
+
+  customElements.define('lightgallery-pressable', LightgalleryPressable);
+</script>
