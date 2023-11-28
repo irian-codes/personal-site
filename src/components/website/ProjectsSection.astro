@@ -3,6 +3,7 @@ import {Image} from 'astro:assets';
 import {projectsData} from '../../data/website/ProjectsData';
 import WebsiteButton from './WebsiteButton.astro';
 import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
+import LightGalleryPressable from './LightGalleryPressable/LightGalleryPressable.astro';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -33,6 +34,21 @@ const t = useTranslations(locale);
             </div>
             <div class="project-description-container">
               <p>{project.description}</p>
+              <div class="project-gallery-button-container">
+                <LightGalleryPressable
+                  entries={[
+                    {
+                      image: project.image,
+                      title: project.name,
+                      description: project.description,
+                    },
+                  ]}
+                >
+                  <WebsiteButton
+                    label={t('website.home.projects-button-open-gallery')}
+                  />
+                </LightGalleryPressable>
+              </div>
               <div class="project-technologies-container">
                 {project.technologies.map((technology) => (
                   <div class="project-technology-container">
@@ -308,5 +324,9 @@ const t = useTranslations(locale);
     @media (--images-too-small) {
       display: none;
     }
+  }
+  .project-gallery-button-container {
+    margin: 0 0 1rem 0;
+    overflow: visible;
   }
 </style>
