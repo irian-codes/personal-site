@@ -4,13 +4,18 @@ import 'lightgallery/css/lightgallery.css';
 import type {GalleryEntry} from './types';
 
 type Props = {
+  galleryId: string;
   entries: GalleryEntry[];
 };
 
-const {entries} = Astro.props;
+const {galleryId, entries} = Astro.props;
 ---
 
-<lightgallery-pressable data-entries={JSON.stringify(entries)}>
+<lightgallery-pressable
+  id={`lightgallery-${galleryId}`}
+  data-gallery-id={galleryId}
+  data-entries={JSON.stringify(entries)}
+>
   <slot />
 </lightgallery-pressable>
 
@@ -37,15 +42,29 @@ const {entries} = Astro.props;
       }
 
       this.entries = parsedEntries;
-      const _lightGallery = (this.lightgallery = this.initLightGallery());
+
+      if (
+        this.dataset.galleryId == null ||
+        this.dataset.galleryId.trim().length === 0
+      ) {
+        throw new Error(
+          'HTML data-galleryId attribute is invalid. Value: ' +
+            this.dataset.galleryId
+        );
+      }
+
+      const _lightGallery = (this.lightgallery = this.initLightGallery(
+        this.dataset.galleryId
+      ));
 
       this.addEventListener('click', function () {
         _lightGallery.openGallery(0);
       });
     }
 
-    private initLightGallery() {
+    private initLightGallery(id: string) {
       return lightGallery(this, {
+        galleryId: id.trim(),
         plugins: [lgHash, lgZoom],
         dynamic: true,
         dynamicEl: this.entries.map(

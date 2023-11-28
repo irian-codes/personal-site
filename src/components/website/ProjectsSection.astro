@@ -36,6 +36,7 @@ const t = useTranslations(locale);
               <p>{project.description}</p>
               <div class="project-gallery-button-container">
                 <LightGalleryPressable
+                  galleryId={`project-${project.id}`}
                   entries={[
                     {
                       image: project.image,
