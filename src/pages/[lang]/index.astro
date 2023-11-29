@@ -101,6 +101,13 @@ const thirdTypeAnimation = {
 </BaseLayout>
 
 <style>
+  /* Here the header breaks into 2 columns (at 817px) */
+  @custom-media --header-breakdown-min screen and (min-width: 51);
+  @custom-media --header-breakdown-max screen and (max-width: 51);
+  /* This difference between 51rem and 47rem is to account for the margin
+    if we don't respect it the image goes back to the top and we don't want that */
+  @custom-media --header-breakdown-margin screen and (max-width: 47em);
+
   :root {
     margin: auto;
     padding: 1.5rem;
@@ -154,9 +161,7 @@ const thirdTypeAnimation = {
     justify-content: center;
     align-items: center;
     margin-right: 2rem;
-    /* This difference between 51rem and 47rem is to account for the margin
-    if we don't respect it the image goes back to the top and we don't want that */
-    @media screen and (max-width: 47em) {
+    @media (--header-breakdown-margin) {
       margin: 0;
     }
   }
@@ -164,7 +169,7 @@ const thirdTypeAnimation = {
     flex-grow: 1;
     display: flex;
     /* This value is when the layout breaks into 2 rows */
-    @media screen and (max-width: 51em) {
+    @media (--header-breakdown-max) {
       margin: 2rem auto;
     }
   }
@@ -175,7 +180,7 @@ const thirdTypeAnimation = {
     border-width: 2px;
     border-radius: 50%;
     border-style: solid;
-    @media screen and (max-width: 51em) {
+    @media (--header-breakdown-max) {
       margin: auto;
     }
   }
@@ -186,7 +191,7 @@ const thirdTypeAnimation = {
   }
   #cv-button-container-desktop {
     margin-top: 2rem;
-    @media screen and (max-width: 51em) {
+    @media (--header-breakdown-max) {
       display: none;
     }
   }
@@ -195,7 +200,7 @@ const thirdTypeAnimation = {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media screen and (min-width: 51em) {
+    @media (--header-breakdown-min) {
       display: none;
     }
   }
