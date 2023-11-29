@@ -2,69 +2,125 @@
 type Props = {
   animationSteps: number;
   durationInSeconds: number;
-  delayInSeconds?: number;
+  firstLinedelayInSeconds?: number;
+  secondLinedelayInSeconds?: number;
 };
 
-const {animationSteps, durationInSeconds, delayInSeconds = 0} = Astro.props;
-const durationString = `${durationInSeconds}s`;
-const delayString = `${delayInSeconds}s`;
+const {
+  animationSteps,
+  durationInSeconds,
+  firstLinedelayInSeconds = 0,
+  secondLinedelayInSeconds = 0,
+} = Astro.props;
 ---
 
-<span class="typewriter-text">
-  <span class="cursor">
+<div class="typewriter-container">
+  <span class="typewriter-text">
     <slot />
   </span>
-</span>
+  <div class="typewriter-overlay first"></div>
+  <div class="typewriter-overlay second"></div>
+</div>
 
 <script>
   // Component inspired by https://codepen.io/blackfrom80s/pen/ogoxLw
+  (function showSecondLineOverlay() {
+    const typewriterTextEls = document.querySelectorAll(
+      '.typewriter-text'
+    ) as NodeListOf<HTMLElement>;
+
+    typewriterTextEls.forEach((el) => {
+      // Get the element rendered height without line breaks
+      el.style.whiteSpace = 'nowrap';
+      const renderedHeightFirst = el.getBoundingClientRect().height;
+
+      // Get the element rendered height with line breaks
+      el.style.whiteSpace = 'unset';
+      const renderedHeightSecond = el.getBoundingClientRect().height;
+
+      // Text jumped line? If yes we display the second line overlay
+      if (renderedHeightFirst !== renderedHeightSecond) {
+        const container = el.parentElement as HTMLElement;
+        const textOverlaySecond = container.querySelector(
+          '.typewriter-overlay.second'
+        ) as HTMLElement;
+
+        textOverlaySecond.style.display = 'block';
+      }
+    });
+  })();
+
   (function () {
-    const typewriterTextEls = document.querySelectorAll('.typewriter-text');
+    const typewriterOverlayEls = document.querySelectorAll(
+      '.typewriter-overlay'
+    ) as NodeListOf<HTMLSpanElement>;
 
-    typewriterTextEls.forEach((typewriterTextEl) => {
-      typewriterTextEl.addEventListener('animationend', () => {
-        const cursor = typewriterTextEl.querySelector(
-          '.cursor'
-        ) as HTMLElement | null;
+    typewriterOverlayEls.forEach((el) => {
+      el.addEventListener('animationend', (ev) => {
+        const animationName = (ev as AnimationEvent).animationName;
 
-        if (cursor != null) {
-          cursor.style.border = 'none';
+        if (animationName === 'typewriter') {
+          el.style.display = 'none';
         }
       });
     });
   })();
 </script>
 
-<style define:vars={{animationSteps, durationString, delayString}}>
-  span {
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter var(--durationString) steps(var(--animationSteps))
-      var(--delayString) 1 normal;
+<style
+  define:vars={{
+    animationSteps,
+    durationInSeconds,
+    firstLinedelayInSeconds,
+    secondLinedelayInSeconds,
+  }}
+>
+  .typewriter-container {
+    position: relative;
   }
 
-  .cursor {
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
-    animation: blinkTextCursor 500ms steps(20) infinite normal;
+  .typewriter-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-left: 2px solid transparent;
+    background-color: rgb(var(--light-background-color));
+    animation:
+      typewriter calc(var(--durationInSeconds) * 1s)
+        steps(var(--animationSteps)) calc(var(--firstLinedelayInSeconds) * 1s) 1
+        normal,
+      blinkTextCursor 500ms steps(20) calc(var(--firstLinedelayInSeconds) * 1s)
+        infinite normal;
+
+    &.second {
+      display: none;
+      animation-delay: calc(
+        (var(--firstLinedelayInSeconds) + var(--secondLinedelayInSeconds)) * 1s
+      );
+      z-index: 2;
+      top: 50%;
+    }
   }
 
   /* Animation */
   @keyframes typewriter {
     from {
-      width: 0%;
+      left: 0%;
     }
     to {
-      width: 100%;
+      left: 100%;
     }
   }
 
   @keyframes blinkTextCursor {
     from {
-      border-right-color: rgba(255, 255, 255, 0.75);
+      border-left-color: rgba(255, 255, 255, 0.75);
     }
     to {
-      border-right-color: transparent;
+      border-left-color: transparent;
     }
   }
 </style>

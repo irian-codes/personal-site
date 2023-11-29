@@ -5,7 +5,7 @@ import personPicture from '../../assets/images/irian-cv-image.jpg';
 import ContactSection from '../../components/website/ContactSection.astro';
 import CvButton from '../../components/website/CvButton.astro';
 import GlowBar from '../../components/website/GlowBar.astro';
-import ProjectsSection from '../../components/website/ProjectsSection.astro';
+import ProjectsSection from '../../components/website/ProjectsSection/ProjectsSection.astro';
 import StarsBackbround from '../../components/website/StarsBackbround.astro';
 import TypewriterText from '../../components/website/TypewriterText.astro';
 import {languages, type LanguageTag} from '../../i18n/i18n';
@@ -21,6 +21,28 @@ export const getStaticPaths = (() => {
 
 const locale = Astro.params.lang as LanguageTag;
 const t = useTranslations(locale);
+
+// CHAINED TYPEWRITER ANIMATION CONFIGURATION
+const firstTypeAnimation = {
+  durationInSeconds: 0.8,
+  animationSteps: 12,
+  firstLinedelayInSeconds: 0,
+  secondLinedelayInSeconds: 0.65,
+};
+const secondTypeAnimation = {
+  durationInSeconds: 0.8,
+  animationSteps: 24,
+  firstLinedelayInSeconds: firstTypeAnimation.durationInSeconds,
+  secondLinedelayInSeconds: 0.65,
+};
+const thirdTypeAnimation = {
+  durationInSeconds: 1,
+  animationSteps: 24,
+  firstLinedelayInSeconds:
+    firstTypeAnimation.durationInSeconds +
+    secondTypeAnimation.durationInSeconds,
+  secondLinedelayInSeconds: 0.85,
+};
 ---
 
 <BaseLayout title="Irian's website">
@@ -28,32 +50,41 @@ const t = useTranslations(locale);
   <GlowBar />
   <main>
     <div id="top-section-container">
-      <div>
-        <TypewriterText durationInSeconds={0.8} animationSteps={12}>
-          <h1>
-            {t('website.home.title.first-part') + ' '}
-            <span class="title-highlight"
-              >{t('website.home.title.second-part')}</span
-            >
-          </h1>
-        </TypewriterText>
-        <TypewriterText durationInSeconds={1.2} animationSteps={24}>
-          <div class="subheading">
-            {t('website.home.subtitle.first-part')}
+      <div id="top-section-text-container">
+        <div>
+          <TypewriterText {...firstTypeAnimation}>
+            <h1>
+              {t('website.home.title.first-part') + ' '}
+              <span class="title-highlight"
+                >{t('website.home.title.second-part')}</span
+              >
+            </h1>
+          </TypewriterText>
+          <TypewriterText {...secondTypeAnimation}>
+            <div class="subheading">
+              {t('website.home.subtitle.first-part')}
+            </div>
+          </TypewriterText>
+          <TypewriterText {...thirdTypeAnimation}>
+            <div class="subheading">
+              {t('website.home.subtitle.second-part')}
+            </div>
+          </TypewriterText>
+          <div id="cv-button-container-desktop">
+            <CvButton />
           </div>
-        </TypewriterText>
-        <TypewriterText durationInSeconds={1.6} animationSteps={24}>
-          <div class="subheading">
-            {t('website.home.subtitle.second-part')}
-          </div>
-        </TypewriterText>
+        </div>
+      </div>
+      <div id="person-picture-container">
+        <Image
+          id="person-picture"
+          src={personPicture}
+          alt={t('website.home.person-image.alt-attribute')}
+        />
+      </div>
+      <div id="cv-button-container-mobile">
         <CvButton />
       </div>
-      <Image
-        id="person-picture"
-        src={personPicture}
-        alt={t('website.home.person-image.alt-attribute')}
-      />
     </div>
     <h2>{t('website.home.projects-title')}</h2>
     <div class="heading-underline" role="presentation"></div>
@@ -70,6 +101,13 @@ const t = useTranslations(locale);
 </BaseLayout>
 
 <style>
+  /* Here the header breaks into 2 columns */
+  @custom-media --header-breakdown-min screen and (min-width: 50em);
+  @custom-media --header-breakdown-max screen and (max-width: 50em);
+  /* After this the Fluid Typography starts taking effect so we need to
+  remove the fixed width */
+  @custom-media --header-text-start-shrinking screen and (min-width: 46em);
+
   :root {
     margin: auto;
     padding: 1.5rem;
@@ -88,7 +126,8 @@ const t = useTranslations(locale);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     border-radius: 10px;
     border-color: rgb(var(--accent-color-1));
     border-width: 3px;
@@ -116,18 +155,55 @@ const t = useTranslations(locale);
       rgba(var(--accent-color-1), 0) 100%
     );
   }
+  #top-section-text-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      @media (--header-text-start-shrinking) {
+        /* Min with that fits all languages text */
+        width: 29rem;
+      }
+    }
+  }
+  #person-picture-container {
+    flex-grow: 1;
+    display: flex;
+    /* This value is when the layout breaks into 2 rows */
+    @media (--header-breakdown-max) {
+      margin: 2rem auto;
+    }
+  }
   #person-picture {
     width: 200px;
     height: 200px;
-    margin-left: 4rem;
     border-color: rgb(var(--accent-color-1));
     border-width: 2px;
     border-radius: 50%;
     border-style: solid;
+    @media (--header-breakdown-max) {
+      margin: auto;
+    }
   }
   .title-highlight {
     color: rgb(var(--accent-color-1));
     text-shadow: 2px 2px 6px rgba(var(--accent-color-1), 0.7);
     font-weight: 800;
+  }
+  #cv-button-container-desktop {
+    margin-top: 2rem;
+    @media (--header-breakdown-max) {
+      display: none;
+    }
+  }
+  #cv-button-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (--header-breakdown-min) {
+      display: none;
+    }
   }
 </style>

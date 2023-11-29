@@ -5,6 +5,7 @@ module.exports = {
     require('postcss-functions')({
       functions: {multipleBoxShadow},
     }),
+    require('postcss-custom-media'),
     require('postcss-nested'),
     require('autoprefixer'),
     require('cssnano'),

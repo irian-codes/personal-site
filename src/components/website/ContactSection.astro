@@ -35,6 +35,8 @@ const phoneNumber = '+34611082305';
         </div>
       </div>
     </a>
+  </div>
+  <div class="contact-options-row">
     <a href=`${respositoryUrl}` target="_blank" rel="noopener noreferrer">
       <div class="contact-container">
         <div class="contact-icon-container">
@@ -63,13 +65,18 @@ const phoneNumber = '+34611082305';
     color: rgb(var(--text-color));
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    width: fit-content;
     margin: auto;
     background-color: rgb(var(--light-background-color));
     border-radius: 10px;
     padding: 1rem;
+    width: 24rem;
+    /* When the icons break in 2 rows */
+    @media screen and (max-width: 29.3em) {
+      width: 12rem;
+    }
   }
   .contact-options-row {
     display: flex;

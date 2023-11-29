@@ -1,8 +1,9 @@
 ---
 import {Image} from 'astro:assets';
-import {projectsData} from '../../data/website/ProjectsData';
-import WebsiteButton from './WebsiteButton.astro';
-import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
+import {projectsData} from '../../../data/website/ProjectsData';
+import WebsiteButton from '../WebsiteButton.astro';
+import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
+import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -17,37 +18,48 @@ const t = useTranslations(locale);
   <div class="projects-grid">
     {
       projects.map((project, index) => (
-        <div
-          class:list={{
-            'project-container': true,
-            hidden: index > 2,
-          }}
-        >
-          <Image class="project-image" src={project.image} alt="" />
-          <div class="project-overlay">
-            <div class="project-title-container">
-              <h3 class="project-title">{project.name}</h3>
-              <button class="close-button hidden" type="button">
-                &times;
-              </button>
-            </div>
-            <div class="project-description-container">
-              <p>{project.description}</p>
-              <div class="project-technologies-container">
-                {project.technologies.map((technology) => (
-                  <div class="project-technology-container">
-                    <div class="project-technology-name">{technology.name}</div>
-                    <Image
-                      class="project-technology-icon"
-                      src={technology.icon}
-                      alt={`${technology.name} logo`}
+        <ProjectGalleryPressable project={project}>
+          <div
+            class:list={{
+              'project-container': true,
+              hidden: index > 2,
+            }}
+          >
+            <Image class="project-image" src={project.image} alt="" />
+            <div class="project-overlay">
+              <div class="project-title-container">
+                <h3 class="project-title">{project.name}</h3>
+                <button class="close-button hidden" type="button">
+                  &times;
+                </button>
+              </div>
+              <div class="project-description-container">
+                <p>{project.description}</p>
+                <div class="project-gallery-button-container">
+                  <ProjectGalleryPressable project={project}>
+                    <WebsiteButton
+                      label={t('website.home.projects-button-open-gallery')}
                     />
-                  </div>
-                ))}
+                  </ProjectGalleryPressable>
+                </div>
+                <div class="project-technologies-container">
+                  {project.technologies.map((technology) => (
+                    <div class="project-technology-container">
+                      <div class="project-technology-name">
+                        {technology.name}
+                      </div>
+                      <Image
+                        class="project-technology-icon"
+                        src={technology.icon}
+                        alt={`${technology.name} logo`}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </ProjectGalleryPressable>
       ))
     }
   </div>
@@ -89,6 +101,11 @@ const t = useTranslations(locale);
    * close the project the user needs to click on the cross icon.
    */
   (function projectOnClickHandler() {
+    // When images are too small we don't want to open the overlay
+    if (window.matchMedia('(max-width: 42.5em)').matches) {
+      return;
+    }
+
     const projects = Array.from(
       document.querySelectorAll('.project-container')
     );
@@ -135,9 +152,74 @@ const t = useTranslations(locale);
       });
     });
   })();
+
+  /**
+   * Removes extra Lightgallery elements based on screen size.
+   * The thing is we have two lightgallery-pressable elements in
+   * the HTML tree per project. But we can only leave one because
+   * then the URL with the lighthallery Hash plugin would open
+   * two galleries and we don't want that.
+   *
+   * One could think "why so much effort on this script if we
+   * can just append '-desktop' and '-mobile' to the 'galleryId'
+   * prop of the elements?" Well because if a user is on desktop and
+   * shares the URL with a user that is on mobile it would attempt
+   * to open the wrong gallery. So the best solution is to remove
+   * the duplicate that we don't want and that way the ids will
+   * always match regardless of the client.
+   *
+   * Also we gain performance by not loading duplicate elements.
+   *
+   * This is due to UI/UX decisions. On larger screens the gallery
+   * opens on a button click. On smaller screens the gallery opens
+   * when clicking on the image itself. Since this is a static page
+   * project we cannot serve a dynamic page depending on the viewport
+   * so we do it on the client.
+   */
+  (function removeExtraLightgalleryElements() {
+    // If we are on a small screen we delete the description containers
+    // since they contain lightgallery-pressable elements that we
+    // don't need.
+    if (window.matchMedia('(max-width: 42.5em)').matches) {
+      const projectDescriptionContainers = Array.from(
+        document.querySelectorAll('.project-description-container')
+      );
+
+      projectDescriptionContainers.forEach((pdc) => {
+        pdc.remove();
+      });
+
+      return;
+    }
+
+    // If we are on a big screen we need to do a bit more of work.
+    const projectsGrid = document.querySelector('.projects-grid');
+    const projects = Array.from(
+      document.querySelectorAll('.project-container')
+    );
+
+    // We remove the outer lightgallery-pressable element since in big
+    // screens we want to open it from a button, not by just clicking
+    // on the image.
+    projects.forEach((pr) => {
+      const lightGalleryNodeContent = Array.from(pr.parentElement!.children);
+
+      lightGalleryNodeContent.forEach((child) => {
+        projectsGrid?.appendChild(child);
+      });
+    });
+
+    // Removing the elements that don't have any projects as children
+    document.querySelectorAll('lightgallery-pressable:empty').forEach((lg) => {
+      lg.remove();
+    });
+  })();
 </script>
 
 <style>
+  /* PostCSS plugin postcss-custom-media */
+  @custom-media --images-too-small screen and (max-width: 42.5em);
+
   #projects-section-container {
     margin-top: 2rem;
   }
@@ -232,6 +314,10 @@ const t = useTranslations(locale);
     transition:
       max-height 0.6s,
       opacity 0.6s 0.3s;
+
+    @media (--images-too-small) {
+      display: none;
+    }
   }
   .project-container.active .project-description-container {
     visibility: unset;
@@ -292,5 +378,13 @@ const t = useTranslations(locale);
     &:active {
       transform: scale(1.1);
     }
+
+    @media (--images-too-small) {
+      display: none;
+    }
+  }
+  .project-gallery-button-container {
+    margin: 0 0 1rem 0;
+    overflow: visible;
   }
 </style>
