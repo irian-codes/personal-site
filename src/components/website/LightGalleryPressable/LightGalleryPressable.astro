@@ -1,11 +1,11 @@
 ---
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lightgallery.css';
-import type {GalleryEntry} from './types';
+import type {GalleryItem} from 'lightgallery/lg-utils';
 
 type Props = {
   galleryId: string;
-  entries: GalleryEntry[];
+  entries: GalleryItem[];
 };
 
 const {galleryId, entries} = Astro.props;
@@ -21,7 +21,6 @@ const {galleryId, entries} = Astro.props;
 
 <script>
   import type {GalleryItem} from 'lightgallery/lg-utils';
-  import type {GalleryEntry} from './types';
   // Lightgallery
   import lightGallery from 'lightgallery';
   import type {LightGallery} from 'lightgallery/lightgallery';
@@ -29,7 +28,7 @@ const {galleryId, entries} = Astro.props;
   import lgZoom from 'lightgallery/plugins/zoom';
 
   class LightgalleryPressable extends HTMLElement {
-    private entries: GalleryEntry[] = [];
+    private entries: GalleryItem[] = [];
     private lightgallery: LightGallery;
 
     constructor() {
@@ -67,14 +66,7 @@ const {galleryId, entries} = Astro.props;
         galleryId: id.trim(),
         plugins: [lgHash, lgZoom],
         dynamic: true,
-        dynamicEl: this.entries.map(
-          (entry) =>
-            ({
-              src: entry.image.src,
-              thumb: entry.thumbnail?.src,
-              subHtml: `<h4>${entry.title}</h4><p>${entry.description}</p>`,
-            }) satisfies GalleryItem
-        ),
+        dynamicEl: this.entries,
         download: false,
         closeOnTap: false,
         mobileSettings: {

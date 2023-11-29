@@ -1,9 +1,9 @@
 ---
 import {Image} from 'astro:assets';
-import {projectsData} from '../../data/website/ProjectsData';
-import WebsiteButton from './WebsiteButton.astro';
-import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
-import LightGalleryPressable from './LightGalleryPressable/LightGalleryPressable.astro';
+import {projectsData} from '../../../data/website/ProjectsData';
+import WebsiteButton from '../WebsiteButton.astro';
+import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
+import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -18,16 +18,7 @@ const t = useTranslations(locale);
   <div class="projects-grid">
     {
       projects.map((project, index) => (
-        <LightGalleryPressable
-          galleryId={`project-${project.id}`}
-          entries={[
-            {
-              image: project.image,
-              title: project.name,
-              description: project.description,
-            },
-          ]}
-        >
+        <ProjectGalleryPressable project={project}>
           <div
             class:list={{
               'project-container': true,
@@ -45,20 +36,11 @@ const t = useTranslations(locale);
               <div class="project-description-container">
                 <p>{project.description}</p>
                 <div class="project-gallery-button-container">
-                  <LightGalleryPressable
-                    galleryId={`project-${project.id}`}
-                    entries={[
-                      {
-                        image: project.image,
-                        title: project.name,
-                        description: project.description,
-                      },
-                    ]}
-                  >
+                  <ProjectGalleryPressable project={project}>
                     <WebsiteButton
                       label={t('website.home.projects-button-open-gallery')}
                     />
-                  </LightGalleryPressable>
+                  </ProjectGalleryPressable>
                 </div>
                 <div class="project-technologies-container">
                   {project.technologies.map((technology) => (
@@ -77,7 +59,7 @@ const t = useTranslations(locale);
               </div>
             </div>
           </div>
-        </LightGalleryPressable>
+        </ProjectGalleryPressable>
       ))
     }
   </div>
