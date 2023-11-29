@@ -102,11 +102,11 @@ const thirdTypeAnimation = {
 
 <style>
   /* Here the header breaks into 2 columns (at 817px) */
-  @custom-media --header-breakdown-min screen and (min-width: 51);
-  @custom-media --header-breakdown-max screen and (max-width: 51);
+  @custom-media --header-breakdown-min screen and (min-width: 51.0625em);
+  @custom-media --header-breakdown-max screen and (max-width: 51.0625em);
   /* This difference between 51rem and 47rem is to account for the margin
     if we don't respect it the image goes back to the top and we don't want that */
-  @custom-media --header-breakdown-margin screen and (max-width: 47em);
+  @custom-media --header-breakdown-margin screen and (max-width: 49em);
 
   :root {
     margin: auto;
