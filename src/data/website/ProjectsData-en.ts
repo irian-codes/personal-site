@@ -5,11 +5,11 @@ import iosLogoSvg from '../../assets/images/icons/ios-logo.svg';
 import reactLogoSvg from '../../assets/images/icons/react-logo.svg';
 import restApiLogoSvg from '../../assets/images/icons/rest-api-logo.svg';
 import tsLogoSvg from '../../assets/images/icons/ts-logo.svg';
-import assistantDriversAppImg from '../../assets/images/projects/mobile-apps/assistant-drivers-joined.jpg';
-import caummaMobileAppImg from '../../assets/images/projects/mobile-apps/caumma-joined.jpg';
-import cordobaVivaMobileAppImg from '../../assets/images/projects/mobile-apps/cordoba-viva-joined.jpg';
-import deliveryKingsMobileAppImg from '../../assets/images/projects/mobile-apps/delivery-kings-joined.jpg';
-import medwayMobileAppImg from '../../assets/images/projects/mobile-apps/medway-joined.jpg';
+import assistantDriversAppImg from '../../assets/images/projects/mobile-apps/assistant-drivers/assistant-drivers-joined.jpg';
+import caummaMobileAppImg from '../../assets/images/projects/mobile-apps/caumma/caumma-joined.jpg';
+import cordobaVivaMobileAppImg from '../../assets/images/projects/mobile-apps/cordoba-viva/cordoba-viva-joined.jpg';
+import deliveryKingsMobileAppImg from '../../assets/images/projects/mobile-apps/delivery-kings/delivery-kings-joined.jpg';
+import medwayMobileAppImg from '../../assets/images/projects/mobile-apps/medway/medway-joined.jpg';
 import type {Projects} from './types/ProjectData';
 
 export const projectsData_en: Projects = [
