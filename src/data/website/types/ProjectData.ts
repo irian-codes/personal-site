@@ -9,7 +9,7 @@ export type Project = {
   id: number;
   name: string;
   description: string;
-  image: ImageMetadata;
+  images: ImageMetadata[];
   technologies: Technology[];
 };
 

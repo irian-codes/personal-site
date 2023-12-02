@@ -21,12 +21,10 @@ const subHtml: string = (function buildSubHtml() {
 
 <LightGalleryPressable
   galleryId={`project-${project.id}`}
-  entries={[
-    {
-      src: project.image.src,
-      subHtml,
-    },
-  ]}
+  entries={project.images.map((image) => ({
+    src: image.src,
+    subHtml,
+  }))}
 >
   <slot />
 </LightGalleryPressable>

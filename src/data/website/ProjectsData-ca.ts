@@ -19,7 +19,7 @@ export const projectsData_ca: Projects = [
     name: 'Caumma',
     description:
       "Aplicació mòbil per a una clínica de psicologia per ajudar als terapeutes a gestionar els seus pacients. Els pacients tenen un compte d'usuari perquè puguin registrar des de casa les tasques assignades pel seu terapeuta.",
-    image: caummaMobileAppImg,
+    images: [caummaMobileAppImg],
     technologies: [
       {
         name: 'React Native',
@@ -52,7 +52,7 @@ export const projectsData_ca: Projects = [
     name: 'Assistant Drivers',
     description:
       "Aplicació mòbil per donar servei a un negoci de tipus Uber. Els clients poden contractar un conductor per hores o segons la distància del viatge, seguidament se'ls factura l’import exacte a través de l'aplicació. El client sol·licitava dues apps, una pels usuaris i una altra pels seus conductors.",
-    image: assistantDriversAppImg,
+    images: [assistantDriversAppImg],
     technologies: [
       {
         name: 'React Native',
@@ -81,7 +81,7 @@ export const projectsData_ca: Projects = [
     name: 'Mediterranean Way',
     description:
       "Aplicació mòbil per a la gestió d'apartaments turístics, on es poden visualitzar les reserves i l'estat de les habitacions. A més, es pot registrar i gravar cada torn de neteja, incloent fotografies de qualsevol incidència. També disposa de funcionalitat per calcular els ingressos per habitació per al director de l'hotel.",
-    image: medwayMobileAppImg,
+    images: [medwayMobileAppImg],
     technologies: [
       {
         name: 'React Native',
@@ -110,7 +110,7 @@ export const projectsData_ca: Projects = [
     name: 'Delivery Kings',
     description:
       "Aplicació mòbil per a serveis de lliurament i recollida sota demanda tipus Glovo. Els usuaris poden comprar gairebé qualsevol article, com ara menjar, medicaments o fins i tot una comanda personalitzada amb instruccions específiques. També poden enviar un paquet a un altre usuari després d'omplir un formulari incloent fotografies.",
-    image: deliveryKingsMobileAppImg,
+    images: [deliveryKingsMobileAppImg],
     technologies: [
       {
         name: 'React Native',
@@ -139,7 +139,7 @@ export const projectsData_ca: Projects = [
     name: 'Córdoba Viva',
     description:
       'Aplicació mòbil perquè els usuaris consultin el catàleg de visites guiades turístiques a la ciutat de Còrdova. El client és una agència de viatges. Els usuaris poden consultar les dates i hores actualitzades de tots els esdeveniments i fer una reserva.',
-    image: cordobaVivaMobileAppImg,
+    images: [cordobaVivaMobileAppImg],
     technologies: [
       {
         name: 'React Native',
