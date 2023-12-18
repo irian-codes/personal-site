@@ -116,14 +116,15 @@ export const projectsData_en: Projects = [
     id: 5,
     name: 'Assistant Drivers (Admin Panel)',
     description:
-      'Mobile app to serve an Uber-like business. Customers can hire a driver by the hour or by trip distance and get billed in the app for the exact amount. The client requested one app for users and another for his drivers.',
+      'Web app for the client, to manage users, drivers and the requests for trips. It also allowed for editing trip prices, taxes, available vehicles and other settings.',
     images: projectsGalleries.get('assistant-drivers-desktop') || [],
     technologies: [
       {name: 'React'},
       {name: 'Material UI'},
       {name: 'Typescript'},
       {name: 'Firebase'},
-      {name: 'Rest API'},
+      {name: 'MobX'},
+      {name: 'React Router'},
     ],
   },
   {
