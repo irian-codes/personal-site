@@ -8,7 +8,8 @@ type ProjectName =
   | 'assistant-drivers-desktop'
   | 'cordoba-viva'
   | 'delivery-kings'
-  | 'caumma'
+  | 'caumma-mobile'
+  | 'caumma-desktop'
   | 'medway';
 
 const projectsGalleries = new Map<
@@ -52,10 +53,19 @@ const projectsGalleries = new Map<
     ),
   ],
   [
-    'caumma',
+    'caumma-mobile',
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/mobile-apps/caumma/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
+        {eager: true}
+      )
+    ),
+  ],
+  [
+    'caumma-desktop',
+    getSortedGlobImportedImages(
+      import.meta.glob(
+        '../../assets/images/projects/desktop-apps/caumma-panel/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
         {eager: true}
       )
     ),
@@ -75,10 +85,10 @@ export const projectsData_en: Projects = [
   // TODO: Add more real projects
   {
     id: 0,
-    name: 'Caumma',
+    name: 'Caumma (Mobile App)',
     description:
       'Mobile app for a psychology clinic to help therapists manage their patients. Also, the patients have an account so they can log their homework tasks.',
-    images: projectsGalleries.get('caumma') || [],
+    images: projectsGalleries.get('caumma-mobile') || [],
     technologies: [
       {name: 'React Native'},
       {name: 'Typescript'},
@@ -142,6 +152,21 @@ export const projectsData_en: Projects = [
       {name: 'Rest API'},
       {name: 'Android'},
       {name: 'iOS'},
+    ],
+  },
+  {
+    id: 6,
+    name: 'Caumma (Admin panel)',
+    description:
+      'Web app for the client, to organize their patients, view their progress in their treatment and manage appointments. The client requested one app for users and another for his therapists.',
+    images: projectsGalleries.get('caumma-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Redux Toolkit'},
+      {name: 'React Router'},
     ],
   },
   {
