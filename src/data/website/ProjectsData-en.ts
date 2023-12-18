@@ -10,7 +10,8 @@ type ProjectName =
   | 'delivery-kings'
   | 'caumma-mobile'
   | 'caumma-desktop'
-  | 'medway';
+  | 'medway'
+  | 'duis-desktop';
 
 const projectsGalleries = new Map<
   ProjectName,
@@ -75,6 +76,15 @@ const projectsGalleries = new Map<
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/mobile-apps/medway/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
+        {eager: true}
+      )
+    ),
+  ],
+  [
+    'duis-desktop',
+    getSortedGlobImportedImages(
+      import.meta.glob(
+        '../../assets/images/projects/desktop-apps/duis-panel/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
         {eager: true}
       )
     ),
@@ -182,6 +192,21 @@ export const projectsData_en: Projects = [
       {name: 'Rest API'},
       {name: 'Android'},
       {name: 'iOS'},
+    ],
+  },
+  {
+    id: 7,
+    name: 'DUIS (Admin panel)',
+    description:
+      'Web app to manage where and when to dispatch doctors to different events. Also, it handled employee status, holidays and if they were a freelance or hired.',
+    images: projectsGalleries.get('duis-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Redux Toolkit'},
+      {name: 'React Router'},
     ],
   },
 ];
