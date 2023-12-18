@@ -11,7 +11,8 @@ import type {Projects} from './types/ProjectData';
 // Project images glob import to not import each gallery item manually
 // Sadly the import.meta.glob cannot be used with dynamic strings so we need a lot of repetition.
 type ProjectName =
-  | 'assistant-drivers'
+  | 'assistant-drivers-mobile'
+  | 'assistant-drivers-desktop'
   | 'cordoba-viva'
   | 'delivery-kings'
   | 'caumma'
@@ -22,10 +23,19 @@ const projectsGalleries = new Map<
   ReturnType<typeof getSortedGlobImportedImages>
 >([
   [
-    'assistant-drivers',
+    'assistant-drivers-mobile',
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/mobile-apps/assistant-drivers/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
+        {eager: true}
+      )
+    ),
+  ],
+  [
+    'assistant-drivers-desktop',
+    getSortedGlobImportedImages(
+      import.meta.glob(
+        '../../assets/images/projects/desktop-apps/assistant-drivers-panel/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
         {eager: true}
       )
     ),
@@ -105,10 +115,10 @@ export const projectsData_en: Projects = [
   },
   {
     id: 2,
-    name: 'Assistant Drivers',
+    name: 'Assistant Drivers (Mobile App)',
     description:
       'Mobile app to serve an Uber-like business. Customers can hire a driver by the hour or by trip distance and get billed in the app for the exact amount. The client requested one app for users and another for his drivers.',
-    images: projectsGalleries.get('assistant-drivers') || [],
+    images: projectsGalleries.get('assistant-drivers-mobile') || [],
     technologies: [
       {
         name: 'React Native',
@@ -129,6 +139,31 @@ export const projectsData_en: Projects = [
       {
         name: 'Android',
         icon: androidLogoSvg,
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Assistant Drivers (Admin Panel)',
+    description:
+      'Mobile app to serve an Uber-like business. Customers can hire a driver by the hour or by trip distance and get billed in the app for the exact amount. The client requested one app for users and another for his drivers.',
+    images: projectsGalleries.get('assistant-drivers-desktop') || [],
+    technologies: [
+      {
+        name: 'React',
+        icon: reactLogoSvg,
+      },
+      {
+        name: 'Material UI',
+        icon: firebaseLogoSvg,
+      },
+      {
+        name: 'Typescript',
+        icon: tsLogoSvg,
+      },
+      {
+        name: 'Firebase',
+        icon: firebaseLogoSvg,
       },
     ],
   },
