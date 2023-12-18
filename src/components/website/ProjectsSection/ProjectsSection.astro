@@ -35,26 +35,17 @@ const t = useTranslations(locale);
               </div>
               <div class="project-description-container">
                 <p>{project.description}</p>
+                <div class="project-technologies-container">
+                  {project.technologies.map((tech) => (
+                    <div class="project-technology-container">{tech.name}</div>
+                  ))}
+                </div>
                 <div class="project-gallery-button-container">
                   <ProjectGalleryPressable project={project}>
                     <WebsiteButton
                       label={t('website.home.projects-button-open-gallery')}
                     />
                   </ProjectGalleryPressable>
-                </div>
-                <div class="project-technologies-container">
-                  {project.technologies.map((technology) => (
-                    <div class="project-technology-container">
-                      <div class="project-technology-name">
-                        {technology.name}
-                      </div>
-                      <Image
-                        class="project-technology-icon"
-                        src={technology.icon}
-                        alt={`${technology.name} logo`}
-                      />
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
@@ -334,15 +325,14 @@ const t = useTranslations(locale);
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 10px;
     background-color: rgb(var(--heading-color-2));
     border-radius: 5px;
     color: black;
-    padding: 10px;
-  }
-  .project-technology-name {
-    margin-right: 5px;
+    padding: 5px;
     white-space: nowrap;
+    font-family: 'Red Hat Display Variable', sans-serif;
+    font-size: 11pt;
   }
   .project-technology-icon {
     width: 2rem;
@@ -384,7 +374,7 @@ const t = useTranslations(locale);
     }
   }
   .project-gallery-button-container {
-    margin: 0 0 1rem 0;
+    margin: 1rem 0 0.5rem 0;
     overflow: visible;
   }
 </style>

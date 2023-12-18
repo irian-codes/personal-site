@@ -1,10 +1,3 @@
-import androidLogoSvg from '../../assets/images/icons/android-logo.svg';
-import expoLogoSvg from '../../assets/images/icons/expo-logo.svg';
-import firebaseLogoSvg from '../../assets/images/icons/firebase-logo.svg';
-import iosLogoSvg from '../../assets/images/icons/ios-logo.svg';
-import reactLogoSvg from '../../assets/images/icons/react-logo.svg';
-import restApiLogoSvg from '../../assets/images/icons/rest-api-logo.svg';
-import tsLogoSvg from '../../assets/images/icons/ts-logo.svg';
 import {getSortedGlobImportedImages} from '../../utils/ImageUtils';
 import type {Projects} from './types/ProjectData';
 
@@ -79,27 +72,21 @@ export const projectsData_es: Projects = [
     technologies: [
       {
         name: 'React Native',
-        icon: reactLogoSvg,
       },
       {
         name: 'Typescript',
-        icon: tsLogoSvg,
       },
       {
         name: 'Expo',
-        icon: expoLogoSvg,
       },
       {
         name: 'Rest API',
-        icon: restApiLogoSvg,
       },
       {
         name: 'Android',
-        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: iosLogoSvg,
       },
     ],
   },
@@ -112,23 +99,18 @@ export const projectsData_es: Projects = [
     technologies: [
       {
         name: 'React Native',
-        icon: reactLogoSvg,
       },
       {
         name: 'Expo',
-        icon: expoLogoSvg,
       },
       {
         name: 'Typescript',
-        icon: tsLogoSvg,
       },
       {
         name: 'Firebase',
-        icon: firebaseLogoSvg,
       },
       {
         name: 'Android',
-        icon: androidLogoSvg,
       },
     ],
   },
@@ -141,23 +123,18 @@ export const projectsData_es: Projects = [
     technologies: [
       {
         name: 'React Native',
-        icon: reactLogoSvg,
       },
       {
         name: 'Typescript',
-        icon: tsLogoSvg,
       },
       {
         name: 'Rest API',
-        icon: restApiLogoSvg,
       },
       {
         name: 'Android',
-        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: iosLogoSvg,
       },
     ],
   },
@@ -170,23 +147,18 @@ export const projectsData_es: Projects = [
     technologies: [
       {
         name: 'React Native',
-        icon: reactLogoSvg,
       },
       {
         name: 'Typescript',
-        icon: tsLogoSvg,
       },
       {
         name: 'Rest API',
-        icon: restApiLogoSvg,
       },
       {
         name: 'Android',
-        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: iosLogoSvg,
       },
     ],
   },
@@ -199,23 +171,18 @@ export const projectsData_es: Projects = [
     technologies: [
       {
         name: 'React Native',
-        icon: reactLogoSvg,
       },
       {
         name: 'Typescript',
-        icon: tsLogoSvg,
       },
       {
         name: 'Rest API',
-        icon: restApiLogoSvg,
       },
       {
         name: 'Android',
-        icon: androidLogoSvg,
       },
       {
         name: 'iOS',
-        icon: iosLogoSvg,
       },
     ],
   },
