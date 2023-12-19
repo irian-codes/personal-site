@@ -6,11 +6,11 @@ import type {Projects} from './types/ProjectData';
 type ProjectName =
   | 'assistant-drivers-mobile'
   | 'assistant-drivers-desktop'
-  | 'cordoba-viva'
-  | 'delivery-kings'
+  | 'cordoba-viva-mobile'
+  | 'delivery-kings-mobile'
   | 'caumma-mobile'
   | 'caumma-desktop'
-  | 'medway'
+  | 'medway-mobile'
   | 'duis-desktop'
   | 'mtl-mobile'
   | 'mtl-desktop';
@@ -38,7 +38,7 @@ const projectsGalleries = new Map<
     ),
   ],
   [
-    'cordoba-viva',
+    'cordoba-viva-mobile',
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/mobile-apps/cordoba-viva/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
@@ -47,7 +47,7 @@ const projectsGalleries = new Map<
     ),
   ],
   [
-    'delivery-kings',
+    'delivery-kings-mobile',
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/mobile-apps/delivery-kings/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
@@ -74,7 +74,7 @@ const projectsGalleries = new Map<
     ),
   ],
   [
-    'medway',
+    'medway-mobile',
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/mobile-apps/medway/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
@@ -159,10 +159,10 @@ export const projectsData_en: Projects = [
   },
   {
     id: 1,
-    name: 'Mediterranean Way',
+    name: 'Mediterranean Way (Mobile App)',
     description:
       'Mobile app for managing tourist apartments, where reservations and room status can be visualized, and each cleaning round can be registered and recorded with photos of any incidents. It also has functionality to calculate the revenue per room for the hotel manager.',
-    images: projectsGalleries.get('medway') || [],
+    images: projectsGalleries.get('medway-mobile') || [],
     technologies: [
       {name: 'React Native'},
       {name: 'Typescript'},
@@ -173,10 +173,10 @@ export const projectsData_en: Projects = [
   },
   {
     id: 3,
-    name: 'Delivery Kings',
+    name: 'Delivery Kings (Mobile App)',
     description:
       'Mobile app for on-demand delivery and errand services. Users can buy almost any item, from food, medication or even a custom order with specific instructions. They can also send a package to another user after filling a form including photos.',
-    images: projectsGalleries.get('delivery-kings') || [],
+    images: projectsGalleries.get('delivery-kings-mobile') || [],
     technologies: [
       {name: 'React Native'},
       {name: 'Typescript'},
@@ -234,10 +234,10 @@ export const projectsData_en: Projects = [
   },
   {
     id: 4,
-    name: 'Córdoba Viva',
+    name: 'Córdoba Viva (Mobile App)',
     description:
       'Mobile app for users to check the catalogue of tourist guided tours in the city of Córdoba, Spain. The client is a travel agency. Users can check updated dates and times of all events and make a reservation.',
-    images: projectsGalleries.get('cordoba-viva') || [],
+    images: projectsGalleries.get('cordoba-viva-mobile') || [],
     technologies: [
       {name: 'React Native'},
       {name: 'Typescript'},
