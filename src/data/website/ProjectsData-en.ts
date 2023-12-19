@@ -139,6 +139,7 @@ export const projectsData_en: Projects = [
       {name: 'Typescript'},
       {name: 'Firebase'},
       {name: 'Android'},
+      {name: 'iOS'},
     ],
   },
   {
@@ -180,6 +181,7 @@ export const projectsData_en: Projects = [
       {name: 'React Native'},
       {name: 'Typescript'},
       {name: 'Rest API'},
+      {name: 'MobX'},
       {name: 'Android'},
       {name: 'iOS'},
     ],
@@ -188,7 +190,7 @@ export const projectsData_en: Projects = [
     id: 6,
     name: 'Caumma (Admin panel)',
     description:
-      'Web app for the client, to organize their patients, view their progress in their treatment and manage appointments. The client requested one app for users and another for his therapists.',
+      'Web app for the client, to organize their patients, view their progress in their treatment and manage appointments. It also allowed task creation and assignation to the patients so they could have homework at home to improve themselves.',
     images: projectsGalleries.get('caumma-desktop') || [],
     technologies: [
       {name: 'React'},
@@ -211,6 +213,7 @@ export const projectsData_en: Projects = [
       {name: 'Typescript'},
       {name: 'Firebase'},
       {name: 'Vimeo API'},
+      {name: 'MobX'},
       {name: 'Android'},
       {name: 'iOS'},
     ],
