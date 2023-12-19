@@ -12,6 +12,7 @@ type ProjectName =
   | 'caumma-desktop'
   | 'medway'
   | 'duis-desktop'
+  | 'mtl-mobile'
   | 'mtl-desktop';
 
 const projectsGalleries = new Map<
@@ -86,6 +87,15 @@ const projectsGalleries = new Map<
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/desktop-apps/duis-panel/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
+        {eager: true}
+      )
+    ),
+  ],
+  [
+    'mtl-mobile',
+    getSortedGlobImportedImages(
+      import.meta.glob(
+        '../../assets/images/projects/mobile-apps/mtl/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
         {eager: true}
       )
     ),
@@ -188,6 +198,22 @@ export const projectsData_en: Projects = [
       {name: 'Rest API'},
       {name: 'Redux Toolkit'},
       {name: 'React Router'},
+    ],
+  },
+  {
+    id: 9,
+    name: 'Medical To Life (Mobile App)',
+    description:
+      'Mobile app for a fitness agency. It let users follow a customized sports plan depending on their goals. The client also uploaded videos, recipes and other content for the users. It supported user-based notifications due to each user having a different plan with different milestones linked to specific calendar days.',
+    images: projectsGalleries.get('mtl-mobile') || [],
+    technologies: [
+      {name: 'React Native'},
+      {name: 'Expo'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'Vimeo API'},
+      {name: 'Android'},
+      {name: 'iOS'},
     ],
   },
   {
