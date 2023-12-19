@@ -1,189 +1,156 @@
-import {getSortedGlobImportedImages} from '../../utils/ImageUtils';
+import {projectsGalleries} from './ProjectImages';
 import type {Projects} from './types/ProjectData';
 
-// Project images glob import to not import each gallery item manually
-// Sadly the import.meta.glob cannot be used with dynamic strings so we need a lot of repetition.
-type ProjectName =
-  | 'assistant-drivers'
-  | 'cordoba-viva'
-  | 'delivery-kings'
-  | 'caumma'
-  | 'medway';
-
-const projectsGalleries = new Map<
-  ProjectName,
-  ReturnType<typeof getSortedGlobImportedImages>
->([
-  [
-    'assistant-drivers',
-    getSortedGlobImportedImages(
-      import.meta.glob(
-        '../../assets/images/projects/mobile-apps/assistant-drivers/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
-        {eager: true}
-      )
-    ),
-  ],
-  [
-    'cordoba-viva',
-    getSortedGlobImportedImages(
-      import.meta.glob(
-        '../../assets/images/projects/mobile-apps/cordoba-viva/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
-        {eager: true}
-      )
-    ),
-  ],
-  [
-    'delivery-kings',
-    getSortedGlobImportedImages(
-      import.meta.glob(
-        '../../assets/images/projects/mobile-apps/delivery-kings/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
-        {eager: true}
-      )
-    ),
-  ],
-  [
-    'caumma',
-    getSortedGlobImportedImages(
-      import.meta.glob(
-        '../../assets/images/projects/mobile-apps/caumma/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
-        {eager: true}
-      )
-    ),
-  ],
-  [
-    'medway',
-    getSortedGlobImportedImages(
-      import.meta.glob(
-        '../../assets/images/projects/mobile-apps/medway/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
-        {eager: true}
-      )
-    ),
-  ],
-]);
-
 export const projectsData_es: Projects = [
-  // TODO: Translate projects from ProjectsData-en.ts
   {
     id: 0,
-    name: 'Caumma',
+    name: 'Caumma (App móvil)',
     description:
       'Aplicación móvil para una clínica de psicología para ayudar a los terapeutas a gestionar a sus pacientes. Además, los pacientes tienen una cuenta para que puedan registrar en su casa el progreso de sus tareas asignadas.',
-    images: projectsGalleries.get('caumma') || [],
+    images: projectsGalleries.get('caumma-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Expo',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Expo'},
+      {name: 'Rest API'},
+      {name: 'Android'},
+      {name: 'iOS'},
     ],
   },
   {
     id: 2,
-    name: 'Assistant Drivers',
+    name: 'Assistant Drivers (App móvil)',
     description:
       'Aplicación móvil para un negocio similar a Uber. Los clientes pueden contratar un conductor por horas o por distancia de viaje, luego se les factura el importe exacto en la aplicación. El cliente solicitó una aplicación para los usuarios y otra para sus conductores.',
-    images: projectsGalleries.get('assistant-drivers') || [],
+    images: projectsGalleries.get('assistant-drivers-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Expo',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Firebase',
-      },
-      {
-        name: 'Android',
-      },
+      {name: 'React Native'},
+      {name: 'Expo'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 5,
+    name: 'Assistant Drivers (Panel de administración)',
+    description:
+      'Aplicación web interna para la gestión de usuarios, conductores y viajes. También ofrecía la posiblidad de editar precios, impuestos, vehículos disponibles, entre otras opciones.',
+    images: projectsGalleries.get('assistant-drivers-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'MobX'},
+      {name: 'React Router'},
     ],
   },
   {
     id: 1,
-    name: 'Mediterranean Way',
+    name: 'Mediterranean Way (App móvil)',
     description:
       'Aplicación móvil para la gestión de apartamentos turísticos, donde se pueden visualizar las reservas y el estado de las habitaciones. Además, se puede registrar cada ronda de limpieza y registrarla con fotos de cualquier incidencia. También tiene funcionalidad para calcular los ingresos por habitación para el gerente del hotel.',
-    images: projectsGalleries.get('medway') || [],
+    images: projectsGalleries.get('medway-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Android'},
+      {name: 'iOS'},
     ],
   },
   {
     id: 3,
-    name: 'Delivery Kings',
+    name: 'Delivery Kings (App móvil)',
     description:
       'Aplicación móvil para servicios de entrega y recogidas bajo demanda. Los usuarios pueden comprar casi cualquier artículo, desde alimentos, medicamentos o incluso un pedido personalizado con instrucciones específicas. También pueden enviar un paquete a otro usuario después de completar un formulario que incluye fotos.',
-    images: projectsGalleries.get('delivery-kings') || [],
+    images: projectsGalleries.get('delivery-kings-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'MobX'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 6,
+    name: 'Caumma (Panel de administración)',
+    description:
+      'Aplicación web interna para gestionar los pacientes de la clínica. Permitía visualizar su progreso y gestionar las citas. También permitía crear tareas para que los pacientes las completaran cuando quisieran en sus casas, fuera del horario habitual de visita.',
+    images: projectsGalleries.get('caumma-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Redux Toolkit'},
+      {name: 'React Router'},
+    ],
+  },
+  {
+    id: 9,
+    name: 'Medical To Life (App móvil)',
+    description:
+      'App móvil para una agencia de salud y deporte. Permitía a los usuarios seguir un plan de salud personalizado adecuadao a sus objetivos. También podían visualizar vídeos creados por la agencia, recetas y otros contenidos de utilidad. Soportaba también notificaciones individualizadas para cada usuario dependiendo de su plan de salud y sus objetivos.',
+    images: projectsGalleries.get('mtl-mobile') || [],
+    technologies: [
+      {name: 'React Native'},
+      {name: 'Expo'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'Vimeo API'},
+      {name: 'MobX'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 8,
+    name: 'Medical To Life (Panel de administración)',
+    description:
+      'Aplicación web interna para el cliente. Podía gestionar a los usuario, subir vídeos, recetas, entradas de calendario y otro contenido de utilidad. También permitía chatear con los usuarios.',
+    images: projectsGalleries.get('mtl-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Bootstrap'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'MobX'},
+      {name: 'React Router'},
+      {name: 'Algolia Search'},
     ],
   },
   {
     id: 4,
-    name: 'Córdoba Viva',
+    name: 'Córdoba Viva (App móvil)',
     description:
       'Aplicación móvil para que los usuarios consulten el catálogo de visitas turísticas guiadas en la ciudad de Córdoba. El cliente es una agencia de viajes. Los usuarios pueden consultar las fechas y horarios actualizados de todos los eventos y hacer una reserva.',
-    images: projectsGalleries.get('cordoba-viva') || [],
+    images: projectsGalleries.get('cordoba-viva-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 7,
+    name: 'DUIS (Panel de administración)',
+    description:
+      'Aplicación web interna para el cliente. Servía para gestionar a los doctores en plantilla y enviarlos a distintos eventos. Cuadrando sus horarios y vacaciones. También gestionava la nómina y otros trámites de los trabajadores (autónomos o empleados).',
+    images: projectsGalleries.get('duis-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Redux Toolkit'},
+      {name: 'React Router'},
     ],
   },
 ];
