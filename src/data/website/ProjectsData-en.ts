@@ -11,7 +11,8 @@ type ProjectName =
   | 'caumma-mobile'
   | 'caumma-desktop'
   | 'medway'
-  | 'duis-desktop';
+  | 'duis-desktop'
+  | 'mtl-desktop';
 
 const projectsGalleries = new Map<
   ProjectName,
@@ -85,6 +86,15 @@ const projectsGalleries = new Map<
     getSortedGlobImportedImages(
       import.meta.glob(
         '../../assets/images/projects/desktop-apps/duis-panel/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
+        {eager: true}
+      )
+    ),
+  ],
+  [
+    'mtl-desktop',
+    getSortedGlobImportedImages(
+      import.meta.glob(
+        '../../assets/images/projects/desktop-apps/mtl-panel/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
         {eager: true}
       )
     ),
@@ -178,6 +188,22 @@ export const projectsData_en: Projects = [
       {name: 'Rest API'},
       {name: 'Redux Toolkit'},
       {name: 'React Router'},
+    ],
+  },
+  {
+    id: 8,
+    name: 'Medical To Life (Admin panel)',
+    description:
+      'Web app for the client, to manage the content of the app. It supported uploading videos, calendar entries, recipes and coaches visible on the app. Also it allowed the client to chat with any user.',
+    images: projectsGalleries.get('mtl-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Bootstrap'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'MobX'},
+      {name: 'React Router'},
+      {name: 'Algolia Search'},
     ],
   },
   {
