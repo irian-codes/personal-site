@@ -62,7 +62,7 @@ const projectsGalleries = new Map<
 ]);
 
 export const projectsData_ca: Projects = [
-  // TODO: Add more real projects
+  // TODO: Translate projects from ProjectsData-en.ts
   {
     id: 0,
     name: 'Caumma',

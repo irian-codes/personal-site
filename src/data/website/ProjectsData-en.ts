@@ -112,7 +112,6 @@ const projectsGalleries = new Map<
 ]);
 
 export const projectsData_en: Projects = [
-  // TODO: Add more real projects
   {
     id: 0,
     name: 'Caumma (Mobile App)',
