@@ -1,133 +1,156 @@
-import assistantDriversAppImg from '../../assets/images/projects/mobile-apps/assistant-drivers-joined.jpg';
-import caummaMobileAppImg from '../../assets/images/projects/mobile-apps/caumma-joined.jpg';
-import cordobaVivaMobileAppImg from '../../assets/images/projects/mobile-apps/cordoba-viva-joined.jpg';
-import deliveryKingsMobileAppImg from '../../assets/images/projects/mobile-apps/delivery-kings-joined.jpg';
-import medwayMobileAppImg from '../../assets/images/projects/mobile-apps/medway-joined.jpg';
+import {projectsGalleries} from './ProjectImages';
 import type {Projects} from './types/ProjectData';
 
 export const projectsData_ca: Projects = [
-  // TODO: Add more real projects
   {
     id: 0,
-    name: 'Caumma',
+    name: 'Caumma (App mòbil)',
     description:
       "Aplicació mòbil per a una clínica de psicologia per ajudar als terapeutes a gestionar els seus pacients. Els pacients tenen un compte d'usuari perquè puguin registrar des de casa les tasques assignades pel seu terapeuta.",
-    image: caummaMobileAppImg,
+    images: projectsGalleries.get('caumma-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Expo',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Expo'},
+      {name: 'Rest API'},
+      {name: 'Android'},
+      {name: 'iOS'},
     ],
   },
   {
     id: 2,
-    name: 'Assistant Drivers',
+    name: 'Assistant Drivers (App mòbil)',
     description:
       "Aplicació mòbil per donar servei a un negoci de tipus Uber. Els clients poden contractar un conductor per hores o segons la distància del viatge, seguidament se'ls factura l’import exacte a través de l'aplicació. El client sol·licitava dues apps, una pels usuaris i una altra pels seus conductors.",
-    image: assistantDriversAppImg,
+    images: projectsGalleries.get('assistant-drivers-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Expo',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Firebase',
-      },
-      {
-        name: 'Android',
-      },
+      {name: 'React Native'},
+      {name: 'Expo'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 5,
+    name: "Assistant Drivers (Panell d'administració)",
+    description:
+      "Aplicació web interna per a la gestió d'usuaris, conductors i viatges demanats. També tenia la possibilitat d'editar preus, impostos i vehicles disponibles, entre d'altres opcions.",
+    images: projectsGalleries.get('assistant-drivers-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'MobX'},
+      {name: 'React Router'},
     ],
   },
   {
     id: 1,
-    name: 'Mediterranean Way',
+    name: 'Mediterranean Way (App mòbil)',
     description:
       "Aplicació mòbil per a la gestió d'apartaments turístics, on es poden visualitzar les reserves i l'estat de les habitacions. A més, es pot registrar i gravar cada torn de neteja, incloent fotografies de qualsevol incidència. També disposa de funcionalitat per calcular els ingressos per habitació per al director de l'hotel.",
-    image: medwayMobileAppImg,
+    images: projectsGalleries.get('medway-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Android'},
+      {name: 'iOS'},
     ],
   },
   {
     id: 3,
-    name: 'Delivery Kings',
+    name: 'Delivery Kings (App mòbil)',
     description:
       "Aplicació mòbil per a serveis de lliurament i recollida sota demanda tipus Glovo. Els usuaris poden comprar gairebé qualsevol article, com ara menjar, medicaments o fins i tot una comanda personalitzada amb instruccions específiques. També poden enviar un paquet a un altre usuari després d'omplir un formulari incloent fotografies.",
-    image: deliveryKingsMobileAppImg,
+    images: projectsGalleries.get('delivery-kings-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'MobX'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 6,
+    name: "Caumma (Panell d'administració)",
+    description:
+      'Aplicació web interna per organitzar els pacients de la clínica, visualitzar el seu progrés i gestionar les cites. També permetia crear tasques per a que els clients poguessin completar-les a casa seva en horari fora de la cita habitual.',
+    images: projectsGalleries.get('caumma-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Redux Toolkit'},
+      {name: 'React Router'},
+    ],
+  },
+  {
+    id: 9,
+    name: 'Medical To Life (App mòbil)',
+    description:
+      "App mòbil per una agència de salut i esport. Permetia als usuaris gaudir d'un pla de salut personalitzat adequat als seus objectius. També podíen visualitzar vídeos creats per l'agència, receptes i altres continguts d'utilitat. Suportava notificaciones individualitzades per a cada usuari degut a que teníen diferents plans i objectius.",
+    images: projectsGalleries.get('mtl-mobile') || [],
+    technologies: [
+      {name: 'React Native'},
+      {name: 'Expo'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'Vimeo API'},
+      {name: 'MobX'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 8,
+    name: "Medical To Life (Panell d'administració)",
+    description:
+      'Aplicació web interna per al client. Podia gestionar els usuaris, pujar vídeos, receptes, entrades de calendari i més contingut. També permetia xatejar amb qualsevol usuari.',
+    images: projectsGalleries.get('mtl-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Bootstrap'},
+      {name: 'Typescript'},
+      {name: 'Firebase'},
+      {name: 'MobX'},
+      {name: 'React Router'},
+      {name: 'Algolia Search'},
     ],
   },
   {
     id: 4,
-    name: 'Córdoba Viva',
+    name: 'Córdoba Viva (App mòbil)',
     description:
       'Aplicació mòbil perquè els usuaris consultin el catàleg de visites guiades turístiques a la ciutat de Còrdova. El client és una agència de viatges. Els usuaris poden consultar les dates i hores actualitzades de tots els esdeveniments i fer una reserva.',
-    image: cordobaVivaMobileAppImg,
+    images: projectsGalleries.get('cordoba-viva-mobile') || [],
     technologies: [
-      {
-        name: 'React Native',
-      },
-      {
-        name: 'Typescript',
-      },
-      {
-        name: 'Rest API',
-      },
-      {
-        name: 'Android',
-      },
-      {
-        name: 'iOS',
-      },
+      {name: 'React Native'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Android'},
+      {name: 'iOS'},
+    ],
+  },
+  {
+    id: 7,
+    name: "DUIS (Panell d'administració)",
+    description:
+      'Aplicació web interna per al client. Servia per gestionar els doctors de la plantilla i enviar-los a diferents esdeveniments. Quadrant dates amb el calendari i les vacances de cadascun. També gestionava la nòmina i altres tràmits dels treballadors (autònoms o empleats).',
+    images: projectsGalleries.get('duis-desktop') || [],
+    technologies: [
+      {name: 'React'},
+      {name: 'Material UI'},
+      {name: 'Typescript'},
+      {name: 'Rest API'},
+      {name: 'Redux Toolkit'},
+      {name: 'React Router'},
     ],
   },
 ];

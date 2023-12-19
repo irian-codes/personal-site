@@ -17,41 +17,49 @@ const t = useTranslations(locale);
 <div id="projects-section-container">
   <div class="projects-grid">
     {
-      projects.map((project, index) => (
-        <ProjectGalleryPressable project={project}>
-          <div
-            class:list={{
-              'project-container': true,
-              hidden: index > 2,
-            }}
-          >
-            <Image class="project-image" src={project.image} alt="" />
-            <div class="project-overlay">
-              <div class="project-title-container">
-                <h3 class="project-title">{project.name}</h3>
-                <button class="close-button hidden" type="button">
-                  &times;
-                </button>
-              </div>
-              <div class="project-description-container">
-                <p>{project.description}</p>
-                <div class="project-technologies-container">
-                  {project.technologies.map((tech) => (
-                    <div class="project-technology-container">{tech.name}</div>
-                  ))}
+      projects.map((project, index) => {
+        if (project?.images == null || project.images.length === 0) {
+          return null;
+        }
+
+        return (
+          <ProjectGalleryPressable project={project}>
+            <div
+              class:list={{
+                'project-container': true,
+                hidden: index > 2,
+              }}
+            >
+              <Image class="project-image" src={project.images[0]} alt="" />
+              <div class="project-overlay">
+                <div class="project-title-container">
+                  <h3 class="project-title">{project.name}</h3>
+                  <button class="close-button hidden" type="button">
+                    &times;
+                  </button>
                 </div>
-                <div class="project-gallery-button-container">
-                  <ProjectGalleryPressable project={project}>
-                    <WebsiteButton
-                      label={t('website.home.projects-button-open-gallery')}
-                    />
-                  </ProjectGalleryPressable>
+                <div class="project-description-container">
+                  <p>{project.description}</p>
+                  <div class="project-technologies-container">
+                    {project.technologies.map((tech) => (
+                      <div class="project-technology-container">
+                        {tech.name}
+                      </div>
+                    ))}
+                  </div>
+                  <div class="project-gallery-button-container">
+                    <ProjectGalleryPressable project={project}>
+                      <WebsiteButton
+                        label={t('website.home.projects-button-open-gallery')}
+                      />
+                    </ProjectGalleryPressable>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </ProjectGalleryPressable>
-      ))
+          </ProjectGalleryPressable>
+        );
+      })
     }
   </div>
   {

@@ -1,3 +1,4 @@
+import type {ImageMetadata} from 'astro';
 import Color from 'colorjs.io';
 import Jimp from 'jimp';
 
@@ -35,4 +36,38 @@ export async function colorizeImage(
   const buffer = await colorizedImage.getBufferAsync(Jimp.MIME_PNG);
 
   return buffer;
+}
+
+/**
+ * Type definition for Vite glob import in 'eager' mode.
+ * Used like this: `import.meta.glob(path, {eager: true})`
+ * Represents object containing each imported image, the key is the image path.
+ *
+ * Source: https://vitejs.dev/guide/features#glob-import
+ */
+type ViteImageGlobImport = {
+  [key: string]: {
+    default: ImageMetadata;
+    [key: symbol]: 'Module';
+  };
+};
+
+/**
+ * Retrieves an array of Astro image metadata sorted by keys from the image glob import statement.
+ *
+ * Source: https://docs.astro.build/en/recipes/dynamically-importing-images/
+ *
+ * NOTE: This only works if you pass the `{eager: true}` to the glob import function.
+ * Check the {@link ViteImageGlobImport} JSDoc for more info.
+ *
+ * @param {ViteImageGlobImport} imageGlobImport - The object returned by `import.meta.glob(path, {eager: true})`
+ * @return {ImageMetadata[]} An array of image metadata sorted by keys.
+ */
+export function getSortedGlobImportedImages(
+  imageGlobImport: ViteImageGlobImport
+): ImageMetadata[] {
+  const sortedKeys = Object.keys(imageGlobImport).sort();
+  const sortedImages = sortedKeys.map((key) => imageGlobImport[key].default);
+
+  return sortedImages;
 }
