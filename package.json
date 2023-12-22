@@ -13,11 +13,11 @@
   "dependencies": {
     "@astrojs/check": "^0.2.0",
     "@astrojs/react": "^3.0.2",
-    "@fontsource-variable/red-hat-display": "^5.0.18",
-    "@fontsource-variable/rubik": "^5.0.19",
-    "@fontsource/noto-sans": "^5.0.17",
+    "@fontsource-variable/red-hat-display": "^5.0.19",
+    "@fontsource-variable/rubik": "^5.0.20",
+    "@fontsource/noto-sans": "^5.0.18",
     "@react-pdf/pdfkit": "^3.0.2",
-    "@react-pdf/renderer": "^3.1.12",
+    "@react-pdf/renderer": "^3.1.14",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
     "astro": "^3.1.1",
@@ -29,15 +29,15 @@
     "set-random-interval": "^1.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.6.3",
+    "@types/node": "^20.10.5",
     "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.1",
+    "cssnano": "^6.0.2",
     "patch-package": "^8.0.0",
     "postcss-custom-media": "^10.0.2",
     "postcss-functions": "^4.0.2",
     "postcss-nested": "^6.0.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0",
-    "typescript": "^5.2.2"
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "typescript": "^5.3.3"
   }
 }
