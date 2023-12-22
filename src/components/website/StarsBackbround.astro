@@ -21,8 +21,11 @@
     const clonedStarNode = document
       .getElementById('shooting-star-model')
       ?.cloneNode(true) as HTMLElement;
+
     clonedStarNode.id = '';
-    const clonedStarTail = clonedStarNode.firstChild as HTMLElement;
+    const clonedStarTail = clonedStarNode.querySelector(
+      '.shooting-star-tail'
+    ) as HTMLElement;
 
     const animationMaxDurationInSeconds = 10;
 
