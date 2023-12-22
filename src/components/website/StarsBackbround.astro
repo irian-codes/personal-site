@@ -13,6 +13,10 @@
   import {getRandomInt} from '../../utils/MathUtils';
 
   function spawnShootingStar() {
+    if (document.hidden || document.visibilityState === 'hidden') {
+      return;
+    }
+
     const bgContainer = document.getElementById('stars-bg-container')!;
     const clonedStarNode = document
       .getElementById('shooting-star-model')
