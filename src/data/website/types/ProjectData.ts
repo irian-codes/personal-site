@@ -8,6 +8,7 @@ export type Project = {
   id: number;
   name: string;
   description: string;
+  appType: 'mobile-app' | 'web-app' | 'admin-panel';
   images: ImageMetadata[];
   technologies: Technology[];
 };

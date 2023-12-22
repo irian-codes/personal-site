@@ -34,6 +34,13 @@ const t = useTranslations(locale);
               <div class="project-overlay">
                 <div class="project-title-container">
                   <h3 class="project-title">{project.name}</h3>
+                  <h5 class="project-subtitle">
+                    {'(' +
+                      t(
+                        `website.home.project-subtitle.type.${project.appType}`
+                      ) +
+                      ')'}
+                  </h5>
                   <button class="close-button hidden" type="button">
                     &times;
                   </button>
@@ -299,6 +306,10 @@ const t = useTranslations(locale);
   }
   .project-title {
     margin: 0.4rem 0 0.5rem 0;
+  }
+  .project-subtitle {
+    margin: 0 auto 0 0.5rem;
+    font-weight: 400;
   }
   .project-description-container {
     visibility: hidden;
