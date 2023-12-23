@@ -4,6 +4,8 @@
   // Make the glow bar disappear after the animation ends
   const glowBar = document.getElementById('glow-bar');
 
+  glowBar?.classList.add('animationOn');
+
   glowBar?.addEventListener('animationend', () => {
     glowBar?.remove();
   });
@@ -11,6 +13,7 @@
 
 <style>
   #glow-bar {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -23,11 +26,15 @@
       rgba(var(--accent-color-1), 0.6) 80%,
       transparent 100%
     );
-    animation: glowBar 500ms linear 100ms 1 running;
     transform: rotate(-45deg) translateX(-50%);
     transform-origin: top left;
     /* We don't want it on top of the content */
     z-index: 9999;
+
+    &.animationOn {
+      display: block;
+      animation: glowBar 500ms linear 100ms 1 running;
+    }
   }
 
   @keyframes glowBar {

@@ -22,12 +22,13 @@ const {
   <div class="typewriter-overlay second"></div>
 </div>
 
-<script>
+<script is:inline>
+  // Inlining scripts since it needs to load with the DOM or in slow connections it won't work.
+  // If we inline it we disable Astro optimizations and that's a good thing in this case.
+
   // Component inspired by https://codepen.io/blackfrom80s/pen/ogoxLw
   (function showSecondLineOverlay() {
-    const typewriterTextEls = document.querySelectorAll(
-      '.typewriter-text'
-    ) as NodeListOf<HTMLElement>;
+    const typewriterTextEls = document.querySelectorAll('.typewriter-text');
 
     typewriterTextEls.forEach((el) => {
       // Get the element rendered height without line breaks
@@ -40,10 +41,10 @@ const {
 
       // Text jumped line? If yes we display the second line overlay
       if (renderedHeightFirst !== renderedHeightSecond) {
-        const container = el.parentElement as HTMLElement;
+        const container = el.parentElement;
         const textOverlaySecond = container.querySelector(
           '.typewriter-overlay.second'
-        ) as HTMLElement;
+        );
 
         textOverlaySecond.style.display = 'block';
       }
@@ -53,11 +54,11 @@ const {
   (function () {
     const typewriterOverlayEls = document.querySelectorAll(
       '.typewriter-overlay'
-    ) as NodeListOf<HTMLSpanElement>;
+    );
 
     typewriterOverlayEls.forEach((el) => {
       el.addEventListener('animationend', (ev) => {
-        const animationName = (ev as AnimationEvent).animationName;
+        const animationName = ev.animationName;
 
         if (animationName === 'typewriter') {
           el.style.display = 'none';
