@@ -18,8 +18,8 @@ const supportedLocales = Object.keys(translations);
     .trim();
 
   if (!isLanguageSupported(userLanguage)) {
-    window.location.href = `/${defaultLanguageTag}/`;
+    window.location.href += `/${defaultLanguageTag}/`;
   } else {
-    window.location.href = `/${userLanguage}/`;
+    window.location.href += `/${userLanguage}/`;
   }
 </script>

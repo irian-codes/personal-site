@@ -4,10 +4,11 @@ import WebsiteButton from './WebsiteButton.astro';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div id="cv-button">
-  <a href=`/irian-cv-${locale}.pdf`>
+  <a href=`${baseUrl}/irian-cv-${locale}.pdf`>
     <WebsiteButton label={t('website.home.cv-button.label')} />
   </a>
 </div>
