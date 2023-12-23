@@ -20,7 +20,10 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
   // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
   const imageUrl =
-    'http://localhost:4321/assets/images/cv/icons/' + props.type + '.png';
+    `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
+    '/assets/images/cv/icons/' +
+    props.type +
+    '.png';
 
   function formatData(data: string): string {
     switch (props.type) {
