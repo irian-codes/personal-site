@@ -1,4 +1,4 @@
-import {getPublicAssetsURL} from '../../components/cv/utils/URL';
+import {getPublicFolderURL} from '../../components/cv/utils/URL';
 import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
@@ -16,11 +16,11 @@ const header: Header = {
   position: 'App/Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
-  photoSrc: getPublicAssetsURL() + '/assets/images/cv/irian-cv-image.jpg',
+  photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
   websiteUrl: 'https://irian.codes',
   // TODO: Set the correct URL on deployment.
   websiteQrImageSrc:
-    getPublicAssetsURL() + '/assets/images/cv/irian-codes-qr.png',
+    getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Spain',
   email: 'irian@irian.codes',
   phone: '+34611082305',
@@ -421,7 +421,7 @@ const educationSection: EducationSection = {
         'Learned designing apps with Figma and other customer analysis techniques like Customer Journey Map and User Persona.',
         'Learned computer science basics with C.',
       ],
-      iconSrc: getPublicAssetsURL() + '/assets/images/cv/logos/uoc.jpg',
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
       id: 1,
@@ -430,7 +430,7 @@ const educationSection: EducationSection = {
       location: 'Tarragona, Spain',
       period: 'Sept 2013 - Jun 2017',
       lines: ['Learned business management, marketing and business planning.'],
-      iconSrc: getPublicAssetsURL() + '/assets/images/cv/logos/urv.jpg',
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
     },
   ],
 };
@@ -450,7 +450,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Interviewed, hired and onboarded developers and interns for the team.',
       ],
       iconSrc:
-        getPublicAssetsURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
+        getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 1,
@@ -465,7 +465,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Handled the release, versioning and updates of apps with Expo EAS for Android and iOS.',
       ],
       iconSrc:
-        getPublicAssetsURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
+        getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 2,
@@ -477,7 +477,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking, VR headset physics, game management and optimization.',
         'Integrated Unity with devices like a BT controlled fan by an Arduino and a racing simulator cockpit.',
       ],
-      iconSrc: getPublicAssetsURL() + '/assets/images/cv/logos/ekisolid.jpg',
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
       id: 3,
@@ -489,7 +489,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Designed and developed websites in Wordpress using Divi, making adjustments with CSS.',
       ],
       iconSrc:
-        getPublicAssetsURL() +
+        getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
   ],

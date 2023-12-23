@@ -6,6 +6,6 @@
  * get the public folder inside the React part
  * of the code.
  */
-export function getPublicAssetsURL(): string {
+export function getPublicFolderURL(): string {
   return './public';
 }
