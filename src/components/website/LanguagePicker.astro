@@ -16,7 +16,10 @@ const t = useTranslations(locale);
     {
       Object.entries(languages).map(([langTag, value]) => (
         <li>
-          <a href={switchUrlLang(Astro.url, langTag as LanguageTag)}>
+          <a
+            href={switchUrlLang(Astro.url, langTag as LanguageTag)}
+            hreflang={langTag}
+          >
             <Image
               class="flag"
               src={value.flagImage}
