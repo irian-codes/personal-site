@@ -1,3 +1,4 @@
+import {getPublicAssetsURL} from '../../components/cv/utils/URL';
 import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
@@ -15,14 +16,11 @@ const header: Header = {
   position: 'Desarrollador de apps/web',
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
-  photoSrc:
-    `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-    '/assets/images/cv/irian-cv-image.jpg',
+  photoSrc: getPublicAssetsURL() + '/assets/images/cv/irian-cv-image.jpg',
   websiteUrl: 'https://irian.codes',
   // TODO: Set the correct URL on deployment.
   websiteQrImageSrc:
-    `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-    '/assets/images/cv/irian-codes-qr.png',
+    getPublicAssetsURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'España',
   email: 'irian@irian.codes',
   phone: '+34611082305',
@@ -419,9 +417,7 @@ const educationSection: EducationSection = {
         'Diseño con Figma y técnicas de análisis de usuarios como Customer Journey Map y User Persona.',
         'Conceptos básicos de informática con C.',
       ],
-      iconSrc:
-        `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-        '/assets/images/cv/logos/uoc.jpg',
+      iconSrc: getPublicAssetsURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
       id: 1,
@@ -432,9 +428,7 @@ const educationSection: EducationSection = {
       lines: [
         'Estudios en gestión de empresas turísticas, marketing y business plan.',
       ],
-      iconSrc:
-        `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-        '/assets/images/cv/logos/urv.jpg',
+      iconSrc: getPublicAssetsURL() + '/assets/images/cv/logos/urv.jpg',
     },
   ],
 };
@@ -454,8 +448,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Realicé entrevistas, seleccioné e incorporé desarrolladores y becarios en el equipo.',
       ],
       iconSrc:
-        `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-        '/assets/images/cv/logos/studio-by-caigo.jpg',
+        getPublicAssetsURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 1,
@@ -470,8 +463,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Publicación, gestión de versiones y actualizaciones de apps con Expo EAS para Android y iOS.',
       ],
       iconSrc:
-        `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-        '/assets/images/cv/logos/studio-by-caigo.jpg',
+        getPublicAssetsURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 2,
@@ -483,9 +475,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Desarrollé muchos scripts en C# para añadir funcionalidades al proyecto realizado por el equipo de diseño del juego. Incluyendo networking, la física del casco de realidad virtual y gestión y optimización de los juegos.',
         'Integrar Unity con dispositivos IoT como un ventilador controlado por Bluetooth por un Arduino y un simulador de movimiento de coche.',
       ],
-      iconSrc:
-        `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-        '/assets/images/cv/logos/ekisolid.jpg',
+      iconSrc: getPublicAssetsURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
       id: 3,
@@ -497,7 +487,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Diseñar y desarrollar páginas web en Wordpress utilizando Divi, haciendo ajustes con CSS.',
       ],
       iconSrc:
-        `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
+        getPublicAssetsURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
   ],

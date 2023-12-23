@@ -1,4 +1,5 @@
 import {Font} from '@react-pdf/renderer';
+import {getPublicAssetsURL} from './URL';
 
 export function registerFonts() {
   // Disabling hyphenation
@@ -9,37 +10,31 @@ export function registerFonts() {
     fonts: [
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/poppins-latin-400-normal.woff',
+          getPublicAssetsURL() + '/assets/fonts/poppins-latin-400-normal.woff',
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/poppins-latin-400-italic.woff',
+          getPublicAssetsURL() + '/assets/fonts/poppins-latin-400-italic.woff',
         fontStyle: 'italic',
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/poppins-latin-500-normal.woff',
+          getPublicAssetsURL() + '/assets/fonts/poppins-latin-500-normal.woff',
         fontWeight: 500,
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/poppins-latin-600-normal.woff',
+          getPublicAssetsURL() + '/assets/fonts/poppins-latin-600-normal.woff',
         fontWeight: 600,
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/poppins-latin-700-normal.woff',
+          getPublicAssetsURL() + '/assets/fonts/poppins-latin-700-normal.woff',
         fontWeight: 'bold',
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/poppins-latin-700-italic.woff',
+          getPublicAssetsURL() + '/assets/fonts/poppins-latin-700-italic.woff',
         fontWeight: 'bold',
         fontStyle: 'italic',
       },
@@ -51,7 +46,7 @@ export function registerFonts() {
     fonts: [
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
+          getPublicAssetsURL() +
           '/assets/fonts/roboto-mono-latin-400-normal.woff',
       },
     ],
@@ -62,25 +57,21 @@ export function registerFonts() {
     fonts: [
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/roboto-latin-400-normal.woff',
+          getPublicAssetsURL() + '/assets/fonts/roboto-latin-400-normal.woff',
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/roboto-latin-400-italic.woff',
+          getPublicAssetsURL() + '/assets/fonts/roboto-latin-400-italic.woff',
         fontStyle: 'italic',
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/roboto-latin-700-normal.woff',
+          getPublicAssetsURL() + '/assets/fonts/roboto-latin-700-normal.woff',
         fontWeight: 'bold',
       },
       {
         src:
-          `${import.meta.env.SERVER_URL}${import.meta.env.BASE_URL}` +
-          '/assets/fonts/roboto-latin-700-italic.woff',
+          getPublicAssetsURL() + '/assets/fonts/roboto-latin-700-italic.woff',
         fontWeight: 'bold',
         fontStyle: 'italic',
       },
