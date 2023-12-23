@@ -27,7 +27,9 @@ export function useTranslations(lang: LanguageTag) {
  */
 export function getLangFromUrl(url: URL): LanguageTag {
   const pathSegments = url.pathname.split('/');
-  const langTag = pathSegments[1] as LanguageTag;
+  const langTag = pathSegments.find((segment) =>
+    Object.keys(languages).some((langTag) => langTag === segment)
+  ) as LanguageTag;
 
   return langTag in translations ? langTag : defaultLanguageTag;
 }
