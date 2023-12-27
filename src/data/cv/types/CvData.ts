@@ -1,5 +1,7 @@
 export type Header = {
   name: string;
+  surnames: string;
+  position: string;
   birthdate: string;
   photoSrc: string;
   websiteUrl: string;
@@ -15,12 +17,32 @@ export type AboutSection = {
   lines: string[];
 };
 
+export type Skill = {
+  id: number;
+  name: string;
+  iconSrc?: string;
+  level: 'beginner' | 'intermediate' | 'proficient';
+  category:
+    | 'language'
+    | 'database'
+    | 'library-framework'
+    | 'dev-tool'
+    | 'ai-tool'
+    | 'tool'
+    | 'other'
+    | 'soft-skill';
+};
+
 export type SkillsSection = {
-  lines: string[];
+  skills: Skill[];
 };
 
 export type EducationEntry = {
+  id: number;
   title: string;
+  institution: string;
+  location: string;
+  period: string;
   lines: string[];
   iconSrc: string;
 };
@@ -30,6 +52,7 @@ export type EducationSection = {
 };
 
 export type WorkExperienceEntry = {
+  id: number;
   title: string;
   company: string;
   location: string;
@@ -46,16 +69,11 @@ export type OtherSection = {
   lines: string[];
 };
 
-export type InterestsSection = {
-  lines: string[];
-};
-
 export type CvData = {
   header: Header;
   aboutSection: AboutSection;
   skillsSection: SkillsSection;
   educationSection: EducationSection;
   workExperienceSection: WorkExperienceSection;
-  interestsSection: InterestsSection;
   otherSection: OtherSection;
 };

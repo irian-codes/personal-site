@@ -1,22 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import {defaultLanguageTag} from '../i18n/i18n';
+import {translations} from '../i18n/i18n';
+
+const supportedLocales = Object.keys(translations);
 ---
 
-<BaseLayout title="CV">
-  <main>
-    <h1>Hello World</h1>
-    <ul>
-      <li>
-        <a href="/cv-en.pdf">Curriculum ENGLISH</a>
-      </li>
-      <li>
-        <a href="/cv-es.pdf">Curriculum CASTELLANO</a>
-      </li>
-      <li>
-        <a href="/cv-ca.pdf">Curriculum CATALÀ</a>
-      </li>
-    </ul>
-  </main>
-</BaseLayout>
+<!-- Redirecting user to his browser's language page if they navigate to the base URL -->
+<script define:vars={{defaultLanguageTag, supportedLocales}}>
+  function isLanguageSupported(lang) {
+    return lang != null && supportedLocales.includes(lang);
+  }
 
-<style></style>
+  // Sometimes the locale tag is in long format like 'en-GB' and we need to convert it to short format
+  const userLanguage = (window.navigator.language || 'en')
+    .substring(0, 2)
+    .toLowerCase()
+    .trim();
+
+  const currentUrl = window.location.href.replace(/\/$/, '');
+  if (!isLanguageSupported(userLanguage)) {
+    window.location.href = currentUrl + `/${defaultLanguageTag}/`;
+  } else {
+    window.location.href = currentUrl + `/${userLanguage}/`;
+  }
+</script>

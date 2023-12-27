@@ -1,0 +1,145 @@
+<div id="stars-bg-container">
+  <!-- Inspired by https://codepen.io/mattmarble/pen/qBdamQz -->
+  <div id="stars-far"></div>
+  <div id="stars-close"></div>
+  <!-- Inspired by https://codepen.io/delroyprithvi/pen/LYyJROR -->
+  <div id="shooting-star-model" class="shooting-star">
+    <div class="shooting-star-tail"></div>
+  </div>
+</div>
+
+<script>
+  import setRandomInterval from 'set-random-interval';
+  import {getRandomInt} from '../../utils/MathUtils';
+
+  function spawnShootingStar() {
+    if (document.hidden || document.visibilityState === 'hidden') {
+      return;
+    }
+
+    const bgContainer = document.getElementById('stars-bg-container')!;
+    const clonedStarNode = document
+      .getElementById('shooting-star-model')
+      ?.cloneNode(true) as HTMLElement;
+
+    clonedStarNode.id = '';
+    const clonedStarTail = clonedStarNode.querySelector(
+      '.shooting-star-tail'
+    ) as HTMLElement;
+
+    const animationMaxDurationInSeconds = 10;
+
+    clonedStarNode.style.display = 'block';
+    clonedStarNode.style.animationDuration = `${
+      Math.floor(Math.random() * animationMaxDurationInSeconds) + 1
+    }s`;
+
+    clonedStarNode.style.height = `${getRandomInt(3, 6)}px`;
+    clonedStarNode.style.width = clonedStarNode.style.height;
+    clonedStarTail.style.height = `${Math.round(
+      parseInt(clonedStarNode.style.height) / 2
+    )}px`;
+
+    // Setting a min 10% since otherwise it's not seen by the user
+    clonedStarNode.style.left = `${getRandomInt(10, 100)}%`;
+
+    // Removing node so it doesn't saturate the DOM
+    clonedStarNode.addEventListener('animationend', () => {
+      clonedStarNode.remove();
+    });
+
+    bgContainer.appendChild(clonedStarNode);
+  }
+
+  // Call spawnShootingStar function randomly
+  setRandomInterval(spawnShootingStar, 1 * 1000, 8 * 1000);
+</script>
+
+<style>
+  #stars-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    z-index: -10;
+  }
+
+  /* STARRY BACKGROUND */
+  #stars-close {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    /* custom 'postcss-function' */
+    box-shadow: multipleBoxShadow(100, rgb(var(--heading-color-2)), 1, 2000);
+    animation: bgAnimation 100s linear infinite;
+  }
+
+  #stars-far {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    /* custom 'postcss-function' */
+    box-shadow: multipleBoxShadow(200, rgb(var(--heading-color-2)), 1, 2000);
+    animation: bgAnimation 150s linear infinite;
+  }
+
+  /* SHOOTING STARS */
+  #shooting-star-model {
+    display: none;
+  }
+
+  .shooting-star {
+    position: fixed;
+    top: 0%;
+    width: 4px;
+    height: 4px;
+    background: rgb(var(--heading-color-2));
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 4px rgba(var(--heading-color-2), 0.1),
+      0 0 0 8px rgba(var(--heading-color-2), 0.1),
+      0 0 20px rgba(var(--heading-color-2), 0.1);
+    animation: shootingStarAnimation 3s linear;
+  }
+
+  .shooting-star-tail {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgb(var(--heading-color-2)),
+      transparent
+    );
+  }
+
+  /* ANIMATIONS */
+  @keyframes bgAnimation {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+
+  @keyframes shootingStarAnimation {
+    0% {
+      transform: rotate(315deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(315deg) translateX(-2000px);
+      opacity: 0;
+    }
+  }
+</style>

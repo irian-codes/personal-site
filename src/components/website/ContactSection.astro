@@ -1,0 +1,133 @@
+---
+import emailIconRaw from '../../assets/images/icons/email.svg?raw';
+import githubIconRaw from '../../assets/images/icons/github.svg?raw';
+import linkedinIconRaw from '../../assets/images/icons/linkedin.svg?raw';
+import phoneIconRaw from '../../assets/images/icons/phone.svg?raw';
+import {getLangFromUrl, useTranslations} from '../../i18n/i18nUtils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+const mail = 'irian@irian.codes';
+const linkedInUrl = 'https://www.linkedin.com/in/irian-mont%C3%B3n-0b58358a/';
+const respositoryUrl = 'https://github.com/irian-codes';
+const phoneNumber = '+34611082305';
+---
+
+<div class="contact-section-container">
+  <div class="contact-options-row">
+    <a href=`mailto:${mail}` target="_blank" rel="noopener noreferrer">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={emailIconRaw} />
+        </div>
+        <div class="contact-option-title">
+          {t('website.home.contact-section.email.title')}
+        </div>
+      </div>
+    </a>
+    <a href=`${linkedInUrl}` target="_blank" rel="noopener noreferrer">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={linkedinIconRaw} />
+        </div>
+        <div class="contact-option-title">
+          {t('website.home.contact-section.linkedin.title')}
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="contact-options-row">
+    <a href=`${respositoryUrl}` target="_blank" rel="noopener noreferrer">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={githubIconRaw} />
+        </div>
+        <div class="contact-option-title">
+          {t('website.home.contact-section.github.title')}
+        </div>
+      </div>
+    </a>
+    <a href=`tel:${phoneNumber}` target="_blank" rel="noopener noreferrer">
+      <div class="contact-container">
+        <div class="contact-icon-container">
+          <Fragment set:html={phoneIconRaw} />
+        </div>
+        <div class="contact-option-title">
+          {t('website.home.contact-section.phone.title')}
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+  .contact-section-container {
+    color: rgb(var(--text-color));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    background-color: rgb(var(--light-background-color));
+    border-radius: 10px;
+    padding: 1rem;
+    width: 24rem;
+    /* When the icons break in 2 rows */
+    @media screen and (max-width: 29.3em) {
+      width: 12rem;
+    }
+  }
+  .contact-options-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: flex-start;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0.5rem 1rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    .contact-icon-container {
+      background-color: black;
+      :global(svg) {
+        transform: rotate3d(0, 1, 0, 180deg);
+        :global(#icon-color) {
+          fill: rgb(var(--accent-color-1));
+        }
+      }
+    }
+  }
+  .contact-icon-container {
+    background-color: rgb(var(--accent-color-1));
+    border-radius: 50%;
+    padding: 10px;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+    :global(svg) {
+      height: 2rem;
+      width: 2rem;
+      transition: all 0.4s;
+      :global(#icon-color) {
+        fill: black;
+      }
+    }
+  }
+  .contact-option-title {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: rgb(var(--text-color));
+  }
+</style>

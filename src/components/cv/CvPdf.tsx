@@ -5,9 +5,12 @@ import type {LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
+import {SkillsSection} from './sections/SkillsSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
+import {registerFonts} from './utils/Fonts';
 
+registerFonts();
 export const LanguageContext = createContext<LanguageTag>('en');
 
 export function CvPdf(langTag: LanguageTag) {
@@ -31,38 +34,16 @@ export function CvPdf(langTag: LanguageTag) {
               </Text>
             </View>
 
-            {/* Skills section */}
-            <View style={styles.section}>
-              <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
-              {data.content.skillsSection.lines.map((line) => (
-                // A bit dirty way to get the key but eh, it should work except in edge cases
-                <Text key={line.substring(0, 10)} style={styles.content}>
-                  {line}
-                </Text>
-              ))}
-            </View>
-
-            <EducationSection />
+            <SkillsSection containerStyle={styles.section} />
             <WorkExperienceSection />
-
-            {/* Interests section */}
-            <View style={styles.section}>
-              <Text style={styles.h1}>
-                {t('cv.main.section.title.interests')}
-              </Text>
-              {data.content.interestsSection.lines.map((line) => (
-                <Text key={line.substring(0, 10)} style={styles.content}>
-                  {line}
-                </Text>
-              ))}
-            </View>
+            <EducationSection />
 
             {/* Other section */}
-            <View style={styles.section}>
+            <View style={[styles.section, {marginBottom: 0}]}>
               <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
               {data.content.otherSection.lines.map((line) => (
                 <Text key={line.substring(0, 10)} style={styles.content}>
-                  {line}
+                  {'- ' + line}
                 </Text>
               ))}
             </View>
@@ -80,6 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#ffffff',
     padding: '1cm',
+    fontFamily: cvGlobalStyles.text.fontFamily.body,
   },
   main: {
     marginTop: '1cm',
@@ -88,14 +70,8 @@ const styles = StyleSheet.create({
     marginBottom: '0.5cm',
   },
   h1: {...cvGlobalStyles.text.headings.h1},
-  h2WithIcon: {
-    ...cvGlobalStyles.text.headings.h2,
-    marginBottom: '0.1cm',
-    marginLeft: '0.2cm',
-    transform: 'skew(-10deg, 0)', // For whatever reason 'fontStyle' is not working.
-  },
   content: {
-    fontSize: cvGlobalStyles.text.fontSize.smallest,
+    fontSize: cvGlobalStyles.text.fontSize.small,
     marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
 });

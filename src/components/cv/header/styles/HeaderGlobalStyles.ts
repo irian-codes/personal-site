@@ -1,3 +1,6 @@
+import Color from 'colorjs.io';
+import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
+
 export const headerGlobalStyles = {
   text: {
     fontSize: {
@@ -9,6 +12,10 @@ export const headerGlobalStyles = {
     colors: {
       primary: 'black',
     },
+    fontFamily: {
+      name: 'Poppins',
+      contactDetailsHeader: 'Poppins',
+    },
   },
   spacing: {
     smallest: '0.25cm',
@@ -16,6 +23,10 @@ export const headerGlobalStyles = {
     medium: '1cm',
   },
   colors: {
-    background: 'gray',
+    icons: cvGlobalStyles.colors.secondary,
+    border: cvGlobalStyles.colors.secondary,
+    background: new Color(cvGlobalStyles.colors.secondary)
+      .range('white', {space: 'srgb'})(0.9)
+      .toString(),
   },
 };

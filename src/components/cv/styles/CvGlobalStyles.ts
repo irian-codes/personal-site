@@ -1,32 +1,47 @@
+const colors = {
+  primary: 'black',
+  secondary: '#dd2222',
+};
+
 const textStyles = {
   fontSize: {
-    smallest: 12,
+    smallest: 8,
+    tiny: 10,
+    small: 12,
     medium: 14,
     large: 16,
-  },
-  colors: {
-    primary: 'black',
-    secondary: 'blue',
   },
   spacing: {
     headingMarginBottom: '0.3cm',
     lineSpacing: '0.2cm',
     smallest: '0.1cm',
   },
+  fontFamily: {
+    headers: 'Poppins',
+    body: 'Roboto',
+    monospace: 'Roboto Mono',
+  },
 };
 
 const headingStyles = {
   h1: {
+    fontFamily: textStyles.fontFamily.headers,
+    fontWeight: 600,
     fontSize: textStyles.fontSize.large,
-    fontWeight: 'bold' as const,
     marginBottom: textStyles.spacing.headingMarginBottom,
     textDecoration: 'underline' as const,
-    color: textStyles.colors.secondary,
+    color: colors.secondary,
   },
   h2: {
+    fontFamily: textStyles.fontFamily.headers,
     fontSize: textStyles.fontSize.medium,
     marginBottom: textStyles.spacing.lineSpacing,
-    color: textStyles.colors.primary,
+    color: colors.primary,
+  },
+  h3: {
+    fontSize: textStyles.fontSize.small,
+    marginBottom: textStyles.spacing.lineSpacing,
+    color: colors.primary,
   },
 };
 
@@ -37,6 +52,7 @@ const sectionsStyles = {
 };
 
 export const cvGlobalStyles = {
+  colors,
   text: {
     ...textStyles,
     headings: headingStyles,
