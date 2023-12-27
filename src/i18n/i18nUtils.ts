@@ -1,4 +1,9 @@
-import {defaultLanguageTag, translations, type LanguageTag} from './i18n';
+import {
+  defaultLanguageTag,
+  languages,
+  translations,
+  type LanguageTag,
+} from './i18n';
 
 /**
  * Translation hook to load i18n translations from JSON.
@@ -22,7 +27,9 @@ export function useTranslations(lang: LanguageTag) {
  */
 export function getLangFromUrl(url: URL): LanguageTag {
   const pathSegments = url.pathname.split('/');
-  const langTag = pathSegments[1] as LanguageTag;
+  const langTag = pathSegments.find((segment) =>
+    Object.keys(languages).some((langTag) => langTag === segment)
+  ) as LanguageTag;
 
   return langTag in translations ? langTag : defaultLanguageTag;
 }
@@ -36,7 +43,13 @@ export function getLangFromUrl(url: URL): LanguageTag {
  */
 export function switchUrlLang(url: URL, lang: LanguageTag): URL {
   const pathSegments = url.pathname.split('/');
-  pathSegments[1] = lang;
+
+  // find the current language tag in pathSegments
+  const index = pathSegments.findIndex((segment) =>
+    Object.keys(languages).some((langTag) => langTag === segment)
+  );
+
+  pathSegments[index] = lang;
   const newUrl = new URL(url.origin + pathSegments.join('/'));
 
   return newUrl;

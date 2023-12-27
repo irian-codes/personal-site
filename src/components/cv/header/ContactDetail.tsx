@@ -5,6 +5,7 @@ import {useTranslations} from '../../../i18n/i18nUtils';
 import {colorizeImage} from '../../../utils/ImageUtils';
 import {splitStringAtLastOccurrence} from '../../../utils/StringUtils';
 import {LanguageContext} from '../CvPdf';
+import {getPublicFolderURL} from '../utils/URL';
 import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
 
 type ContactType = 'email' | 'linkedin' | 'repository' | 'location' | 'phone';
@@ -20,7 +21,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
   // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
   const imageUrl =
-    'http://localhost:4321/assets/images/cv/icons/' + props.type + '.png';
+    getPublicFolderURL() + '/assets/images/cv/icons/' + props.type + '.png';
 
   function formatData(data: string): string {
     switch (props.type) {

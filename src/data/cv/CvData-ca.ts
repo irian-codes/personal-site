@@ -1,3 +1,4 @@
+import {getPublicFolderURL} from '../../components/cv/utils/URL';
 import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
@@ -15,11 +16,11 @@ const header: Header = {
   position: "Desenvolupador d'apps/web",
   birthdate: '1993-12-10T00:00:00+01:00',
   // TODO: Set the correct URL on deployment.
-  photoSrc: 'http://localhost:4321/assets/images/cv/irian-cv-image.jpg',
+  photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
   websiteUrl: 'https://irian.codes',
   // TODO: Set the correct URL on deployment.
   websiteQrImageSrc:
-    'http://localhost:4321/assets/images/cv/irian-codes-qr.png',
+    getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Espanya',
   email: 'irian@irian.codes',
   phone: '+34611082305',
@@ -416,7 +417,7 @@ const educationSection: EducationSection = {
         "Disseny d'apps amb Figma i tècniques d'anàlisi d'usuaris com Customer Journey Map i User Persona.",
         "Conceptes bàsics d'informàtica amb C.",
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/logos/uoc.jpg',
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
       id: 1,
@@ -427,7 +428,7 @@ const educationSection: EducationSection = {
       lines: [
         "Estudis en gestió d'empreses turístiques, màrqueting i business plan.",
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/logos/urv.jpg',
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
     },
   ],
 };
@@ -447,7 +448,7 @@ const workExperienceSection: WorkExperienceSection = {
         "Vaig realitzar entrevistes, seleccionar i incorporar desenvolupadors i becaris a l'equip.",
       ],
       iconSrc:
-        'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
+        getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 1,
@@ -462,7 +463,7 @@ const workExperienceSection: WorkExperienceSection = {
         "Gestionar el llançament, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
       ],
       iconSrc:
-        'http://localhost:4321/assets/images/cv/logos/studio-by-caigo.jpg',
+        getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 2,
@@ -474,7 +475,7 @@ const workExperienceSection: WorkExperienceSection = {
         "Vaig desenvolupar molts scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
         'Integrar Unity amb dispositius IoT com un ventilador controlat per Bluetooth per un Arduino i un simulador de moviment de cotxe.',
       ],
-      iconSrc: 'http://localhost:4321/assets/images/cv/logos/ekisolid.jpg',
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
       id: 3,
@@ -486,7 +487,8 @@ const workExperienceSection: WorkExperienceSection = {
         'Dissenyar i desenvolupar pàgines web en Wordpress utilitzant Divi, fent ajustos amb CSS.',
       ],
       iconSrc:
-        'http://localhost:4321/assets/images/cv/logos/digital-media-empresas.jpg',
+        getPublicFolderURL() +
+        '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
   ],
 };

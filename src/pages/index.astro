@@ -17,9 +17,10 @@ const supportedLocales = Object.keys(translations);
     .toLowerCase()
     .trim();
 
+  const currentUrl = window.location.href.replace(/\/$/, '');
   if (!isLanguageSupported(userLanguage)) {
-    window.location.href = `/${defaultLanguageTag}/`;
+    window.location.href = currentUrl + `/${defaultLanguageTag}/`;
   } else {
-    window.location.href = `/${userLanguage}/`;
+    window.location.href = currentUrl + `/${userLanguage}/`;
   }
 </script>
