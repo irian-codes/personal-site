@@ -1,0 +1,26 @@
+---
+import {defaultLanguageTag} from '../i18n/i18n';
+import {translations} from '../i18n/i18n';
+
+const supportedLocales = Object.keys(translations);
+---
+
+<!-- Redirecting user to his browser's language page if they navigate to the base URL -->
+<script define:vars={{defaultLanguageTag, supportedLocales}}>
+  function isLanguageSupported(lang) {
+    return lang != null && supportedLocales.includes(lang);
+  }
+
+  // Sometimes the locale tag is in long format like 'en-GB' and we need to convert it to short format
+  const userLanguage = (window.navigator.language || 'en')
+    .substring(0, 2)
+    .toLowerCase()
+    .trim();
+
+  const currentUrl = window.location.href.replace(/\/$/, '');
+  if (!isLanguageSupported(userLanguage)) {
+    window.location.href = currentUrl + `/${defaultLanguageTag}/`;
+  } else {
+    window.location.href = currentUrl + `/${userLanguage}/`;
+  }
+</script>

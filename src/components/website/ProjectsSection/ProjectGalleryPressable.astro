@@ -1,0 +1,30 @@
+---
+import type {Project} from '../../../data/website/types/ProjectData';
+import LightGalleryPressable from '../LightGalleryPressable/LightGalleryPressable.astro';
+
+type Props = {
+  project: Project;
+};
+
+const {project} = Astro.props;
+
+const subHtml: string = (function buildSubHtml() {
+  const title = `<h4>${project.name}</h4>`;
+  const description = `<p style="margin: 0.6rem;">${project.description}</p>`;
+  const technologies = `<p class="project-technologies">${project.technologies
+    .map((tech) => tech.name)
+    .join(' | ')}</p>`;
+
+  return title + description + technologies;
+})();
+---
+
+<LightGalleryPressable
+  galleryId={`project-${project.id}`}
+  entries={project.images.map((image) => ({
+    src: image.src,
+    subHtml,
+  }))}
+>
+  <slot />
+</LightGalleryPressable>

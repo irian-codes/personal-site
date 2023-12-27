@@ -1,0 +1,403 @@
+---
+import {Image} from 'astro:assets';
+import {projectsData} from '../../../data/website/ProjectsData';
+import WebsiteButton from '../WebsiteButton.astro';
+import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
+import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
+
+const locale = getLangFromUrl(Astro.url);
+
+const projects = projectsData.data.find(
+  (project) => project.langTag === locale
+)!.content;
+
+const t = useTranslations(locale);
+---
+
+<div id="projects-section-container">
+  <div class="projects-column">
+    {
+      projects.map((project, index) => {
+        if (project?.images == null || project.images.length === 0) {
+          return null;
+        }
+
+        return (
+          <ProjectGalleryPressable project={project}>
+            <div
+              class:list={{
+                'project-container': true,
+                hidden: index > 2,
+              }}
+            >
+              <Image class="project-image" src={project.images[0]} alt="" />
+              <div class="project-overlay">
+                <div class="project-title-container">
+                  <h3 class="project-title">{project.name}</h3>
+                  <h5 class="project-subtitle">
+                    {'(' +
+                      t(
+                        `website.home.project-subtitle.type.${project.appType}`
+                      ) +
+                      ')'}
+                  </h5>
+                  <button class="close-button hidden" type="button">
+                    &times;
+                  </button>
+                </div>
+                <div class="project-description-container">
+                  <p>{project.description}</p>
+                  <div class="project-technologies-container">
+                    {project.technologies.map((tech) => (
+                      <div class="project-technology-container">
+                        {tech.name}
+                      </div>
+                    ))}
+                  </div>
+                  <div class="project-gallery-button-container">
+                    <ProjectGalleryPressable project={project}>
+                      <WebsiteButton
+                        label={t('website.home.projects-button-open-gallery')}
+                      />
+                    </ProjectGalleryPressable>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ProjectGalleryPressable>
+        );
+      })
+    }
+  </div>
+  {
+    projects.length > 3 && (
+      <div id="view-more-button" class="projects-button">
+        <WebsiteButton
+          label={t('website.home.projects-button-view-more.label')}
+        />
+      </div>
+    )
+  }
+</div>
+
+<script>
+  (function viewHideProjectsButtonOnClick() {
+    const viewMoreButton = document.getElementById('view-more-button');
+
+    if (viewMoreButton == null) {
+      return;
+    }
+
+    function showMoreProjects() {
+      const projects = Array.from(
+        document.querySelectorAll('.project-container')
+      );
+
+      projects.forEach((pr) => pr.classList.remove('hidden'));
+      viewMoreButton!.style.display = 'none';
+    }
+
+    viewMoreButton.addEventListener('click', showMoreProjects);
+  })();
+
+  /**
+   * Handles clicking on a project.
+   * Clicking on a project opens it by adding 'active' class.
+   * Clicking on the same project again ignores the click. To
+   * close the project the user needs to click on the cross icon.
+   */
+  (function projectOnClickHandler() {
+    // When images are too small we don't want to open the overlay
+    if (window.matchMedia('(max-width: 42.5em)').matches) {
+      return;
+    }
+
+    const projects = Array.from(
+      document.querySelectorAll('.project-container')
+    );
+
+    const closeButtons = Array.from(document.querySelectorAll('.close-button'));
+
+    projects.forEach((pr) => {
+      pr.addEventListener('click', () => {
+        // If the project is already active it means we clicked on the same one a second time
+        if (pr.classList.contains('active')) {
+          return;
+        }
+
+        // Closing all projects
+        projects.forEach((pr) => {
+          pr.classList.remove('active');
+
+          closeButtons.forEach((cb) => {
+            cb.classList.add('hidden');
+          });
+        });
+
+        // Opening the clicked project
+        pr.classList.add('active');
+        pr.querySelector('.close-button')?.classList.remove('hidden');
+      });
+    });
+  })();
+
+  (function closeIconOnClickHandler() {
+    const closeButtons = Array.from(document.querySelectorAll('.close-button'));
+
+    closeButtons.forEach((cb) => {
+      cb.addEventListener('click', (event) => {
+        // Needed so projectOnClickHandler() doesn't add 'active' the class back
+        event?.stopPropagation();
+
+        const activeProject = document.querySelector(
+          '.project-container.active'
+        );
+
+        activeProject?.classList.remove('active');
+        cb.classList.add('hidden');
+      });
+    });
+  })();
+
+  /**
+   * Removes extra Lightgallery elements based on screen size.
+   * The thing is we have two lightgallery-pressable elements in
+   * the HTML tree per project. But we can only leave one because
+   * then the URL with the lighthallery Hash plugin would open
+   * two galleries and we don't want that.
+   *
+   * One could think "why so much effort on this script if we
+   * can just append '-desktop' and '-mobile' to the 'galleryId'
+   * prop of the elements?" Well because if a user is on desktop and
+   * shares the URL with a user that is on mobile it would attempt
+   * to open the wrong gallery. So the best solution is to remove
+   * the duplicate that we don't want and that way the ids will
+   * always match regardless of the client.
+   *
+   * Also we gain performance by not loading duplicate elements.
+   *
+   * This is due to UI/UX decisions. On larger screens the gallery
+   * opens on a button click. On smaller screens the gallery opens
+   * when clicking on the image itself. Since this is a static page
+   * project we cannot serve a dynamic page depending on the viewport
+   * so we do it on the client.
+   */
+  (function removeExtraLightgalleryElements() {
+    // If we are on a small screen we delete the description containers
+    // since they contain lightgallery-pressable elements that we
+    // don't need.
+    if (window.matchMedia('(max-width: 42.5em)').matches) {
+      const projectDescriptionContainers = Array.from(
+        document.querySelectorAll('.project-description-container')
+      );
+
+      projectDescriptionContainers.forEach((pdc) => {
+        pdc.remove();
+      });
+
+      return;
+    }
+
+    // If we are on a big screen we need to do a bit more of work.
+    const projectsGrid = document.querySelector('.projects-column');
+    const projects = Array.from(
+      document.querySelectorAll('.project-container')
+    );
+
+    // We remove the outer lightgallery-pressable element since in big
+    // screens we want to open it from a button, not by just clicking
+    // on the image.
+    projects.forEach((pr) => {
+      const lightGalleryNodeContent = Array.from(pr.parentElement!.children);
+
+      lightGalleryNodeContent.forEach((child) => {
+        projectsGrid?.appendChild(child);
+      });
+    });
+
+    // Removing the elements that don't have any projects as children
+    document.querySelectorAll('lightgallery-pressable:empty').forEach((lg) => {
+      lg.remove();
+    });
+  })();
+</script>
+
+<style>
+  /* PostCSS plugin postcss-custom-media */
+  @custom-media --images-too-small screen and (max-width: 42.5em);
+
+  #projects-section-container {
+    margin-top: 2rem;
+  }
+  #view-more-button {
+    margin-top: 0;
+  }
+  .hidden {
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+  }
+  h2 {
+    text-align: center;
+  }
+  .projects-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+  .project-container {
+    margin: 1rem auto;
+    position: relative;
+    transition: opacity 1s;
+    cursor: pointer;
+
+    /* Selected project glow effect */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 48%;
+      left: 1%;
+      width: 98%;
+      height: 5%;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.6s;
+      box-shadow: 0 0 10rem 8rem rgb(var(--accent-color-1));
+      z-index: -1;
+    }
+
+    /* TODO: Adapt to devices that can't hover, aka touch devices */
+    &:hover::after {
+      opacity: 0.9;
+    }
+
+    &.active {
+      cursor: default;
+    }
+
+    &.hidden {
+      margin: 0;
+    }
+  }
+  .project-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-height: 40rem;
+    border-radius: 10px;
+    image-rendering: optimizeQuality;
+    object-position: center;
+    object-fit: cover;
+  }
+  .project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(var(--text-color));
+    text-align: left;
+  }
+  .project-title {
+    margin: 0.4rem 0.5rem 0.5rem 0;
+  }
+  .project-subtitle {
+    margin: 0;
+    margin-right: auto;
+    font-weight: 400;
+  }
+  .project-description-container {
+    visibility: hidden;
+    height: auto;
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto;
+    justify-content: space-between;
+    transition:
+      max-height 0.6s,
+      opacity 0.6s 0.3s;
+
+    @media (--images-too-small) {
+      display: none;
+    }
+  }
+  .project-container.active .project-description-container {
+    visibility: unset;
+    opacity: 1;
+    max-height: 14rem; /* More than necessary but not too much */
+  }
+  .project-technologies-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .project-technology-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    background-color: rgb(var(--heading-color-2));
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    white-space: nowrap;
+    font-family: 'Red Hat Display Variable', sans-serif;
+    font-size: 11pt;
+  }
+  .project-technology-icon {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+  .projects-button {
+    display: flow-root;
+    text-align: center;
+    margin: 2rem auto;
+  }
+  .close-button {
+    appearance: none;
+    background-color: rgb(var(--heading-color-2));
+    color: rgb(var(--light-background-color));
+    border-color: rgb(var(--heading-color-2));
+    border-style: solid;
+    border-radius: 3px;
+    font-size: large;
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+    font-size: 20pt;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform ease-in-out 0.1s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.1);
+    }
+
+    @media (--images-too-small) {
+      display: none;
+    }
+  }
+  .project-gallery-button-container {
+    margin: 1rem 0 0.5rem 0;
+    overflow: visible;
+  }
+</style>

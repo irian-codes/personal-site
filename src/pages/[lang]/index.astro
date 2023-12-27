@@ -1,0 +1,209 @@
+---
+import type {GetStaticPaths} from 'astro';
+import {Image} from 'astro:assets';
+import personPicture from '../../assets/images/irian-cv-image.jpg';
+import ContactSection from '../../components/website/ContactSection.astro';
+import CvButton from '../../components/website/CvButton.astro';
+import GlowBar from '../../components/website/GlowBar.astro';
+import ProjectsSection from '../../components/website/ProjectsSection/ProjectsSection.astro';
+import StarsBackbround from '../../components/website/StarsBackbround.astro';
+import TypewriterText from '../../components/website/TypewriterText.astro';
+import {languages, type LanguageTag} from '../../i18n/i18n';
+import {useTranslations} from '../../i18n/i18nUtils';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// We need this special function so Astro can generate a page for each langauge
+export const getStaticPaths = (() => {
+  return Object.keys(languages).map((lang) => ({
+    params: {lang},
+  }));
+}) satisfies GetStaticPaths;
+
+const locale = Astro.params.lang as LanguageTag;
+const t = useTranslations(locale);
+
+// CHAINED TYPEWRITER ANIMATION CONFIGURATION
+const firstTypeAnimation = {
+  durationInSeconds: 0.8,
+  animationSteps: 12,
+  firstLinedelayInSeconds: 0,
+  secondLinedelayInSeconds: 0.65,
+};
+const secondTypeAnimation = {
+  durationInSeconds: 0.8,
+  animationSteps: 24,
+  firstLinedelayInSeconds: firstTypeAnimation.durationInSeconds,
+  secondLinedelayInSeconds: 0.65,
+};
+const thirdTypeAnimation = {
+  durationInSeconds: 1,
+  animationSteps: 24,
+  firstLinedelayInSeconds:
+    firstTypeAnimation.durationInSeconds +
+    secondTypeAnimation.durationInSeconds,
+  secondLinedelayInSeconds: 0.85,
+};
+---
+
+<BaseLayout title="Irian's website">
+  <StarsBackbround />
+  <GlowBar />
+  <main>
+    <div id="top-section-container">
+      <div id="top-section-text-container">
+        <div>
+          <TypewriterText {...firstTypeAnimation}>
+            <h1>
+              {t('website.home.title.first-part') + ' '}
+              <span class="title-highlight"
+                >{t('website.home.title.second-part')}</span
+              >
+            </h1>
+          </TypewriterText>
+          <TypewriterText {...secondTypeAnimation}>
+            <div class="subheading">
+              {t('website.home.subtitle.first-part')}
+            </div>
+          </TypewriterText>
+          <TypewriterText {...thirdTypeAnimation}>
+            <div class="subheading">
+              {t('website.home.subtitle.second-part')}
+            </div>
+          </TypewriterText>
+          <div id="cv-button-container-desktop">
+            <CvButton />
+          </div>
+        </div>
+      </div>
+      <div id="person-picture-container">
+        <Image
+          id="person-picture"
+          src={personPicture}
+          alt={t('website.home.person-image.alt-attribute')}
+        />
+      </div>
+      <div id="cv-button-container-mobile">
+        <CvButton />
+      </div>
+    </div>
+    <h2>{t('website.home.projects-title')}</h2>
+    <div class="heading-underline" role="presentation"></div>
+    <ProjectsSection />
+    <h2 id="contact-title-first-part">
+      {t('website.home.contact-title.first-part') + '... '}
+      <span id="contact-title-second-part" class="title-highlight"
+        >{t('website.home.contact-title.second-part')}</span
+      >
+    </h2>
+    <ContactSection />
+    <div class="spacer-global" role="presentation"></div>
+  </main>
+</BaseLayout>
+
+<style>
+  /* Here the header breaks into 2 columns */
+  @custom-media --header-breakdown-min screen and (min-width: 50em);
+  @custom-media --header-breakdown-max screen and (max-width: 50em);
+  /* After this the Fluid Typography starts taking effect so we need to
+  remove the fixed width */
+  @custom-media --header-text-start-shrinking screen and (min-width: 46em);
+
+  :root {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 1200px;
+  }
+  #contact-title-first-part {
+    color: rgb(var(--heading-color-1));
+    text-shadow: none;
+    margin: 4rem auto 2.5rem auto;
+    max-width: 60rem;
+  }
+  #contact-title-second-part {
+    white-space: nowrap;
+  }
+  #top-section-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border-color: rgb(var(--accent-color-1));
+    border-width: 3px;
+    border-style: solid;
+    padding: 2rem;
+    background-color: rgb(var(--light-background-color));
+    overflow: hidden;
+    position: relative;
+  }
+  /* Light reflection CSS effect */
+  #top-section-container:before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -110px;
+    width: 10rem;
+    height: 20rem;
+    opacity: 0.7;
+    transform: rotate(45deg);
+    background: linear-gradient(
+      to right,
+      rgba(var(--accent-color-1), 1) 0%,
+      rgba(var(--accent-color-1), 0.15) 70%,
+      rgba(var(--accent-color-1), 0.09) 92%,
+      rgba(var(--accent-color-1), 0) 100%
+    );
+  }
+  #top-section-text-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      @media (--header-text-start-shrinking) {
+        /* Min with that fits all languages text */
+        width: 29rem;
+      }
+    }
+  }
+  #person-picture-container {
+    flex-grow: 1;
+    display: flex;
+    /* This value is when the layout breaks into 2 rows */
+    @media (--header-breakdown-max) {
+      margin: 2rem auto;
+    }
+  }
+  #person-picture {
+    width: 200px;
+    height: 200px;
+    border-color: rgb(var(--accent-color-1));
+    border-width: 2px;
+    border-radius: 50%;
+    border-style: solid;
+    @media (--header-breakdown-max) {
+      margin: auto;
+    }
+  }
+  .title-highlight {
+    color: rgb(var(--accent-color-1));
+    text-shadow: 2px 2px 6px rgba(var(--accent-color-1), 0.7);
+    font-weight: 800;
+  }
+  #cv-button-container-desktop {
+    margin-top: 2rem;
+    @media (--header-breakdown-max) {
+      display: none;
+    }
+  }
+  #cv-button-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (--header-breakdown-min) {
+      display: none;
+    }
+  }
+</style>
