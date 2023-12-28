@@ -6,5 +6,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [react()],
   site: 'https://irian-codes.github.io',
-  base: '/personal-site',
+  base: '/personal-site/', // Always end with trailing slash
 });
