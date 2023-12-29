@@ -56,10 +56,11 @@ export function getLanguageSwitcherURL(url: URL, lang: LanguageTag): URL {
     .filter((segment) => segment !== baseUrl.replaceAll('/', ''));
 
   const newLangTag = lang === defaultLanguageTag ? '' : lang;
+  const queryString = lang === defaultLanguageTag ? '?lang-redirect=no' : '';
 
   // Add the new language tag just after url.origin
   const newUrl = new URL(
-    [url.origin, baseUrl, newLangTag, ...filteredSegments]
+    [url.origin, baseUrl, newLangTag, ...filteredSegments, queryString]
       .join('/')
       .replaceAll(/\/{2,}/g, '/')
   );
