@@ -42,15 +42,21 @@ export function getLangFromUrl(url: URL): LanguageTag {
  * @return {URL} The new URL with the language switched.
  */
 export function switchUrlLang(url: URL, lang: LanguageTag): URL {
-  const pathSegments = url.pathname.split('/');
+  const pathSegments = url.pathname
+    .split('/')
+    .filter((segment) => segment.trim().length > 0);
 
-  // find the current language tag in pathSegments
-  const index = pathSegments.findIndex((segment) =>
-    Object.keys(languages).some((langTag) => langTag === segment)
+  // Remove the current language tag
+  const filteredSegments = pathSegments.filter(
+    (segment) => !Object.keys(languages).includes(segment)
   );
 
-  pathSegments[index] = lang;
-  const newUrl = new URL(url.origin + pathSegments.join('/'));
+  const newLangTag = lang === defaultLanguageTag ? '' : lang;
+
+  // Add the new language tag just after url.origin
+  const newUrl = new URL(
+    [url.origin, newLangTag, ...filteredSegments].join('/')
+  );
 
   return newUrl;
 }
