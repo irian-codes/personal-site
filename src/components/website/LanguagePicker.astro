@@ -3,7 +3,7 @@ import {Image} from 'astro:assets';
 import {languages, type LanguageTag} from '../../i18n/i18n';
 import {
   getLangFromUrl,
-  switchUrlLang,
+  getLanguageSwitcherURL,
   useTranslations,
 } from '../../i18n/i18nUtils';
 
@@ -17,7 +17,7 @@ const t = useTranslations(locale);
       Object.entries(languages).map(([langTag, value]) => (
         <li>
           <a
-            href={switchUrlLang(Astro.url, langTag as LanguageTag)}
+            href={getLanguageSwitcherURL(Astro.url, langTag as LanguageTag)}
             hreflang={langTag}
           >
             <Image

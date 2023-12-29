@@ -44,7 +44,7 @@ export function getLangFromUrl(url: URL): LanguageTag {
  * @param {LanguageTag} lang - The new language tag.
  * @return {URL} The new URL with the language switched.
  */
-export function switchUrlLang(url: URL, lang: LanguageTag): URL {
+export function getLanguageSwitcherURL(url: URL, lang: LanguageTag): URL {
   const baseUrl = import.meta.env.BASE_URL;
   const pathSegments = url.pathname
     .split('/')
