@@ -216,8 +216,12 @@ const t = useTranslations(locale);
     });
 
     // Removing the elements that don't have any projects as children
-    document.querySelectorAll('lightgallery-pressable:empty').forEach((lg) => {
-      lg.remove();
+    // Seems removing a node doesn't remove the instance so the loop
+    // doesn't break, so let's go!
+    document.querySelectorAll('lightgallery-pressable').forEach((lg) => {
+      if (lg.children.length === 0) {
+        lg.remove();
+      }
     });
   })();
 </script>
