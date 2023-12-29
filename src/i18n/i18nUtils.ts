@@ -26,9 +26,12 @@ export function useTranslations(lang: LanguageTag) {
  * @return {LanguageTag} The language tag extracted from the URL pathname, if not found it returns the default language.
  */
 export function getLangFromUrl(url: URL): LanguageTag {
-  const pathSegments = url.pathname.split('/');
+  const pathSegments = url.pathname
+    .split('/')
+    .filter((segment) => segment.trim().length > 0);
+
   const langTag = pathSegments.find((segment) =>
-    Object.keys(languages).some((langTag) => langTag === segment)
+    Object.keys(languages).includes(segment)
   ) as LanguageTag;
 
   return langTag in translations ? langTag : defaultLanguageTag;
