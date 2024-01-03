@@ -10,6 +10,7 @@ import '@fontsource/noto-sans/700.css';
 
 const locale = getLangFromUrl(Astro.url);
 const baseUrl = import.meta.env.BASE_URL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
 ---
 
@@ -45,7 +46,7 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
     <meta name="version" content={appVersion} />
-    <link rel="canonical" href={Astro.url.origin} />
+    <link rel="canonical" href={canonicalURL} />
     <title>Irian Codes</title>
   </head>
   <body>
