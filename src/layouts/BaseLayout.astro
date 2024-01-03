@@ -8,13 +8,9 @@ import '@fontsource-variable/rubik';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/noto-sans/700.css';
 
-export interface Props {
-  title: string;
-}
-
-const {title} = Astro.props;
 const locale = getLangFromUrl(Astro.url);
 const baseUrl = import.meta.env.BASE_URL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
 ---
 
@@ -50,7 +46,8 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     <meta name="theme-color" content="#ffffff" />
     <meta name="generator" content={Astro.generator} />
     <meta name="version" content={appVersion} />
-    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+    <title>Irian Codes</title>
   </head>
   <body>
     <nav>
