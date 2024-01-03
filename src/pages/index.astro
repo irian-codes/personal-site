@@ -1,23 +1,37 @@
 ---
-import {defaultLanguageTag} from '../i18n/i18n';
-import {translations} from '../i18n/i18n';
+import {defaultLanguageTag, translations} from '../i18n/i18n';
+import HomePage from '../layouts/HomePage.astro';
 
 const supportedLocales = Object.keys(translations);
+const locale = defaultLanguageTag;
 ---
 
-<!-- Redirecting user to his browser's language page if they navigate to the base URL -->
+<HomePage locale={locale} />
+
+<!-- Redirecting user to the browser's language page if they navigate to the base URL -->
 <script define:vars={{defaultLanguageTag, supportedLocales}}>
-  function isLanguageSupported(lang) {
-    return lang != null && supportedLocales.includes(lang);
+  // If the URL string variable to not redirect is present, just return
+  if (window.location.search.includes('lang-redirect=no')) {
+    return;
   }
 
   // Sometimes the locale tag is in long format like 'en-GB' and we need to convert it to short format
-  const userLanguage = (window.navigator.language || 'en')
+  const userLanguage = (window.navigator.language || defaultLanguageTag)
     .substring(0, 2)
     .toLowerCase()
     .trim();
 
-  const currentUrl = window.location.href.replace(/\/$/, '');
+  if (userLanguage === defaultLanguageTag) {
+    return;
+  }
+
+  // Redirecting user to the browser's language page if it's not the default
+  const currentUrl = window.location.href.split('?')[0].replace(/\/$/, '');
+
+  function isLanguageSupported(lang) {
+    return lang != null && supportedLocales.includes(lang);
+  }
+
   if (!isLanguageSupported(userLanguage)) {
     window.location.href = currentUrl + `/${defaultLanguageTag}/`;
   } else {

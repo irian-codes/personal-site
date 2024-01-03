@@ -26,9 +26,12 @@ export function useTranslations(lang: LanguageTag) {
  * @return {LanguageTag} The language tag extracted from the URL pathname, if not found it returns the default language.
  */
 export function getLangFromUrl(url: URL): LanguageTag {
-  const pathSegments = url.pathname.split('/');
+  const pathSegments = url.pathname
+    .split('/')
+    .filter((segment) => segment.trim().length > 0);
+
   const langTag = pathSegments.find((segment) =>
-    Object.keys(languages).some((langTag) => langTag === segment)
+    Object.keys(languages).includes(segment)
   ) as LanguageTag;
 
   return langTag in translations ? langTag : defaultLanguageTag;
@@ -41,16 +44,26 @@ export function getLangFromUrl(url: URL): LanguageTag {
  * @param {LanguageTag} lang - The new language tag.
  * @return {URL} The new URL with the language switched.
  */
-export function switchUrlLang(url: URL, lang: LanguageTag): URL {
-  const pathSegments = url.pathname.split('/');
+export function getLanguageSwitcherURL(url: URL, lang: LanguageTag): URL {
+  const baseUrl = import.meta.env.BASE_URL;
+  const pathSegments = url.pathname
+    .split('/')
+    .filter((segment) => segment.trim().length > 0);
 
-  // find the current language tag in pathSegments
-  const index = pathSegments.findIndex((segment) =>
-    Object.keys(languages).some((langTag) => langTag === segment)
+  // Remove the current language tag and base URL
+  const filteredSegments = pathSegments
+    .filter((segment) => !Object.keys(languages).includes(segment))
+    .filter((segment) => segment !== baseUrl.replaceAll('/', ''));
+
+  const newLangTag = lang === defaultLanguageTag ? '' : lang;
+  const queryString = lang === defaultLanguageTag ? '?lang-redirect=no' : '';
+
+  // Add the new language tag just after url.origin
+  const newUrl = new URL(
+    [url.origin, baseUrl, newLangTag, ...filteredSegments, queryString]
+      .join('/')
+      .replaceAll(/\/{2,}/g, '/')
   );
-
-  pathSegments[index] = lang;
-  const newUrl = new URL(url.origin + pathSegments.join('/'));
 
   return newUrl;
 }
