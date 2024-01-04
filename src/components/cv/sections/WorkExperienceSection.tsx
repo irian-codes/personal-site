@@ -18,7 +18,7 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>
-        {t('cv.main.section.title.work-experience')}
+        {t('cv.body.section.title.work-experience')}
       </Text>
       {data.content.workExperienceSection.entries.map((entry) => (
         <SectionEntryWithIcon

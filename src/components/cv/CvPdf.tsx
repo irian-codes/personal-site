@@ -27,7 +27,7 @@ export function CvPdf(langTag: LanguageTag) {
             {/* About me section */}
             <View style={styles.section}>
               <Text style={styles.h1}>
-                {t('cv.main.section.title.about-me')}
+                {t('cv.body.section.title.about-me')}
               </Text>
               <Text style={styles.content}>
                 {data.content.aboutSection.lines.map((line) => line)}
@@ -40,7 +40,7 @@ export function CvPdf(langTag: LanguageTag) {
 
             {/* Other section */}
             <View style={[styles.section, {marginBottom: 0}]}>
-              <Text style={styles.h1}>{t('cv.main.section.title.other')}</Text>
+              <Text style={styles.h1}>{t('cv.body.section.title.other')}</Text>
               {data.content.otherSection.lines.map((line) => (
                 <Text key={line.substring(0, 10)} style={styles.content}>
                   {'- ' + line}

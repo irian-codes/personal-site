@@ -62,7 +62,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <View style={styles.skillsLegendAndTitleContainer}>
-        <Text style={styles.h1}>{t('cv.main.section.title.skills')}</Text>
+        <Text style={styles.h1}>{t('cv.body.section.title.skills')}</Text>
         <SkillsLegend />
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
