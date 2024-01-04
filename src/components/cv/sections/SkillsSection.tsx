@@ -40,7 +40,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         .range('black', {space: 'srgb'})(0.2)
         .toString(),
     },
-  };
+  } as const;
 
   const SkillsLegend = (props: any) => (
     <View style={styles.skillsLegendContainer}>
@@ -52,7 +52,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
           />
           {/* Label */}
           <Text style={{fontSize: cvGlobalStyles.text.fontSize.tiny}}>
-            {color[0].charAt(0).toUpperCase() + color[0].slice(1)}
+            {t('cv.body.section.skills.labels.' + color[0])}
           </Text>
         </View>
       ))}
