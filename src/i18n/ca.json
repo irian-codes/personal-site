@@ -31,5 +31,7 @@
   "website.home.contact-section.email.title": "Email",
   "website.home.contact-section.github.title": "GitHub",
   "website.home.contact-section.linkedin.title": "LinkedIn",
-  "website.home.contact-section.phone.title": "Telèfon"
+  "website.home.contact-section.phone.title": "Telèfon",
+  "website.home.meta.open-graph.title": "Irian - Desenvolupador web y mòbil",
+  "website.home.meta.open-graph.description": "Mira el meu portafolis i el meu CV i potser encaixem per treballar junts!"
 }
