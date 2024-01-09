@@ -1,9 +1,12 @@
 {
-  "cv.main.section.title.about-me": "Sobre mí",
-  "cv.main.section.title.skills": "Habilidades",
-  "cv.main.section.title.work-experience": "Experiencia Laboral",
-  "cv.main.section.title.education": "Educación",
-  "cv.main.section.title.other": "Intereses/Otros",
+  "cv.body.section.title.about-me": "Sobre mí",
+  "cv.body.section.title.skills": "Habilidades",
+  "cv.body.section.skills.labels.beginner": "Principiante",
+  "cv.body.section.skills.labels.intermediate": "Intermedio",
+  "cv.body.section.skills.labels.proficient": "Avanzado",
+  "cv.body.section.title.work-experience": "Experiencia Laboral",
+  "cv.body.section.title.education": "Educación",
+  "cv.body.section.title.other": "Intereses/Otros",
   "cv.header.contact-details.email.title": "Email",
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Ubicación",
@@ -28,5 +31,8 @@
   "website.home.contact-section.email.title": "Email",
   "website.home.contact-section.github.title": "GitHub",
   "website.home.contact-section.linkedin.title": "LinkedIn",
-  "website.home.contact-section.phone.title": "Teléfono"
+  "website.home.contact-section.phone.title": "Teléfono",
+  "website.home.meta.description": "Mi sitio web para mostrar mi portafolio como desarrollador web y móvil con React y React Native. Mira mis proyectos y currículum y tal vez podamos trabajar juntos!",
+  "website.home.meta.open-graph.title": "Irian - Desarrollador web y móvil",
+  "website.home.meta.open-graph.description": "Mira mi portafolio y mi CV y quizá encajamos para trabajar juntos!"
 }

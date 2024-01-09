@@ -25,7 +25,7 @@ const phoneNumber = '+34611082305';
         </div>
       </div>
     </a>
-    <a href=`${linkedInUrl}` target="_blank" rel="noopener noreferrer">
+    <a href=`${linkedInUrl}` target="_blank" rel="noopener noreferrer external">
       <div class="contact-container">
         <div class="contact-icon-container">
           <Fragment set:html={linkedinIconRaw} />
@@ -37,7 +37,11 @@ const phoneNumber = '+34611082305';
     </a>
   </div>
   <div class="contact-options-row">
-    <a href=`${respositoryUrl}` target="_blank" rel="noopener noreferrer">
+    <a
+      href=`${respositoryUrl}`
+      target="_blank"
+      rel="noopener noreferrer external"
+    >
       <div class="contact-container">
         <div class="contact-icon-container">
           <Fragment set:html={githubIconRaw} />

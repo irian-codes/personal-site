@@ -1,9 +1,12 @@
 {
-  "cv.main.section.title.about-me": "Sobre mi",
-  "cv.main.section.title.skills": "Habilitats",
-  "cv.main.section.title.work-experience": "Experiència Laboral",
-  "cv.main.section.title.education": "Educació",
-  "cv.main.section.title.other": "Interessos/Altres",
+  "cv.body.section.title.about-me": "Sobre mi",
+  "cv.body.section.title.skills": "Habilitats",
+  "cv.body.section.skills.labels.beginner": "Novell",
+  "cv.body.section.skills.labels.intermediate": "Mitjà",
+  "cv.body.section.skills.labels.proficient": "Avançat",
+  "cv.body.section.title.work-experience": "Experiència Laboral",
+  "cv.body.section.title.education": "Educació",
+  "cv.body.section.title.other": "Interessos/Altres",
   "cv.header.contact-details.email.title": "Email",
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Ubicació",
@@ -28,5 +31,8 @@
   "website.home.contact-section.email.title": "Email",
   "website.home.contact-section.github.title": "GitHub",
   "website.home.contact-section.linkedin.title": "LinkedIn",
-  "website.home.contact-section.phone.title": "Telèfon"
+  "website.home.contact-section.phone.title": "Telèfon",
+  "website.home.meta.description": "El meu lloc web per mostrar el meu dossier com a desenvolupador web i mòbil amb React i React Native. Pots mirar els meus projectes i cv i potser podem treballar plegats!",
+  "website.home.meta.open-graph.title": "Irian - Desenvolupador web y mòbil",
+  "website.home.meta.open-graph.description": "Mira el meu portafolis i el meu CV i potser encaixem per treballar junts!"
 }

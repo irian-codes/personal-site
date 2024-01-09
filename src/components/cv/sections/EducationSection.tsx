@@ -17,7 +17,7 @@ export const EducationSection = (props: EducationSectionProps) => {
 
   return (
     <View style={props.containerStyle}>
-      <Text style={styles.h1}>{t('cv.main.section.title.education')}</Text>
+      <Text style={styles.h1}>{t('cv.body.section.title.education')}</Text>
       {data.content.educationSection.entries.map((entry) => (
         <SectionEntryWithIcon
           key={entry.id}

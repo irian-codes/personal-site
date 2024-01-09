@@ -1,9 +1,12 @@
 {
-  "cv.main.section.title.about-me": "About me",
-  "cv.main.section.title.skills": "Skills",
-  "cv.main.section.title.work-experience": "Work Experience",
-  "cv.main.section.title.education": "Education",
-  "cv.main.section.title.other": "Interests/Other",
+  "cv.body.section.title.about-me": "About me",
+  "cv.body.section.title.skills": "Skills",
+  "cv.body.section.skills.labels.beginner": "Beginner",
+  "cv.body.section.skills.labels.intermediate": "Intermediate",
+  "cv.body.section.skills.labels.proficient": "Proficient",
+  "cv.body.section.title.work-experience": "Work Experience",
+  "cv.body.section.title.education": "Education",
+  "cv.body.section.title.other": "Interests/Other",
   "cv.header.contact-details.email.title": "Email",
   "cv.header.contact-details.linkedin.title": "LinkedIn",
   "cv.header.contact-details.location.title": "Location",
@@ -28,5 +31,8 @@
   "website.home.contact-section.email.title": "Email",
   "website.home.contact-section.github.title": "GitHub",
   "website.home.contact-section.linkedin.title": "LinkedIn",
-  "website.home.contact-section.phone.title": "Phone"
+  "website.home.contact-section.phone.title": "Phone",
+  "website.home.meta.description": "Portfolio website of me, Irian, a web and mobile developer with React and React Native. Check out my projects and resume and maybe we can work together!",
+  "website.home.meta.open-graph.title": "Irian - Web and mobile app developer",
+  "website.home.meta.open-graph.description": "See my portfolio and resume and maybe we can work together!"
 }
