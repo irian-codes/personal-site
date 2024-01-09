@@ -31,5 +31,7 @@
   "website.home.contact-section.email.title": "Email",
   "website.home.contact-section.github.title": "GitHub",
   "website.home.contact-section.linkedin.title": "LinkedIn",
-  "website.home.contact-section.phone.title": "Phone"
+  "website.home.contact-section.phone.title": "Phone",
+  "website.home.meta.open-graph.title": "Irian - Web and mobile app developer",
+  "website.home.meta.open-graph.description": "See my portfolio and resume and maybe we can work together!"
 }
