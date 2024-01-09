@@ -1,12 +1,22 @@
 ---
+import ogImageEn from '../assets/images/open-graph/og-image-en.jpg';
 import LanguagePicker from '../components/website/LanguagePicker.astro';
 import {getLangFromUrl, useTranslations} from '../i18n/i18nUtils';
+import {getSortedGlobImportedImages} from '../utils/ImageUtils';
 
 // FONTS
 import '@fontsource-variable/red-hat-display';
 import '@fontsource-variable/rubik';
 import '@fontsource/noto-sans/400.css';
 import '@fontsource/noto-sans/700.css';
+
+// OPEN GRAPH IMAGES
+const ogImages = getSortedGlobImportedImages(
+  import.meta.glob(
+    '../assets/images/open-graph/*.{jpeg,jpg,png,webp,tiff,gif,svg,avif}',
+    {eager: true}
+  )
+);
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -54,6 +64,13 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     <meta
       property="og:description"
       content={t('website.home.meta.open-graph.description')}
+    />
+    <meta
+      property="og:image"
+      content={(
+        ogImages.find((img) => img.src.includes('og-image-' + locale)) ??
+        ogImageEn
+      ).src}
     />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:locale" content={locale} />
