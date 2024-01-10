@@ -34,7 +34,7 @@ const aboutSection: AboutSection = {
       header.name
     }, soc un desenvolupador d'apps frontend de ${calculateAge(
       header.birthdate
-    )} anys i més de 4 anys d'experiència en programació, treballant des de casa. Faig apps per web, Android i iOS amb React i React Native amb Typescript, incloses algunes on he estat desenvolupador lead. Estic buscant una feina on poder créixer i treballar en projectes més complexos, perquè fins ara he estat treballant en apps per a petites empreses. Vull aprendre i créixer com a desenvolupador, perquè el que m'importa és crear software realment útil, i sentir que he sigut part del procés al costat de companys inspiradors i amb talent.`,
+    )} anys amb més de 4 anys d'experiència en programació, treballant des de casa. He creat bastantes aplicacions per a la web, Android i iOS amb React i React Native amb Typescript, incloses algunes on he estat desenvolupador lead. Estic buscant una feina on pugui créixer, tot participant en projectes més complexos, perquè fins ara he estat treballant en apps per a petites empreses però ara busco reptes més interessants. Sóc desenvolupador perquè m'agrada crear software útil utilitzant tecnologies innovadores al costat d’un bon equip del que pugui aprendre i millorar. En l'àmbit personal, recentment he estat experimentant amb agents d'IA de programació i generació d'imatges, el qual ha resultat en un parell d'idees interessants que plantejo desenvolupar.`,
   ],
 };
 
@@ -494,12 +494,7 @@ const workExperienceSection: WorkExperienceSection = {
 };
 
 const otherSection: OtherSection = {
-  lines: [
-    'Idiomes: català, castellà, anglès.',
-    "Membre d'una associació de jocs de taula i rol.",
-    'Fusteria, manualitats amb paper i mindfulness.',
-    'Permís de conduir: Sí.',
-  ],
+  lines: ['Idiomes: català, castellà, anglès.', 'Permís de conduir: Sí.'],
 };
 
 export const cvData_ca: CvData = {
