@@ -4,6 +4,7 @@ import {cvData} from '../../data/cv/CvData';
 import type {LanguageTag} from '../../i18n/i18n';
 import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
+import {AboutMeSection} from './sections/AboutMeSection';
 import {EducationSection} from './sections/EducationSection';
 import {SkillsSection} from './sections/SkillsSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
@@ -24,16 +25,7 @@ export function CvPdf(langTag: LanguageTag) {
           <Header />
 
           <View style={styles.main}>
-            {/* About me section */}
-            <View style={styles.section}>
-              <Text style={styles.h1}>
-                {t('cv.body.section.title.about-me')}
-              </Text>
-              <Text style={styles.content}>
-                {data.content.aboutSection.lines.map((line) => line)}
-              </Text>
-            </View>
-
+            <AboutMeSection containerStyle={styles.section} />
             <SkillsSection containerStyle={styles.section} />
             <WorkExperienceSection />
             <EducationSection />
