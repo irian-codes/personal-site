@@ -55,6 +55,24 @@
       toggleRibbon('hide');
     }
   });
+
+  // Hiding the forkongithub ribbon when the gallery is open
+  // by detecting when the class 'lg-on' is added to the
+  // document.documentElement (aka '<html>') element.
+  // This is necessary because if the user has the ribbon visible
+  // and it clicks on a gallery element it would not disappear.
+  const observer = new MutationObserver(function (mutations, observer) {
+    const isGalleryClassPresent = mutations.some((m) =>
+      (m.target as HTMLElement)?.classList.contains('lg-on')
+    );
+
+    if (isGalleryClassPresent) {
+      toggleRibbon('hide');
+    }
+  }).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  });
 </script>
 
 <style>
