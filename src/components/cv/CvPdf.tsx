@@ -1,11 +1,10 @@
-import {Document, Page, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {Document, Page, StyleSheet, View} from '@react-pdf/renderer';
 import {createContext} from 'react';
-import {cvData} from '../../data/cv/CvData';
 import type {LanguageTag} from '../../i18n/i18n';
-import {useTranslations} from '../../i18n/i18nUtils';
 import {Header} from './header/Header';
 import {AboutMeSection} from './sections/AboutMeSection';
 import {EducationSection} from './sections/EducationSection';
+import {OtherSection} from './sections/OtherSection';
 import {SkillsSection} from './sections/SkillsSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 import {cvGlobalStyles} from './styles/CvGlobalStyles';
@@ -15,9 +14,6 @@ registerFonts();
 export const LanguageContext = createContext<LanguageTag>('en');
 
 export function CvPdf(langTag: LanguageTag) {
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
-
   return (
     <LanguageContext.Provider value={langTag}>
       <Document>
@@ -29,16 +25,9 @@ export function CvPdf(langTag: LanguageTag) {
             <SkillsSection containerStyle={styles.section} />
             <WorkExperienceSection />
             <EducationSection />
-
-            {/* Other section */}
-            <View style={[styles.section, {marginBottom: 0}]}>
-              <Text style={styles.h1}>{t('cv.body.section.title.other')}</Text>
-              {data.content.otherSection.lines.map((line) => (
-                <Text key={line.substring(0, 10)} style={styles.content}>
-                  {'- ' + line}
-                </Text>
-              ))}
-            </View>
+            <OtherSection
+              containerStyle={[styles.section, {marginBottom: 0}]}
+            />
           </View>
         </Page>
       </Document>
@@ -60,10 +49,5 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: '0.5cm',
-  },
-  h1: {...cvGlobalStyles.text.headings.h1},
-  content: {
-    fontSize: cvGlobalStyles.text.fontSize.small,
-    marginBottom: cvGlobalStyles.text.spacing.lineSpacing,
   },
 });
