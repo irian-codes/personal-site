@@ -1,5 +1,6 @@
 ---
 import ogImageEn from '../assets/images/open-graph/og-image-en.jpg';
+import ForkGithubRibbon from '../components/website/ForkGithubRibbon.astro';
 import LanguagePicker from '../components/website/LanguagePicker.astro';
 import {getLangFromUrl, useTranslations} from '../i18n/i18nUtils';
 import {getSortedGlobImportedImages} from '../utils/ImageUtils';
@@ -104,6 +105,7 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
       <LanguagePicker />
     </nav>
     <slot />
+    <ForkGithubRibbon />
   </body>
 </html>
 
