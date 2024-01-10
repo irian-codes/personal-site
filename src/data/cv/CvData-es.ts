@@ -34,7 +34,7 @@ const aboutSection: AboutSection = {
       header.name
     }, soy un desarrollador de apps frontend de ${calculateAge(
       header.birthdate
-    )} años y más de 4 años de experiencia en programación, trabajando desde casa. Hago apps para la web, Android y iOS con React y React Native con Typescript, incluidas algunas donde he sido desarrollador lead. Estoy buscando un trabajo en el que poder crecer y trabajar en proyectos más complejos, porque hasta ahora he estado trabajando en apps para pequeñas empresas. Quiero aprender y crecer como desarrollador, porque lo que me importa es crear software realmente útil, y sentir que he sido parte del proceso junto a compañeros inspiradores y con talento.`,
+    )} años con más de 4 años de experiencia en programación trabajando desde casa. He creado bastantes aplicaciones para la web, Android e iOS usando React y React Native con Typescript, incluidas algunas en las que he sido desarrollador lead. Estoy buscando un trabajo donde pueda crecer participando en proyectos más complejos, porque hasta ahora he estado trabajando en apps para pequeñas empresas, y ahora busco retos más interesantes. Soy desarrollador porque me gusta crear software útil utilizando tecnologías innovadoras junto a un buen equipo del que pueda aprender y mejorar. En el ámbito personal, recientemente he estado experimentando con agentes de IA de programación y generación de imágenes, lo cual ha resultado en un par de ideas interesantes que planteo desarrollar.`,
   ],
 };
 
@@ -494,12 +494,7 @@ const workExperienceSection: WorkExperienceSection = {
 };
 
 const otherSection: OtherSection = {
-  lines: [
-    'Idiomas: catalán, castellano, inglés.',
-    'Miembro de una asociación de juegos de mesa y rol.',
-    'Carpintería, manualidades de papel y mindfulness.',
-    'Permiso de conducir: Sí.',
-  ],
+  lines: ['Idiomas: catalán, castellano, inglés.', 'Permiso de conducir: Sí.'],
 };
 
 export const cvData_es: CvData = {
