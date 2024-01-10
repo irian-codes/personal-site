@@ -23,6 +23,12 @@
       return;
     }
 
+    // If a gallery is opened we never want to show the forkongithub ribbon
+    if (window.location.href.includes('#lg')) {
+      forkongithubElement.style.opacity = '0';
+      return;
+    }
+
     const offsetInRem = 2;
     const currentPosition = window.innerHeight + window.scrollY;
     const scrollTriggerPosition =
