@@ -18,14 +18,28 @@
     return rem * rootFontSize;
   }
 
-  window.addEventListener('scroll', function () {
+  function toggleRibbon(newState: 'show' | 'hide') {
+    if (forkongithubElement == null) {
+      return;
+    }
+
+    if (newState === 'show') {
+      forkongithubElement.style.opacity = '1';
+    }
+
+    if (newState === 'hide') {
+      forkongithubElement.style.opacity = '0';
+    }
+  }
+
+  window.addEventListener('scroll', function (ev) {
     if (forkongithubElement == null) {
       return;
     }
 
     // If a gallery is opened we never want to show the forkongithub ribbon
     if (window.location.href.includes('#lg')) {
-      forkongithubElement.style.opacity = '0';
+      toggleRibbon('hide');
       return;
     }
 
@@ -36,9 +50,9 @@
 
     if (currentPosition >= scrollTriggerPosition) {
       // User has reached the bottom of the page
-      forkongithubElement.style.opacity = '1';
+      toggleRibbon('show');
     } else {
-      forkongithubElement.style.opacity = '0';
+      toggleRibbon('hide');
     }
   });
 </script>
