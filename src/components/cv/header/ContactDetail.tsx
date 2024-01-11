@@ -19,7 +19,6 @@ export const ContactDetail = (props: ContactDetailProps) => {
   const t = useTranslations(langTag);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
-  // TODO: Set the correct URL on deployment. The best way would probably be through environment variables.
   const imageUrl =
     getPublicFolderURL() + '/assets/images/cv/icons/' + props.type + '.png';
 

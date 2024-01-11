@@ -15,10 +15,8 @@ const header: Header = {
   surnames: 'Montón',
   position: 'App/Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
-  // TODO: Set the correct URL on deployment.
   photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
   websiteUrl: 'https://irian.codes',
-  // TODO: Set the correct URL on deployment.
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Spain',
@@ -32,7 +30,7 @@ const aboutSection: AboutSection = {
   lines: [
     `Hello! I'm ${header.name}, a ${calculateAge(
       header.birthdate
-    )} year old frontend app developer with +4 years of programming experience working from home. I've built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Now I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I want to learn and grow as a developer, because what matters to me is building software that really matters and feel I could be a part of that alongside talented and inspiring colleagues.`,
+    )} year old frontend app developer with +4 years of programming experience working from home. I've built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Currently, I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I am a developer because I like to build software that matters using technologies that excite me while collaborating with talented colleagues that I can learn from. Recently, I've been delving into AI agents for coding and image generation, resulting in a couple of promising project ideas I'd like to make related to my tabletop roleplaying hobby, that I regularly enjoy with my friends at my local board games club.`,
   ],
 };
 
@@ -496,12 +494,7 @@ const workExperienceSection: WorkExperienceSection = {
 };
 
 const otherSection: OtherSection = {
-  lines: [
-    'Languages: English, Spanish, Catalan.',
-    'Member of a local board and roleplaying games club.',
-    'Woodworking, paper crafts and mindfulness.',
-    'Driving License: Yes.',
-  ],
+  lines: ['Languages: English, Spanish, Catalan.', 'Driving License: Yes.'],
 };
 
 export const cvData_en: CvData = {
