@@ -19,7 +19,7 @@ const header: Header = {
   websiteUrl: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Spain',
+  location: 'Reus, Spain',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
