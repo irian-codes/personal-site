@@ -38,17 +38,22 @@ export const ContactDetail = (props: ContactDetailProps) => {
     }
   }
 
-  function getURLByType(data: string): string {
+  function getURLByType(content: string): string {
     switch (props.type) {
       case 'linkedin':
       case 'repository':
-        return 'https://' + data;
+        return 'https://' + content;
 
       case 'email':
-        return 'mailto:' + data;
+        return 'mailto:' + content;
 
       case 'phone':
-        return 'tel:' + data;
+        return 'tel:' + content;
+
+      case 'location':
+        const mapsUrl = data.content.header.locationMapsUrl;
+
+        return mapsUrl ?? '#';
 
       default:
         return '#';
