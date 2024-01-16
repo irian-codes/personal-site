@@ -19,7 +19,7 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
           <Text style={styles.h2WithIcon}>{props.title}</Text>
           <View style={styles.secondLineContainer}>
             <Text style={styles.h3WithIcon}>{props.place}</Text>
-            <Text style={styles.h4WithIcon}>{`| ${props.location}`}</Text>
+            <Text style={styles.h4WithIcon}>{`|  ${props.location}`}</Text>
           </View>
         </View>
       </View>
