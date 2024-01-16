@@ -22,7 +22,7 @@ export const EducationSection = (props: EducationSectionProps) => {
         <SectionEntryWithIcon
           key={entry.id}
           title={`${entry.title}, (${entry.period})`}
-          subtitle={entry.institution}
+          place={entry.institution}
           iconSrc={entry.iconSrc}
           lines={entry.lines}
           containerStyle={{

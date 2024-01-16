@@ -3,7 +3,7 @@ import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
 
 type SectionEntryWithIconProps = {
   title: string;
-  subtitle?: string;
+  place: string;
   lines: string[];
   iconSrc: string;
   containerStyle?: any;
@@ -16,7 +16,7 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
         <Image src={props.iconSrc} style={styles.icon} />
         <View style={styles.titleContainer}>
           <Text style={styles.h2WithIcon}>{props.title}</Text>
-          <Text style={styles.h3WithIcon}>{props.subtitle}</Text>
+          <Text style={styles.h3WithIcon}>{props.place}</Text>
         </View>
       </View>
       {props.lines.map((line) => (
