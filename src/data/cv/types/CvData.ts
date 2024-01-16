@@ -7,6 +7,7 @@ export type Header = {
   websiteUrl: string;
   websiteQrImageSrc: string;
   location: string;
+  locationMapsUrl?: string;
   email: string;
   phone: string;
   linkedin: string;
