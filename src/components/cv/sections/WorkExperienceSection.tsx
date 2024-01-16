@@ -24,7 +24,8 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
         <SectionEntryWithIcon
           key={entry.id}
           title={`${entry.title} (${entry.period})`}
-          subtitle={entry.company}
+          place={entry.company}
+          location={entry.location}
           iconSrc={entry.iconSrc}
           lines={entry.lines}
           containerStyle={{
