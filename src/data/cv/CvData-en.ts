@@ -412,7 +412,7 @@ const educationSection: EducationSection = {
       id: 0,
       title: 'Masters in Mobile App Development',
       institution: 'Universitat Oberta de Catalunya',
-      location: 'Remote, Spain',
+      location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
         'Developed final project with a real company (Studio by Caigo).',
@@ -440,7 +440,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 0,
       title: 'Lead frontend developer',
       company: 'Studio by Caigo',
-      location: 'Remote, Spain',
+      location: 'Reus, Spain (remote)',
       period: 'Aug 2022 - May 2023',
       lines: [
         'Led the development team on my latest projects done with React and React Native.',
@@ -455,7 +455,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 1,
       title: 'Frontend app developer',
       company: 'Studio by Caigo',
-      location: 'Remote, Spain',
+      location: 'Reus, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
       lines: [
         'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
@@ -470,7 +470,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 2,
       title: 'Unity 3D VR developer',
       company: 'Ekisolid',
-      location: 'Remote, Spain',
+      location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
       lines: [
         'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking, VR headset physics, game management and optimization.',
@@ -482,7 +482,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 3,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
-      location: 'Remote, Spain',
+      location: 'Reus, Spain (remote)',
       period: 'Jun 2016 - Nov 2016',
       lines: [
         'Designed and developed websites in Wordpress using Divi, making adjustments with CSS.',

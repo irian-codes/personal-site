@@ -4,6 +4,7 @@ import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
 type SectionEntryWithIconProps = {
   title: string;
   place: string;
+  location: string;
   lines: string[];
   iconSrc: string;
   containerStyle?: any;
@@ -16,7 +17,10 @@ export const SectionEntryWithIcon = (props: SectionEntryWithIconProps) => {
         <Image src={props.iconSrc} style={styles.icon} />
         <View style={styles.titleContainer}>
           <Text style={styles.h2WithIcon}>{props.title}</Text>
-          <Text style={styles.h3WithIcon}>{props.place}</Text>
+          <View style={styles.secondLineContainer}>
+            <Text style={styles.h3WithIcon}>{props.place}</Text>
+            <Text style={styles.h4WithIcon}>{`| ${props.location}`}</Text>
+          </View>
         </View>
       </View>
       {props.lines.map((line) => (
@@ -41,6 +45,12 @@ const styles = StyleSheet.create({
     marginBottom: '0.1cm',
     marginLeft: '0.2cm',
   },
+  h4WithIcon: {
+    ...cvGlobalStyles.text.headings.h4,
+    marginBottom: '0.1cm',
+    marginLeft: '0.2cm',
+    color: cvGlobalStyles.colors.primaryGray,
+  },
   icon: {
     height: '1cm',
     width: '1cm',
@@ -62,5 +72,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'center',
+  },
+  secondLineContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
 });

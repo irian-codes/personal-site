@@ -408,7 +408,7 @@ const educationSection: EducationSection = {
       id: 0,
       title: 'Máster en Desarrollo de Aplicaciones',
       institution: 'Universitat Oberta de Catalunya',
-      location: 'Remoto, España',
+      location: 'Barcelona, España (remoto)',
       period: 'Feb 2020 - Ene 2022',
       lines: [
         'Proyecto final desarrollado en una empresa real (Studio by Caigo).',
@@ -438,7 +438,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 0,
       title: 'Desarrollador lead frontend',
       company: 'Studio by Caigo',
-      location: 'Remoto, España',
+      location: 'Reus, España (remoto)',
       period: 'Ago 2022 - May 2023',
       lines: [
         'He dirigido el equipo de desarrollo de mis últimos proyectos realizados con React y React Native.',
@@ -453,7 +453,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 1,
       title: 'Desarrollador frontend de apps',
       company: 'Studio by Caigo',
-      location: 'Remot, España',
+      location: 'Reus, España (híbrido)',
       period: 'Jul 2021 - Ago 2022',
       lines: [
         'Desarrollar el frontendo de apps con React y React Native. Aprendí a colaborar con Gitlab.',
@@ -468,7 +468,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 2,
       title: 'Desarrollador Unity 3D VR',
       company: 'Ekisolid',
-      location: 'Remoto, España',
+      location: 'Barcelona, España (remoto)',
       period: 'Nov 2017 - Dic 2019',
       lines: [
         'Desarrollé muchos scripts en C# para añadir funcionalidades al proyecto realizado por el equipo de diseño del juego. Incluyendo networking, la física del casco de realidad virtual y gestión y optimización de los juegos.',
@@ -480,7 +480,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 3,
       title: 'Desarrollador web con Wordpress',
       company: 'Digital Media Empresas',
-      location: 'Remoto, España',
+      location: 'Reus, España (remoto)',
       period: 'Jun 2016 - Nov 2016',
       lines: [
         'Diseñar y desarrollar páginas web en Wordpress utilizando Divi, haciendo ajustes con CSS.',

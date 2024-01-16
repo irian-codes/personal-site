@@ -23,6 +23,7 @@ export const EducationSection = (props: EducationSectionProps) => {
           key={entry.id}
           title={`${entry.title}, (${entry.period})`}
           place={entry.institution}
+          location={entry.location}
           iconSrc={entry.iconSrc}
           lines={entry.lines}
           containerStyle={{

@@ -25,6 +25,7 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
           key={entry.id}
           title={`${entry.title} (${entry.period})`}
           place={entry.company}
+          location={entry.location}
           iconSrc={entry.iconSrc}
           lines={entry.lines}
           containerStyle={{

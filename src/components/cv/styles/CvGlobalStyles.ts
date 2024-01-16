@@ -1,6 +1,7 @@
 const colors = {
   primary: 'black',
   secondary: '#dd2222',
+  primaryGray: '#4d4d4d',
 };
 
 const textStyles = {
@@ -40,6 +41,11 @@ const headingStyles = {
   },
   h3: {
     fontSize: textStyles.fontSize.small,
+    marginBottom: textStyles.spacing.lineSpacing,
+    color: colors.primary,
+  },
+  h4: {
+    fontSize: textStyles.fontSize.tiny,
     marginBottom: textStyles.spacing.lineSpacing,
     color: colors.primary,
   },
