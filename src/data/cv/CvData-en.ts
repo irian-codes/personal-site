@@ -14,7 +14,7 @@ const header: Header = {
   surnames: 'Montón',
   position: 'App/Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
-  photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
+  photoSrc: '',
   websiteUrl: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',

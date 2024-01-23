@@ -1,5 +1,4 @@
 import {getPublicFolderURL} from '../../components/cv/utils/URL';
-import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
   CvData,
@@ -29,11 +28,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `Buenas! Me llamo ${
-      header.name
-    }, soy un desarrollador de apps frontend de ${calculateAge(
-      header.birthdate
-    )} años con más de 4 años de experiencia en programación trabajando desde casa. He creado bastantes aplicaciones para la web, Android e iOS usando React y React Native con Typescript, incluidas algunas en las que he sido desarrollador lead. Estoy buscando un trabajo donde pueda crecer participando en proyectos más complejos, porque hasta ahora he estado trabajando en apps para pequeñas empresas, y ahora busco retos más interesantes. Soy desarrollador porque me gusta crear software útil utilizando tecnologías innovadoras junto a un buen equipo del que pueda aprender y mejorar. En el ámbito personal, recientemente he estado experimentando con agentes de IA de programación y generación de imágenes, lo cual ha resultado en un par de ideas interesantes que planteo desarrollar.`,
+    'Desarrollador Typescript con 4+ años de experiencia buscando un nuevo reto laboral con el que superarme!',
   ],
 };
 
