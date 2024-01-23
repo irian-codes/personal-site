@@ -1,5 +1,4 @@
 import {getPublicFolderURL} from '../../components/cv/utils/URL';
-import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
   CvData,
@@ -29,11 +28,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `Bones! Em dic ${
-      header.name
-    }, soc un desenvolupador d'apps frontend de ${calculateAge(
-      header.birthdate
-    )} anys amb més de 4 anys d'experiència en programació, treballant des de casa. He creat bastantes aplicacions per a la web, Android i iOS amb React i React Native amb Typescript, incloses algunes on he estat desenvolupador lead. Estic buscant una feina on pugui créixer, tot participant en projectes més complexos, perquè fins ara he estat treballant en apps per a petites empreses però ara busco reptes més interessants. Sóc desenvolupador perquè m'agrada crear software útil utilitzant tecnologies innovadores al costat d’un bon equip del que pugui aprendre i millorar. En l'àmbit personal, recentment he estat experimentant amb agents d'IA de programació i generació d'imatges, el qual ha resultat en un parell d'idees interessants que plantejo desenvolupar.`,
+    "Desenvolupador Typescript amb 4+ anys d'experiència buscant una nova oportunitat laboral per superar-me!",
   ],
 };
 
@@ -411,10 +406,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Espanya (remot)',
       period: 'Feb 2020 - Gen 2022',
       lines: [
-        'Projecte final desenvolupat a una empresa real (Studio by Caigo).',
-        "Desenvolupament d'apps web/mòbils amb Angular, Android Studio, Flutter i React Native.",
-        "Disseny d'apps amb Figma i tècniques d'anàlisi d'usuaris com Customer Journey Map i User Persona.",
-        "Conceptes bàsics d'informàtica amb C.",
+        "Vaig aprendre disseny d'apps web/mòbils amb Figma i desenvolupament amb Typescript, inclòs un projecte final amb una empresa. També vaig practicar conceptes bàsics d'informàtica amb C.",
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -436,15 +428,15 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 0,
-      title: 'Desenvolupador lead frontend',
+      title: 'Desenvolupador Lead',
       company: 'Studio by Caigo',
       location: 'Reus, Espanya (remot)',
       period: 'Ago 2022 - Mai 2023',
       lines: [
-        "He dirigit l'equip de desenvolupament dels meus últims projectes realitzats amb React i React Native.",
-        "Vaig organitzar el treball en milestones, establint objectius amb l'equip i fent revisions de codi i standups per garantir que el projecte es lliurés d'acord amb els estàndards de qualitat de l'empresa, els requisits del projecte i en un termini raonable.",
+        "Dirigir l'equip de desenvolupament en projectes realitzats amb React, React Native, Firebase i ExpressJS.",
+        "Organitzar el treball en milestones, establint objectius amb l'equip i fent revisions de codi i standups per garantir que el projecte es lliurés d'acord amb els estàndards de qualitat de l'empresa, els requisits del projecte i en un termini raonable.",
         "Crear documentació dels projectes i per la incorporació a l'equip de nous membres.",
-        "Vaig realitzar entrevistes, seleccionar i incorporar desenvolupadors i becaris a l'equip.",
+        "Realitzar entrevistes, seleccionar i incorporar desenvolupadors i becaris a l'equip.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -458,7 +450,7 @@ const workExperienceSection: WorkExperienceSection = {
       lines: [
         "Desenvolupar el frontend d'apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.",
         "Treballar amb l'equip de backend per garantir que el frontend funcionés bé amb el backend API REST.",
-        'Configurar el backend de diversos projectes amb Firebase i Google Cloud, també va ajudar amb el desenvolupament amb NestJs, ExpressJs, MongoDB i Docker.',
+        'Desenvolupar el backend de diversos projectes amb Firebase i Google Cloud, també va ajudar amb el desenvolupament amb NestJs, ExpressJs, MongoDB i Docker.',
         "Gestionar el llançament, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
       ],
       iconSrc:
@@ -471,13 +463,25 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, Espanya (remot)',
       period: 'Nov 2017 - Des 2019',
       lines: [
-        "Vaig desenvolupar molts scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
+        "Desenvolupar scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
         'Integrar Unity amb dispositius IoT com un ventilador controlat per Bluetooth per un Arduino i un simulador de moviment de cotxe.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
       id: 3,
+      title: 'Gestor de riscos (pràctiques)',
+      company: 'Portaventura',
+      location: 'Vila-Seca, Espanya',
+      period: 'Feb 2017 - Abr 2017',
+      lines: [
+        'Desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les factures dels danys del parc. També vaig fer altres tasques poc rellevants.',
+      ],
+      iconSrc:
+        getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+    },
+    {
+      id: 4,
       title: 'Desenvolupador web amb Wordpress',
       company: 'Digital Media Empresas',
       location: 'Reus, Espanya (remot)',
@@ -489,11 +493,22 @@ const workExperienceSection: WorkExperienceSection = {
         getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
+    {
+      id: 5,
+      title: "Gestor de places d'allotjament (pràctiques)",
+      company: 'Hotelbeds Group',
+      location: 'Tarragona, Espanya',
+      period: 'Feb 2016 - Mai 2016',
+      lines: [
+        'Desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les dades associades a les vendes de reserves. També vaig fer altres tasques poc rellevants.',
+      ],
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
+    },
   ],
 };
 
 const otherSection: OtherSection = {
-  lines: ['Idiomes: català, castellà, anglès.', 'Permís de conduir: Sí.'],
+  lines: ['Idiomes: Anglès, Castellà, Català.', 'Permís de conduir: Sí.'],
 };
 
 export const cvData_ca: CvData = {

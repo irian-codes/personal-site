@@ -1,5 +1,4 @@
 import {getPublicFolderURL} from '../../components/cv/utils/URL';
-import {calculateAge} from '../../utils/DateUtils';
 import type {
   AboutSection,
   CvData,
@@ -15,7 +14,7 @@ const header: Header = {
   surnames: 'Montón',
   position: 'App/Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
-  photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
+  photoSrc: '',
   websiteUrl: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
@@ -29,9 +28,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    `Hello! I'm ${header.name}, a ${calculateAge(
-      header.birthdate
-    )} year old frontend app developer with +4 years of programming experience working from home. I've built many apps for the web, Android and iOS using React and React Native with Typescript, including some where I've been lead developer. Currently, I am seeking a job where I can grow and work on bigger and more complex projects, because up until now I've been working on apps for small businesses. I am a developer because I like to build software that matters using technologies that excite me while collaborating with talented colleagues that I can learn from. Recently, I've been delving into AI agents for coding and image generation, resulting in a couple of promising project ideas I'd like to make related to my tabletop roleplaying hobby, that I regularly enjoy with my friends at my local board games club.`,
+    'Typescript developer with 4+ years of experience ready to tackle bigger and exciting challenges!',
   ],
 };
 
@@ -415,10 +412,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Developed final project with a real company (Studio by Caigo).',
-        'Learned mobile/web app development with Angular, Android Studio, Flutter and React Native.',
-        'Learned designing apps with Figma and other customer analysis techniques like Customer Journey Map and User Persona.',
-        'Learned computer science basics with C.',
+        'Learned mobile/web app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -438,12 +432,12 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 0,
-      title: 'Lead frontend developer',
+      title: 'Lead developer',
       company: 'Studio by Caigo',
       location: 'Reus, Spain (remote)',
       period: 'Aug 2022 - May 2023',
       lines: [
-        'Led the development team on my latest projects done with React and React Native.',
+        'Led the development team on projects made with React, React Native, Firebase and ExpressJS.',
         "Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project's requirements and ensured it was delivered within a reasonable timeframe.",
         'Created extensive project and onboarding documentation for the development team.',
         'Interviewed, hired and onboarded developers and interns for the team.',
@@ -480,6 +474,18 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
+      title: 'Portaventura risk management intern',
+      company: 'Portaventura',
+      location: 'Vila-Seca, Spain',
+      period: 'Feb 2017 - Apr 2017',
+      lines: [
+        'Developed a series of Microsoft Office Excel macros to significantly reduce the time it took to process park reparations invoices. I also did other non-relevant tasks in this position.',
+      ],
+      iconSrc:
+        getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+    },
+    {
+      id: 4,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
       location: 'Reus, Spain (remote)',
@@ -490,6 +496,17 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc:
         getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
+    },
+    {
+      id: 5,
+      title: 'Accomodation manager intern',
+      company: 'Hotelbeds Group',
+      location: 'Tarragona, Spain',
+      period: 'Feb 2016 - May 2016',
+      lines: [
+        'Developed a series of Microsoft Office Excel macros to significantly reduce the time it took to process sales data. I also did other non-relevant tasks in this position.',
+      ],
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
     },
   ],
 };
