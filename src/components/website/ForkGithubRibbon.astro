@@ -24,10 +24,12 @@
     }
 
     if (newState === 'show') {
+      forkongithubElement.style.visibility = 'visible';
       forkongithubElement.style.opacity = '1';
     }
 
     if (newState === 'hide') {
+      forkongithubElement.style.visibility = 'hidden';
       forkongithubElement.style.opacity = '0';
     }
   }
@@ -79,6 +81,7 @@
   #forkongithub {
     position: fixed;
     display: block;
+    visibility: hidden;
     opacity: 0;
     bottom: -4.5rem;
     right: -8.5rem;
@@ -87,7 +90,7 @@
     height: 12.5rem;
     z-index: 9000;
     transform: rotate(315deg);
-    transition: 0.5s;
+    transition: opacity 0.5s;
   }
   a {
     top: 4rem;

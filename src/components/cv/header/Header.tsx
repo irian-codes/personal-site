@@ -11,13 +11,23 @@ export const Header = (props: HeaderProps) => {
   const langTag = useContext(LanguageContext);
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.firstRowContainer}>
+  const ApplicantImageComponent = () => {
+    if (data.content.header.photoSrc.length > 0) {
+      return (
         <Image
           src={data.content.header.photoSrc}
           style={styles.applicantPhoto}
         />
+      );
+    } else {
+      return <View style={styles.applicantPhoto} />;
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.firstRowContainer}>
+        <ApplicantImageComponent />
         <View style={styles.nameTitleContainer}>
           <Text style={styles.name}>
             {data.content.header.name + ' ' + data.content.header.surnames}
@@ -59,6 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     padding: headerGlobalStyles.spacing.small,
+    paddingTop: headerGlobalStyles.spacing.smallest,
     backgroundColor: headerGlobalStyles.colors.background,
     borderColor: headerGlobalStyles.colors.border,
     borderWidth: 2,
@@ -85,6 +96,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    marginHorizontal: 'auto',
   },
   name: {
     fontSize: headerGlobalStyles.text.fontSize.name,
@@ -101,13 +113,13 @@ const styles = StyleSheet.create({
     fontFamily: headerGlobalStyles.text.fontFamily.name,
   },
   applicantPhoto: {
-    height: '4cm',
-    width: '4cm',
+    height: '3cm',
+    width: '3cm',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
   },
   qrContainer: {
     flexDirection: 'column',
@@ -116,13 +128,13 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   qrImage: {
-    height: '3.5cm',
-    width: '3.5cm',
+    height: '2.5cm',
+    width: '2.5cm',
   },
   websiteText: {
-    fontSize: headerGlobalStyles.text.fontSize.medium,
+    fontSize: headerGlobalStyles.text.fontSize.smallest,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: '0.2cm',
+    marginTop: '0.1cm',
   },
 });
