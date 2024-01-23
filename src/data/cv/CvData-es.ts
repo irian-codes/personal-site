@@ -428,12 +428,12 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 0,
-      title: 'Desarrollador lead frontend',
+      title: 'Desarrollador Lead',
       company: 'Studio by Caigo',
       location: 'Reus, España (remoto)',
       period: 'Ago 2022 - May 2023',
       lines: [
-        'Dirigí el equipo de desarrollo de mis últimos proyectos realizados con React y React Native.',
+        'Dirigí el equipo de desarrollo de proyectos realizados con React, React Native, Firebase y ExpressJS.',
         'Organicé el trabajo en milestones, estableciendo objetivos con el equipo y haciendo revisiones de código y standups para garantizar que el proyecto se entregara de acuerdo con los estándares de calidad de la empresa, los requisitos del proyecto y en un plazo razonable.',
         'Escribí documentación de los proyectos y para la incorporación al equipo de nuevos miembros.',
         'Realicé entrevistas, seleccioné e incorporé desarrolladores y becarios en el equipo.',
