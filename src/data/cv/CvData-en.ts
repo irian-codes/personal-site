@@ -480,6 +480,18 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
+      title: 'Portaventura risk management intern',
+      company: 'Portaventura',
+      location: 'Vila-Seca, Spain',
+      period: 'Feb 2017 - Apr 2017',
+      lines: [
+        'Developed a series of Microsoft Office Excel macros to significantly reduce the time it took to process park reparations invoices. I also did other non-relevant tasks in this position.',
+      ],
+      iconSrc:
+        getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+    },
+    {
+      id: 4,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
       location: 'Reus, Spain (remote)',
@@ -490,6 +502,17 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc:
         getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
+    },
+    {
+      id: 5,
+      title: 'Accomodation manager intern',
+      company: 'Hotelbeds Group',
+      location: 'Tarragona, Spain',
+      period: 'Feb 2016 - May 2016',
+      lines: [
+        'Developed a series of Microsoft Office Excel macros to significantly reduce the time it took to process sales data. I also did other non-relevant tasks in this position.',
+      ],
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
     },
   ],
 };

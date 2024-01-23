@@ -478,6 +478,18 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
+      title: 'Gestor de riesgos (prácticas)',
+      company: 'Portaventura',
+      location: 'Vila-Seca, España',
+      period: 'Feb 2017 - Abr 2017',
+      lines: [
+        'Desarrollé macros de Office Excel que redujeron significativamente el tiempo de procesamiento de las facturas de los daños del parque. También realicé otras tareas poco relevantes.',
+      ],
+      iconSrc:
+        getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+    },
+    {
+      id: 4,
       title: 'Desarrollador web con Wordpress',
       company: 'Digital Media Empresas',
       location: 'Reus, España (remoto)',
@@ -488,6 +500,17 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc:
         getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
+    },
+    {
+      id: 5,
+      title: 'Gestor de plazas de alojamiento (prácticas)',
+      company: 'Hotelbeds Group',
+      location: 'Tarragona, España',
+      period: 'Feb 2016 - May 2016',
+      lines: [
+        'Desarrollé macros de Office Excel que redujeron significativamente el tiempo de procesamiento de los datos asociados a las ventas de reservas. También realicé otras tareas poco relevantes.',
+      ],
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
     },
   ],
 };
