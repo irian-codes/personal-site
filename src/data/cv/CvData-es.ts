@@ -508,7 +508,7 @@ const workExperienceSection: WorkExperienceSection = {
 };
 
 const otherSection: OtherSection = {
-  lines: ['Idiomas: catalán, castellano, inglés.', 'Permiso de conducir: Sí.'],
+  lines: ['Idiomas: Inglés, Castellano, Catalán.', 'Permiso de conducir: Sí.'],
 };
 
 export const cvData_es: CvData = {
