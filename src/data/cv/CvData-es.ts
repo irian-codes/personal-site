@@ -441,9 +441,9 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, España (remoto)',
       period: 'Ago 2022 - May 2023',
       lines: [
-        'He dirigido el equipo de desarrollo de mis últimos proyectos realizados con React y React Native.',
+        'Dirigí el equipo de desarrollo de mis últimos proyectos realizados con React y React Native.',
         'Organicé el trabajo en milestones, estableciendo objetivos con el equipo y haciendo revisiones de código y standups para garantizar que el proyecto se entregara de acuerdo con los estándares de calidad de la empresa, los requisitos del proyecto y en un plazo razonable.',
-        'Crear documentación de los proyectos y para la incorporación al equipo de nuevos miembros.',
+        'Escribí documentación de los proyectos y para la incorporación al equipo de nuevos miembros.',
         'Realicé entrevistas, seleccioné e incorporé desarrolladores y becarios en el equipo.',
       ],
       iconSrc:
@@ -456,9 +456,9 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, España (híbrido)',
       period: 'Jul 2021 - Ago 2022',
       lines: [
-        'Desarrollar el frontendo de apps con React y React Native. Aprendí a colaborar con Gitlab.',
-        'Trabajar con el equipo de backend para garantizar que el frontend funcionara bien con su API REST.',
-        'Configurar el backend de varios proyectos con Firebase y Google Cloud, también ayudé a desarrollar con NestJs, ExpressJs, MongoDB y Docker.',
+        'Desarrollé el frontend de apps con React y React Native. Aprendí a colaborar con Gitlab.',
+        'Trabajé con el equipo de backend para garantizar que el frontend funcionara bien con su API REST.',
+        'Desarrollé el backend de varios proyectos con Firebase y Google Cloud, también ayudé a desarrollar con NestJs, ExpressJs, MongoDB y Docker.',
         'Publicación, gestión de versiones y actualizaciones de apps con Expo EAS para Android y iOS.',
       ],
       iconSrc:
@@ -471,8 +471,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, España (remoto)',
       period: 'Nov 2017 - Dic 2019',
       lines: [
-        'Desarrollé muchos scripts en C# para añadir funcionalidades al proyecto realizado por el equipo de diseño del juego. Incluyendo networking, la física del casco de realidad virtual y gestión y optimización de los juegos.',
-        'Integrar Unity con dispositivos IoT como un ventilador controlado por Bluetooth por un Arduino y un simulador de movimiento de coche.',
+        'Desarrollé scripts en C# para añadir funcionalidades al proyecto realizado por el equipo de diseño del juego. Incluyendo networking, la física del casco de realidad virtual y gestión y optimización de los juegos.',
+        'Integré Unity con dispositivos IoT como un ventilador controlado por Bluetooth por un Arduino y un simulador de movimiento de coche.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
@@ -495,7 +495,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, España (remoto)',
       period: 'Jun 2016 - Nov 2016',
       lines: [
-        'Diseñar y desarrollar páginas web en Wordpress utilizando Divi, haciendo ajustes con CSS.',
+        'Diseñé y desarrollé páginas web en Wordpress utilizando Divi, haciendo ajustes con CSS.',
       ],
       iconSrc:
         getPublicFolderURL() +

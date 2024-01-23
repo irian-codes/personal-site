@@ -441,10 +441,10 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, Espanya (remot)',
       period: 'Ago 2022 - Mai 2023',
       lines: [
-        "He dirigit l'equip de desenvolupament dels meus últims projectes realitzats amb React i React Native.",
-        "Vaig organitzar el treball en milestones, establint objectius amb l'equip i fent revisions de codi i standups per garantir que el projecte es lliurés d'acord amb els estàndards de qualitat de l'empresa, els requisits del projecte i en un termini raonable.",
+        "Dirigir l'equip de desenvolupament dels meus últims projectes realitzats amb React i React Native.",
+        "Organitzar el treball en milestones, establint objectius amb l'equip i fent revisions de codi i standups per garantir que el projecte es lliurés d'acord amb els estàndards de qualitat de l'empresa, els requisits del projecte i en un termini raonable.",
         "Crear documentació dels projectes i per la incorporació a l'equip de nous membres.",
-        "Vaig realitzar entrevistes, seleccionar i incorporar desenvolupadors i becaris a l'equip.",
+        "Realitzar entrevistes, seleccionar i incorporar desenvolupadors i becaris a l'equip.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -458,7 +458,7 @@ const workExperienceSection: WorkExperienceSection = {
       lines: [
         "Desenvolupar el frontend d'apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.",
         "Treballar amb l'equip de backend per garantir que el frontend funcionés bé amb el backend API REST.",
-        'Configurar el backend de diversos projectes amb Firebase i Google Cloud, també va ajudar amb el desenvolupament amb NestJs, ExpressJs, MongoDB i Docker.',
+        'Desenvolupar el backend de diversos projectes amb Firebase i Google Cloud, també va ajudar amb el desenvolupament amb NestJs, ExpressJs, MongoDB i Docker.',
         "Gestionar el llançament, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
       ],
       iconSrc:
@@ -471,7 +471,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, Espanya (remot)',
       period: 'Nov 2017 - Des 2019',
       lines: [
-        "Vaig desenvolupar molts scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
+        "Desenvolupar scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
         'Integrar Unity amb dispositius IoT com un ventilador controlat per Bluetooth per un Arduino i un simulador de moviment de cotxe.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
@@ -483,7 +483,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Vila-Seca, Espanya',
       period: 'Feb 2017 - Abr 2017',
       lines: [
-        'Vaig desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les factures dels danys del parc. També vaig fer altres tasques poc rellevants.',
+        'Desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les factures dels danys del parc. També vaig fer altres tasques poc rellevants.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
@@ -508,7 +508,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Tarragona, Espanya',
       period: 'Feb 2016 - Mai 2016',
       lines: [
-        'Vaig desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les dades associades a les vendes de reserves. També vaig fer altres tasques poc rellevants.',
+        'Desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les dades associades a les vendes de reserves. També vaig fer altres tasques poc rellevants.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
     },
