@@ -21,10 +21,10 @@ export function CvPdf(langTag: LanguageTag) {
           <Header />
 
           <View style={styles.main}>
+            <AboutMeSection containerStyle={styles.section} />
             <WorkExperienceSection />
             <EducationSection />
             <SkillsSection containerStyle={styles.section} />
-            <AboutMeSection containerStyle={styles.section} />
             <OtherSection
               containerStyle={[styles.section, {marginBottom: 0}]}
             />
