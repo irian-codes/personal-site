@@ -412,10 +412,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Developed final project with a real company (Studio by Caigo).',
-        'Learned mobile/web app development with Angular, Android Studio, Flutter and React Native.',
-        'Learned designing apps with Figma and other customer analysis techniques like Customer Journey Map and User Persona.',
-        'Learned computer science basics with C.',
+        'Learned mobile/web app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
