@@ -46,7 +46,7 @@ export const Header = (props: HeaderProps) => {
       </View>
 
       {/* spacer */}
-      <View style={{height: headerGlobalStyles.spacing.smallest}} />
+      <View style={{height: headerGlobalStyles.spacing.small}} />
 
       <View style={styles.secondRowContainer}>
         <ContactDetail type={'email'} containerStyle={{width: '5.75cm'}} />
