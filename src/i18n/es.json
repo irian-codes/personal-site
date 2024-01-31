@@ -19,7 +19,7 @@
   "website.home.cv-button.label": "Ver mi CV",
   "website.home.person-image.alt-attribute": "Imagen de Irian Montón",
   "common.language-picker.flag-image-alt": "Bandera del siguiente código de idioma:",
-  "website.home.projects-title": "Mis proyectos",
+  "website.home.projects-title": "Mis proyectos <underline>reales</underline>",
   "website.home.project-subtitle.type.admin-panel": "Panel de administración",
   "website.home.project-subtitle.type.web-app": "App web",
   "website.home.project-subtitle.type.mobile-app": "App móvil",

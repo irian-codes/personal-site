@@ -10,6 +10,7 @@ import TypewriterText from '../components/website/TypewriterText.astro';
 import {defaultLanguageTag, type LanguageTag} from '../i18n/i18n';
 import {useTranslations} from '../i18n/i18nUtils';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SpanTranslation from '../components/website/SpanTranslation.astro';
 
 interface Props {
   locale: LanguageTag;
@@ -82,7 +83,12 @@ const thirdTypeAnimation = {
         <CvButton />
       </div>
     </div>
-    <h2>{t('website.home.projects-title')}</h2>
+
+    <h2>
+      <SpanTranslation>
+        {t('website.home.projects-title')}
+      </SpanTranslation>
+    </h2>
     <div class="heading-underline" role="presentation"></div>
     <ProjectsSection />
     <h2 id="contact-title-first-part">
