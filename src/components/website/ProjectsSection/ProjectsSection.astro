@@ -315,7 +315,13 @@ const t = useTranslations(locale);
     text-align: left;
 
     & .project-published-label {
-      margin-right: 2rem;
+      margin-right: 1.5rem;
+      font-size: 1rem;
+
+      @media (--images-too-small) {
+        margin: 0 0 0 0.3rem;
+        font-size: clamp(0.6rem, 2vw + 0.1rem, 1rem);
+      }
     }
   }
   .project-title {
