@@ -11,6 +11,7 @@ export type Project = {
   appType: 'mobile-app' | 'web-app' | 'admin-panel';
   images: ImageMetadata[];
   technologies: Technology[];
+  publishUrls: Map<'google' | 'apple' | 'url', string>;
 };
 
 export type Projects = Project[];

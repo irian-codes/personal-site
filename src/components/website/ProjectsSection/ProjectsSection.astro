@@ -41,6 +41,9 @@ const t = useTranslations(locale);
                       ) +
                       ')'}
                   </h5>
+                  {project.publishUrls.size > 0 && (
+                    <p class="project-published-label">PUBLISHED!</p>
+                  )}
                   <button class="close-button hidden" type="button">
                     &times;
                   </button>
@@ -310,6 +313,10 @@ const t = useTranslations(locale);
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(var(--text-color));
     text-align: left;
+
+    & .project-published-label {
+      margin-right: 2rem;
+    }
   }
   .project-title {
     margin: 0.4rem 0.5rem 0.5rem 0;
