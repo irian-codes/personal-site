@@ -41,6 +41,7 @@ export const projectsData_en: Projects = [
       {name: 'iOS'},
     ],
     publishUrls: new Map([
+      ['google', ''],
       ['apple', 'https://apps.apple.com/us/app/assistant-drivers/id1599937718'],
     ]),
   },
@@ -76,6 +77,7 @@ export const projectsData_en: Projects = [
       {name: 'iOS'},
     ],
     publishUrls: new Map([
+      ['google', ''],
       ['apple', 'https://apps.apple.com/us/app/medical-to-life/id6443401988'],
     ]),
   },
