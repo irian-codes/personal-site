@@ -5,6 +5,7 @@ import WebsiteButton from '../WebsiteButton.astro';
 import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
 import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
 import {urlToHttpOptions} from 'url';
+import StoreUrlButton from './StoreUrlButton.astro';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -68,19 +69,15 @@ const t = useTranslations(locale);
                       const [key, url] = entry;
 
                       return (
-                        <div class="app-store-link-container">
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer external"
-                          >
-                            <div>
-                              {key.slice(0, 1).toUpperCase() +
-                                key.slice(1) +
-                                ' link'}
-                            </div>
-                          </a>
-                        </div>
+                        <StoreUrlButton
+                          label={
+                            key.slice(0, 1).toUpperCase() +
+                            key.slice(1) +
+                            ' link'
+                          }
+                          url={url}
+                          disabled={url.trim().length === 0}
+                        />
                       );
                     })}
                   </div>
@@ -439,25 +436,5 @@ const t = useTranslations(locale);
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-  .app-store-link-container a {
-    appearance: none;
-    color: rgb(var(--text-color));
-    text-decoration: none;
-
-    &:hover div,
-    &:focus div,
-    &:active div {
-      transform: scale(1.1);
-    }
-
-    & div {
-      background-color: rgb(var(--light-background-color));
-      border: 3px solid rgb(var(--accent-color-1));
-      border-radius: 3px;
-      padding: 0.5rem;
-      margin-left: 1rem;
-      transition: transform ease-in-out 0.1s;
-    }
   }
 </style>
