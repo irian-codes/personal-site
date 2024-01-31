@@ -40,7 +40,10 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[astro]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "never"
+      }
     }
   }
 }
