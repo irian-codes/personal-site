@@ -66,16 +66,25 @@ const t = useTranslations(locale);
                     </ProjectGalleryPressable>
                     {Array.from(project.publishUrls.entries()).map((entry) => {
                       const [key, url] = entry;
+                      const label = (() => {
+                        if (url === 'internal') {
+                          return t(
+                            'website.home.project-button-publish-url.type.internal.label'
+                          );
+                        }
+
+                        return (
+                          key.slice(0, 1).toUpperCase() + key.slice(1) + ' link'
+                        );
+                      })();
 
                       return (
                         <StoreUrlButton
-                          label={
-                            key.slice(0, 1).toUpperCase() +
-                            key.slice(1) +
-                            ' link'
-                          }
+                          label={label}
                           url={url}
-                          disabled={url.trim().length === 0}
+                          disabled={
+                            url.trim().length === 0 || url === 'internal'
+                          }
                         />
                       );
                     })}
