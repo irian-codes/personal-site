@@ -4,6 +4,7 @@ import {projectsData} from '../../../data/website/ProjectsData';
 import WebsiteButton from '../WebsiteButton.astro';
 import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
 import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
+import StoreUrlButton from './StoreUrlButton.astro';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -41,6 +42,9 @@ const t = useTranslations(locale);
                       ) +
                       ')'}
                   </h5>
+                  {project.publishUrls.size > 0 && (
+                    <p class="project-published-label">PUBLISHED!</p>
+                  )}
                   <button class="close-button hidden" type="button">
                     &times;
                   </button>
@@ -60,6 +64,30 @@ const t = useTranslations(locale);
                         label={t('website.home.projects-button-open-gallery')}
                       />
                     </ProjectGalleryPressable>
+                    {Array.from(project.publishUrls.entries()).map((entry) => {
+                      const [key, url] = entry;
+                      const label = (() => {
+                        if (url === 'internal') {
+                          return t(
+                            'website.home.project-button-publish-url.type.internal.label'
+                          );
+                        }
+
+                        return (
+                          key.slice(0, 1).toUpperCase() + key.slice(1) + ' link'
+                        );
+                      })();
+
+                      return (
+                        <StoreUrlButton
+                          label={label}
+                          url={url}
+                          disabled={
+                            url.trim().length === 0 || url === 'internal'
+                          }
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -310,6 +338,16 @@ const t = useTranslations(locale);
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(var(--text-color));
     text-align: left;
+
+    & .project-published-label {
+      margin-right: 1.5rem;
+      font-size: 1rem;
+
+      @media (--images-too-small) {
+        margin: 0 0 0 0.3rem;
+        font-size: clamp(0.6rem, 2vw + 0.1rem, 1rem);
+      }
+    }
   }
   .project-title {
     margin: 0.4rem 0.5rem 0.5rem 0;
@@ -403,5 +441,8 @@ const t = useTranslations(locale);
   .project-gallery-button-container {
     margin: 1rem 0 0.5rem 0;
     overflow: visible;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 </style>

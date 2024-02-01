@@ -1,5 +1,6 @@
 ---
 import type {Project} from '../../../data/website/types/ProjectData';
+import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
 import LightGalleryPressable from '../LightGalleryPressable/LightGalleryPressable.astro';
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
 };
 
 const {project} = Astro.props;
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 const subHtml: string = (function buildSubHtml() {
   const title = `<h4>${project.name}</h4>`;
@@ -15,7 +18,42 @@ const subHtml: string = (function buildSubHtml() {
     .map((tech) => tech.name)
     .join(' | ')}</p>`;
 
-  return title + description + technologies;
+  function buildPublishedUrlsHtml(): string {
+    const strings = Array.from(project.publishUrls.entries()).map((entry) => {
+      const [key, url] = entry;
+
+      const label = (() => {
+        if (url === 'internal') {
+          return t(
+            'website.home.project-button-publish-url.type.internal.label'
+          );
+        }
+
+        return key.slice(0, 1).toUpperCase() + key.slice(1);
+      })();
+
+      if (url.trim().length === 0 || url === 'internal') {
+        return `<div style="display: inline">${label}</div>`;
+      }
+
+      return `<a href=${url} target="_blank" rel="noopener noreferrer external">
+          ${label + ' link'}
+        </a>`;
+    });
+
+    const divider = '<div style="display: inline; margin: 0 0.2rem">|</div>';
+
+    const urlsHtml = `<div class="project-published-urls-container" style="font-size: 0.8rem; margin-top: 0.6rem">${
+      'Published on: ' + strings.join(divider)
+    }</div>`;
+
+    return urlsHtml;
+  }
+
+  const publishedUrls =
+    project.publishUrls.size > 0 ? buildPublishedUrlsHtml() : '';
+
+  return title + description + technologies + publishedUrls;
 })();
 ---
 

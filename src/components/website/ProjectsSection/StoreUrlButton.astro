@@ -1,0 +1,60 @@
+---
+type Props = {
+  label: string;
+  url: string;
+  disabled?: boolean;
+};
+
+const {label, url, disabled = false} = Astro.props;
+---
+
+<div class="app-store-link-container">
+  {
+    disabled ? (
+      <button class="disabled" disabled autocomplete="off">
+        {label}
+      </button>
+    ) : (
+      <a href={url} target="_blank" rel="noopener noreferrer external">
+        <button class="enabled" autocomplete="off">
+          {label}
+        </button>
+      </a>
+    )
+  }
+</div>
+
+<style>
+  .app-store-link-container a {
+    appearance: none;
+    color: rgb(var(--text-color));
+    text-decoration: none;
+
+    &:hover button,
+    &:focus button,
+    &:active button {
+      transform: scale(1.1);
+    }
+  }
+  .app-store-link-container button {
+    appearance: none;
+    background-color: rgb(var(--light-background-color));
+    border: 3px solid rgb(var(--accent-color-1));
+    border-radius: 3px;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: transform ease-in-out 0.1s;
+    color: rgb(var(--text-color));
+    font-family: 'Noto Sans', system-ui, sans-serif;
+    font-size: large;
+
+    &.disabled {
+      border-color: gray;
+    }
+
+    &.enabled {
+      cursor: pointer;
+      border-color: rgb(var(--accent-color-1));
+    }
+  }
+</style>

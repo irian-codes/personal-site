@@ -1,0 +1,57 @@
+<span-translation>
+  <slot />
+</span-translation>
+
+<script is:inline>
+  class SpanTranslation extends HTMLElement {
+    constructor() {
+      super();
+
+      const childStr = (() => {
+        if (this.childNodes.length === 0) {
+          return '';
+        }
+
+        return this.childNodes[0].textContent ?? '';
+      })();
+
+      if (childStr == null || childStr.trim().length === 0) {
+        return;
+      }
+
+      const tagsRegex = /(<.+?> | <\/.+?>)/;
+      const strings = childStr.split(tagsRegex).map((str) => {
+        if (str.includes('<') || str.includes('>')) {
+          // Regex to replace <className>text</className> into <span class="className">text</span>
+          return str.replace(
+            /<(.+?)>(.+?)<\/(.+?)>/,
+            '<span class="$1">$2</span>'
+          );
+        } else {
+          return str;
+        }
+      });
+
+      this.innerHTML = strings.join(' ');
+    }
+  }
+
+  customElements.define('span-translation', SpanTranslation);
+</script>
+
+<style>
+  span-translation {
+    & :global(.underline) {
+      text-decoration: underline;
+      text-underline-offset: 0.5rem;
+    }
+
+    & :global(.italic) {
+      font-style: italic;
+    }
+
+    & :global(.bold) {
+      font-weight: bold;
+    }
+  }
+</style>

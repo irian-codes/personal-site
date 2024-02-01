@@ -17,6 +17,13 @@ export const projectsData_es: Projects = [
       {name: 'Android'},
       {name: 'iOS'},
     ],
+    publishUrls: new Map([
+      [
+        'google',
+        'https://play.google.com/store/apps/details?id=com.studiobycaigo.caumma',
+      ],
+      ['apple', 'https://apps.apple.com/es/app/caumma/id1660931013'],
+    ]),
   },
   {
     id: 2,
@@ -33,6 +40,10 @@ export const projectsData_es: Projects = [
       {name: 'Android'},
       {name: 'iOS'},
     ],
+    publishUrls: new Map([
+      ['google', ''],
+      ['apple', 'https://apps.apple.com/es/app/assistant-drivers/id1599937718'],
+    ]),
   },
   {
     id: 5,
@@ -49,6 +60,7 @@ export const projectsData_es: Projects = [
       {name: 'MobX'},
       {name: 'React Router'},
     ],
+    publishUrls: new Map([['url', 'internal']]),
   },
   {
     id: 1,
@@ -64,6 +76,10 @@ export const projectsData_es: Projects = [
       {name: 'Android'},
       {name: 'iOS'},
     ],
+    publishUrls: new Map([
+      ['google', ''],
+      ['apple', 'https://apps.apple.com/es/app/medical-to-life/id6443401988'],
+    ]),
   },
   {
     id: 3,
@@ -80,6 +96,7 @@ export const projectsData_es: Projects = [
       {name: 'Android'},
       {name: 'iOS'},
     ],
+    publishUrls: new Map([]),
   },
   {
     id: 6,
@@ -96,6 +113,7 @@ export const projectsData_es: Projects = [
       {name: 'Redux Toolkit'},
       {name: 'React Router'},
     ],
+    publishUrls: new Map([['url', 'internal']]),
   },
   {
     id: 9,
@@ -114,6 +132,13 @@ export const projectsData_es: Projects = [
       {name: 'Android'},
       {name: 'iOS'},
     ],
+    publishUrls: new Map([
+      [
+        'google',
+        'https://play.google.com/store/apps/details?id=com.studiobycaigo.medicaltolife',
+      ],
+      ['apple', 'https://apps.apple.com/es/app/mediterranean-way/id1609962077'],
+    ]),
   },
   {
     id: 8,
@@ -131,6 +156,7 @@ export const projectsData_es: Projects = [
       {name: 'React Router'},
       {name: 'Algolia Search'},
     ],
+    publishUrls: new Map([['url', 'internal']]),
   },
   {
     id: 4,
@@ -146,6 +172,13 @@ export const projectsData_es: Projects = [
       {name: 'Android'},
       {name: 'iOS'},
     ],
+    publishUrls: new Map([
+      [
+        'google',
+        'https://play.google.com/store/apps/details?id=com.adappty.cordobaviva',
+      ],
+      ['apple', 'https://apps.apple.com/es/app/cordoba-viva/id1578914116'],
+    ]),
   },
   {
     id: 7,
@@ -162,5 +195,6 @@ export const projectsData_es: Projects = [
       {name: 'Redux Toolkit'},
       {name: 'React Router'},
     ],
+    publishUrls: new Map([]),
   },
 ];
