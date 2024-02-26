@@ -18,16 +18,18 @@ export const EducationSection = (props: EducationSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.education')}</Text>
-      {data.content.educationSection.entries.map((entry) => (
-        <SectionEntry
-          key={entry.id}
-          title={entry.title}
-          duration={entry.period}
-          place={entry.institution}
-          location={entry.location}
-          lines={entry.lines}
-        />
-      ))}
+      {data.content.educationSection.entries
+        .filter((entry) => !entry.hidden)
+        .map((entry) => (
+          <SectionEntry
+            key={entry.id}
+            title={entry.title}
+            duration={entry.period}
+            place={entry.institution}
+            location={entry.location}
+            lines={entry.lines}
+          />
+        ))}
     </View>
   );
 };

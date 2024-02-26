@@ -14,6 +14,8 @@ export type Header = {
   repository: string;
 };
 
+type isHidden = {hidden?: boolean};
+
 export type AboutSection = {
   lines: string[];
 };
@@ -32,7 +34,7 @@ export type Skill = {
     | 'tool'
     | 'other'
     | 'soft-skill';
-};
+} & isHidden;
 
 export type SkillsSection = {
   skills: Skill[];
@@ -46,7 +48,7 @@ export type EducationEntry = {
   period: string;
   lines: string[];
   iconSrc: string;
-};
+} & isHidden;
 
 export type EducationSection = {
   entries: EducationEntry[];
@@ -60,7 +62,7 @@ export type WorkExperienceEntry = {
   period: string;
   lines: string[];
   iconSrc: string;
-};
+} & isHidden;
 
 export type WorkExperienceSection = {
   entries: WorkExperienceEntry[];

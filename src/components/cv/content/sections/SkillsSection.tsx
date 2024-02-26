@@ -66,14 +66,16 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         <SkillsLegend />
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        {data.content.skillsSection.skills.map((skill) => (
-          <SkillChip
-            key={skill.id}
-            value={skill.name}
-            bgColor={skillColors[skill.level].bgColor}
-            textColor={skillColors[skill.level].textColor}
-          />
-        ))}
+        {data.content.skillsSection.skills
+          .filter((skill) => !skill.hidden)
+          .map((skill) => (
+            <SkillChip
+              key={skill.id}
+              value={skill.name}
+              bgColor={skillColors[skill.level].bgColor}
+              textColor={skillColors[skill.level].textColor}
+            />
+          ))}
       </View>
     </View>
   );

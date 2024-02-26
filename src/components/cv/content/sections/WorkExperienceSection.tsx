@@ -20,19 +20,21 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
       <Text style={styles.h1}>
         {t('cv.body.section.title.work-experience')}
       </Text>
-      {data.content.workExperienceSection.entries.map((entry) => (
-        <SectionEntry
-          key={entry.id}
-          title={entry.title}
-          place={entry.company}
-          duration={entry.period}
-          location={entry.location}
-          lines={entry.lines}
-          containerStyle={{
-            marginBottom: cvStyles.text.sections.spacing.smallest,
-          }}
-        />
-      ))}
+      {data.content.workExperienceSection.entries
+        .filter((entry) => !entry.hidden)
+        .map((entry) => (
+          <SectionEntry
+            key={entry.id}
+            title={entry.title}
+            place={entry.company}
+            duration={entry.period}
+            location={entry.location}
+            lines={entry.lines}
+            containerStyle={{
+              marginBottom: cvStyles.text.sections.spacing.smallest,
+            }}
+          />
+        ))}
     </View>
   );
 };

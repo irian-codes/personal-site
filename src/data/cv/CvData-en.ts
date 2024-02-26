@@ -483,6 +483,7 @@ const workExperienceSection: WorkExperienceSection = {
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+      hidden: true,
     },
     {
       id: 4,
@@ -507,6 +508,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Developed a series of Microsoft Office Excel macros to significantly reduce the time it took to process sales data. I also did other non-relevant tasks in this position.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
+      hidden: true,
     },
   ],
 };
