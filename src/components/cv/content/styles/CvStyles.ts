@@ -13,7 +13,7 @@ const textStyles = {
     large: 16,
   },
   spacing: {
-    headingMarginBottom: '0.3cm',
+    headingMarginBottom: '0.1cm',
     lineSpacing: '0.15cm',
     smallest: '0.1cm',
   },
