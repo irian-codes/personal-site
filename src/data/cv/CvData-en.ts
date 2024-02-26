@@ -433,19 +433,19 @@ const skillsSection: SkillsSection = {
       hidden: true,
     },
     {
-      id: 70,
+      id: 73,
       name: 'English',
       level: 'proficient',
       category: 'soft-skill',
     },
     {
-      id: 71,
+      id: 74,
       name: 'Spanish',
       level: 'proficient',
       category: 'soft-skill',
     },
     {
-      id: 72,
+      id: 75,
       name: 'Catalan',
       level: 'proficient',
       category: 'soft-skill',
