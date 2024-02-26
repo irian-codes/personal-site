@@ -1,5 +1,5 @@
 import {StyleSheet, Text} from '@react-pdf/renderer';
-import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
+import {cvStyles} from '../../styles/CvStyles';
 
 type SkillChip = {
   value: string;
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     padding: '0.1cm',
   },
   text: {
-    fontSize: cvGlobalStyles.text.fontSize.smallest,
-    fontFamily: cvGlobalStyles.text.fontFamily.monospace,
+    fontSize: cvStyles.text.fontSize.smallest,
+    fontFamily: cvStyles.text.fontFamily.monospace,
   },
 });

@@ -1,13 +1,8 @@
-import {Document, Page, StyleSheet, View} from '@react-pdf/renderer';
+import {Document, Page, StyleSheet} from '@react-pdf/renderer';
 import {createContext} from 'react';
 import type {LanguageTag} from '../../i18n/i18n';
-import {Header} from './header/Header';
-import {AboutMeSection} from './sections/AboutMeSection';
-import {EducationSection} from './sections/EducationSection';
-import {OtherSection} from './sections/OtherSection';
-import {SkillsSection} from './sections/SkillsSection';
-import {WorkExperienceSection} from './sections/WorkExperienceSection';
-import {cvGlobalStyles} from './styles/CvGlobalStyles';
+import {CvContent} from './content';
+import {cvStyles} from './content/styles/CvStyles';
 import {registerFonts} from './utils/Fonts';
 
 registerFonts();
@@ -18,17 +13,7 @@ export function CvPdf(langTag: LanguageTag) {
     <LanguageContext.Provider value={langTag}>
       <Document>
         <Page size="A4" style={styles.page}>
-          <Header />
-
-          <View style={styles.main}>
-            <AboutMeSection containerStyle={styles.section} />
-            <WorkExperienceSection />
-            <EducationSection />
-            <SkillsSection containerStyle={styles.section} />
-            <OtherSection
-              containerStyle={[styles.section, {marginBottom: 0}]}
-            />
-          </View>
+          <CvContent />
         </Page>
       </Document>
     </LanguageContext.Provider>
@@ -42,12 +27,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#ffffff',
     padding: '1cm',
-    fontFamily: cvGlobalStyles.text.fontFamily.body,
-  },
-  main: {
-    marginTop: '1cm',
-  },
-  section: {
-    marginBottom: '0.5cm',
+    fontFamily: cvStyles.text.fontFamily.body,
   },
 });

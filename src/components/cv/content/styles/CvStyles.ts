@@ -14,7 +14,7 @@ const textStyles = {
   },
   spacing: {
     headingMarginBottom: '0.3cm',
-    lineSpacing: '0.2cm',
+    lineSpacing: '0.15cm',
     smallest: '0.1cm',
   },
   fontFamily: {
@@ -54,10 +54,12 @@ const headingStyles = {
 const sectionsStyles = {
   spacing: {
     small: '0.5cm',
+    tiny: '0.25cm',
+    smallest: '0.15cm',
   },
 };
 
-export const cvGlobalStyles = {
+export const cvStyles = {
   colors,
   text: {
     ...textStyles,

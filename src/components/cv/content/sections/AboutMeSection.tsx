@@ -1,8 +1,8 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../data/cv/CvData';
-import {LanguageContext} from '../CvPdf';
-import {cvGlobalStyles} from '../styles/CvGlobalStyles';
+import {cvData} from '../../../../data/cv/CvData';
+import {LanguageContext} from '../../CvPdf';
+import {cvStyles} from '../styles/CvStyles';
 
 type AboutMeSectionProps = {containerStyle?: any};
 
@@ -21,12 +21,9 @@ export const AboutMeSection = (props: AboutMeSectionProps) => {
 
 const styles = StyleSheet.create({
   content: {
-    fontFamily: cvGlobalStyles.text.fontFamily.headers,
-    fontWeight: 500,
-    fontSize: cvGlobalStyles.text.fontSize.large,
-    marginBottom: cvGlobalStyles.text.spacing.headingMarginBottom,
-    color: cvGlobalStyles.colors.primary,
-    textAlign: 'center',
-    marginHorizontal: 40,
+    fontFamily: cvStyles.text.fontFamily.headers,
+    fontSize: cvStyles.text.fontSize.small,
+    color: cvStyles.colors.primary,
+    textAlign: 'left',
   },
 });

@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import Color from 'colorjs.io';
 import {useContext, useMemo} from 'react';
-import {cvData} from '../../../data/cv/CvData';
-import {useTranslations} from '../../../i18n/i18nUtils';
-import {LanguageContext} from '../CvPdf';
-import {cvGlobalStyles} from '../styles/CvGlobalStyles';
+import {cvData} from '../../../../data/cv/CvData';
+import {useTranslations} from '../../../../i18n/i18nUtils';
+import {LanguageContext} from '../../CvPdf';
+import {cvStyles} from '../styles/CvStyles';
 import {SkillChip} from './components/SkillChip';
 
 type SkillsSectionProps = {
@@ -17,7 +17,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
   const skillChipBaseColor = useMemo(
-    () => new Color(cvGlobalStyles.colors.secondary),
+    () => new Color(cvStyles.colors.secondary),
     []
   );
 
@@ -51,7 +51,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
             style={[styles.legendColor, {backgroundColor: color[1].bgColor}]}
           />
           {/* Label */}
-          <Text style={{fontSize: cvGlobalStyles.text.fontSize.tiny}}>
+          <Text style={{fontSize: cvStyles.text.fontSize.tiny}}>
             {t('cv.body.section.skills.labels.' + color[0])}
           </Text>
         </View>
@@ -80,7 +80,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
 };
 
 const styles = StyleSheet.create({
-  h1: {...cvGlobalStyles.text.headings.h1},
+  h1: {...cvStyles.text.headings.h1},
   legendColor: {
     width: 8,
     height: 8,

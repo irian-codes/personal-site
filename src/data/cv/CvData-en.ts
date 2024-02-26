@@ -12,10 +12,10 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: 'App/Web Developer',
+  position: 'Mobile and Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: '',
-  websiteUrl: 'https://irian.codes',
+  website: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Reus, Spain',
@@ -474,7 +474,7 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
-      title: 'Portaventura risk management intern',
+      title: 'Portaventura risk management (internship)',
       company: 'Portaventura',
       location: 'Vila-Seca, Spain',
       period: 'Feb 2017 - Apr 2017',
@@ -499,7 +499,7 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 5,
-      title: 'Accomodation manager intern',
+      title: 'Accomodation manager (internship)',
       company: 'Hotelbeds Group',
       location: 'Tarragona, Spain',
       period: 'Feb 2016 - May 2016',

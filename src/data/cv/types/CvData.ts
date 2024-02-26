@@ -4,7 +4,7 @@ export type Header = {
   position: string;
   birthdate: string;
   photoSrc: string;
-  websiteUrl: string;
+  website: string;
   websiteQrImageSrc: string;
   location: string;
   locationMapsUrl?: string;

@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../data/cv/CvData';
-import {useTranslations} from '../../../i18n/i18nUtils';
-import {LanguageContext} from '../CvPdf';
-import {cvGlobalStyles} from '../styles/CvGlobalStyles';
-import {SectionEntryWithIcon} from './components/SectionEntryWithIcon';
+import {cvData} from '../../../../data/cv/CvData';
+import {useTranslations} from '../../../../i18n/i18nUtils';
+import {LanguageContext} from '../../CvPdf';
+import {cvStyles} from '../styles/CvStyles';
+import {SectionEntry} from './components/SectionEntry';
 
 type WorkExperienceSectionProps = {
   containerStyle?: any;
@@ -21,15 +21,15 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
         {t('cv.body.section.title.work-experience')}
       </Text>
       {data.content.workExperienceSection.entries.map((entry) => (
-        <SectionEntryWithIcon
+        <SectionEntry
           key={entry.id}
-          title={`${entry.title} (${entry.period})`}
+          title={entry.title}
           place={entry.company}
+          duration={entry.period}
           location={entry.location}
-          iconSrc={entry.iconSrc}
           lines={entry.lines}
           containerStyle={{
-            marginBottom: cvGlobalStyles.text.sections.spacing.small,
+            marginBottom: cvStyles.text.sections.spacing.smallest,
           }}
         />
       ))}
@@ -38,5 +38,5 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
 };
 
 const styles = StyleSheet.create({
-  h1: {...cvGlobalStyles.text.headings.h1},
+  h1: {...cvStyles.text.headings.h1},
 });
