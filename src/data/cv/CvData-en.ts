@@ -83,6 +83,7 @@ const skillsSection: SkillsSection = {
       name: 'Next.js',
       level: 'beginner',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 9,
@@ -185,6 +186,7 @@ const skillsSection: SkillsSection = {
       name: 'PostgreSQL',
       level: 'beginner',
       category: 'database',
+      hidden: true,
     },
     {
       id: 21,
