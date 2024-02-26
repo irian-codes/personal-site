@@ -188,7 +188,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 21,
-      name: 'ExpressJs',
+      name: 'Express',
       level: 'beginner',
       category: 'library-framework',
     },
@@ -474,7 +474,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning Full Stack development with Next.js, React Native, ExpressJs and PostgreSQL.',
+        'Learning Full Stack development with Next.js, React Native, Express and PostgreSQL.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -510,7 +510,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, Spain (remote)',
       period: 'Aug 2022 - May 2023',
       lines: [
-        'Organized the work into milestones, set goals and did code reviews with the team to develop projects made with React, React Native, Firebase and ExpressJS that met company quality expectations.',
+        'Organized the work into milestones, set goals and did code reviews with the team to develop projects made with React, React Native, Firebase and Express that met company quality expectations.',
         'Created extensive project and onboarding documentation for the development team and new hires.',
       ],
       iconSrc:
@@ -524,7 +524,7 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Jul 2021 - Aug 2022',
       lines: [
         'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
-        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
+        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, Express, MongoDB and Docker.',
         'Handled the release, versioning and updates of apps with Expo EAS for Android and iOS.',
       ],
       iconSrc:
