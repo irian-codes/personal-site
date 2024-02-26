@@ -400,7 +400,7 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
-      id: 0,
+      id: 1,
       title: 'Máster en Desarrollo de Aplicaciones',
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, España (remoto)',
@@ -411,7 +411,7 @@ const educationSection: EducationSection = {
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
-      id: 1,
+      id: 0,
       title: 'Grado en Turismo',
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, España',
@@ -427,7 +427,7 @@ const educationSection: EducationSection = {
 const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
-      id: 0,
+      id: 5,
       title: 'Desarrollador Lead',
       company: 'Studio by Caigo',
       location: 'Reus, España (remoto)',
@@ -442,7 +442,7 @@ const workExperienceSection: WorkExperienceSection = {
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
-      id: 1,
+      id: 4,
       title: 'Desarrollador frontend de apps',
       company: 'Studio by Caigo',
       location: 'Reus, España (híbrido)',
@@ -457,7 +457,7 @@ const workExperienceSection: WorkExperienceSection = {
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Desarrollador Unity 3D VR',
       company: 'Ekisolid',
       location: 'Barcelona, España (remoto)',
@@ -469,7 +469,7 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
-      id: 3,
+      id: 2,
       title: 'Gestor de riesgos (prácticas)',
       company: 'Portaventura',
       location: 'Vila-Seca, España',
@@ -481,7 +481,7 @@ const workExperienceSection: WorkExperienceSection = {
         getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
     },
     {
-      id: 4,
+      id: 1,
       title: 'Desarrollador web con Wordpress',
       company: 'Digital Media Empresas',
       location: 'Reus, España (remoto)',
@@ -494,7 +494,7 @@ const workExperienceSection: WorkExperienceSection = {
         '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
     {
-      id: 5,
+      id: 0,
       title: 'Gestor de plazas de alojamiento (prácticas)',
       company: 'Hotelbeds Group',
       location: 'Tarragona, España',

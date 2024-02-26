@@ -22,6 +22,7 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
       </Text>
       {data.content.workExperienceSection.entries
         .filter((entry) => !entry.hidden)
+        .sort((a, b) => (a.id < b.id ? 1 : -1))
         .map((entry) => (
           <SectionEntry
             key={entry.id}

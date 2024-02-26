@@ -456,7 +456,7 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
-      id: 0,
+      id: 1,
       title: 'Masters in Mobile App Development',
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, Spain (remote)',
@@ -467,7 +467,7 @@ const educationSection: EducationSection = {
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
-      id: 1,
+      id: 0,
       title: "Tourism and Hospitality Bachelor's Degree",
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Spain',
@@ -481,7 +481,7 @@ const educationSection: EducationSection = {
 const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
-      id: 0,
+      id: 5,
       title: 'Lead developer',
       company: 'Studio by Caigo',
       location: 'Reus, Spain (remote)',
@@ -494,7 +494,7 @@ const workExperienceSection: WorkExperienceSection = {
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
-      id: 1,
+      id: 4,
       title: 'Frontend app developer',
       company: 'Studio by Caigo',
       location: 'Reus, Spain (hybrid)',
@@ -508,7 +508,7 @@ const workExperienceSection: WorkExperienceSection = {
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Unity 3D VR developer',
       company: 'Ekisolid',
       location: 'Barcelona, Spain (remote)',
@@ -519,7 +519,7 @@ const workExperienceSection: WorkExperienceSection = {
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
-      id: 3,
+      id: 2,
       title: 'Portaventura risk management (internship)',
       company: 'Portaventura',
       location: 'Vila-Seca, Spain',
@@ -532,7 +532,7 @@ const workExperienceSection: WorkExperienceSection = {
       hidden: true,
     },
     {
-      id: 4,
+      id: 1,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
       location: 'Reus, Spain (remote)',
@@ -543,7 +543,7 @@ const workExperienceSection: WorkExperienceSection = {
         '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
     {
-      id: 5,
+      id: 0,
       title: 'Accomodation manager (internship)',
       company: 'Hotelbeds Group',
       location: 'Tarragona, Spain',
