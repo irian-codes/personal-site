@@ -13,7 +13,7 @@ export function CvContent() {
 
       <View style={styles.main}>
         <WorkExperienceSection />
-        <EducationSection />
+        <EducationSection containerStyle={styles.section} />
         <SkillsSection containerStyle={styles.section} />
         <OtherSection containerStyle={[styles.section, {marginBottom: 0}]} />
       </View>

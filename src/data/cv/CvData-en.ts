@@ -422,7 +422,7 @@ const educationSection: EducationSection = {
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Spain',
       period: 'Sept 2013 - Jun 2017',
-      lines: ['Learned business management, marketing and business planning.'],
+      lines: [],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
     },
   ],
