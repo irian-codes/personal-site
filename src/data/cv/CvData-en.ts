@@ -79,6 +79,12 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 76,
+      name: 'Next.js',
+      level: 'beginner',
+      category: 'library-framework',
+    },
+    {
       id: 9,
       name: 'React Native',
       level: 'proficient',
@@ -171,6 +177,12 @@ const skillsSection: SkillsSection = {
     {
       id: 20,
       name: 'MongoDB',
+      level: 'beginner',
+      category: 'database',
+    },
+    {
+      id: 77,
+      name: 'PostgreSQL',
       level: 'beginner',
       category: 'database',
     },
@@ -455,6 +467,17 @@ const skillsSection: SkillsSection = {
 
 const educationSection: EducationSection = {
   entries: [
+    {
+      id: 2,
+      title: 'Full Stack Development',
+      institution: 'Zero To Mastery Academy',
+      location: 'Toronto, Canada (remote)',
+      period: 'Sep 2023 - Present',
+      lines: [
+        'Learning Full Stack development with Next.js, React Native, ExpressJs and PostgreSQL.',
+      ],
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
+    },
     {
       id: 1,
       title: 'Masters in Mobile App Development',
