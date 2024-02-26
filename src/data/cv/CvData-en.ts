@@ -432,6 +432,24 @@ const skillsSection: SkillsSection = {
       category: 'soft-skill',
       hidden: true,
     },
+    {
+      id: 70,
+      name: 'English',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
+    {
+      id: 71,
+      name: 'Spanish',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
+    {
+      id: 72,
+      name: 'Catalan',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
   ],
 };
 

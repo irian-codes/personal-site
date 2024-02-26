@@ -2,7 +2,6 @@ import {StyleSheet, View} from '@react-pdf/renderer';
 import React from 'react';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
-import {OtherSection} from './sections/OtherSection';
 import {SkillsSection} from './sections/SkillsSection';
 import {WorkExperienceSection} from './sections/WorkExperienceSection';
 
@@ -15,7 +14,6 @@ export function CvContent() {
         <WorkExperienceSection />
         <EducationSection containerStyle={styles.section} />
         <SkillsSection containerStyle={styles.section} />
-        <OtherSection containerStyle={[styles.section, {marginBottom: 0}]} />
       </View>
     </React.Fragment>
   );
