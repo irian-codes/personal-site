@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: headerStyles.spacing.medium,
+    marginBottom: headerStyles.spacing.smallest,
   },
   firstColumnContainer: {
     flexDirection: 'column',

@@ -10,7 +10,7 @@ export function CvContent() {
     <React.Fragment>
       <Header />
 
-      <View style={styles.main}>
+      <View>
         <WorkExperienceSection />
         <EducationSection containerStyle={styles.section} />
         <SkillsSection containerStyle={styles.section} />
@@ -20,9 +20,6 @@ export function CvContent() {
 }
 
 const styles = StyleSheet.create({
-  main: {
-    marginTop: '-0.5cm',
-  },
   section: {
     marginBottom: '0.5cm',
   },
