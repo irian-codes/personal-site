@@ -29,7 +29,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         .toString(),
     },
     intermediate: {
-      textColor: 'white',
+      textColor: 'black',
       bgColor: skillChipBaseColor
         .range('white', {space: 'srgb'})(0.4)
         .toString(),
