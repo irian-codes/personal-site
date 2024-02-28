@@ -41,13 +41,6 @@ const skillsSection: SkillsSection = {
       category: 'language',
     },
     {
-      id: 1,
-      name: 'JavaScript',
-      level: 'proficient',
-      category: 'language',
-      hidden: true,
-    },
-    {
       id: 2,
       name: 'JSON',
       level: 'proficient',
@@ -56,13 +49,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 3,
-      name: 'HTML',
-      level: 'proficient',
-      category: 'language',
-    },
-    {
-      id: 4,
-      name: 'CSS',
+      name: 'HTML/CSS/JS',
       level: 'proficient',
       category: 'language',
     },
@@ -144,7 +131,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 17,
-      name: 'Redux Toolkit',
+      name: 'Redux',
       level: 'intermediate',
       category: 'library-framework',
     },
@@ -203,12 +190,6 @@ const skillsSection: SkillsSection = {
     {
       id: 32,
       name: 'Jest',
-      level: 'beginner',
-      category: 'library-framework',
-    },
-    {
-      id: 33,
-      name: 'Mocha',
       level: 'beginner',
       category: 'library-framework',
     },
@@ -281,6 +262,7 @@ const skillsSection: SkillsSection = {
       name: 'Codeium',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 38,
@@ -328,6 +310,7 @@ const skillsSection: SkillsSection = {
       name: 'Upwork',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 52,
