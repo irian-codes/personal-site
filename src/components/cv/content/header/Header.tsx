@@ -115,21 +115,5 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     marginRight: headerStyles.spacing.small,
   },
-  qrContainer: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-  },
-  qrImage: {
-    height: '2.5cm',
-    width: '2.5cm',
-  },
-  websiteText: {
-    fontSize: headerStyles.text.fontSize.smallest,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: '0.1cm',
-  },
   contactDetail: {width: '3.5cm', marginBottom: headerStyles.spacing.smallest},
 });
