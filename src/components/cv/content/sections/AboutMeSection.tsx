@@ -12,9 +12,9 @@ export const AboutMeSection = (props: AboutMeSectionProps) => {
 
   return (
     <View style={props.containerStyle}>
-      <Text style={styles.content}>
-        {data.content.aboutSection.lines.map((line) => line)}
-      </Text>
+      {data.content.aboutSection.lines.map((line) => (
+        <Text style={styles.content}>{line}</Text>
+      ))}
     </View>
   );
 };
