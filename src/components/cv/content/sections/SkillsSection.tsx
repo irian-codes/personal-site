@@ -51,7 +51,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
             style={[styles.legendColor, {backgroundColor: color[1].bgColor}]}
           />
           {/* Label */}
-          <Text style={{fontSize: cvStyles.text.fontSize.tiny}}>
+          <Text style={{fontSize: cvStyles.text.fontSize.small}}>
             {t('cv.body.section.skills.labels.' + color[0])}
           </Text>
         </View>

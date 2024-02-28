@@ -27,7 +27,7 @@ export const OtherSection = (props: OtherSectionProps) => {
 const styles = StyleSheet.create({
   h1: {...cvStyles.text.headings.h1},
   content: {
-    fontSize: cvStyles.text.fontSize.small,
+    fontSize: cvStyles.text.fontSize.medium,
     marginBottom: cvStyles.text.spacing.lineSpacing,
   },
 });

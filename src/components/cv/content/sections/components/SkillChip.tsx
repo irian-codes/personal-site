@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     padding: '0.1cm',
   },
   text: {
-    fontSize: cvStyles.text.fontSize.smallest,
+    fontSize: cvStyles.text.fontSize.skills,
     fontFamily: cvStyles.text.fontFamily.monospace,
   },
 });

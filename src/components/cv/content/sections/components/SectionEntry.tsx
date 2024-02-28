@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     color: cvStyles.colors.primaryGray,
   },
   content: {
-    fontSize: cvStyles.text.fontSize.small,
+    fontSize: cvStyles.text.fontSize.medium,
     marginBottom: cvStyles.text.spacing.lineSpacing,
     textAlign: 'justify',
   },
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   secondLineSeparator: {
     color: cvStyles.colors.primaryGray,
-    fontSize: cvStyles.text.fontSize.small,
+    fontSize: cvStyles.text.fontSize.medium,
     marginHorizontal: '0.2cm',
     marginTop: '-0.15cm',
   },

@@ -6,11 +6,11 @@ const colors = {
 
 const textStyles = {
   fontSize: {
-    smallest: 8,
-    tiny: 10,
-    small: 12,
-    medium: 14,
-    large: 16,
+    skills: 8,
+    small: 9,
+    medium: 11,
+    large: 12,
+    largex: 14,
   },
   spacing: {
     headingMarginBottom: '0.1cm',
@@ -28,24 +28,24 @@ const headingStyles = {
   h1: {
     fontFamily: textStyles.fontFamily.headers,
     fontWeight: 600,
-    fontSize: textStyles.fontSize.large,
+    fontSize: textStyles.fontSize.largex,
     marginBottom: textStyles.spacing.headingMarginBottom,
     textDecoration: 'underline' as const,
     color: colors.secondary,
   },
   h2: {
     fontFamily: textStyles.fontFamily.headers,
-    fontSize: textStyles.fontSize.medium,
+    fontSize: textStyles.fontSize.large,
     marginBottom: textStyles.spacing.lineSpacing,
     color: colors.primary,
   },
   h3: {
-    fontSize: textStyles.fontSize.small,
+    fontSize: textStyles.fontSize.medium,
     marginBottom: textStyles.spacing.lineSpacing,
     color: colors.primary,
   },
   h4: {
-    fontSize: textStyles.fontSize.tiny,
+    fontSize: textStyles.fontSize.small,
     marginBottom: textStyles.spacing.lineSpacing,
     color: colors.primary,
   },
