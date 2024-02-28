@@ -114,10 +114,10 @@ const styles = StyleSheet.create({
     fontWeight: 500,
   },
   text: {
-    fontSize: headerStyles.text.fontSize.smallest,
+    fontSize: headerStyles.text.fontSize.small,
   },
   link: {
-    fontSize: headerStyles.text.fontSize.smallest,
+    fontSize: headerStyles.text.fontSize.small,
     color: headerStyles.text.colors.primary,
     textDecoration: 'none',
   },

@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     fontFamily: headerStyles.text.fontFamily.name,
   },
   position: {
-    fontSize: 18,
+    fontSize: headerStyles.text.fontSize.position,
     fontStyle: 'italic',
     textAlign: 'left',
     marginTop: '-0.2cm',

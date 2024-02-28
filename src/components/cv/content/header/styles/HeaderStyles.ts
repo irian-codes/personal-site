@@ -4,9 +4,10 @@ import {cvStyles} from '../../styles/CvStyles';
 export const headerStyles = {
   text: {
     fontSize: {
-      smallest: 10,
-      medium: 12,
-      large: 14,
+      small: 9,
+      medium: 11,
+      large: 12,
+      position: 18,
       name: 28,
     },
     colors: {

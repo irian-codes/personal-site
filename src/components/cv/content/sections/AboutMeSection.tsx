@@ -2,6 +2,7 @@ import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
 import {cvData} from '../../../../data/cv/CvData';
 import {LanguageContext} from '../../CvPdf';
+import {headerStyles} from '../header/styles/HeaderStyles';
 import {cvStyles} from '../styles/CvStyles';
 
 type AboutMeSectionProps = {containerStyle?: any};
@@ -22,8 +23,8 @@ export const AboutMeSection = (props: AboutMeSectionProps) => {
 const styles = StyleSheet.create({
   content: {
     fontFamily: cvStyles.text.fontFamily.headers,
-    fontSize: cvStyles.text.fontSize.small,
-    color: cvStyles.colors.primary,
+    fontSize: headerStyles.text.fontSize.medium,
+    color: headerStyles.text.colors.primary,
     textAlign: 'left',
   },
 });
