@@ -522,7 +522,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
       lines: [
-        'Developed many scripts in C# to add functionality to the project made by the game design team.',
+        'With C# scripts I brought to life the VR experiences the designers created in Unity.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
