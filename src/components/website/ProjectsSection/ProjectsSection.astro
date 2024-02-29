@@ -43,7 +43,9 @@ const t = useTranslations(locale);
                       ')'}
                   </h5>
                   {project.publishUrls.size > 0 && (
-                    <p class="project-published-label">PUBLISHED!</p>
+                    <p class="project-published-label">
+                      {t('website.home.projects-published.label').toUpperCase()}
+                    </p>
                   )}
                   <button class="close-button hidden" type="button">
                     &times;
