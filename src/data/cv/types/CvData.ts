@@ -68,6 +68,24 @@ export type WorkExperienceSection = {
   entries: WorkExperienceEntry[];
 };
 
+export type ProjectSection = {
+  entries: ProjectEntry[];
+};
+
+export type ProjectEntry = {
+  id: number;
+  name: string;
+  period: string;
+  lines: string[];
+  technologies: Technology[];
+  urls: Map<'live' | 'repository', string>;
+  iconSrc: string;
+} & isHidden;
+
+export type Technology = {
+  name: string;
+};
+
 export type OtherSection = {
   lines: string[];
 };
@@ -78,5 +96,6 @@ export type CvData = {
   skillsSection: SkillsSection;
   educationSection: EducationSection;
   workExperienceSection: WorkExperienceSection;
+  projectSection: ProjectSection;
   otherSection: OtherSection;
 };

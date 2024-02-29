@@ -29,6 +29,9 @@ export const EducationSection = (props: EducationSectionProps) => {
             place={entry.institution}
             location={entry.location}
             lines={entry.lines}
+            containerStyle={{
+              marginBottom: cvStyles.text.sections.spacing.smallest,
+            }}
           />
         ))}
     </View>

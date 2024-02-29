@@ -5,6 +5,7 @@ import type {
   EducationSection,
   Header,
   OtherSection,
+  ProjectSection,
   SkillsSection,
   WorkExperienceSection,
 } from './types/CvData';
@@ -424,19 +425,19 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 73,
-      name: 'Inglés',
+      name: 'Anglès',
       level: 'proficient',
       category: 'soft-skill',
     },
     {
       id: 74,
-      name: 'Español',
+      name: 'Castellà',
       level: 'proficient',
       category: 'soft-skill',
     },
     {
       id: 75,
-      name: 'Catalán',
+      name: 'Català',
       level: 'proficient',
       category: 'soft-skill',
     },
@@ -452,7 +453,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canadà (remot)',
       period: 'Set 2023 - Present',
       lines: [
-        'Aprenent desenvolupament Full Stack amb Next.js, React Native, Express y PostgreSQL.',
+        'Aprenent desenvolupament Full Stack amb Next.js, React Native, Express i PostgreSQL.',
       ],
       iconSrc: '',
     },
@@ -558,6 +559,30 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
+const projectSection: ProjectSection = {
+  entries: [
+    {
+      id: 0,
+      name: 'Pàgina web personal',
+      period: 'Set 2023',
+      lines: [
+        'La meva pàgina personal per mostrar els meus projectes reals i millorar les meves habilitats en HTML/CSS/JS.',
+      ],
+      technologies: [
+        {name: 'Astro'},
+        {name: 'React'},
+        {name: 'Typescript'},
+        {name: 'PostCSS'},
+      ],
+      urls: new Map([
+        ['live', 'https://irian.codes'],
+        ['repository', 'https://github.com/irian-codes/personal-site'],
+      ]),
+      iconSrc: '',
+    },
+  ],
+};
+
 const otherSection: OtherSection = {
   lines: ['Idiomes: Anglès, Castellà, Català.', 'Permís de conduir: Sí.'],
 };
@@ -568,5 +593,6 @@ export const cvData_ca: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
+  projectSection,
   otherSection,
 };

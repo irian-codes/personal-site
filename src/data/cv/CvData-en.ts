@@ -5,6 +5,7 @@ import type {
   EducationSection,
   Header,
   OtherSection,
+  ProjectSection,
   SkillsSection,
   WorkExperienceSection,
 } from './types/CvData';
@@ -565,6 +566,30 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
+const projectSection: ProjectSection = {
+  entries: [
+    {
+      id: 0,
+      name: 'Personal website',
+      period: 'Sep 2023',
+      lines: [
+        'My portfolio website to showcase my real projects and learn Astro, which enhanced my HTML/CSS/JS skills.',
+      ],
+      technologies: [
+        {name: 'Astro'},
+        {name: 'React'},
+        {name: 'Typescript'},
+        {name: 'PostCSS'},
+      ],
+      urls: new Map([
+        ['live', 'https://irian.codes'],
+        ['repository', 'https://github.com/irian-codes/personal-site'],
+      ]),
+      iconSrc: '',
+    },
+  ],
+};
+
 const otherSection: OtherSection = {
   lines: ['Languages: English, Spanish, Catalan.', 'Driving License: Yes.'],
 };
@@ -575,5 +600,6 @@ export const cvData_en: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
+  projectSection,
   otherSection,
 };

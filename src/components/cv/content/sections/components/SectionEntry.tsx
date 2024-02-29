@@ -1,4 +1,5 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import React from 'react';
 import {cvStyles} from '../../styles/CvStyles';
 
 type SectionEntryProps = {
@@ -27,11 +28,15 @@ export const SectionEntry = (props: SectionEntryProps) => {
           <Text style={styles.h4}>{`${props.location}`}</Text>
         </View>
       </View>
-      {props.lines.map((line) => (
+      {props.lines.map((line, index, linesArr) => (
         // A bit dirty way to get the key but eh, it should work except in edge cases
-        <Text key={line.substring(0, 10)} style={styles.content}>
-          {'- ' + line}
-        </Text>
+        <React.Fragment key={line.substring(0, 10)}>
+          <Text style={styles.content}>{'- ' + line}</Text>
+
+          {index !== linesArr.length - 1 && (
+            <View style={{height: cvStyles.text.spacing.lineSpacing}} />
+          )}
+        </React.Fragment>
       ))}
     </View>
   );
@@ -44,7 +49,6 @@ const styles = StyleSheet.create({
   },
   content: {
     fontSize: cvStyles.text.fontSize.medium,
-    marginBottom: cvStyles.text.spacing.lineSpacing,
     textAlign: 'justify',
   },
   titleRowContainer: {

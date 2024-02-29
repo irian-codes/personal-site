@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '8cm',
     flexWrap: 'wrap',
-    height: '5cm',
+    height: '4cm',
   },
   photoAndTextContainer: {
     flexDirection: 'row',
