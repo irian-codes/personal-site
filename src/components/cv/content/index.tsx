@@ -23,6 +23,6 @@ export function CvContent() {
 
 const styles = StyleSheet.create({
   section: {
-    marginBottom: '0.5cm',
+    marginBottom: '0.2cm',
   },
 });

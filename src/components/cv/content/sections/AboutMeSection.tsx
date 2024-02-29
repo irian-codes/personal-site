@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
-import {useContext} from 'react';
+import React, {useContext} from 'react';
 import {cvData} from '../../../../data/cv/CvData';
 import {LanguageContext} from '../../CvPdf';
 import {headerStyles} from '../header/styles/HeaderStyles';
@@ -13,10 +13,14 @@ export const AboutMeSection = (props: AboutMeSectionProps) => {
 
   return (
     <View style={props.containerStyle}>
-      {data.content.aboutSection.lines.map((line) => (
-        <Text key={line.substring(0, 10)} style={styles.content}>
-          {line}
-        </Text>
+      {data.content.aboutSection.lines.map((line, index, linesArr) => (
+        <React.Fragment key={line.substring(0, 10)}>
+          <Text style={styles.content}>{line}</Text>
+
+          {index !== linesArr.length - 1 && (
+            <View style={{height: cvStyles.text.spacing.lineSpacing}} />
+          )}
+        </React.Fragment>
       ))}
     </View>
   );

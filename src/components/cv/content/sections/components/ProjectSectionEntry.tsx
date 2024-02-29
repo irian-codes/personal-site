@@ -1,4 +1,5 @@
 import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
+import React from 'react';
 import type {ProjectEntry} from '../../../../../data/cv/types/CvData';
 import {cvStyles} from '../../styles/CvStyles';
 
@@ -28,12 +29,18 @@ export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {
         )}
       </View>
 
-      {props.project.lines.map((line) => (
-        // A bit dirty way to get the key but eh, it should work except in edge cases
-        <Text key={line.substring(0, 10)} style={styles.content}>
-          {'- ' + line}
-        </Text>
-      ))}
+      <View style={styles.projectLinesContainer}>
+        {props.project.lines.map((line, index) => (
+          // A bit dirty way to get the key but eh, it should work except in edge cases
+          <React.Fragment key={line.substring(0, 10)}>
+            <Text style={styles.content}>{'- ' + line}</Text>
+
+            {index !== props.project.lines.length - 1 && (
+              <View style={{height: cvStyles.text.spacing.lineSpacing}} />
+            )}
+          </React.Fragment>
+        ))}
+      </View>
     </View>
   );
 };
@@ -41,7 +48,6 @@ export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {
 const styles = StyleSheet.create({
   content: {
     fontSize: cvStyles.text.fontSize.medium,
-    marginBottom: cvStyles.text.spacing.lineSpacing,
     textAlign: 'justify',
   },
   firstLineContainer: {
@@ -53,5 +59,8 @@ const styles = StyleSheet.create({
     ...cvStyles.text.headings.h2,
     fontWeight: 'bold',
     textDecoration: 'none',
+  },
+  projectLinesContainer: {
+    marginTop: '-0.1cm',
   },
 });
