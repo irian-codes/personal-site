@@ -32,9 +32,7 @@ const locale = defaultLanguageTag;
     return lang != null && supportedLocales.includes(lang);
   }
 
-  if (!isLanguageSupported(userLanguage)) {
-    window.location.href = currentUrl + `/${defaultLanguageTag}/`;
-  } else {
+  if (isLanguageSupported(userLanguage)) {
     window.location.href = currentUrl + `/${userLanguage}/`;
   }
 </script>
