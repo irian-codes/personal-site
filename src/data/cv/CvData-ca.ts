@@ -41,27 +41,16 @@ const skillsSection: SkillsSection = {
       category: 'language',
     },
     {
-      id: 1,
-      name: 'JavaScript',
-      level: 'proficient',
-      category: 'language',
-    },
-    {
       id: 2,
       name: 'JSON',
       level: 'proficient',
       category: 'language',
+      hidden: true,
     },
     {
       id: 3,
-      name: 'HTML',
-      level: 'intermediate',
-      category: 'language',
-    },
-    {
-      id: 4,
-      name: 'CSS',
-      level: 'intermediate',
+      name: 'HTML/CSS/JS',
+      level: 'proficient',
       category: 'language',
     },
     {
@@ -81,6 +70,13 @@ const skillsSection: SkillsSection = {
       name: 'React Native',
       level: 'proficient',
       category: 'library-framework',
+    },
+    {
+      id: 76,
+      name: 'Next.js',
+      level: 'beginner',
+      category: 'library-framework',
+      hidden: true,
     },
     {
       id: 10,
@@ -105,10 +101,11 @@ const skillsSection: SkillsSection = {
       name: 'Flutter',
       level: 'beginner',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 13,
-      name: 'Material UI (MUI)',
+      name: 'Material UI',
       level: 'intermediate',
       category: 'library-framework',
     },
@@ -117,12 +114,14 @@ const skillsSection: SkillsSection = {
       name: 'React Native Elements',
       level: 'proficient',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 15,
       name: 'React Router',
       level: 'proficient',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 16,
@@ -132,7 +131,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 17,
-      name: 'Redux Toolkit',
+      name: 'Redux',
       level: 'intermediate',
       category: 'library-framework',
     },
@@ -141,6 +140,7 @@ const skillsSection: SkillsSection = {
       name: 'i18next',
       level: 'proficient',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 19,
@@ -153,18 +153,27 @@ const skillsSection: SkillsSection = {
       name: 'Yarn',
       level: 'beginner',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 62,
       name: 'NPM',
       level: 'proficient',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 20,
       name: 'MongoDB',
       level: 'beginner',
       category: 'database',
+    },
+    {
+      id: 77,
+      name: 'PostgreSQL',
+      level: 'beginner',
+      category: 'database',
+      hidden: true,
     },
     {
       id: 21,
@@ -174,19 +183,13 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 22,
-      name: 'NestJS',
+      name: 'NestJs',
       level: 'beginner',
       category: 'library-framework',
     },
     {
       id: 32,
       name: 'Jest',
-      level: 'beginner',
-      category: 'library-framework',
-    },
-    {
-      id: 33,
-      name: 'Mocha',
       level: 'beginner',
       category: 'library-framework',
     },
@@ -213,18 +216,21 @@ const skillsSection: SkillsSection = {
       name: 'Gitlab',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 28,
       name: 'Github',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 27,
       name: 'Expo EAS',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 29,
@@ -237,6 +243,7 @@ const skillsSection: SkillsSection = {
       name: 'Wordpress',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 31,
@@ -255,6 +262,7 @@ const skillsSection: SkillsSection = {
       name: 'Codeium',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 38,
@@ -267,48 +275,56 @@ const skillsSection: SkillsSection = {
       name: 'Todoist',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 40,
       name: 'Trello',
       level: 'beginner',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 42,
       name: 'Slack',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 43,
       name: 'Chat GPT',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 45,
       name: 'Phind',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 47,
       name: 'Upwork',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 52,
       name: 'Microsoft Office',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 53,
       name: 'Treball en equip en remot',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 54,
@@ -321,72 +337,84 @@ const skillsSection: SkillsSection = {
       name: 'Objectius SMART',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 56,
       name: 'Priorització',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 57,
       name: "Lideratge d'equips",
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 58,
       name: 'Treball autònom',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 59,
       name: 'Aprenentatge actiu',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 60,
       name: 'Code ownership',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 61,
       name: 'Debugging',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 63,
       name: 'UI/UX',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 64,
       name: 'Comprensió del model de negoci',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 65,
       name: 'Orientació de personal de pràctiques',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 66,
       name: 'Revisió de codi',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 67,
       name: 'Flexibilitat horària',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 68,
@@ -394,11 +422,40 @@ const skillsSection: SkillsSection = {
       level: 'beginner',
       category: 'soft-skill',
     },
+    {
+      id: 73,
+      name: 'Inglés',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
+    {
+      id: 74,
+      name: 'Español',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
+    {
+      id: 75,
+      name: 'Catalán',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
   ],
 };
 
 const educationSection: EducationSection = {
   entries: [
+    {
+      id: 2,
+      title: 'Desenvolupament Full Stack',
+      institution: 'Zero To Mastery Academy',
+      location: 'Toronto, Canadà (remot)',
+      period: 'Set 2023 - Present',
+      lines: [
+        'Aprenent desenvolupament Full Stack amb Next.js, React Native, Express y PostgreSQL.',
+      ],
+      iconSrc: '',
+    },
     {
       id: 1,
       title: "Màster en Desenvolupament d'Aplicacions",
@@ -416,9 +473,7 @@ const educationSection: EducationSection = {
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Espanya',
       period: 'Set 2013 - Jun 2017',
-      lines: [
-        "Estudis en gestió d'empreses turístiques, màrqueting i business plan.",
-      ],
+      lines: [],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
     },
   ],
@@ -433,10 +488,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, Espanya (remot)',
       period: 'Ago 2022 - Mai 2023',
       lines: [
-        "Dirigir l'equip de desenvolupament en projectes realitzats amb React, React Native, Firebase i ExpressJS.",
-        "Organitzar el treball en milestones, establint objectius amb l'equip i fent revisions de codi i standups per garantir que el projecte es lliurés d'acord amb els estàndards de qualitat de l'empresa, els requisits del projecte i en un termini raonable.",
-        "Crear documentació dels projectes i per la incorporació a l'equip de nous membres.",
-        "Realitzar entrevistes, seleccionar i incorporar desenvolupadors i becaris a l'equip.",
+        "Vaig organitzar els projectes per objectius i vaig fer revisions de codi amb l'equip per desenvolupar apps amb React, React Native, Firebase i Express que van complir amb les expectatives de qualitat de l'empresa.",
+        "Vaig escriure documentació dels projectes per a l'equip de desenvolupament i incorporació per als nous integrants de l'equip.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -449,8 +502,7 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Jul 2021 - Ago 2022',
       lines: [
         "Desenvolupar el frontend d'apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.",
-        "Treballar amb l'equip de backend per garantir que el frontend funcionés bé amb el backend API REST.",
-        'Desenvolupar el backend de diversos projectes amb Firebase i Google Cloud, també va ajudar amb el desenvolupament amb NestJs, ExpressJs, MongoDB i Docker.',
+        'Vaig configurar el backend de diversos projectes amb Firebase i Google Cloud, també vaig ajudar amb el desenvolupament amb NestJs, Express, MongoDB i Docker.',
         "Gestionar el llançament, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
       ],
       iconSrc:
@@ -463,8 +515,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, Espanya (remot)',
       period: 'Nov 2017 - Des 2019',
       lines: [
-        "Desenvolupar scripts en C# per afegir funcionalitats al projecte realitzat per l'equip de disseny del joc. Incloent networking, la física del casc de realitat virtual i gestió i optimització del jocs.",
-        'Integrar Unity amb dispositius IoT com un ventilador controlat per Bluetooth per un Arduino i un simulador de moviment de cotxe.',
+        'Mitjançant scripts amb C# vaig donar funcionalitat a les experiències VR que els dissenyadors van crear a Unity.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
@@ -479,6 +530,7 @@ const workExperienceSection: WorkExperienceSection = {
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+      hidden: true,
     },
     {
       id: 1,
@@ -486,9 +538,7 @@ const workExperienceSection: WorkExperienceSection = {
       company: 'Digital Media Empresas',
       location: 'Reus, Espanya (remot)',
       period: 'Jun 2016 - Nov 2016',
-      lines: [
-        'Dissenyar i desenvolupar pàgines web en Wordpress utilitzant Divi, fent ajustos amb CSS.',
-      ],
+      lines: [],
       iconSrc:
         getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
@@ -503,6 +553,7 @@ const workExperienceSection: WorkExperienceSection = {
         'Desenvolupar macros per Office Excel que van reduir significativament el temps de processament de les dades associades a les vendes de reserves. També vaig fer altres tasques poc rellevants.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
+      hidden: true,
     },
   ],
 };
