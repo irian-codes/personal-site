@@ -4,6 +4,7 @@ import {cvData} from '../../../../data/cv/CvData';
 import {useTranslations} from '../../../../i18n/i18nUtils';
 import {LanguageContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
+import {ProjectSectionEntry} from './components/ProjectSectionEntry';
 
 type ProjectSectionProps = {
   containerStyle?: any;
@@ -17,6 +18,9 @@ export const ProjectsSection = (props: ProjectSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.projects')}</Text>
+      {data.content.projectSection.entries.map((entry) => (
+        <ProjectSectionEntry project={entry} containerStyle={{}} />
+      ))}
     </View>
   );
 };

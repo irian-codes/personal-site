@@ -573,7 +573,7 @@ const projectSection: ProjectSection = {
       name: 'Personal website',
       period: 'Sep 2023',
       lines: [
-        'My personal portfolio website to showcase my real projects and learn Astro, which enhanced my HTML/CSS/JS skills.',
+        'My portfolio website to showcase my real projects and learn Astro, which enhanced my HTML/CSS/JS skills.',
       ],
       technologies: [
         {name: 'Astro'},
