@@ -14,7 +14,9 @@ export const AboutMeSection = (props: AboutMeSectionProps) => {
   return (
     <View style={props.containerStyle}>
       {data.content.aboutSection.lines.map((line) => (
-        <Text style={styles.content}>{line}</Text>
+        <Text key={line.substring(0, 10)} style={styles.content}>
+          {line}
+        </Text>
       ))}
     </View>
   );
