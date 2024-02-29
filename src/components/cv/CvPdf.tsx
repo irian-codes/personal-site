@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     alignItems: 'stretch',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     backgroundColor: '#ffffff',
     padding: '1cm',
     fontFamily: cvStyles.text.fontFamily.body,
