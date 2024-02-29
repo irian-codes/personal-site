@@ -564,7 +564,7 @@ const projectSection: ProjectSection = {
     {
       id: 0,
       name: 'Página web personal',
-      period: 'Sep 2023',
+      period: 'Set 2023',
       lines: [
         'Mi sitio web personal para mostrar mis proyectos reales y mejorar mis habilidades en HTML/CSS/JS.',
       ],
