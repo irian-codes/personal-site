@@ -560,7 +560,27 @@ const workExperienceSection: WorkExperienceSection = {
 };
 
 const projectSection: ProjectSection = {
-  entries: [],
+  entries: [
+    {
+      id: 0,
+      name: 'Página web personal',
+      period: 'Sep 2023',
+      lines: [
+        'Mi sitio web personal para mostrar mis proyectos reales y mejorar mis habilidades en HTML/CSS/JS.',
+      ],
+      technologies: [
+        {name: 'Astro'},
+        {name: 'React'},
+        {name: 'Typescript'},
+        {name: 'PostCSS'},
+      ],
+      urls: new Map([
+        ['live', 'https://irian.codes'],
+        ['repository', 'https://github.com/irian-codes/personal-site'],
+      ]),
+      iconSrc: '',
+    },
+  ],
 };
 
 const otherSection: OtherSection = {
