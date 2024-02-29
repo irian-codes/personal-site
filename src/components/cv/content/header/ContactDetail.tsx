@@ -1,14 +1,19 @@
-import {Image, Link, StyleSheet, Text, View} from '@react-pdf/renderer';
+import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../data/cv/CvData';
-import {useTranslations} from '../../../i18n/i18nUtils';
-import {colorizeImage} from '../../../utils/ImageUtils';
-import {splitStringAtLastOccurrence} from '../../../utils/StringUtils';
-import {LanguageContext} from '../CvPdf';
-import {getPublicFolderURL} from '../utils/URL';
-import {headerGlobalStyles} from './styles/HeaderGlobalStyles';
+import {cvData} from '../../../../data/cv/CvData';
+import {useTranslations} from '../../../../i18n/i18nUtils';
+import {splitStringAtLastOccurrence} from '../../../../utils/StringUtils';
+import {LanguageContext} from '../../CvPdf';
+import {getPublicFolderURL} from '../../utils/URL';
+import {headerStyles} from './styles/HeaderStyles';
 
-type ContactType = 'email' | 'linkedin' | 'repository' | 'location' | 'phone';
+type ContactType =
+  | 'email'
+  | 'linkedin'
+  | 'repository'
+  | 'location'
+  | 'phone'
+  | 'website';
 type ContactDetailProps = {
   type: ContactType;
   containerStyle?: any;
@@ -55,6 +60,9 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
         return mapsUrl ?? '#';
 
+      case 'website':
+        return content;
+
       default:
         return '#';
     }
@@ -76,10 +84,6 @@ export const ContactDetail = (props: ContactDetailProps) => {
 
   return (
     <View style={[styles.container, props.containerStyle]}>
-      <Image
-        src={colorizeImage(imageUrl, '#000', headerGlobalStyles.colors.icons)}
-        style={styles.icon}
-      />
       <View style={styles.textContainer}>
         <Text style={styles.label}>
           {t(`cv.header.contact-details.${props.type}.title`)}
@@ -98,23 +102,23 @@ const styles = StyleSheet.create({
   icon: {
     width: '0.6cm',
     height: '0.6cm',
-    marginRight: headerGlobalStyles.spacing.smallest,
+    marginRight: headerStyles.spacing.smallest,
     marginTop: '0.15cm',
   },
   textContainer: {
     flex: 1,
   },
   label: {
-    fontSize: headerGlobalStyles.text.fontSize.medium,
-    fontFamily: headerGlobalStyles.text.fontFamily.contactDetailsHeader,
+    fontSize: headerStyles.text.fontSize.medium,
+    fontFamily: headerStyles.text.fontFamily.contactDetailsHeader,
     fontWeight: 500,
   },
   text: {
-    fontSize: headerGlobalStyles.text.fontSize.smallest,
+    fontSize: headerStyles.text.fontSize.small,
   },
   link: {
-    fontSize: headerGlobalStyles.text.fontSize.smallest,
-    color: headerGlobalStyles.text.colors.primary,
+    fontSize: headerStyles.text.fontSize.small,
+    color: headerStyles.text.colors.primary,
     textDecoration: 'none',
   },
 });
