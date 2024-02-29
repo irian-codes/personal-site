@@ -5,6 +5,7 @@ import type {
   EducationSection,
   Header,
   OtherSection,
+  ProjectSection,
   SkillsSection,
   WorkExperienceSection,
 } from './types/CvData';
@@ -558,6 +559,10 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
+const projectSection: ProjectSection = {
+  entries: [],
+};
+
 const otherSection: OtherSection = {
   lines: ['Idiomas: Inglés, Castellano, Catalán.', 'Permiso de conducir: Sí.'],
 };
@@ -568,5 +573,6 @@ export const cvData_es: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
+  projectSection,
   otherSection,
 };
