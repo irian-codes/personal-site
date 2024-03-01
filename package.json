@@ -21,7 +21,7 @@
     "@types/react-dom": "^18.2.18",
     "astro": "^4.1.1",
     "colorjs.io": "^0.4.5",
-    "jimp": "^0.22.10",
+    "jimp": "^0.22.12",
     "lightgallery": "^2.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
