@@ -20,6 +20,7 @@ export const ProjectsSection = (props: ProjectSectionProps) => {
       <Text style={styles.h1}>{t('cv.body.section.title.projects')}</Text>
       {data.content.projectSection.entries.map((entry) => (
         <ProjectSectionEntry
+          key={entry.id}
           project={entry}
           containerStyle={{
             marginBottom: cvStyles.text.sections.spacing.smallest,

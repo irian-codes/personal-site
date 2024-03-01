@@ -44,7 +44,8 @@ const subHtml: string = (function buildSubHtml() {
     const divider = '<div style="display: inline; margin: 0 0.2rem">|</div>';
 
     const urlsHtml = `<div class="project-published-urls-container" style="font-size: 0.8rem; margin-top: 0.6rem">${
-      'Published on: ' + strings.join(divider)
+      `${t('website.home.project-gallery.published-text')}:` +
+      strings.join(divider)
     }</div>`;
 
     return urlsHtml;
