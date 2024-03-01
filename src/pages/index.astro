@@ -6,8 +6,6 @@ const supportedLocales = Object.keys(translations);
 const locale = defaultLanguageTag;
 ---
 
-<HomePage locale={locale} />
-
 <!-- Redirecting user to the browser's language page if they navigate to the base URL -->
 <script define:vars={{defaultLanguageTag, supportedLocales}}>
   // If the URL string variable to not redirect is present, just return
@@ -36,3 +34,5 @@ const locale = defaultLanguageTag;
     window.location.href = currentUrl + `/${userLanguage}/`;
   }
 </script>
+
+<HomePage locale={locale} />
