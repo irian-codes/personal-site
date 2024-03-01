@@ -30,10 +30,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.10.8",
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.3",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.5",
     "patch-package": "^8.0.0",
-    "postcss-custom-media": "^10.0.2",
+    "postcss-custom-media": "^10.0.3",
     "postcss-functions": "^4.0.2",
     "postcss-nested": "^6.0.1",
     "prettier": "^3.2.5",
