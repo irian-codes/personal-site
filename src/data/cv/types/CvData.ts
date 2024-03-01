@@ -4,7 +4,7 @@ export type Header = {
   position: string;
   birthdate: string;
   photoSrc: string;
-  websiteUrl: string;
+  website: string;
   websiteQrImageSrc: string;
   location: string;
   locationMapsUrl?: string;
@@ -13,6 +13,8 @@ export type Header = {
   linkedin: string;
   repository: string;
 };
+
+type isHidden = {hidden?: boolean};
 
 export type AboutSection = {
   lines: string[];
@@ -32,7 +34,7 @@ export type Skill = {
     | 'tool'
     | 'other'
     | 'soft-skill';
-};
+} & isHidden;
 
 export type SkillsSection = {
   skills: Skill[];
@@ -46,7 +48,7 @@ export type EducationEntry = {
   period: string;
   lines: string[];
   iconSrc: string;
-};
+} & isHidden;
 
 export type EducationSection = {
   entries: EducationEntry[];
@@ -60,10 +62,28 @@ export type WorkExperienceEntry = {
   period: string;
   lines: string[];
   iconSrc: string;
-};
+} & isHidden;
 
 export type WorkExperienceSection = {
   entries: WorkExperienceEntry[];
+};
+
+export type ProjectSection = {
+  entries: ProjectEntry[];
+};
+
+export type ProjectEntry = {
+  id: number;
+  name: string;
+  period: string;
+  lines: string[];
+  technologies: Technology[];
+  urls: Map<'live' | 'repository', string>;
+  iconSrc: string;
+} & isHidden;
+
+export type Technology = {
+  name: string;
 };
 
 export type OtherSection = {
@@ -76,5 +96,6 @@ export type CvData = {
   skillsSection: SkillsSection;
   educationSection: EducationSection;
   workExperienceSection: WorkExperienceSection;
+  projectSection: ProjectSection;
   otherSection: OtherSection;
 };

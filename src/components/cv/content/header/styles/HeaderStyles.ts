@@ -1,12 +1,13 @@
 import Color from 'colorjs.io';
-import {cvGlobalStyles} from '../../styles/CvGlobalStyles';
+import {cvStyles} from '../../styles/CvStyles';
 
-export const headerGlobalStyles = {
+export const headerStyles = {
   text: {
     fontSize: {
-      smallest: 10,
-      medium: 12,
-      large: 14,
+      small: 9,
+      medium: 11,
+      large: 12,
+      position: 18,
       name: 28,
     },
     colors: {
@@ -21,11 +22,12 @@ export const headerGlobalStyles = {
     smallest: '0.25cm',
     small: '0.5cm',
     medium: '1cm',
+    big: '2cm',
   },
   colors: {
-    icons: cvGlobalStyles.colors.secondary,
-    border: cvGlobalStyles.colors.secondary,
-    background: new Color(cvGlobalStyles.colors.secondary)
+    icons: cvStyles.colors.secondary,
+    border: cvStyles.colors.secondary,
+    background: new Color(cvStyles.colors.secondary)
       .range('white', {space: 'srgb'})(0.9)
       .toString(),
   },

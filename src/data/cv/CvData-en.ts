@@ -5,6 +5,7 @@ import type {
   EducationSection,
   Header,
   OtherSection,
+  ProjectSection,
   SkillsSection,
   WorkExperienceSection,
 } from './types/CvData';
@@ -12,10 +13,10 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: 'App/Web Developer',
+  position: 'Mobile and Web Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: '',
-  websiteUrl: 'https://irian.codes',
+  website: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Reus, Spain',
@@ -41,27 +42,16 @@ const skillsSection: SkillsSection = {
       category: 'language',
     },
     {
-      id: 1,
-      name: 'JavaScript',
-      level: 'proficient',
-      category: 'language',
-    },
-    {
       id: 2,
       name: 'JSON',
       level: 'proficient',
       category: 'language',
+      hidden: true,
     },
     {
       id: 3,
-      name: 'HTML',
-      level: 'intermediate',
-      category: 'language',
-    },
-    {
-      id: 4,
-      name: 'CSS',
-      level: 'intermediate',
+      name: 'HTML/CSS/JS',
+      level: 'proficient',
       category: 'language',
     },
     {
@@ -75,6 +65,13 @@ const skillsSection: SkillsSection = {
       name: 'React',
       level: 'proficient',
       category: 'library-framework',
+    },
+    {
+      id: 76,
+      name: 'Next.js',
+      level: 'beginner',
+      category: 'library-framework',
+      hidden: true,
     },
     {
       id: 9,
@@ -105,10 +102,11 @@ const skillsSection: SkillsSection = {
       name: 'Flutter',
       level: 'beginner',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 13,
-      name: 'Material UI (MUI)',
+      name: 'Material UI',
       level: 'intermediate',
       category: 'library-framework',
     },
@@ -117,12 +115,14 @@ const skillsSection: SkillsSection = {
       name: 'React Native Elements',
       level: 'proficient',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 15,
       name: 'React Router',
       level: 'proficient',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 16,
@@ -132,7 +132,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 17,
-      name: 'Redux Toolkit',
+      name: 'Redux',
       level: 'intermediate',
       category: 'library-framework',
     },
@@ -141,6 +141,7 @@ const skillsSection: SkillsSection = {
       name: 'i18next',
       level: 'proficient',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 19,
@@ -153,18 +154,27 @@ const skillsSection: SkillsSection = {
       name: 'Yarn',
       level: 'beginner',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 62,
       name: 'NPM',
       level: 'proficient',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 20,
       name: 'MongoDB',
       level: 'beginner',
       category: 'database',
+    },
+    {
+      id: 77,
+      name: 'PostgreSQL',
+      level: 'beginner',
+      category: 'database',
+      hidden: true,
     },
     {
       id: 21,
@@ -174,19 +184,13 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 22,
-      name: 'NestJS',
+      name: 'NestJs',
       level: 'beginner',
       category: 'library-framework',
     },
     {
       id: 32,
       name: 'Jest',
-      level: 'beginner',
-      category: 'library-framework',
-    },
-    {
-      id: 33,
-      name: 'Mocha',
       level: 'beginner',
       category: 'library-framework',
     },
@@ -213,18 +217,21 @@ const skillsSection: SkillsSection = {
       name: 'Gitlab',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 28,
       name: 'Github',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 27,
       name: 'Expo EAS',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 29,
@@ -237,6 +244,7 @@ const skillsSection: SkillsSection = {
       name: 'Wordpress',
       level: 'intermediate',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 31,
@@ -255,6 +263,7 @@ const skillsSection: SkillsSection = {
       name: 'Codeium',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 38,
@@ -267,48 +276,56 @@ const skillsSection: SkillsSection = {
       name: 'Todoist',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 40,
       name: 'Trello',
       level: 'beginner',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 42,
       name: 'Slack',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 43,
       name: 'Chat GPT',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 45,
       name: 'Phind',
       level: 'intermediate',
       category: 'ai-tool',
+      hidden: true,
     },
     {
       id: 47,
       name: 'Upwork',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 52,
       name: 'Microsoft Office',
       level: 'proficient',
       category: 'tool',
+      hidden: true,
     },
     {
       id: 53,
       name: 'Remote team collaboration',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 54,
@@ -321,72 +338,84 @@ const skillsSection: SkillsSection = {
       name: 'SMART goals',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 56,
       name: 'Prioritization',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 57,
       name: 'Team leadership',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 58,
       name: 'Working independently',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 59,
       name: 'Active learning',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 60,
       name: 'Code ownership',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 61,
       name: 'Debugging',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 63,
       name: 'UI/UX',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 64,
       name: 'Business needs understanding',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 65,
       name: 'Mentoring interns',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 66,
       name: 'Code review',
       level: 'intermediate',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 67,
       name: 'Flexible work schedule',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 68,
@@ -399,6 +428,25 @@ const skillsSection: SkillsSection = {
       name: 'Work ethic',
       level: 'proficient',
       category: 'soft-skill',
+      hidden: true,
+    },
+    {
+      id: 73,
+      name: 'English',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
+    {
+      id: 74,
+      name: 'Spanish',
+      level: 'proficient',
+      category: 'soft-skill',
+    },
+    {
+      id: 75,
+      name: 'Catalan',
+      level: 'proficient',
+      category: 'soft-skill',
     },
   ],
 };
@@ -406,7 +454,18 @@ const skillsSection: SkillsSection = {
 const educationSection: EducationSection = {
   entries: [
     {
-      id: 0,
+      id: 2,
+      title: 'Full Stack Development',
+      institution: 'Zero To Mastery Academy',
+      location: 'Toronto, Canada (remote)',
+      period: 'Sep 2023 - Present',
+      lines: [
+        'Learning Full Stack development with Next.js, React Native, Express and PostgreSQL.',
+      ],
+      iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
+    },
+    {
+      id: 1,
       title: 'Masters in Mobile App Development',
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, Spain (remote)',
@@ -417,12 +476,12 @@ const educationSection: EducationSection = {
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
-      id: 1,
+      id: 0,
       title: "Tourism and Hospitality Bachelor's Degree",
       institution: 'Universitat Rovira i Virgili',
       location: 'Tarragona, Spain',
       period: 'Sept 2013 - Jun 2017',
-      lines: ['Learned business management, marketing and business planning.'],
+      lines: [],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
     },
   ],
@@ -431,50 +490,46 @@ const educationSection: EducationSection = {
 const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
-      id: 0,
+      id: 5,
       title: 'Lead developer',
       company: 'Studio by Caigo',
       location: 'Reus, Spain (remote)',
       period: 'Aug 2022 - May 2023',
       lines: [
-        'Led the development team on projects made with React, React Native, Firebase and ExpressJS.',
-        "Organized the work to be done into milestones, set goals with the team and did code reviews and standups to ensure the project was delivered according to the quality standards of the company, the project's requirements and ensured it was delivered within a reasonable timeframe.",
-        'Created extensive project and onboarding documentation for the development team.',
-        'Interviewed, hired and onboarded developers and interns for the team.',
+        'Organized the work into milestones, set goals and did code reviews with the team to develop projects made with React, React Native, Firebase and Express that met company quality expectations.',
+        'Created extensive project and onboarding documentation for the development team and new hires.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
-      id: 1,
+      id: 4,
       title: 'Frontend app developer',
       company: 'Studio by Caigo',
       location: 'Reus, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
       lines: [
         'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
-        'Worked with the backend team to ensure the frontend worked well with their REST API backend.',
-        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, ExpressJs, MongoDB and Docker.',
+        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, Express, MongoDB and Docker.',
         'Handled the release, versioning and updates of apps with Expo EAS for Android and iOS.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
-      id: 2,
+      id: 3,
       title: 'Unity 3D VR developer',
       company: 'Ekisolid',
       location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
       lines: [
-        'Developed many scripts in C# to add functionality to the project made by the game design team. Including networking, VR headset physics, game management and optimization.',
-        'Integrated Unity with devices like a BT controlled fan by an Arduino and a racing simulator cockpit.',
+        'With C# scripts I brought to life the VR experiences the designers created in Unity.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
     {
-      id: 3,
-      title: 'Portaventura risk management intern',
+      id: 2,
+      title: 'Portaventura risk management (internship)',
       company: 'Portaventura',
       location: 'Vila-Seca, Spain',
       period: 'Feb 2017 - Apr 2017',
@@ -483,23 +538,22 @@ const workExperienceSection: WorkExperienceSection = {
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/portaventura.jpg',
+      hidden: true,
     },
     {
-      id: 4,
+      id: 1,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
       location: 'Reus, Spain (remote)',
       period: 'Jun 2016 - Nov 2016',
-      lines: [
-        'Designed and developed websites in Wordpress using Divi, making adjustments with CSS.',
-      ],
+      lines: [],
       iconSrc:
         getPublicFolderURL() +
         '/assets/images/cv/logos/digital-media-empresas.jpg',
     },
     {
-      id: 5,
-      title: 'Accomodation manager intern',
+      id: 0,
+      title: 'Accomodation manager (internship)',
       company: 'Hotelbeds Group',
       location: 'Tarragona, Spain',
       period: 'Feb 2016 - May 2016',
@@ -507,6 +561,31 @@ const workExperienceSection: WorkExperienceSection = {
         'Developed a series of Microsoft Office Excel macros to significantly reduce the time it took to process sales data. I also did other non-relevant tasks in this position.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
+      hidden: true,
+    },
+  ],
+};
+
+const projectSection: ProjectSection = {
+  entries: [
+    {
+      id: 0,
+      name: 'Personal website',
+      period: 'Sep 2023',
+      lines: [
+        'My portfolio website to showcase my real projects and learn Astro, which enhanced my HTML/CSS/JS skills.',
+      ],
+      technologies: [
+        {name: 'Astro'},
+        {name: 'React'},
+        {name: 'Typescript'},
+        {name: 'PostCSS'},
+      ],
+      urls: new Map([
+        ['live', 'https://irian.codes'],
+        ['repository', 'https://github.com/irian-codes/personal-site'],
+      ]),
+      iconSrc: '',
     },
   ],
 };
@@ -521,5 +600,6 @@ export const cvData_en: CvData = {
   skillsSection,
   educationSection,
   workExperienceSection,
+  projectSection,
   otherSection,
 };

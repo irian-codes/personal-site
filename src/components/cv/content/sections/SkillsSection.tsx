@@ -1,10 +1,10 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import Color from 'colorjs.io';
 import {useContext, useMemo} from 'react';
-import {cvData} from '../../../data/cv/CvData';
-import {useTranslations} from '../../../i18n/i18nUtils';
-import {LanguageContext} from '../CvPdf';
-import {cvGlobalStyles} from '../styles/CvGlobalStyles';
+import {cvData} from '../../../../data/cv/CvData';
+import {useTranslations} from '../../../../i18n/i18nUtils';
+import {LanguageContext} from '../../CvPdf';
+import {cvStyles} from '../styles/CvStyles';
 import {SkillChip} from './components/SkillChip';
 
 type SkillsSectionProps = {
@@ -17,7 +17,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   const data = cvData.data.find((entry) => entry.langTag === langTag)!;
 
   const skillChipBaseColor = useMemo(
-    () => new Color(cvGlobalStyles.colors.secondary),
+    () => new Color(cvStyles.colors.secondary),
     []
   );
 
@@ -29,7 +29,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         .toString(),
     },
     intermediate: {
-      textColor: 'white',
+      textColor: 'black',
       bgColor: skillChipBaseColor
         .range('white', {space: 'srgb'})(0.4)
         .toString(),
@@ -51,7 +51,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
             style={[styles.legendColor, {backgroundColor: color[1].bgColor}]}
           />
           {/* Label */}
-          <Text style={{fontSize: cvGlobalStyles.text.fontSize.tiny}}>
+          <Text style={{fontSize: cvStyles.text.fontSize.small}}>
             {t('cv.body.section.skills.labels.' + color[0])}
           </Text>
         </View>
@@ -66,21 +66,23 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         <SkillsLegend />
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        {data.content.skillsSection.skills.map((skill) => (
-          <SkillChip
-            key={skill.id}
-            value={skill.name}
-            bgColor={skillColors[skill.level].bgColor}
-            textColor={skillColors[skill.level].textColor}
-          />
-        ))}
+        {data.content.skillsSection.skills
+          .filter((skill) => !skill.hidden)
+          .map((skill) => (
+            <SkillChip
+              key={skill.id}
+              value={skill.name}
+              bgColor={skillColors[skill.level].bgColor}
+              textColor={skillColors[skill.level].textColor}
+            />
+          ))}
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  h1: {...cvGlobalStyles.text.headings.h1},
+  h1: {...cvStyles.text.headings.h1},
   legendColor: {
     width: 8,
     height: 8,
