@@ -1,7 +1,7 @@
 {
   "name": "irian-personal-page",
   "type": "module",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,33 +11,32 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/react": "^3.0.9",
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/react": "^3.0.10",
     "@fontsource-variable/red-hat-display": "^5.0.19",
     "@fontsource-variable/rubik": "^5.0.20",
     "@fontsource/noto-sans": "^5.0.18",
-    "@react-pdf/pdfkit": "^3.0.2",
-    "@react-pdf/renderer": "^3.1.14",
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.1.1",
+    "@react-pdf/renderer": "^3.3.8",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.4.6",
     "colorjs.io": "^0.4.5",
-    "jimp": "^0.22.10",
+    "jimp": "^0.22.12",
     "lightgallery": "^2.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "set-random-interval": "^1.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.8",
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.3",
+    "@types/node": "^20.11.24",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.5",
     "patch-package": "^8.0.0",
-    "postcss-custom-media": "^10.0.2",
+    "postcss-custom-media": "^10.0.3",
     "postcss-functions": "^4.0.2",
     "postcss-nested": "^6.0.1",
-    "prettier": "^3.1.0",
-    "prettier-plugin-astro": "^0.12.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
     "typescript": "^5.3.3"
   }
 }
