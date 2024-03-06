@@ -18,22 +18,16 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   );
 
   const skillColors = {
-    beginner: {
-      textColor: 'black',
-      bgColor: skillChipBaseColor
-        .range('white', {space: 'srgb'})(0.8)
-        .toString(),
-    },
-    intermediate: {
-      textColor: 'black',
-      bgColor: skillChipBaseColor
-        .range('white', {space: 'srgb'})(0.4)
-        .toString(),
-    },
-    proficient: {
+    learnt: {
       textColor: 'white',
       bgColor: skillChipBaseColor
         .range('black', {space: 'srgb'})(0.2)
+        .toString(),
+    },
+    learning: {
+      textColor: 'black',
+      bgColor: skillChipBaseColor
+        .range('white', {space: 'srgb'})(0.8)
         .toString(),
     },
   } as const;
