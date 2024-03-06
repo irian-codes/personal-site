@@ -1,15 +1,13 @@
 import {Image, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {AboutMeSection} from '../sections/AboutMeSection';
 import {cvStyles} from '../styles/CvStyles';
 import {ContactDetail} from './ContactDetail';
 import {headerStyles} from './styles/HeaderStyles';
 
 export const Header = () => {
-  const langTag = useContext(LanguageContext);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   const ApplicantImageComponent = () => {
     if (data.content.header.photoSrc.length > 0) {

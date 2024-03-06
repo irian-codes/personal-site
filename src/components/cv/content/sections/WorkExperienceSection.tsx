@@ -1,8 +1,6 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {useTranslations} from '../../../../i18n/i18nUtils';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {SectionEntry} from './components/SectionEntry';
 
@@ -11,9 +9,7 @@ type WorkExperienceSectionProps = {
 };
 
 export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
-  const langTag = useContext(LanguageContext);
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   return (
     <View style={props.containerStyle}>

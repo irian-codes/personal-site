@@ -1,22 +1,36 @@
 import {Document, Page, StyleSheet} from '@react-pdf/renderer';
 import {createContext} from 'react';
+import {cvData} from '../../data/cv/CvData';
 import type {LanguageTag} from '../../i18n/i18n';
+import {useTranslations} from '../../i18n/i18nUtils';
 import {CvContent} from './content';
 import {cvStyles} from './content/styles/CvStyles';
 import {registerFonts} from './utils/Fonts';
 
 registerFonts();
-export const LanguageContext = createContext<LanguageTag>('en');
+
+type LocalizedDataUtils = {
+  t: ReturnType<typeof useTranslations>;
+  data: (typeof cvData.data)[number];
+};
+
+// @ts-expect-error value not initialized but it doesn't need to be
+export const LocalizedDataContext = createContext<LocalizedDataUtils>();
 
 export function CvPdf(langTag: LanguageTag) {
+  const languageContextValue = {
+    t: useTranslations(langTag),
+    data: cvData.data.find((entry) => entry.langTag === langTag)!,
+  };
+
   return (
-    <LanguageContext.Provider value={langTag}>
+    <LocalizedDataContext.Provider value={languageContextValue}>
       <Document>
         <Page size="A4" style={styles.page}>
           <CvContent />
         </Page>
       </Document>
-    </LanguageContext.Provider>
+    </LocalizedDataContext.Provider>
   );
 }
 

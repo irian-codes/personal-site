@@ -1,9 +1,7 @@
 import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {useTranslations} from '../../../../i18n/i18nUtils';
 import {splitStringAtLastOccurrence} from '../../../../utils/StringUtils';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {getPublicFolderURL} from '../../utils/URL';
 import {headerStyles} from './styles/HeaderStyles';
 
@@ -20,9 +18,7 @@ type ContactDetailProps = {
 };
 
 export const ContactDetail = (props: ContactDetailProps) => {
-  const langTag = useContext(LanguageContext);
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   const imageUrl =
     getPublicFolderURL() + '/assets/images/cv/icons/' + props.type + '.png';
