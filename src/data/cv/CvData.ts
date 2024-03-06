@@ -1,20 +1,13 @@
+import type {LanguageTag} from '../../i18n/i18n';
 import {cvData_ca} from './CvData-ca';
 import {cvData_en} from './CvData-en';
 import {cvData_es} from './CvData-es';
+import type {CvData} from './types/CvData';
 
-export const cvData = {
-  data: [
-    {
-      langTag: 'en',
-      content: cvData_en,
-    },
-    {
-      langTag: 'es',
-      content: cvData_es,
-    },
-    {
-      langTag: 'ca',
-      content: cvData_ca,
-    },
-  ],
+export const cvData: {data: Map<LanguageTag, CvData>} = {
+  data: new Map([
+    ['en', cvData_en],
+    ['es', cvData_es],
+    ['ca', cvData_ca],
+  ]),
 };

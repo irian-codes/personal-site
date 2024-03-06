@@ -16,7 +16,7 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
       <Text style={styles.h1}>
         {t('cv.body.section.title.work-experience')}
       </Text>
-      {data.content.workExperienceSection.entries
+      {data.workExperienceSection.entries
         .filter((entry) => !entry.hidden)
         .sort((a, b) => (a.id < b.id ? 1 : -1))
         .map((entry) => (

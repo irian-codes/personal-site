@@ -52,7 +52,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
         return 'tel:' + content;
 
       case 'location':
-        const mapsUrl = data.content.header.locationMapsUrl;
+        const mapsUrl = data.header.locationMapsUrl;
 
         return mapsUrl ?? '#';
 
@@ -84,7 +84,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
         <Text style={styles.label}>
           {t(`cv.header.contact-details.${props.type}.title`)}
         </Text>
-        {getLinkOrTextElement(data.content.header[props.type])}
+        {getLinkOrTextElement(data.header[props.type])}
       </View>
     </View>
   );

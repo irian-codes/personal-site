@@ -11,7 +11,7 @@ export const OtherSection = (props: OtherSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.other')}</Text>
-      {data.content.otherSection.lines.map((line) => (
+      {data.otherSection.lines.map((line) => (
         <Text key={line.substring(0, 10)} style={styles.content}>
           {'- ' + line}
         </Text>

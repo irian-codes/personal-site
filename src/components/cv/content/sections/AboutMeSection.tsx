@@ -11,7 +11,7 @@ export const AboutMeSection = (props: AboutMeSectionProps) => {
 
   return (
     <View style={props.containerStyle}>
-      {data.content.aboutSection.lines.map((line, index, linesArr) => (
+      {data.aboutSection.lines.map((line, index, linesArr) => (
         <React.Fragment key={line.substring(0, 10)}>
           <Text style={styles.content}>{line}</Text>
 

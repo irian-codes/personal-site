@@ -14,7 +14,7 @@ export const EducationSection = (props: EducationSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.education')}</Text>
-      {data.content.educationSection.entries
+      {data.educationSection.entries
         .filter((entry) => !entry.hidden)
         .sort((a, b) => (a.id < b.id ? 1 : -1))
         .map((entry) => (

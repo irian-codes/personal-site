@@ -14,7 +14,7 @@ export const ProjectsSection = (props: ProjectSectionProps) => {
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.projects')}</Text>
-      {data.content.projectSection.entries.map((entry) => (
+      {data.projectSection.entries.map((entry) => (
         <ProjectSectionEntry
           key={entry.id}
           project={entry}

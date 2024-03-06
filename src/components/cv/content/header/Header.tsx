@@ -10,13 +10,8 @@ export const Header = () => {
   const {t, data} = useContext(LocalizedDataContext);
 
   const ApplicantImageComponent = () => {
-    if (data.content.header.photoSrc.length > 0) {
-      return (
-        <Image
-          src={data.content.header.photoSrc}
-          style={styles.applicantPhoto}
-        />
-      );
+    if (data.header.photoSrc.length > 0) {
+      return <Image src={data.header.photoSrc} style={styles.applicantPhoto} />;
     } else {
       return null;
     }
@@ -30,9 +25,9 @@ export const Header = () => {
 
           <View>
             <Text style={styles.name}>
-              {data.content.header.name + ' ' + data.content.header.surnames}
+              {data.header.name + ' ' + data.header.surnames}
             </Text>
-            <Text style={styles.position}>{data.content.header.position}</Text>
+            <Text style={styles.position}>{data.header.position}</Text>
           </View>
         </View>
         <AboutMeSection />

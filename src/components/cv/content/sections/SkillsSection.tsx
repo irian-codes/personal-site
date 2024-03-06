@@ -62,7 +62,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         <SkillsLegend />
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        {data.content.skillsSection.skills
+        {data.skillsSection.skills
           .filter((skill) => !skill.hidden)
           .map((skill) => (
             <SkillChip
