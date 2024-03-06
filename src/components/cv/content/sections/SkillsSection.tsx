@@ -30,6 +30,12 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         .range('white', {space: 'srgb'})(0.8)
         .toString(),
     },
+    language: {
+      textColor: 'black',
+      bgColor: skillChipBaseColor
+        .range('yellow', {space: 'srgb'})(0.7)
+        .toString(),
+    },
   } as const;
 
   const SkillsLegend = (props: any) => (
@@ -57,13 +63,32 @@ export const SkillsSection = (props: SkillsSectionProps) => {
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
         {data.skillsSection.skills
-          .filter((skill) => !skill.hidden)
+          .filter(
+            (skill) => !skill.hidden && skill.category !== 'human-language'
+          )
+          .sort((skillA, skillB) =>
+            skillA.level === 'learnt' && skillB.level === 'learning' ? -1 : 1
+          )
           .map((skill) => (
             <SkillChip
               key={skill.id}
               value={skill.name}
               bgColor={skillColors[skill.level].bgColor}
               textColor={skillColors[skill.level].textColor}
+            />
+          ))}
+
+        {/* We want human languages at the end of the list so we map again */}
+        {data.skillsSection.skills
+          .filter(
+            (skill) => !skill.hidden && skill.category === 'human-language'
+          )
+          .map((skill) => (
+            <SkillChip
+              key={skill.id}
+              value={skill.name}
+              bgColor={skillColors['language'].bgColor}
+              textColor={skillColors['language'].textColor}
             />
           ))}
       </View>

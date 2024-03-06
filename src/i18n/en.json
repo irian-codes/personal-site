@@ -1,6 +1,7 @@
 {
   "cv.body.section.title.about-me": "About me",
   "cv.body.section.title.skills": "Skills",
+  "cv.body.section.skills.labels.language": "Language",
   "cv.body.section.skills.labels.learning": "In development",
   "cv.body.section.skills.labels.learnt": "Acquired",
   "cv.body.section.title.work-experience": "Work Experience",

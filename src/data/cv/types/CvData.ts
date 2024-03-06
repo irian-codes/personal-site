@@ -26,7 +26,8 @@ export type Skill = {
   iconSrc?: string;
   level: 'learning' | 'learnt';
   category:
-    | 'language'
+    | 'cs-language'
+    | 'human-language'
     | 'database'
     | 'library-framework'
     | 'dev-tool'
