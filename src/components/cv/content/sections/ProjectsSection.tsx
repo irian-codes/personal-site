@@ -1,8 +1,6 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {useTranslations} from '../../../../i18n/i18nUtils';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {ProjectSectionEntry} from './components/ProjectSectionEntry';
 
@@ -11,14 +9,12 @@ type ProjectSectionProps = {
 };
 
 export const ProjectsSection = (props: ProjectSectionProps) => {
-  const langTag = useContext(LanguageContext);
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.projects')}</Text>
-      {data.content.projectSection.entries.map((entry) => (
+      {data.projectSection.entries.map((entry) => (
         <ProjectSectionEntry
           key={entry.id}
           project={entry}

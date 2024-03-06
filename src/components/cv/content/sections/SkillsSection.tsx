@@ -1,9 +1,7 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import Color from 'colorjs.io';
 import {useContext, useMemo} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {useTranslations} from '../../../../i18n/i18nUtils';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {SkillChip} from './components/SkillChip';
 
@@ -12,9 +10,7 @@ type SkillsSectionProps = {
 };
 
 export const SkillsSection = (props: SkillsSectionProps) => {
-  const langTag = useContext(LanguageContext);
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   const skillChipBaseColor = useMemo(
     () => new Color(cvStyles.colors.secondary),
@@ -66,7 +62,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         <SkillsLegend />
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        {data.content.skillsSection.skills
+        {data.skillsSection.skills
           .filter((skill) => !skill.hidden)
           .map((skill) => (
             <SkillChip
