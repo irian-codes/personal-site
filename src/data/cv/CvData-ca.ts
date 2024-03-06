@@ -77,7 +77,6 @@ const skillsSection: SkillsSection = {
       name: 'Next.js',
       level: 'learning',
       category: 'library-framework',
-      hidden: true,
     },
     {
       id: 10,
@@ -109,6 +108,18 @@ const skillsSection: SkillsSection = {
       id: 13,
       name: 'Material UI',
       level: 'learnt',
+      category: 'library-framework',
+    },
+    {
+      id: 34,
+      name: 'PostCSS',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
+      id: 35,
+      name: 'SASS',
+      level: 'learning',
       category: 'library-framework',
     },
     {
@@ -175,7 +186,6 @@ const skillsSection: SkillsSection = {
       name: 'PostgreSQL',
       level: 'learning',
       category: 'database',
-      hidden: true,
     },
     {
       id: 21,
@@ -186,6 +196,13 @@ const skillsSection: SkillsSection = {
     {
       id: 22,
       name: 'NestJs',
+      level: 'learning',
+      category: 'library-framework',
+      hidden: true,
+    },
+    {
+      id: 33,
+      name: 'Node.js',
       level: 'learning',
       category: 'library-framework',
     },
@@ -339,7 +356,6 @@ const skillsSection: SkillsSection = {
       name: 'Objectius SMART',
       level: 'learnt',
       category: 'soft-skill',
-      hidden: true,
     },
     {
       id: 56,
