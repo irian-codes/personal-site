@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginTop: '-0.2cm',
     maxWidth: '8.5cm',
-    marginBottom: headerStyles.spacing.small,
     fontFamily: headerStyles.text.fontFamily.name,
     color: cvStyles.colors.secondary,
   },

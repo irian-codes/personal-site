@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'Typescript developer with 4+ years of experience ready to tackle bigger and exciting challenges!',
+    "Lifelong builder, from assembling my computer at 8 to leading a team of developers in a small company. Now, after 4.5 years of experience, I'm seeking to step up my career in an established, bigger and better company to accelerate my growth and potential. Let's build together!",
   ],
 };
 
