@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'Desarrollador Typescript con 4+ años de experiencia buscando un nuevo reto laboral con el que superarme!',
+    'Llevo 4 años y medio creando apps en pequeñas empresas. Y ahora siento que es hora de seguir creciendo en una buena empresa con recorrido. Espero que sea la tuya!',
   ],
 };
 
