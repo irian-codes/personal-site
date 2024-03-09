@@ -1,9 +1,9 @@
 {
   "cv.body.section.title.about-me": "Sobre mi",
   "cv.body.section.title.skills": "Habilitats",
-  "cv.body.section.skills.labels.beginner": "Novell",
-  "cv.body.section.skills.labels.intermediate": "Mitjà",
-  "cv.body.section.skills.labels.proficient": "Avançat",
+  "cv.body.section.skills.labels.language": "Idioma",
+  "cv.body.section.skills.labels.learning": "En desenvolupament",
+  "cv.body.section.skills.labels.learnt": "Obtinguda",
   "cv.body.section.title.work-experience": "Experiència Laboral",
   "cv.body.section.title.education": "Educació",
   "cv.body.section.title.projects": "Projectes",

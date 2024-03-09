@@ -1,9 +1,7 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import Color from 'colorjs.io';
 import {useContext, useMemo} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {useTranslations} from '../../../../i18n/i18nUtils';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {SkillChip} from './components/SkillChip';
 
@@ -12,9 +10,7 @@ type SkillsSectionProps = {
 };
 
 export const SkillsSection = (props: SkillsSectionProps) => {
-  const langTag = useContext(LanguageContext);
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   const skillChipBaseColor = useMemo(
     () => new Color(cvStyles.colors.secondary),
@@ -22,22 +18,22 @@ export const SkillsSection = (props: SkillsSectionProps) => {
   );
 
   const skillColors = {
-    beginner: {
+    learnt: {
+      textColor: 'white',
+      bgColor: skillChipBaseColor
+        .range('black', {space: 'srgb'})(0.2)
+        .toString(),
+    },
+    learning: {
       textColor: 'black',
       bgColor: skillChipBaseColor
         .range('white', {space: 'srgb'})(0.8)
         .toString(),
     },
-    intermediate: {
+    language: {
       textColor: 'black',
       bgColor: skillChipBaseColor
-        .range('white', {space: 'srgb'})(0.4)
-        .toString(),
-    },
-    proficient: {
-      textColor: 'white',
-      bgColor: skillChipBaseColor
-        .range('black', {space: 'srgb'})(0.2)
+        .range('yellow', {space: 'srgb'})(0.7)
         .toString(),
     },
   } as const;
@@ -66,14 +62,33 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         <SkillsLegend />
       </View>
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-        {data.content.skillsSection.skills
-          .filter((skill) => !skill.hidden)
+        {data.skillsSection.skills
+          .filter(
+            (skill) => !skill.hidden && skill.category !== 'human-language'
+          )
+          .sort((skillA, skillB) =>
+            skillA.level === 'learnt' && skillB.level === 'learning' ? -1 : 1
+          )
           .map((skill) => (
             <SkillChip
               key={skill.id}
               value={skill.name}
               bgColor={skillColors[skill.level].bgColor}
               textColor={skillColors[skill.level].textColor}
+            />
+          ))}
+
+        {/* We want human languages at the end of the list so we map again */}
+        {data.skillsSection.skills
+          .filter(
+            (skill) => !skill.hidden && skill.category === 'human-language'
+          )
+          .map((skill) => (
+            <SkillChip
+              key={skill.id}
+              value={skill.name}
+              bgColor={skillColors['language'].bgColor}
+              textColor={skillColors['language'].textColor}
             />
           ))}
       </View>

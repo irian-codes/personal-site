@@ -1,8 +1,6 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
 import {useContext} from 'react';
-import {cvData} from '../../../../data/cv/CvData';
-import {useTranslations} from '../../../../i18n/i18nUtils';
-import {LanguageContext} from '../../CvPdf';
+import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {SectionEntry} from './components/SectionEntry';
 
@@ -11,14 +9,12 @@ type EducationSectionProps = {
 };
 
 export const EducationSection = (props: EducationSectionProps) => {
-  const langTag = useContext(LanguageContext);
-  const t = useTranslations(langTag);
-  const data = cvData.data.find((entry) => entry.langTag === langTag)!;
+  const {t, data} = useContext(LocalizedDataContext);
 
   return (
     <View style={props.containerStyle}>
       <Text style={styles.h1}>{t('cv.body.section.title.education')}</Text>
-      {data.content.educationSection.entries
+      {data.educationSection.entries
         .filter((entry) => !entry.hidden)
         .sort((a, b) => (a.id < b.id ? 1 : -1))
         .map((entry) => (
