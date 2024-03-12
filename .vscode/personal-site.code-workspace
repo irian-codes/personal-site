@@ -45,6 +45,7 @@
         "source.organizeImports": "never",
       },
     },
+    "prettier.documentSelectors": ["**/*.astro"],
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
