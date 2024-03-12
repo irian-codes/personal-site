@@ -8,8 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "lint": "concurrently \"npm run lint:eslint\" \"npm run lint:stylelint\"",
     "lint:stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "lint:eslint": "eslint \"src/**/*.{js,jsx,ts,tsx,astro}\"",
+    "pretty": "prettier --write .",
     "postinstall": "patch-package"
   },
   "dependencies": {
@@ -35,6 +37,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "astro-eslint-parser": "^0.16.3",
     "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2",
     "cssnano": "^6.0.5",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4",
