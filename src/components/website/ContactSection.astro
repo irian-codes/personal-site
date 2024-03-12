@@ -100,22 +100,6 @@ const phoneNumber = '+34611082305';
     text-decoration: none;
   }
 
-  a:hover,
-  a:focus {
-
-    .contact-icon-container {
-      background-color: black;
-
-      :global(svg) {
-        transform: rotate3d(0, 1, 0, 180deg);
-
-        :global(#icon-color) {
-          fill: rgb(var(--accent-color-1));
-        }
-      }
-    }
-  }
-
   .contact-icon-container {
     background-color: rgb(var(--accent-color-1));
     border-radius: 50%;
@@ -134,6 +118,22 @@ const phoneNumber = '+34611082305';
 
       :global(#icon-color) {
         fill: black;
+      }
+    }
+  }
+
+  a:hover,
+  a:focus {
+
+    .contact-icon-container {
+      background-color: black;
+
+      :global(svg) {
+        transform: rotate3d(0, 1, 0, 180deg);
+
+        :global(#icon-color) {
+          fill: rgb(var(--accent-color-1));
+        }
       }
     }
   }
