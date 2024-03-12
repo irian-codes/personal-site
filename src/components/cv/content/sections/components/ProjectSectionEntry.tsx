@@ -1,11 +1,12 @@
 import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {Style} from '@react-pdf/types';
 import React from 'react';
 import type {ProjectEntry} from '../../../../../data/cv/types/CvData';
 import {cvStyles} from '../../styles/CvStyles';
 
 type ProjectSectionEntryProps = {
   project: ProjectEntry;
-  containerStyle?: any;
+  containerStyle?: Style;
 };
 
 export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {

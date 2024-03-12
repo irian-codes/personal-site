@@ -1,4 +1,5 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {Style} from '@react-pdf/types';
 import Color from 'colorjs.io';
 import {useContext, useMemo} from 'react';
 import {LocalizedDataContext} from '../../CvPdf';
@@ -6,7 +7,7 @@ import {cvStyles} from '../styles/CvStyles';
 import {SkillChip} from './components/SkillChip';
 
 type SkillsSectionProps = {
-  containerStyle?: any;
+  containerStyle?: Style;
 };
 
 export const SkillsSection = (props: SkillsSectionProps) => {
@@ -38,7 +39,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
     },
   } as const;
 
-  const SkillsLegend = (props: any) => (
+  const SkillsLegend = () => (
     <View style={styles.skillsLegendContainer}>
       {Object.entries(skillColors).map((color) => (
         <View key={color[0]} style={styles.skillLegendItemContainer}>

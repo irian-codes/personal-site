@@ -1,4 +1,5 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {Style} from '@react-pdf/types';
 import React from 'react';
 import {cvStyles} from '../../styles/CvStyles';
 
@@ -8,7 +9,7 @@ type SectionEntryProps = {
   place: string;
   location: string;
   lines: string[];
-  containerStyle?: any;
+  containerStyle?: Style;
 };
 
 export const SectionEntry = (props: SectionEntryProps) => {
