@@ -70,10 +70,10 @@ const {
 
 <style
   define:vars={{
-    animationSteps,
-    durationInSeconds,
-    firstLinedelayInSeconds,
-    secondLinedelayInSeconds,
+    "animation-steps": animationSteps,
+    "duration-in-seconds": durationInSeconds,
+    "first-line-delay-in-seconds": firstLinedelayInSeconds,
+    "second-line-delay-in-seconds": secondLinedelayInSeconds,
   }}
 >
   .typewriter-container {
@@ -87,16 +87,16 @@ const {
     border-left: 2px solid transparent;
     background-color: rgb(var(--light-background-color));
     animation:
-      typewriter calc(var(--durationInSeconds) * 1s)
-        steps(var(--animationSteps)) calc(var(--firstLinedelayInSeconds) * 1s) 1
+      typewriter calc(var(--duration-in-seconds) * 1s)
+        steps(var(--animation-steps)) calc(var(--first-line-delay-in-seconds) * 1s) 1
         normal,
-      blinkTextCursor 500ms steps(20) calc(var(--firstLinedelayInSeconds) * 1s)
+        blink-text-cursor 500ms steps(20) calc(var(--first-line-delay-in-seconds) * 1s)
         infinite normal;
 
     &.second {
       display: none;
       animation-delay: calc(
-        (var(--firstLinedelayInSeconds) + var(--secondLinedelayInSeconds)) * 1s
+        (var(--first-line-delay-in-seconds) + var(--second-line-delay-in-seconds)) * 1s
       );
       z-index: 2;
       top: 50%;
@@ -115,7 +115,7 @@ const {
     }
   }
 
-  @keyframes blinkTextCursor {
+  @keyframes blink-text-cursor {
 
     from {
       border-left-color: rgb(255 255 255 / 75%);

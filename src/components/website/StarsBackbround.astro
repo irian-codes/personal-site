@@ -73,8 +73,9 @@
     background: transparent;
 
     /* custom 'postcss-function' */
+    /* stylelint-disable-next-line function-no-unknown, function-name-case */
     box-shadow: multipleBoxShadow(125, rgb(var(--heading-color-2)), 1, 2500);
-    animation: bgAnimation 125s linear infinite;
+    animation: bg-animation 125s linear infinite;
   }
 
   #stars-far {
@@ -83,8 +84,9 @@
     background: transparent;
 
     /* custom 'postcss-function' */
+    /* stylelint-disable-next-line function-no-unknown, function-name-case */
     box-shadow: multipleBoxShadow(250, rgb(var(--heading-color-2)), 1, 2500);
-    animation: bgAnimation 190s linear infinite;
+    animation: bg-animation 190s linear infinite;
   }
 
   /* SHOOTING STARS */
@@ -104,7 +106,7 @@
       0 0 0 4px rgb(var(--heading-color-2) / 10%),
       0 0 0 8px rgb(var(--heading-color-2) / 10%),
       0 0 20px rgb(var(--heading-color-2) / 10%);
-    animation: shootingStarAnimation 3s linear;
+    animation: shooting-star-animation 3s linear;
   }
 
   .shooting-star-tail {
@@ -121,7 +123,7 @@
   }
 
   /* ANIMATIONS */
-  @keyframes bgAnimation {
+  @keyframes bg-animation {
 
     from {
       transform: translateY(0);
@@ -132,7 +134,7 @@
     }
   }
 
-  @keyframes shootingStarAnimation {
+  @keyframes shooting-star-animation {
 
     0% {
       transform: rotate(315deg) translateX(0);
