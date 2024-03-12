@@ -49,5 +49,12 @@
     "less.validate": false,
     "scss.validate": false,
     "stylelint.validate": ["astro", "css"],
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "astro",
+      "typescript",
+      "typescriptreact",
+    ],
   },
 }
