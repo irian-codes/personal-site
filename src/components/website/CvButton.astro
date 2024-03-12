@@ -20,7 +20,7 @@ const buttonUrl = (() => {
   </a>
 </div>
 
-<script define:vars={{locale}}>
+<script>
   const button = document.getElementById('cv-button');
   function animateButton() {
     button?.classList.add('jello-horizontal');
@@ -34,8 +34,9 @@ const buttonUrl = (() => {
   #cv-button {
     display: inline-block;
   }
-  #cv-button:before,
-  #cv-button:after {
+
+  #cv-button::before,
+  #cv-button::after {
     display: block;
     position: absolute;
     content: '';
@@ -46,7 +47,8 @@ const buttonUrl = (() => {
     transition: all ease-in-out 0.5s;
     background-repeat: no-repeat;
   }
-  #cv-button:before {
+
+  #cv-button::before {
     display: none;
     top: -75%;
     background-image: radial-gradient(
@@ -83,7 +85,8 @@ const buttonUrl = (() => {
       10% 10%,
       18% 18%;
   }
-  #cv-button:after {
+
+  #cv-button::after {
     display: none;
     bottom: -75%;
     background-image: radial-gradient(
@@ -112,13 +115,14 @@ const buttonUrl = (() => {
       20% 20%;
   }
 
-  #cv-button.bg-animate:before {
+  #cv-button.bg-animate::before {
     display: block;
-    animation: topBubbles ease-in-out 1s forwards;
+    animation: top-bubbles ease-in-out 1s forwards;
   }
-  #cv-button.bg-animate:after {
+
+  #cv-button.bg-animate::after {
     display: block;
-    animation: bottomBubbles ease-in-out 1s forwards;
+    animation: bottom-bubbles ease-in-out 1s forwards;
   }
 
   .jello-horizontal {
@@ -127,30 +131,38 @@ const buttonUrl = (() => {
 
   /* ANIMATIONS */
   @keyframes jello-horizontal {
+
     0% {
       transform: scale3d(1, 1, 1);
     }
+
     30% {
       transform: scale3d(1.25, 0.75, 1);
     }
+
     40% {
       transform: scale3d(0.75, 1.25, 1);
     }
+
     50% {
       transform: scale3d(1.15, 0.85, 1);
     }
+
     65% {
       transform: scale3d(0.95, 1.05, 1);
     }
+
     75% {
       transform: scale3d(1.05, 0.95, 1);
     }
+
     100% {
       transform: scale3d(1, 1, 1);
     }
   }
 
-  @keyframes topBubbles {
+  @keyframes top-bubbles {
+
     0% {
       background-position:
         5% 90%,
@@ -163,6 +175,7 @@ const buttonUrl = (() => {
         55% 90%,
         70% 90%;
     }
+
     50% {
       background-position:
         0% 80%,
@@ -175,6 +188,7 @@ const buttonUrl = (() => {
         65% 20%,
         90% 30%;
     }
+
     100% {
       background-position:
         0% 70%,
@@ -196,7 +210,8 @@ const buttonUrl = (() => {
     }
   }
 
-  @keyframes bottomBubbles {
+  @keyframes bottom-bubbles {
+
     0% {
       background-position:
         10% -10%,
@@ -207,6 +222,7 @@ const buttonUrl = (() => {
         70% -10%,
         70% 0%;
     }
+
     50% {
       background-position:
         0% 80%,
@@ -217,6 +233,7 @@ const buttonUrl = (() => {
         95% 60%,
         105% 0%;
     }
+
     100% {
       background-position:
         0% 90%,

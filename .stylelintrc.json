@@ -1,0 +1,15 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-html"],
+  "rules": {
+    "property-no-vendor-prefix": true,
+    "shorthand-property-no-redundant-values": null,
+    "no-duplicate-selectors": true,
+    "rule-empty-line-before": "always-multi-line",
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  }
+}

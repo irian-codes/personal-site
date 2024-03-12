@@ -1,8 +1,8 @@
 import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {Style} from '@react-pdf/types';
 import {useContext} from 'react';
 import {splitStringAtLastOccurrence} from '../../../../utils/StringUtils';
 import {LocalizedDataContext} from '../../CvPdf';
-import {getPublicFolderURL} from '../../utils/URL';
 import {headerStyles} from './styles/HeaderStyles';
 
 type ContactType =
@@ -14,14 +14,11 @@ type ContactType =
   | 'website';
 type ContactDetailProps = {
   type: ContactType;
-  containerStyle?: any;
+  containerStyle?: Style;
 };
 
 export const ContactDetail = (props: ContactDetailProps) => {
   const {t, data} = useContext(LocalizedDataContext);
-
-  const imageUrl =
-    getPublicFolderURL() + '/assets/images/cv/icons/' + props.type + '.png';
 
   function formatData(data: string): string {
     switch (props.type) {
@@ -52,9 +49,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
         return 'tel:' + content;
 
       case 'location':
-        const mapsUrl = data.header.locationMapsUrl;
-
-        return mapsUrl ?? '#';
+        return data.header.locationMapsUrl ?? '#';
 
       case 'website':
         return content;
@@ -79,7 +74,7 @@ export const ContactDetail = (props: ContactDetailProps) => {
   }
 
   return (
-    <View style={[styles.container, props.containerStyle]}>
+    <View style={[styles.container, props.containerStyle ?? {}]}>
       <View style={styles.textContainer}>
         <Text style={styles.label}>
           {t(`cv.header.contact-details.${props.type}.title`)}

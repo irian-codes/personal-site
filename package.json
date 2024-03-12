@@ -1,14 +1,19 @@
 {
   "name": "irian-personal-page",
   "type": "module",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postinstall": "patch-package"
+    "lint": "concurrently \"npm run lint:eslint\" \"npm run lint:stylelint\"",
+    "lint:stylelint": "stylelint \"src/**/*.{css,astro}\"",
+    "lint:eslint": "eslint \"src/**/*.{js,jsx,ts,tsx,astro}\"",
+    "pretty": "prettier --write .",
+    "postinstall": "patch-package",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.6",
@@ -29,14 +34,25 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "astro-eslint-parser": "^0.16.3",
     "autoprefixer": "^10.4.17",
+    "concurrently": "^8.2.2",
     "cssnano": "^6.0.5",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "husky": "^9.0.11",
     "patch-package": "^8.0.0",
     "postcss-custom-media": "^10.0.3",
     "postcss-functions": "^4.0.2",
+    "postcss-html": "^1.6.0",
     "postcss-nested": "^6.0.1",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.3.3"
   }
 }

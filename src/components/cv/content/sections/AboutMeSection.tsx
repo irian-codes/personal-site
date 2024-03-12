@@ -1,10 +1,11 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {Style} from '@react-pdf/types';
 import React, {useContext} from 'react';
 import {LocalizedDataContext} from '../../CvPdf';
 import {headerStyles} from '../header/styles/HeaderStyles';
 import {cvStyles} from '../styles/CvStyles';
 
-type AboutMeSectionProps = {containerStyle?: any};
+type AboutMeSectionProps = {containerStyle?: Style};
 
 export const AboutMeSection = (props: AboutMeSectionProps) => {
   const {t, data} = useContext(LocalizedDataContext);

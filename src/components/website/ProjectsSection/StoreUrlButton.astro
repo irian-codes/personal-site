@@ -25,17 +25,6 @@ const {label, url, disabled = false} = Astro.props;
 </div>
 
 <style>
-  .app-store-link-container a {
-    appearance: none;
-    color: rgb(var(--text-color));
-    text-decoration: none;
-
-    &:hover button,
-    &:focus button,
-    &:active button {
-      transform: scale(1.1);
-    }
-  }
   .app-store-link-container button {
     appearance: none;
     background-color: rgb(var(--light-background-color));
@@ -55,6 +44,18 @@ const {label, url, disabled = false} = Astro.props;
     &.enabled {
       cursor: pointer;
       border-color: rgb(var(--accent-color-1));
+    }
+  }
+
+  .app-store-link-container a {
+    appearance: none;
+    color: rgb(var(--text-color));
+    text-decoration: none;
+
+    &:hover button,
+    &:focus button,
+    &:active button {
+      transform: scale(1.1);
     }
   }
 </style>
