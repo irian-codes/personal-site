@@ -24,11 +24,7 @@ module.exports = {
       extends: ['plugin:@typescript-eslint/recommended'],
       rules: {
         // override/add rules settings here, such as:
-        // "astro/no-set-html-directive": "error"
-        // '@typescript-eslint/no-unused-vars': [
-        //   'error',
-        //   {argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_'},
-        // ]
+        '@typescript-eslint/no-unused-vars': ['warn'],
       },
     },
   ],
