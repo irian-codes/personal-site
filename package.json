@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "lint:stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "postinstall": "patch-package"
   },
   "dependencies": {
