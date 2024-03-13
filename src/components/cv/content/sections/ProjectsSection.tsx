@@ -1,11 +1,12 @@
 import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import type {Style} from '@react-pdf/types';
 import {useContext} from 'react';
 import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {ProjectSectionEntry} from './components/ProjectSectionEntry';
 
 type ProjectSectionProps = {
-  containerStyle?: any;
+  containerStyle?: Style;
 };
 
 export const ProjectsSection = (props: ProjectSectionProps) => {

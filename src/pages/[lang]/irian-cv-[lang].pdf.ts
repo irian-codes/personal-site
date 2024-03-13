@@ -15,7 +15,7 @@ export const GET: APIRoute = async function (context) {
 
   // Reading the stream
   const chunks = [];
-  for await (let chunk of pdfStream) {
+  for await (const chunk of pdfStream) {
     chunks.push(chunk);
   }
 

@@ -3,13 +3,13 @@ import type {APIRoute} from 'astro';
 import {CvPdf} from '../components/cv/CvPdf';
 import {defaultLanguageTag} from '../i18n/i18n';
 
-export const GET: APIRoute = async function (context) {
+export const GET: APIRoute = async function () {
   // TODO: Move this implementation to function 'renderToBuffer' when it's implemented in Typescript in the library.
   const pdfStream = await ReactPDF.renderToStream(CvPdf(defaultLanguageTag));
 
   // Reading the stream
   const chunks = [];
-  for await (let chunk of pdfStream) {
+  for await (const chunk of pdfStream) {
     chunks.push(chunk);
   }
 

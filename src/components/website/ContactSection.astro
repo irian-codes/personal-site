@@ -68,48 +68,38 @@ const phoneNumber = '+34611082305';
   .contact-section-container {
     color: rgb(var(--text-color));
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
     margin: auto;
     background-color: rgb(var(--light-background-color));
     border-radius: 10px;
     padding: 1rem;
     width: 24rem;
+
     /* When the icons break in 2 rows */
-    @media screen and (max-width: 29.3em) {
+    @media screen and (width <= 29.3em) {
       width: 12rem;
     }
   }
+
   .contact-options-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-content: flex-start;
+    place-content: flex-start space-around;
   }
+
   .contact-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    place-content: center center;
     margin: 0.5rem 1rem;
   }
+
   a {
     text-decoration: none;
   }
-  a:hover,
-  a:focus {
-    .contact-icon-container {
-      background-color: black;
-      :global(svg) {
-        transform: rotate3d(0, 1, 0, 180deg);
-        :global(#icon-color) {
-          fill: rgb(var(--accent-color-1));
-        }
-      }
-    }
-  }
+
   .contact-icon-container {
     background-color: rgb(var(--accent-color-1));
     border-radius: 50%;
@@ -120,15 +110,34 @@ const phoneNumber = '+34611082305';
     justify-content: center;
     align-items: center;
     transition: all 0.4s;
+
     :global(svg) {
       height: 2rem;
       width: 2rem;
       transition: all 0.4s;
+
       :global(#icon-color) {
         fill: black;
       }
     }
   }
+
+  a:hover,
+  a:focus {
+
+    .contact-icon-container {
+      background-color: black;
+
+      :global(svg) {
+        transform: rotate3d(0, 1, 0, 180deg);
+
+        :global(#icon-color) {
+          fill: rgb(var(--accent-color-1));
+        }
+      }
+    }
+  }
+
   .contact-option-title {
     text-align: center;
     margin-top: 0.5rem;

@@ -34,7 +34,7 @@
     }
   }
 
-  window.addEventListener('scroll', function (ev) {
+  window.addEventListener('scroll', function () {
     if (forkongithubElement == null) {
       return;
     }
@@ -63,7 +63,7 @@
   // document.documentElement (aka '<html>') element.
   // This is necessary because if the user has the ribbon visible
   // and it clicks on a gallery element it would not disappear.
-  const observer = new MutationObserver(function (mutations, observer) {
+  const observer = new MutationObserver(function (mutations) {
     const isGalleryClassPresent = mutations.some((m) =>
       (m.target as HTMLElement)?.classList.contains('lg-on')
     );
@@ -92,6 +92,7 @@
     transform: rotate(315deg);
     transition: opacity 0.5s;
   }
+
   a {
     top: 4rem;
     right: -6rem;

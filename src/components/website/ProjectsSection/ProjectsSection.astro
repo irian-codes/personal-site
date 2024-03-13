@@ -263,24 +263,28 @@ const t = useTranslations(locale);
   #projects-section-container {
     margin-top: 2rem;
   }
+
   #view-more-button {
     margin-top: 0;
   }
+
   .hidden {
     visibility: hidden;
     overflow: hidden;
     height: 0;
     opacity: 0;
   }
+
   h2 {
     text-align: center;
   }
+
   .projects-column {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    place-content: center center;
   }
+
   .project-container {
     margin: 1rem auto;
     position: relative;
@@ -288,6 +292,7 @@ const t = useTranslations(locale);
     cursor: pointer;
 
     /* Selected project glow effect */
+
     &::after {
       content: '';
       position: absolute;
@@ -303,6 +308,7 @@ const t = useTranslations(locale);
     }
 
     /* TODO: Adapt to devices that can't hover, aka touch devices */
+
     &:hover::after {
       opacity: 0.9;
     }
@@ -315,29 +321,31 @@ const t = useTranslations(locale);
       margin: 0;
     }
   }
+
   .project-title-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
   }
+
   .project-image {
     width: 100%;
     height: auto;
     max-height: 40rem;
     border-radius: 10px;
-    image-rendering: optimizeQuality;
+    image-rendering: optimizequality;
     object-position: center;
     object-fit: cover;
   }
+
   .project-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(0 0 0 / 80%);
     color: rgb(var(--text-color));
     text-align: left;
 
@@ -351,14 +359,17 @@ const t = useTranslations(locale);
       }
     }
   }
+
   .project-title {
     margin: 0.4rem 0.5rem 0.5rem 0;
   }
+
   .project-subtitle {
     margin: 0;
     margin-right: auto;
     font-weight: 400;
   }
+
   .project-description-container {
     visibility: hidden;
     height: auto;
@@ -377,16 +388,19 @@ const t = useTranslations(locale);
       display: none;
     }
   }
+
   .project-container.active .project-description-container {
     visibility: unset;
     opacity: 1;
     max-height: 14rem; /* More than necessary but not too much */
   }
+
   .project-technologies-container {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
+
   .project-technology-container {
     display: flex;
     flex-direction: row;
@@ -401,16 +415,19 @@ const t = useTranslations(locale);
     font-family: 'Red Hat Display Variable', sans-serif;
     font-size: 11pt;
   }
+
   .project-technology-icon {
     width: 2rem;
     height: 2rem;
     object-fit: contain;
   }
+
   .projects-button {
     display: flow-root;
     text-align: center;
     margin: 2rem auto;
   }
+
   .close-button {
     appearance: none;
     background-color: rgb(var(--heading-color-2));
@@ -418,7 +435,6 @@ const t = useTranslations(locale);
     border-color: rgb(var(--heading-color-2));
     border-style: solid;
     border-radius: 3px;
-    font-size: large;
     padding: 0;
     height: 2rem;
     width: 2rem;
@@ -440,6 +456,7 @@ const t = useTranslations(locale);
       display: none;
     }
   }
+
   .project-gallery-button-container {
     margin: 1rem 0 0.5rem 0;
     overflow: visible;
