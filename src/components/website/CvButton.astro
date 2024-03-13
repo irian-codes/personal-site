@@ -14,242 +14,102 @@ const buttonUrl = (() => {
 })();
 ---
 
-<div id="cv-button">
+<div class="cv-button">
   <a href={buttonUrl}>
     <WebsiteButton label={t('website.home.cv-button.label')} />
   </a>
+  <div class="ripple-container">
+    <span class="ripple-source"></span>
+  </div>
 </div>
 
 <script>
-  const button = document.getElementById('cv-button');
-  function animateButton() {
-    button?.classList.add('jello-horizontal');
-    button?.classList.add('bg-animate');
-  }
+  const cvButtons = Array.from(document.getElementsByClassName('cv-button'));
 
-  button?.addEventListener('click', animateButton);
+  cvButtons.forEach((btn) => {
+    const rippleSource = btn.querySelector('.ripple-source') as
+      | HTMLElement
+      | undefined;
+
+    const rippleContainer = btn.querySelector('.ripple-container') as
+      | HTMLElement
+      | undefined;
+
+    if (!rippleSource || !rippleContainer) {
+      return;
+    }
+
+    btn.addEventListener('click', (event) => {
+      // Remove the animation in case the user clicks and it's still playing
+      rippleContainer.classList.remove('ripple-animation-on');
+      rippleSource?.classList.remove('ripple-animation-on');
+
+      const {pageX, pageY} = event as MouseEvent;
+      const rect = btn.getBoundingClientRect();
+
+      rippleSource.style.top = `${pageY - rect.top}px`;
+      rippleSource.style.left = `${pageX - rect.left}px`;
+
+      rippleContainer?.classList.add('ripple-animation-on');
+      rippleSource?.classList.add('ripple-animation-on');
+    });
+
+    rippleSource.addEventListener('animationend', () => {
+      rippleContainer.classList.remove('ripple-animation-on');
+      rippleSource?.classList.remove('ripple-animation-on');
+    });
+  });
 </script>
 
 <style>
-  #cv-button {
+  .cv-button {
     display: inline-block;
+    position: relative;
   }
 
-  #cv-button::before,
-  #cv-button::after {
-    display: block;
+  .ripple-container {
     position: absolute;
-    content: '';
-    width: 140%;
-    height: 100%;
-    left: -20%;
-    z-index: -1000;
-    transition: all ease-in-out 0.5s;
-    background-repeat: no-repeat;
+    inset: 0 0 0 0;
+    overflow: hidden;
+
+    /* We need to lower the z-index so the ripple is behind the button, otherwise it obstructs onhover and onclick events */
+    z-index: -1;
+
+    /* This is necessary to match the scale on button hover */
+    transform: scale(1.1);
+
+    &.ripple-animation-on {
+      z-index: 10;
+    }
   }
 
-  #cv-button::before {
+  .ripple-source {
+    position: absolute;
     display: none;
-    top: -75%;
-    background-image: radial-gradient(
-        circle,
-        rgb(var(--accent-color-1)) 20%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle,
-        transparent 20%,
-        rgb(var(--accent-color-1)) 20%,
-        transparent 30%
-      ),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(
-        circle,
-        transparent 10%,
-        rgb(var(--accent-color-1)) 15%,
-        transparent 20%
-      ),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%);
-    background-size:
-      10% 10%,
-      20% 20%,
-      15% 15%,
-      20% 20%,
-      18% 18%,
-      10% 10%,
-      15% 15%,
-      10% 10%,
-      18% 18%;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 2px rgb(255 255 255 / 50%),
+      0 0 0 4px rgb(255 255 255 / 20%);
+
+    &.ripple-animation-on {
+      display: block;
+      animation: shadow-animation 1.6s ease-out;
+    }
   }
 
-  #cv-button::after {
-    display: none;
-    bottom: -75%;
-    background-image: radial-gradient(
-        circle,
-        rgb(var(--accent-color-1)) 20%,
-        transparent 20%
-      ),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(
-        circle,
-        transparent 10%,
-        rgb(var(--accent-color-1)) 15%,
-        transparent 20%
-      ),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%),
-      radial-gradient(circle, rgb(var(--accent-color-1)) 20%, transparent 20%);
-    background-size:
-      15% 15%,
-      20% 20%,
-      18% 18%,
-      20% 20%,
-      15% 15%,
-      10% 10%,
-      20% 20%;
-  }
-
-  #cv-button.bg-animate::before {
-    display: block;
-    animation: top-bubbles ease-in-out 1s forwards;
-  }
-
-  #cv-button.bg-animate::after {
-    display: block;
-    animation: bottom-bubbles ease-in-out 1s forwards;
-  }
-
-  .jello-horizontal {
-    animation: jello-horizontal 0.9s ease-in-out both;
-  }
-
-  /* ANIMATIONS */
-  @keyframes jello-horizontal {
-
+  @keyframes shadow-animation {
+    
     0% {
-      transform: scale3d(1, 1, 1);
-    }
-
-    30% {
-      transform: scale3d(1.25, 0.75, 1);
-    }
-
-    40% {
-      transform: scale3d(0.75, 1.25, 1);
-    }
-
-    50% {
-      transform: scale3d(1.15, 0.85, 1);
-    }
-
-    65% {
-      transform: scale3d(0.95, 1.05, 1);
-    }
-
-    75% {
-      transform: scale3d(1.05, 0.95, 1);
+      transform: scale(1);
     }
 
     100% {
-      transform: scale3d(1, 1, 1);
-    }
-  }
-
-  @keyframes top-bubbles {
-
-    0% {
-      background-position:
-        5% 90%,
-        10% 90%,
-        10% 90%,
-        15% 90%,
-        25% 90%,
-        25% 90%,
-        40% 90%,
-        55% 90%,
-        70% 90%;
-    }
-
-    50% {
-      background-position:
-        0% 80%,
-        0% 20%,
-        10% 40%,
-        20% 0%,
-        30% 30%,
-        22% 50%,
-        50% 50%,
-        65% 20%,
-        90% 30%;
-    }
-
-    100% {
-      background-position:
-        0% 70%,
-        0% 10%,
-        10% 30%,
-        20% -10%,
-        30% 20%,
-        22% 40%,
-        50% 40%,
-        65% 10%,
-        90% 20%;
-      background-size:
-        0% 0%,
-        0% 0%,
-        0% 0%,
-        0% 0%,
-        0% 0%,
-        0% 0%;
-    }
-  }
-
-  @keyframes bottom-bubbles {
-
-    0% {
-      background-position:
-        10% -10%,
-        30% 10%,
-        55% -10%,
-        70% -10%,
-        85% -10%,
-        70% -10%,
-        70% 0%;
-    }
-
-    50% {
-      background-position:
-        0% 80%,
-        20% 80%,
-        45% 60%,
-        60% 100%,
-        75% 70%,
-        95% 60%,
-        105% 0%;
-    }
-
-    100% {
-      background-position:
-        0% 90%,
-        20% 90%,
-        45% 70%,
-        60% 110%,
-        75% 80%,
-        95% 70%,
-        110% 10%;
-      background-size:
-        0% 0%,
-        0% 0%,
-        0% 0%,
-        0% 0%,
-        0% 0%,
-        0% 0%;
+      transform: scale(100);
     }
   }
 </style>
