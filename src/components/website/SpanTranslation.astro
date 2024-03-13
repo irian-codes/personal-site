@@ -2,7 +2,7 @@
   <slot />
 </span-translation>
 
-<script is:inline>
+<script>
   class SpanTranslation extends HTMLElement {
     constructor() {
       super();
@@ -41,7 +41,7 @@
 
 <style>
   span-translation {
-
+    
     & :global(.underline) {
       text-decoration: underline;
       text-underline-offset: 0.5rem;

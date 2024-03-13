@@ -1,12 +1,17 @@
 ---
 import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
+import SpanTranslation from '../../SpanTranslation.astro';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
 ---
 
 <div id="about-me-section-container">
-  <p>{t('website.home.about-me-section.description')}</p>
+  <p>
+    <SpanTranslation
+      >{t('website.home.about-me-section.description')}</SpanTranslation
+    >
+  </p>
 </div>
 
 <style>
