@@ -1,10 +1,10 @@
 ---
 import {Image} from 'astro:assets';
 import personPicture from '../assets/images/irian-cv-image.jpg';
-import ContactSection from '../components/website/ContactSection.astro';
+import ContactSection from '../components/website/sections/ContactSection/ContactSection.astro';
 import CvButton from '../components/website/CvButton.astro';
 import GlowBar from '../components/website/GlowBar.astro';
-import ProjectsSection from '../components/website/ProjectsSection/ProjectsSection.astro';
+import ProjectsSection from '../components/website/sections/ProjectsSection/ProjectsSection.astro';
 import StarsBackbround from '../components/website/StarsBackbround.astro';
 import TypewriterText from '../components/website/TypewriterText.astro';
 import {defaultLanguageTag, type LanguageTag} from '../i18n/i18n';
@@ -45,6 +45,7 @@ const thirdTypeAnimation = {
 <BaseLayout>
   <StarsBackbround />
   <GlowBar />
+
   <main>
     <div id="top-section-container">
       <div id="top-section-text-container">
