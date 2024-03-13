@@ -8,6 +8,7 @@ import {useTranslations} from '../i18n/i18nUtils';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SpanTranslation from '../components/website/SpanTranslation.astro';
 import TopSection from '../components/website/sections/TopSection/TopSection.astro';
+import AboutMeSection from '../components/website/sections/AboutMeSection/AboutMeSection.astro';
 
 interface Props {
   locale: LanguageTag;
@@ -32,6 +33,12 @@ const t = useTranslations(locale);
     <div class="heading-underline" role="presentation"></div>
     <ProjectsSection />
 
+    <h2 id="about-me-title">
+      {t('website.home.about-me-section-title')}
+    </h2>
+    <div class="heading-underline" role="presentation"></div>
+    <AboutMeSection />
+
     <h2 id="contact-title-first-part">
       {t('website.home.contact-title.first-part') + '... '}
       <span id="contact-title-second-part" class="title-highlight"
@@ -39,6 +46,7 @@ const t = useTranslations(locale);
       >
     </h2>
     <ContactSection />
+
     <div class="spacer-global" role="presentation"></div>
   </main>
 </BaseLayout>

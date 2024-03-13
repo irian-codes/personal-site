@@ -1,0 +1,45 @@
+---
+import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<div id="about-me-section-container">
+  <p>{t('website.home.about-me-section.description')}</p>
+</div>
+
+<style>
+  #about-me-section-container {
+    display: flex;
+    flex-flow: row nowrap;
+    place-content: center space-around;
+    padding: 2rem;
+    position: relative;
+    max-width: 60rem;
+    margin: -3rem auto 0 auto;
+  }
+
+  p {
+    color: rgb(var(--text-color));
+    font-size: clamp(1rem, 2.5vw + 0.6rem, 2.1rem);
+
+    &::before {
+      content: '“';
+      font-size: 5rem;
+      color: rgb(var(--accent-color-1));
+      position: absolute;
+      left: -0.5rem;
+      top: 0.2rem;
+    }
+
+    &::after {
+      content: '”';
+      font-size: 5rem;
+      color: rgb(var(--accent-color-1));
+      position: absolute;
+      right: 0;
+      bottom: -2rem;
+    }
+  }
+</style>
