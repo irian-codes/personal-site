@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Porto 4 anys i mig creant apps en petites empreses. Ara sento que ha arribat l'hora de créixer en una bona empresa amb recorregut. Espero que sigui la teva!",
+    "Porto 4 anys i mig creant apps. I ara ha arribat l'hora d'apostar a llarg plaç en una bona empresa on pugui seguir desenvolupant apps amb gran impacte.",
   ],
 };
 
