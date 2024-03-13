@@ -25,7 +25,7 @@ const subHtml: string = (function buildSubHtml() {
       const label = (() => {
         if (url === 'internal') {
           return t(
-            'website.home.project-button-publish-url.type.internal.label'
+            'website.home.project-card.button-publish-url.type.internal.label'
           );
         }
 
@@ -44,7 +44,7 @@ const subHtml: string = (function buildSubHtml() {
     const divider = '<div style="display: inline; margin: 0 0.2rem">|</div>';
 
     const urlsHtml = `<div class="project-published-urls-container" style="font-size: 0.8rem; margin-top: 0.6rem">${
-      `${t('website.home.project-gallery.published-text')}:` +
+      `${t('website.home.project-card.gallery.published-text')}:` +
       strings.join(divider)
     }</div>`;
 
