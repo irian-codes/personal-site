@@ -70,13 +70,13 @@ const thirdTypeAnimation = {
 </div>
 
 <style>
-  /* Here the header breaks into 2 columns */
-  @custom-media --header-breakdown-min screen and (min-width: 50em);
-  @custom-media --header-breakdown-max screen and (max-width: 50em);
+  /* Here the top section breaks into 2 columns */
+  @custom-media --top-section-breakdown-min screen and (min-width: 50em);
+  @custom-media --top-section-breakdown-max screen and (max-width: 50em);
 
   /* After this the Fluid Typography starts taking effect so we need to
   remove the fixed width */
-  @custom-media --header-text-start-shrinking screen and (min-width: 46em);
+  @custom-media --top-section-text-start-shrinking screen and (min-width: 46em);
 
   #top-section-container {
     display: flex;
@@ -120,7 +120,7 @@ const thirdTypeAnimation = {
     align-items: center;
 
     & > div {
-      @media (--header-text-start-shrinking) {
+      @media (--top-section-text-start-shrinking) {
         /* Min with that fits all languages text */
         width: 29rem;
       }
@@ -132,7 +132,7 @@ const thirdTypeAnimation = {
     display: flex;
 
     /* This value is when the layout breaks into 2 rows */
-    @media (--header-breakdown-max) {
+    @media (--top-section-breakdown-max) {
       margin: 2rem auto;
     }
   }
@@ -145,7 +145,7 @@ const thirdTypeAnimation = {
     border-radius: 50%;
     border-style: solid;
 
-    @media (--header-breakdown-max) {
+    @media (--top-section-breakdown-max) {
       margin: auto;
     }
   }
@@ -159,7 +159,7 @@ const thirdTypeAnimation = {
   #cv-button-container-desktop {
     margin-top: 2rem;
 
-    @media (--header-breakdown-max) {
+    @media (--top-section-breakdown-max) {
       display: none;
     }
   }
@@ -170,7 +170,7 @@ const thirdTypeAnimation = {
     justify-content: center;
     align-items: center;
 
-    @media (--header-breakdown-min) {
+    @media (--top-section-breakdown-min) {
       display: none;
     }
   }
