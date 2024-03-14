@@ -24,41 +24,66 @@ const buttonUrl = (() => {
 </div>
 
 <script>
-  const cvButtons = Array.from(document.getElementsByClassName('cv-button'));
+  (function rippleClickAnimation() {
+    const cvButtons = Array.from(document.getElementsByClassName('cv-button'));
 
-  cvButtons.forEach((btn) => {
-    const rippleSource = btn.querySelector('.ripple-source') as
-      | HTMLElement
-      | undefined;
+    cvButtons.forEach((btn) => {
+      const rippleSource = btn.querySelector('.ripple-source') as
+        | HTMLElement
+        | undefined;
 
-    const rippleContainer = btn.querySelector('.ripple-container') as
-      | HTMLElement
-      | undefined;
+      const rippleContainer = btn.querySelector('.ripple-container') as
+        | HTMLElement
+        | undefined;
 
-    if (!rippleSource || !rippleContainer) {
-      return;
-    }
+      if (!rippleSource || !rippleContainer) {
+        return;
+      }
 
-    btn.addEventListener('click', (event) => {
-      // Remove the animation in case the user clicks and it's still playing
-      rippleContainer.classList.remove('ripple-animation-on');
-      rippleSource?.classList.remove('ripple-animation-on');
+      btn.addEventListener('click', (event) => {
+        // Remove the animation in case the user clicks and it's still playing
+        rippleContainer.classList.remove('ripple-animation-on');
+        rippleSource?.classList.remove('ripple-animation-on');
 
-      const {pageX, pageY} = event as MouseEvent;
-      const rect = btn.getBoundingClientRect();
+        const {pageX, pageY} = event as MouseEvent;
+        const rect = btn.getBoundingClientRect();
 
-      rippleSource.style.top = `${pageY - rect.top}px`;
-      rippleSource.style.left = `${pageX - rect.left}px`;
+        rippleSource.style.top = `${pageY - rect.top}px`;
+        rippleSource.style.left = `${pageX - rect.left}px`;
 
-      rippleContainer?.classList.add('ripple-animation-on');
-      rippleSource?.classList.add('ripple-animation-on');
+        rippleContainer?.classList.add('ripple-animation-on');
+        rippleSource?.classList.add('ripple-animation-on');
+      });
+
+      rippleSource.addEventListener('animationend', () => {
+        rippleContainer.classList.remove('ripple-animation-on');
+        rippleSource?.classList.remove('ripple-animation-on');
+      });
     });
+  })();
 
-    rippleSource.addEventListener('animationend', () => {
-      rippleContainer.classList.remove('ripple-animation-on');
-      rippleSource?.classList.remove('ripple-animation-on');
+  (function fluidScaling() {
+    const cvButtons = Array.from(document.getElementsByClassName('cv-button'));
+
+    const minWidth = 700;
+    const maxWidth = 1080;
+    const minScaleValue = 1;
+    const maxScaleValue = 1.5;
+
+    const mappingScaleFactor =
+      (maxScaleValue - minScaleValue) / (maxWidth - minWidth);
+
+    const offset = -minWidth * mappingScaleFactor + minScaleValue;
+
+    const scaleValue = Math.max(
+      Math.min(window.innerWidth * mappingScaleFactor + offset, maxScaleValue),
+      minScaleValue
+    );
+
+    cvButtons.forEach((btn) => {
+      (btn as HTMLButtonElement).style.transform = `scale(${scaleValue})`;
     });
-  });
+  })();
 </script>
 
 <style>
@@ -103,7 +128,7 @@ const buttonUrl = (() => {
   }
 
   @keyframes shadow-animation {
-
+    
     0% {
       transform: scale(1);
     }

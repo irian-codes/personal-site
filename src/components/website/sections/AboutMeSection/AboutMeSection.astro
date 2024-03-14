@@ -1,5 +1,6 @@
 ---
 import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
+import CvButton from '../../CvButton.astro';
 import SpanTranslation from '../../SpanTranslation.astro';
 
 const locale = getLangFromUrl(Astro.url);
@@ -12,6 +13,9 @@ const t = useTranslations(locale);
       >{t('website.home.about-me-section.description')}</SpanTranslation
     >
   </p>
+</div>
+<div id="cv-button-container">
+  <CvButton />
 </div>
 
 <style>
@@ -49,7 +53,15 @@ const t = useTranslations(locale);
       color: rgb(var(--accent-color-1));
       position: absolute;
       right: 0;
-      bottom: -2rem;
+      bottom: -3rem;
     }
+  }
+
+  #cv-button-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    place-content: center center;
+    margin-top: -1rem;
   }
 </style>

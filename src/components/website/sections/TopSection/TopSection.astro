@@ -1,6 +1,5 @@
 ---
 import TypewriterText from '../../TypewriterText.astro';
-import CvButton from '../../CvButton.astro';
 import {Image} from 'astro:assets';
 import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
 import personPicture from '../../../../assets/images/irian-cv-image.jpg';
@@ -52,20 +51,15 @@ const thirdTypeAnimation = {
           {t('website.home.top-section.subtitle.second-part')}
         </div>
       </TypewriterText>
-      <div id="cv-button-container-desktop">
-        <CvButton />
-      </div>
     </div>
   </div>
+
   <div id="person-picture-container">
     <Image
       id="person-picture"
       src={personPicture}
       alt={t('website.home.top-section.person-image.alt-attribute')}
     />
-  </div>
-  <div id="cv-button-container-mobile">
-    <CvButton />
   </div>
 </div>
 
@@ -133,7 +127,7 @@ const thirdTypeAnimation = {
 
     /* This value is when the layout breaks into 2 rows */
     @media (--top-section-breakdown-max) {
-      margin: 2rem auto;
+      margin: 2rem auto 0 auto;
     }
   }
 
@@ -154,24 +148,5 @@ const thirdTypeAnimation = {
     color: rgb(var(--accent-color-1));
     text-shadow: 2px 2px 6px rgb(var(--accent-color-1) / 70%);
     font-weight: 800;
-  }
-
-  #cv-button-container-desktop {
-    margin-top: 2rem;
-
-    @media (--top-section-breakdown-max) {
-      display: none;
-    }
-  }
-
-  #cv-button-container-mobile {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media (--top-section-breakdown-min) {
-      display: none;
-    }
   }
 </style>
