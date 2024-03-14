@@ -154,7 +154,7 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     font-size: clamp(2.5rem, 4vw + 1.2rem, 3rem);
     font-weight: 600;
     color: rgb(var(--accent-color-1));
-    margin: 3rem 0 1rem 0;
+    margin: 1rem 0 1rem 0;
     text-shadow: 2px 2px 6px rgb(var(--accent-color-1) / 70%);
     text-align: center;
   }
@@ -168,8 +168,18 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     text-align: center;
   }
 
-  .spacer-global {
+  .spacer-global-large {
     width: 1px;
     height: 5rem;
+  }
+
+  .spacer-global-medium {
+    width: 1px;
+    height: 2.5rem;
+  }
+
+  .spacer-global-small {
+    width: 1px;
+    height: 0.5rem;
   }
 </style>
