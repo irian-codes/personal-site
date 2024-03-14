@@ -12,7 +12,7 @@
           return '';
         }
 
-        return this.childNodes[0].textContent ?? '';
+        return (this.childNodes[0].textContent ?? '').trim();
       })();
 
       if (childStr == null || childStr.trim().length === 0) {
