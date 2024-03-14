@@ -24,6 +24,8 @@ const buttonUrl = (() => {
 </div>
 
 <script>
+  import {mapRangeOntoAnother} from '../../utils/MathUtils';
+
   (function rippleClickAnimation() {
     const cvButtons = Array.from(document.getElementsByClassName('cv-button'));
 
@@ -70,18 +72,16 @@ const buttonUrl = (() => {
     const minScaleValue = 1;
     const maxScaleValue = 1.5;
 
-    const mappingScaleFactor =
-      (maxScaleValue - minScaleValue) / (maxWidth - minWidth);
-
-    const offset = -minWidth * mappingScaleFactor + minScaleValue;
-
-    const scaleValue = Math.max(
-      Math.min(window.innerWidth * mappingScaleFactor + offset, maxScaleValue),
-      minScaleValue
-    );
-
     cvButtons.forEach((btn) => {
-      (btn as HTMLButtonElement).style.transform = `scale(${scaleValue})`;
+      (btn as HTMLButtonElement).style.transform = `scale(${mapRangeOntoAnother(
+        {
+          valueA: window.innerWidth,
+          minA: minWidth,
+          maxA: maxWidth,
+          minB: minScaleValue,
+          maxB: maxScaleValue,
+        }
+      )})`;
     });
   })();
 </script>
