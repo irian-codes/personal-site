@@ -42,13 +42,12 @@
         // Keeping the format word1 <className>word2</className> word3 and returning it as a string
         .map((node) =>
           node.nodeType === Node.TEXT_NODE
-            ? node.textContent
-            : `<${node.nodeName.toLowerCase()}>${node.textContent}</${node.nodeName.toLowerCase()}>`
+            ? node.textContent ?? ''
+            : `<${node.nodeName.toLowerCase()}>${node.textContent ?? ''}</${node.nodeName.toLowerCase()}>`
         )
         .filter((node) => node != null && node.trim().length > 0);
 
-      // We know there are no nulls so we just cast it
-      return result as string[];
+      return result;
     }
   }
 
