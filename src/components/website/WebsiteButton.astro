@@ -8,7 +8,70 @@ const {label} = Astro.props;
 
 <button class="website-button" type="button">
   {label}
+  <span class="ripple-source"></span>
 </button>
+
+<script>
+  (function rippleClickAnimation() {
+    const buttons = Array.from(
+      document.getElementsByClassName('website-button')
+    ) as HTMLButtonElement[];
+
+    buttons.forEach((btn) => {
+      const rippleSource = btn
+        .getElementsByClassName('ripple-source')
+        .item(0) as HTMLElement | undefined;
+
+      if (!rippleSource) {
+        return;
+      }
+
+      /**
+       * Handles the click event on the button to create
+       * a ripple effect on the clicked location. Delaying
+       * the event bubbling by a brief amount of time.
+       * It only triggers the first time the button is clicked.
+       *
+       * @param {MouseEvent} event - The click event object.
+       */
+      function onClickHandler(event: MouseEvent) {
+        // Prevent the default action of the event,
+        // for now, since we want to play the animation.
+        event.preventDefault();
+        event.stopPropagation();
+
+        // How much time to wait before allowing the button to do
+        // its intended function (so, bubbling the event up).
+        const delayInMs = 150;
+
+        // Get the coordinates where the user clicked in the viewport
+        const {clientX, clientY} = event;
+        // Get the position and size of the button
+        const rect = btn.getBoundingClientRect();
+
+        // Calculate the top and left position of the ripple effect center
+        rippleSource!.style.top = `${clientY - rect.top}px`;
+        rippleSource!.style.left = `${clientX - rect.left}px`;
+
+        // Add the animation class to the ripple effect
+        rippleSource?.classList.add('ripple-animation-on');
+
+        // After a brief delay, remove the click event listener
+        // and click again on the button to trigger any default event
+        setTimeout(() => {
+          btn.removeEventListener('click', onClickHandler);
+          btn.click();
+        }, delayInMs);
+      }
+
+      btn.addEventListener('click', onClickHandler);
+
+      rippleSource.addEventListener('animationend', () => {
+        rippleSource?.classList.remove('ripple-animation-on');
+      });
+    });
+  })();
+</script>
 
 <style>
   button {
@@ -23,11 +86,43 @@ const {label} = Astro.props;
     padding: 0.5rem;
     cursor: pointer;
     transition: transform ease-in-out 0.1s;
+    position: relative;
+    overflow: hidden;
   }
 
   button:hover,
   button:focus,
   button:active {
     transform: scale(1.1);
+  }
+
+  .ripple-source {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 2px rgb(255 255 255 / 50%),
+      0 0 0 4px rgb(255 255 255 / 20%);
+
+    &.ripple-animation-on {
+      display: block;
+      animation: shadow-animation 1.6s ease-out;
+    }
+  }
+
+  @keyframes shadow-animation {
+
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(100);
+    }
   }
 </style>
