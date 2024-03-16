@@ -71,7 +71,7 @@ const {label} = Astro.props;
       btn.addEventListener('click', onClickHandler);
 
       rippleSource.addEventListener('animationend', () => {
-        rippleSource?.classList.remove('ripple-animation-on');
+        rippleSource.classList.remove('ripple-animation-on');
       });
     });
   })();
