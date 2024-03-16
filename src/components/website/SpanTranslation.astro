@@ -2,7 +2,7 @@
   <slot />
 </span-translation>
 
-<script is:inline>
+<script>
   class SpanTranslation extends HTMLElement {
     constructor() {
       super();
@@ -12,15 +12,14 @@
           return '';
         }
 
-        return this.childNodes[0].textContent ?? '';
+        return (this.childNodes[0].textContent ?? '').trim();
       })();
 
       if (childStr == null || childStr.trim().length === 0) {
         return;
       }
 
-      const tagsRegex = /(<.+?> | <\/.+?>)/;
-      const strings = childStr.split(tagsRegex).map((str) => {
+      const strings = this.parseTextWithTags(childStr).map((str) => {
         if (str.includes('<') || str.includes('>')) {
           // Regex to replace <className>text</className> into <span class="className">text</span>
           return str.replace(
@@ -32,7 +31,23 @@
         }
       });
 
-      this.innerHTML = strings.join(' ');
+      this.innerHTML = strings.join('');
+    }
+
+    private parseTextWithTags(text: string) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(text, 'text/html');
+
+      const result = Array.from(doc.body.childNodes)
+        // Keeping the format word1 <className>word2</className> word3 and returning it as a string
+        .map((node) =>
+          node.nodeType === Node.TEXT_NODE
+            ? node.textContent ?? ''
+            : `<${node.nodeName.toLowerCase()}>${node.textContent ?? ''}</${node.nodeName.toLowerCase()}>`
+        )
+        .filter((node) => node != null && node.trim().length > 0);
+
+      return result;
     }
   }
 

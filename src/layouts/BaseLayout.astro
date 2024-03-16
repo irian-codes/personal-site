@@ -113,7 +113,6 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
   :root {
     --base-color: 255 255 255;
     --accent-color-1: 124 58 237;
-    --accent-color-2: 27 154 170;
     --background-color: 0 0 0;
     --light-background-color: 25 27 32;
     --text-color: 247 247 255;
@@ -155,7 +154,7 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     font-size: clamp(2.5rem, 4vw + 1.2rem, 3rem);
     font-weight: 600;
     color: rgb(var(--accent-color-1));
-    margin: 3rem 0 1rem 0;
+    margin: 1rem 0 1rem 0;
     text-shadow: 2px 2px 6px rgb(var(--accent-color-1) / 70%);
     text-align: center;
   }
@@ -169,8 +168,18 @@ const appVersion = import.meta.env.APP_VERSION ?? 'unknown';
     text-align: center;
   }
 
-  .spacer-global {
+  .spacer-global-large {
     width: 1px;
     height: 5rem;
+  }
+
+  .spacer-global-medium {
+    width: 1px;
+    height: 2.5rem;
+  }
+
+  .spacer-global-small {
+    width: 1px;
+    height: 0.5rem;
   }
 </style>

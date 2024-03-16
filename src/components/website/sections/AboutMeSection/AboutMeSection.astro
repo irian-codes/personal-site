@@ -1,0 +1,67 @@
+---
+import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
+import CvButton from '../../CvButton.astro';
+import SpanTranslation from '../../SpanTranslation.astro';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+
+<div id="about-me-section-container">
+  <p>
+    <SpanTranslation
+      >{t('website.home.about-me-section.description')}</SpanTranslation
+    >
+  </p>
+</div>
+<div id="cv-button-container">
+  <CvButton />
+</div>
+
+<style>
+  #about-me-section-container {
+    display: flex;
+    flex-flow: row nowrap;
+    place-content: center space-around;
+    padding: 2rem;
+    position: relative;
+    max-width: 60rem;
+    margin: -3rem auto 0 auto;
+
+    /* Blurred background to enhance readability */
+    backdrop-filter: blur(1px);
+  }
+
+  p {
+    color: rgb(var(--text-color));
+    font-size: clamp(1rem, 2.5vw + 0.6rem, 2.1rem);
+
+    &::before {
+      content: '“';
+      font-size: 7rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(var(--accent-color-1));
+      position: absolute;
+      left: -0.5rem;
+      top: 0.2rem;
+    }
+
+    &::after {
+      content: '”';
+      font-size: 7rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(var(--accent-color-1));
+      position: absolute;
+      right: 0;
+      bottom: -3rem;
+    }
+  }
+
+  #cv-button-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    place-content: center center;
+    margin-top: -1rem;
+  }
+</style>

@@ -1,8 +1,8 @@
 ---
 import {Image} from 'astro:assets';
-import {projectsData} from '../../../data/website/ProjectsData';
-import WebsiteButton from '../WebsiteButton.astro';
-import {getLangFromUrl, useTranslations} from '../../../i18n/i18nUtils';
+import {projectsData} from '../../../../data/website/ProjectsData';
+import WebsiteButton from '../../WebsiteButton.astro';
+import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
 import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
 import StoreUrlButton from './StoreUrlButton.astro';
 
@@ -38,13 +38,15 @@ const t = useTranslations(locale);
                   <h5 class="project-subtitle">
                     {'(' +
                       t(
-                        `website.home.project-subtitle.type.${project.appType}`
+                        `website.home.project-card.subtitle.type.${project.appType}`
                       ) +
                       ')'}
                   </h5>
                   {project.publishUrls.size > 0 && (
                     <p class="project-published-label">
-                      {t('website.home.projects-published.label').toUpperCase()}
+                      {t(
+                        'website.home.project-card.published.label'
+                      ).toUpperCase()}
                     </p>
                   )}
                   <button class="close-button hidden" type="button">
@@ -63,7 +65,9 @@ const t = useTranslations(locale);
                   <div class="project-gallery-button-container">
                     <ProjectGalleryPressable project={project}>
                       <WebsiteButton
-                        label={t('website.home.projects-button-open-gallery')}
+                        label={t(
+                          'website.home.project-card.button-open-gallery'
+                        )}
                       />
                     </ProjectGalleryPressable>
                     {Array.from(project.publishUrls.entries()).map((entry) => {
@@ -71,7 +75,7 @@ const t = useTranslations(locale);
                       const label = (() => {
                         if (url === 'internal') {
                           return t(
-                            'website.home.project-button-publish-url.type.internal.label'
+                            'website.home.project-card.button-publish-url.type.internal.label'
                           );
                         }
 
@@ -103,7 +107,7 @@ const t = useTranslations(locale);
     projects.length > 3 && (
       <div id="view-more-button" class="projects-button">
         <WebsiteButton
-          label={t('website.home.projects-button-view-more.label')}
+          label={t('website.home.projects-section.button-view-more.label')}
         />
       </div>
     )
