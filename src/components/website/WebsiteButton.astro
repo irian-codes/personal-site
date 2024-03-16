@@ -48,10 +48,14 @@ const {label} = Astro.props;
         const {clientX, clientY} = event;
         // Get the position and size of the button
         const rect = btn.getBoundingClientRect();
+        const rippleDimensions = {
+          width: 7,
+          height: 7,
+        };
 
         // Calculate the top and left position of the ripple effect center
-        rippleSource!.style.top = `${clientY - rect.top}px`;
-        rippleSource!.style.left = `${clientX - rect.left}px`;
+        rippleSource!.style.top = `${clientY - rect.top - rippleDimensions.height}px`;
+        rippleSource!.style.left = `${clientX - rect.left - rippleDimensions.width}px`;
 
         // Add the animation class to the ripple effect
         rippleSource?.classList.add('ripple-animation-on');
