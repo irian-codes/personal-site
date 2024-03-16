@@ -1,9 +1,16 @@
 ---
 interface Props {
   label: string;
+  /**
+   * The maximum font size in rem when the button is in fluid scaling mode.
+   * If not passed or undefined the fluid scaling is disabled.
+   * Useful to make the button bigger depending on the resolution.
+   */
+  fluidMaxFontSizeInRem?: number;
 }
 
 const {label} = Astro.props;
+const cssFluidMaxFontSize = `${Astro.props.fluidMaxFontSizeInRem ?? 1}rem`;
 ---
 
 <button class="website-button" type="button">
@@ -77,7 +84,7 @@ const {label} = Astro.props;
   })();
 </script>
 
-<style>
+<style define:vars={{cssFluidMaxFontSize}}>
   button {
     appearance: none;
     background-color: rgb(var(--accent-color-1));
@@ -86,7 +93,7 @@ const {label} = Astro.props;
     border-style: solid;
     border-radius: 3px;
     font-family: 'Noto Sans', system-ui, sans-serif;
-    font-size: large;
+    font-size: clamp(1rem, 2vw + 0.5rem, var(--cssFluidMaxFontSize));
     padding: 0.5rem;
     cursor: pointer;
     transition: transform ease-in-out 0.1s;

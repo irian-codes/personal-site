@@ -16,31 +16,9 @@ const buttonUrl = (() => {
 
 <div class="cv-button">
   <a href={buttonUrl}>
-    <WebsiteButton label={t('website.home.top-section.cv-button.label')} />
+    <WebsiteButton
+      label={t('website.home.top-section.cv-button.label')}
+      fluidMaxFontSizeInRem={2}
+    />
   </a>
 </div>
-
-<script>
-  import {mapRangeOntoAnother} from '../../utils/MathUtils';
-
-  (function fluidScaling() {
-    const cvButtons = Array.from(document.getElementsByClassName('cv-button'));
-
-    const minWidth = 700;
-    const maxWidth = 1080;
-    const minScaleValue = 1;
-    const maxScaleValue = 1.5;
-
-    cvButtons.forEach((btn) => {
-      (btn as HTMLButtonElement).style.transform = `scale(${mapRangeOntoAnother(
-        {
-          valueA: window.innerWidth,
-          minA: minWidth,
-          maxA: maxWidth,
-          minB: minScaleValue,
-          maxB: maxScaleValue,
-        }
-      )})`;
-    });
-  })();
-</script>
