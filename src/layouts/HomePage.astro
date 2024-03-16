@@ -25,6 +25,8 @@ const t = useTranslations(locale);
   <main>
     <TopSection />
 
+    <div class="spacer-global-medium" role="presentation"></div>
+
     <h2>
       <SpanTranslation>
         {t('website.home.projects-section-title')}
@@ -33,11 +35,15 @@ const t = useTranslations(locale);
     <div class="heading-underline" role="presentation"></div>
     <ProjectsSection />
 
+    <div class="spacer-global-medium" role="presentation"></div>
+
     <h2 id="about-me-title">
       {t('website.home.about-me-section-title')}
     </h2>
     <div class="heading-underline" role="presentation"></div>
     <AboutMeSection />
+
+    <div class="spacer-global-medium" role="presentation"></div>
 
     <h2 id="contact-title-first-part">
       {t('website.home.contact-title.first-part') + '... '}
@@ -47,7 +53,7 @@ const t = useTranslations(locale);
     </h2>
     <ContactSection />
 
-    <div class="spacer-global" role="presentation"></div>
+    <div class="spacer-global-large" role="presentation"></div>
   </main>
 </BaseLayout>
 
