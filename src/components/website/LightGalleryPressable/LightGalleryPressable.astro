@@ -59,12 +59,18 @@ const {galleryId, entries} = Astro.props;
       this.addEventListener('click', function () {
         _lightGallery.openGallery(0);
       });
+
+      // Hack to allow phones to close the gallery with the back button
+      this.addEventListener('lgBeforeOpen', () => {
+        window.history.pushState('#lgOpened', '', window.location.href);
+      });
     }
 
     private initLightGallery(id: string) {
       return lightGallery(this, {
         galleryId: id.trim(),
         plugins: [lgHash, lgZoom],
+        hash: true,
         dynamic: true,
         dynamicEl: this.entries,
         download: false,
