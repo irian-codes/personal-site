@@ -513,7 +513,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, Spain (remote)',
       period: 'Aug 2022 - May 2023',
       lines: [
-        'Organized the work into milestones, set goals and did code reviews with the team to develop projects made with React, React Native, Firebase and Express that met company quality expectations.',
+        "Implemented a structured development process using milestones, clear team goals, and regular code reviews. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
         'Created extensive project and onboarding documentation for the development team and new hires.',
       ],
       iconSrc:
@@ -527,8 +527,8 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Jul 2021 - Aug 2022',
       lines: [
         'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
-        'Configured the backend of several projects with Firebase and Google Cloud, also helped with developing in NestJs, Express, MongoDB and Docker.',
-        'Handled the release, versioning and updates of apps with Expo EAS for Android and iOS.',
+        'Leveraged Firebase and Google Cloud to configure robust backends for various projects. Contributed to development efforts with NestJS, Express, MongoDB, and Docker.',
+        'Implemented an automated system to publish, manage and update apps for Android and iOS with Expo EAS.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -540,7 +540,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
       lines: [
-        'With C# scripts I brought to life the VR experiences the designers created in Unity.',
+        'Developed immersive VR experiences in Unity and C# that got superb ratings from clients and users.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },

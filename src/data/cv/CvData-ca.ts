@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Porto 4 anys i mig creant apps. I ara ha arribat l'hora d'apostar a llarg plaç en una bona empresa on pugui seguir desenvolupant apps amb gran impacte.",
+    "Fa 4 anys i mig que creo apps. I ara ha arribat l'hora d'apostar a llarg plaç en una bona empresa on pugui continuar desenvolupant apps amb gran impacte.",
   ],
 };
 
@@ -506,8 +506,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, Espanya (remot)',
       period: 'Ago 2022 - Mai 2023',
       lines: [
-        "Vaig organitzar els projectes per objectius i vaig fer revisions de codi amb l'equip per desenvolupar apps amb React, React Native, Firebase i Express que van complir amb les expectatives de qualitat de l'empresa.",
-        "Vaig escriure documentació dels projectes per a l'equip de desenvolupament i incorporació per als nous integrants de l'equip.",
+        "Vaig implementar un estructurat procés de desenvolupament basat en objectius, reunions periòdiques i revisions de codi per assegurar l'èxit de les apps. Fets amb React, React Native, Firebase i Express.",
+        "Vaig escriure documentació per a l'equip de desenvolupament i incorporació per als nous integrants de l'equip.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -520,8 +520,8 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Jul 2021 - Ago 2022',
       lines: [
         "Desenvolupar el frontend d'apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.",
-        'Vaig configurar el backend de diversos projectes amb Firebase i Google Cloud, també vaig ajudar amb el desenvolupament amb NestJs, Express, MongoDB i Docker.',
-        "Gestionar el llançament, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
+        'Vaig utilitzar Firebase i Google Cloud per configurar backends robustos per varis projectes. També vaig ajudar amb el desenvolupament amb NestJs, Express, MongoDB i Docker.',
+        "Vaig implementar un sistema automatitzat de publicació, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -533,7 +533,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, Espanya (remot)',
       period: 'Nov 2017 - Des 2019',
       lines: [
-        'Mitjançant scripts amb C# vaig donar funcionalitat a les experiències VR que els dissenyadors van crear a Unity.',
+        'Amb C# i Unity vaig desenvolupar experiències VR, obtenint altes qualificacions per part dels clients i usuaris.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
