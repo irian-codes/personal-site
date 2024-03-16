@@ -506,8 +506,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Reus, España (remoto)',
       period: 'Ago 2022 - May 2023',
       lines: [
-        'Organicé el trabajo por objetivos y realicé revisiones de código con el equipo para desarrollar proyectos con React, React Native, Firebase y Express que cumplieron con las expectativas de calidad de la empresa.',
-        'Escribí la documentación de los proyectos para el equipo de desarrollo e incorporación para los nuevos integrantes el equipo.',
+        'Implementé un estructurado sistema de desarrollo por objetivos, revisiones de código y reuniones periódicas para desarrollar proyectos de éxito con React, React Native, Firebase y Express.',
+        'Escribí la documentación para el equipo de desarrollo e incorporación para los nuevos integrantes el equipo.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -520,8 +520,8 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Jul 2021 - Ago 2022',
       lines: [
         'Desarrollé el frontend de apps con React y React Native. Aprendí a colaborar con Gitlab.',
-        'Configuré el backend de varios proyectos con Firebase y Google Cloud, también ayudé con el desarrollo con NestJs, Express, MongoDB y Docker.',
-        'Publicación, gestión de versiones y actualizaciones de apps con Expo EAS para Android y iOS.',
+        'Utilicé Firebase y Google Cloud para configurar un backend robusto para varios proyectos. También ayudé con el desarrollo con NestJs, Express, MongoDB y Docker.',
+        'Implementé un sistema automatizado de publicación, gestión de versiones y actualizaciones de las apps con Expo EAS para Android y iOS.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -533,7 +533,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Barcelona, España (remoto)',
       period: 'Nov 2017 - Dic 2019',
       lines: [
-        'Mediante scripts de C# doté de funcionalidad las experiencias de VR que los diseñadores crearon en Unity.',
+        'Con Unity y C# desarrollé experiencias de VR que obtuvieron geniales calificaciones de clientes y usuarios.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
