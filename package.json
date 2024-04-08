@@ -21,7 +21,7 @@
     "@fontsource-variable/red-hat-display": "^5.0.20",
     "@fontsource-variable/rubik": "^5.0.21",
     "@fontsource/noto-sans": "^5.0.21",
-    "@react-pdf/renderer": "^3.3.8",
+    "@react-pdf/renderer": "^3.4.2",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "astro": "^4.4.6",
