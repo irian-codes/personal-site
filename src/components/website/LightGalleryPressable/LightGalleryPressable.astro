@@ -29,7 +29,6 @@ const {galleryId, entries} = Astro.props;
 
   class LightgalleryPressable extends HTMLElement {
     private entries: GalleryItem[] = [];
-    private lightgallery: LightGallery;
 
     constructor() {
       super();
@@ -52,9 +51,7 @@ const {galleryId, entries} = Astro.props;
         );
       }
 
-      const _lightGallery = (this.lightgallery = this.initLightGallery(
-        this.dataset.galleryId
-      ));
+      const _lightGallery = this.initLightGallery(this.dataset.galleryId);
 
       this.addEventListener('click', function () {
         _lightGallery.openGallery(0);
