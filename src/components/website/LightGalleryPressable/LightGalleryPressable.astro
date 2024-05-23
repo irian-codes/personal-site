@@ -72,9 +72,12 @@ const {galleryId, entries} = Astro.props;
         dynamicEl: this.entries,
         download: false,
         closeOnTap: false,
+        swipeToClose: false,
         loop: false,
+
         mobileSettings: {
           showCloseIcon: true,
+          swipeToClose: true,
         },
       });
     }
