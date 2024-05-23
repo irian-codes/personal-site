@@ -82,3 +82,13 @@ const {galleryId, entries} = Astro.props;
 
   customElements.define('lightgallery-pressable', LightgalleryPressable);
 </script>
+
+<style is:global>
+  .lg-container {
+    
+    & button.lg-prev,
+    & button.lg-next {
+      color: hsl(0deg 0% 90%);
+    }
+  }
+</style>
