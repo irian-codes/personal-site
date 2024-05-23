@@ -29,6 +29,7 @@ const {galleryId, entries} = Astro.props;
 
   class LightgalleryPressable extends HTMLElement {
     private entries: GalleryItem[] = [];
+    private lightGallery: LightGallery;
 
     constructor() {
       super();
@@ -51,16 +52,9 @@ const {galleryId, entries} = Astro.props;
         );
       }
 
-      const _lightGallery = this.initLightGallery(this.dataset.galleryId);
+      this.lightGallery = this.initLightGallery(this.dataset.galleryId);
 
-      this.addEventListener('click', function () {
-        _lightGallery.openGallery(0);
-      });
-
-      // Hack to allow phones to close the gallery with the back button
-      this.addEventListener('lgBeforeOpen', () => {
-        window.history.pushState('#lgOpened', '', window.location.href);
-      });
+      this.registerEventListeners();
     }
 
     private initLightGallery(id: string) {
@@ -79,6 +73,49 @@ const {galleryId, entries} = Astro.props;
           showCloseIcon: true,
           swipeToClose: true,
         },
+      });
+    }
+
+    private registerEventListeners() {
+      this.addEventListener('click', function () {
+        (this as LightgalleryPressable).lightGallery.openGallery(0);
+      });
+
+      // Hack to allow phones to close the gallery with the back button
+      this.addEventListener('lgBeforeOpen', () => {
+        window.history.pushState('#lgOpened', '', window.location.href);
+      });
+
+      this.addEventListener('lgBeforeSlide', (event) => {
+        const gallery = (this as LightgalleryPressable).lightGallery;
+        const slideCount = gallery.getItems().length;
+        const currentSlide = event.detail.index + 1;
+
+        if (currentSlide === slideCount) {
+          this.updateArrowsVisibility({next: 'hide', prev: 'show'});
+        } else if (currentSlide === 1) {
+          this.updateArrowsVisibility({next: 'show', prev: 'hide'});
+        } else {
+          this.updateArrowsVisibility({next: 'show', prev: 'show'});
+        }
+      });
+    }
+
+    private updateArrowsVisibility(newState: {
+      [arrow in 'prev' | 'next']: 'show' | 'hide';
+    }) {
+      const galleryContainer = document.querySelector<HTMLDivElement>(
+        '.lg-container.lg-show'
+      );
+
+      Object.entries(newState).forEach(([arrow, newStateValue]) => {
+        const arrowEl = galleryContainer?.querySelector<HTMLButtonElement>(
+          `.lg-${arrow}`
+        );
+
+        if (arrowEl) {
+          arrowEl.style.display = newStateValue === 'show' ? 'block' : 'none';
+        }
       });
     }
   }
