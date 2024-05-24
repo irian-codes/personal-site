@@ -358,6 +358,7 @@ const t = useTranslations(locale);
 
     & .container-right-part {
       flex-wrap: nowrap;
+      margin-right: 1rem;
     }
   }
 
@@ -462,16 +463,14 @@ const t = useTranslations(locale);
 
   .close-button {
     appearance: none;
-    background-color: rgb(var(--heading-color-2));
-    color: rgb(var(--light-background-color));
-    border-color: rgb(var(--heading-color-2));
-    border-style: solid;
-    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    border: none;
     padding: 0;
     height: 2rem;
-    width: 2rem;
-    font-size: 20pt;
-    font-weight: lighter;
+    width: 3rem;
+    font-size: 24pt;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -483,6 +482,15 @@ const t = useTranslations(locale);
     &:active {
       transform: scale(1.1);
     }
+
+    @media (--images-too-small) {
+      display: none;
+    }
+  }
+
+  .chevron-up-icon {
+    /* So it overlaps with close button */
+    margin-left: -2rem;
 
     @media (--images-too-small) {
       display: none;
