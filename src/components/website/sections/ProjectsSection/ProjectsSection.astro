@@ -5,6 +5,7 @@ import WebsiteButton from '../../WebsiteButton.astro';
 import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
 import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
 import StoreUrlButton from './StoreUrlButton.astro';
+import chevronUpIconRaw from '../../../../assets/images/icons/chevron-up.svg?raw';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -55,6 +56,9 @@ const t = useTranslations(locale);
                     <button class="close-button hidden" type="button">
                       &times;
                     </button>
+                    <div class="chevron-up-icon">
+                      <Fragment set:html={chevronUpIconRaw} />
+                    </div>
                   </div>
                 </div>
                 <div class="project-description-container">
@@ -153,6 +157,9 @@ const t = useTranslations(locale);
     );
 
     const closeButtons = Array.from(document.querySelectorAll('.close-button'));
+    const chevronsUp = Array.from(
+      document.querySelectorAll('.chevron-up-icon')
+    );
 
     projects.forEach((pr) => {
       pr.addEventListener('click', () => {
@@ -168,11 +175,16 @@ const t = useTranslations(locale);
           closeButtons.forEach((cb) => {
             cb.classList.add('hidden');
           });
+
+          chevronsUp.forEach((cu) => {
+            cu.classList.remove('hidden');
+          });
         });
 
         // Opening the clicked project
         pr.classList.add('active');
         pr.querySelector('.close-button')?.classList.remove('hidden');
+        pr.querySelector('.chevron-up-icon')?.classList.add('hidden');
       });
     });
   })();
@@ -191,6 +203,9 @@ const t = useTranslations(locale);
 
         activeProject?.classList.remove('active');
         cb.classList.add('hidden');
+
+        const cu = cb.parentNode?.querySelector('.chevron-up-icon');
+        cu?.classList.remove('hidden');
       });
     });
   })();
