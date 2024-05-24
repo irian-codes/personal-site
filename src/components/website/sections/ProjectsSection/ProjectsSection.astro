@@ -33,25 +33,29 @@ const t = useTranslations(locale);
             >
               <Image class="project-image" src={project.images[0]} alt="" />
               <div class="project-overlay">
-                <div class="project-title-container">
-                  <h3 class="project-title">{project.name}</h3>
-                  <h5 class="project-subtitle">
-                    {'(' +
-                      t(
-                        `website.home.project-card.subtitle.type.${project.appType}`
-                      ) +
-                      ')'}
-                  </h5>
-                  {project.publishUrls.size > 0 && (
-                    <p class="project-published-label">
-                      {t(
-                        'website.home.project-card.published.label'
-                      ).toUpperCase()}
-                    </p>
-                  )}
-                  <button class="close-button hidden" type="button">
-                    &times;
-                  </button>
+                <div class="project-overlay-top-container">
+                  <div class="container-left-part">
+                    <h3 class="project-title">{project.name}</h3>
+                    <h5 class="project-subtitle">
+                      {'(' +
+                        t(
+                          `website.home.project-card.subtitle.type.${project.appType}`
+                        ) +
+                        ')'}
+                    </h5>
+                  </div>
+                  <div class="container-right-part">
+                    {project.publishUrls.size > 0 && (
+                      <p class="project-published-label">
+                        {t(
+                          'website.home.project-card.published.label'
+                        ).toUpperCase()}
+                      </p>
+                    )}
+                    <button class="close-button hidden" type="button">
+                      &times;
+                    </button>
+                  </div>
                 </div>
                 <div class="project-description-container">
                   <p>{project.description}</p>
@@ -326,11 +330,22 @@ const t = useTranslations(locale);
     }
   }
 
-  .project-title-container {
+  .project-overlay-top-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: space-between;
     align-items: center;
+
+    & .container-left-part,
+    & .container-right-part {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+
+    & .container-right-part {
+      flex-wrap: nowrap;
+    }
   }
 
   .project-image {
