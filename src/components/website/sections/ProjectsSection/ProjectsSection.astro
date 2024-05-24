@@ -126,16 +126,14 @@ const t = useTranslations(locale);
       return;
     }
 
-    function showMoreProjects() {
+    viewMoreButton.addEventListener('click', function showMoreProjects() {
       const projects = Array.from(
         document.querySelectorAll('.project-container')
       );
 
       projects.forEach((pr) => pr.classList.remove('hidden'));
       viewMoreButton!.style.display = 'none';
-    }
-
-    viewMoreButton.addEventListener('click', showMoreProjects);
+    });
   })();
 
   /**
