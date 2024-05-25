@@ -5,6 +5,7 @@ import WebsiteButton from '../../WebsiteButton.astro';
 import {getLangFromUrl, useTranslations} from '../../../../i18n/i18nUtils';
 import ProjectGalleryPressable from './ProjectGalleryPressable.astro';
 import StoreUrlButton from './StoreUrlButton.astro';
+import chevronUpIconRaw from '../../../../assets/images/icons/chevron-up.svg?raw';
 
 const locale = getLangFromUrl(Astro.url);
 
@@ -33,25 +34,32 @@ const t = useTranslations(locale);
             >
               <Image class="project-image" src={project.images[0]} alt="" />
               <div class="project-overlay">
-                <div class="project-title-container">
-                  <h3 class="project-title">{project.name}</h3>
-                  <h5 class="project-subtitle">
-                    {'(' +
-                      t(
-                        `website.home.project-card.subtitle.type.${project.appType}`
-                      ) +
-                      ')'}
-                  </h5>
-                  {project.publishUrls.size > 0 && (
-                    <p class="project-published-label">
-                      {t(
-                        'website.home.project-card.published.label'
-                      ).toUpperCase()}
-                    </p>
-                  )}
-                  <button class="close-button hidden" type="button">
-                    &times;
-                  </button>
+                <div class="project-overlay-top-container">
+                  <div class="container-left-part">
+                    <h3 class="project-title">{project.name}</h3>
+                    <h5 class="project-subtitle">
+                      {'(' +
+                        t(
+                          `website.home.project-card.subtitle.type.${project.appType}`
+                        ) +
+                        ')'}
+                    </h5>
+                  </div>
+                  <div class="container-right-part">
+                    {project.publishUrls.size > 0 && (
+                      <p class="project-published-label">
+                        {t(
+                          'website.home.project-card.published.label'
+                        ).toUpperCase()}
+                      </p>
+                    )}
+                    <button class="close-button hidden" type="button">
+                      &times;
+                    </button>
+                    <div class="chevron-up-icon">
+                      <Fragment set:html={chevronUpIconRaw} />
+                    </div>
+                  </div>
                 </div>
                 <div class="project-description-container">
                   <p>{project.description}</p>
@@ -122,16 +130,14 @@ const t = useTranslations(locale);
       return;
     }
 
-    function showMoreProjects() {
+    viewMoreButton.addEventListener('click', function showMoreProjects() {
       const projects = Array.from(
         document.querySelectorAll('.project-container')
       );
 
       projects.forEach((pr) => pr.classList.remove('hidden'));
       viewMoreButton!.style.display = 'none';
-    }
-
-    viewMoreButton.addEventListener('click', showMoreProjects);
+    });
   })();
 
   /**
@@ -151,6 +157,9 @@ const t = useTranslations(locale);
     );
 
     const closeButtons = Array.from(document.querySelectorAll('.close-button'));
+    const chevronsUp = Array.from(
+      document.querySelectorAll('.chevron-up-icon')
+    );
 
     projects.forEach((pr) => {
       pr.addEventListener('click', () => {
@@ -166,11 +175,16 @@ const t = useTranslations(locale);
           closeButtons.forEach((cb) => {
             cb.classList.add('hidden');
           });
+
+          chevronsUp.forEach((cu) => {
+            cu.classList.remove('hidden');
+          });
         });
 
         // Opening the clicked project
         pr.classList.add('active');
         pr.querySelector('.close-button')?.classList.remove('hidden');
+        pr.querySelector('.chevron-up-icon')?.classList.add('hidden');
       });
     });
   })();
@@ -189,6 +203,9 @@ const t = useTranslations(locale);
 
         activeProject?.classList.remove('active');
         cb.classList.add('hidden');
+
+        const cu = cb.parentNode?.querySelector('.chevron-up-icon');
+        cu?.classList.remove('hidden');
       });
     });
   })();
@@ -326,11 +343,23 @@ const t = useTranslations(locale);
     }
   }
 
-  .project-title-container {
+  .project-overlay-top-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: space-between;
     align-items: center;
+
+    & .container-left-part,
+    & .container-right-part {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+    }
+
+    & .container-right-part {
+      flex-wrap: nowrap;
+      margin-right: 1rem;
+    }
   }
 
   .project-image {
@@ -434,16 +463,14 @@ const t = useTranslations(locale);
 
   .close-button {
     appearance: none;
-    background-color: rgb(var(--heading-color-2));
-    color: rgb(var(--light-background-color));
-    border-color: rgb(var(--heading-color-2));
-    border-style: solid;
-    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    border: none;
     padding: 0;
     height: 2rem;
-    width: 2rem;
-    font-size: 20pt;
-    font-weight: lighter;
+    width: 3rem;
+    font-size: 24pt;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -455,6 +482,15 @@ const t = useTranslations(locale);
     &:active {
       transform: scale(1.1);
     }
+
+    @media (--images-too-small) {
+      display: none;
+    }
+  }
+
+  .chevron-up-icon {
+    /* So it overlaps with close button */
+    margin-left: -2rem;
 
     @media (--images-too-small) {
       display: none;

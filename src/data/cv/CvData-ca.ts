@@ -504,7 +504,7 @@ const workExperienceSection: WorkExperienceSection = {
       title: 'Desenvolupador Lead',
       company: 'Studio by Caigo',
       location: 'Reus, Espanya (remot)',
-      period: 'Ago 2022 - Mai 2023',
+      period: 'Ago 2022 - Jun 2023',
       lines: [
         "Vaig implementar un estructurat procés de desenvolupament basat en objectius, reunions periòdiques i revisions de codi per assegurar l'èxit de les apps. Fets amb React, React Native, Firebase i Express.",
         "Vaig escriure documentació per a l'equip de desenvolupament i incorporació per als nous integrants de l'equip.",
