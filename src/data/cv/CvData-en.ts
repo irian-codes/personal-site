@@ -19,8 +19,8 @@ const header: Header = {
   website: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Reus, Spain',
-  locationMapsUrl: 'https://maps.app.goo.gl/ggMeWYByNuUqigrJ7',
+  location: 'Tarragona, Spain',
+  locationMapsUrl: 'https://maps.app.goo.gl/3soGKCQTwza9vfi97',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
@@ -510,7 +510,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 5,
       title: 'Lead developer',
       company: 'Studio by Caigo',
-      location: 'Reus, Spain (remote)',
+      location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
         "Implemented a structured development process using milestones, clear team goals, and regular code reviews. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
@@ -523,7 +523,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 4,
       title: 'Frontend app developer',
       company: 'Studio by Caigo',
-      location: 'Reus, Spain (hybrid)',
+      location: 'Tarragona, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
       lines: [
         'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
@@ -561,7 +561,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 1,
       title: 'Wordpress website developer',
       company: 'Digital Media Empresas',
-      location: 'Reus, Spain (remote)',
+      location: 'Tarragona, Spain (remote)',
       period: 'Jun 2016 - Nov 2016',
       lines: [],
       iconSrc:
