@@ -19,8 +19,8 @@ const header: Header = {
   website: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Reus, Espanya',
-  locationMapsUrl: 'https://maps.app.goo.gl/ggMeWYByNuUqigrJ7',
+  location: 'Tarragona, Espanya',
+  locationMapsUrl: 'https://maps.app.goo.gl/3soGKCQTwza9vfi97',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
@@ -503,7 +503,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 5,
       title: 'Desenvolupador Lead',
       company: 'Studio by Caigo',
-      location: 'Reus, Espanya (remot)',
+      location: 'Tarragona, Espanya (remot)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
         "Vaig implementar un estructurat procés de desenvolupament basat en objectius, reunions periòdiques i revisions de codi per assegurar l'èxit de les apps. Fets amb React, React Native, Firebase i Express.",
@@ -516,7 +516,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 4,
       title: "Desenvolupador frontend d'apps",
       company: 'Studio by Caigo',
-      location: 'Reus, Espanya (híbrid)',
+      location: 'Tarragona, Espanya (híbrid)',
       period: 'Jul 2021 - Ago 2022',
       lines: [
         "Desenvolupar el frontend d'apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.",
@@ -554,7 +554,7 @@ const workExperienceSection: WorkExperienceSection = {
       id: 1,
       title: 'Desenvolupador web amb Wordpress',
       company: 'Digital Media Empresas',
-      location: 'Reus, Espanya (remot)',
+      location: 'Tarragona, Espanya (remot)',
       period: 'Jun 2016 - Nov 2016',
       lines: [],
       iconSrc:
