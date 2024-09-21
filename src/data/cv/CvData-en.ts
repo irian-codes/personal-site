@@ -521,7 +521,7 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 4,
-      title: 'Frontend app developer',
+      title: 'Frontend app developer with Typescript',
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
@@ -535,12 +535,12 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
-      title: 'Unity 3D VR developer',
+      title: 'Unity 3D C# developer',
       company: 'Ekisolid',
       location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
       lines: [
-        'Developed immersive VR experiences in Unity and C# that got superb ratings from clients and users.',
+        'With C#, I developed the software architecture for immersive VR experiences that got superb ratings.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
