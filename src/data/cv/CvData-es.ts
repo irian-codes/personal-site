@@ -81,7 +81,7 @@ const skillsSection: SkillsSection = {
     {
       id: 10,
       name: 'Astro',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -118,7 +118,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 35,
-      name: 'SASS',
+      name: 'Tailwind CSS',
       level: 'learning',
       category: 'library-framework',
     },
@@ -514,7 +514,7 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 4,
-      title: 'Desarrollador frontend de apps',
+      title: 'Desarrollador frontend de apps con Typescript',
       company: 'Studio by Caigo',
       location: 'Tarragona, España (híbrido)',
       period: 'Jul 2021 - Ago 2022',
@@ -528,12 +528,12 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
-      title: 'Desarrollador Unity 3D VR',
+      title: 'Desarrollador C# con Unity 3D',
       company: 'Ekisolid',
       location: 'Barcelona, España (remoto)',
       period: 'Nov 2017 - Dic 2019',
       lines: [
-        'Con Unity y C# desarrollé experiencias de VR que obtuvieron geniales calificaciones de clientes y usuarios.',
+        'Con C#, desarrollé la arquitectura de software para experiencias VR, con excelentes calificaciones de clientes.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/ekisolid.jpg',
     },
