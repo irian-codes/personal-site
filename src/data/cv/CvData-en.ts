@@ -81,7 +81,7 @@ const skillsSection: SkillsSection = {
     {
       id: 10,
       name: 'Astro',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -118,7 +118,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 35,
-      name: 'SASS',
+      name: 'Tailwind CSS',
       level: 'learning',
       category: 'library-framework',
     },
