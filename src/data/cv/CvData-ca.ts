@@ -192,6 +192,13 @@ const skillsSection: SkillsSection = {
       name: 'Express',
       level: 'learning',
       category: 'library-framework',
+      hidden: true,
+    },
+    {
+      id: 41,
+      name: 'Zod',
+      level: 'learning',
+      category: 'library-framework',
     },
     {
       id: 22,
@@ -470,7 +477,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canadà (remot)',
       period: 'Set 2023 - Present',
       lines: [
-        'Aprenent desenvolupament Full Stack amb Next.js, React Native, Express i PostgreSQL.',
+        "Aprenent DS&A i desenvolupament d'apps Full Stack amb Next.js, Tailwind CSS, PostgreSQL i Zod.",
       ],
       iconSrc: '',
     },
