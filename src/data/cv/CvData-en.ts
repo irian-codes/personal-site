@@ -192,6 +192,13 @@ const skillsSection: SkillsSection = {
       name: 'Express',
       level: 'learning',
       category: 'library-framework',
+      hidden: true,
+    },
+    {
+      id: 41,
+      name: 'Zod',
+      level: 'learning',
+      category: 'library-framework',
     },
     {
       id: 22,
@@ -477,7 +484,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning Full Stack development with Next.js, React Native, Express and PostgreSQL.',
+        'Learning DS&A and Full Stack development with Next.js, Tailwind CSS, PostgreSQL and Zod.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
