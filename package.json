@@ -8,9 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "concurrently \"npm run lint:eslint\" \"npm run lint:stylelint\"",
+    "lint": "concurrently --names \"eslint,stylelint\" --prefix-colors \"yellow,blue\" \"npm run lint:eslint\" \"npm run lint:stylelint\"",
     "lint:stylelint": "stylelint \"src/**/*.{css,astro}\"",
     "lint:eslint": "eslint \"src/**/*.{js,jsx,ts,tsx,astro}\"",
+    "typecheck": "tsc --noEmit",
     "pretty": "prettier --write .",
     "postinstall": "patch-package",
     "prepare": "husky"
