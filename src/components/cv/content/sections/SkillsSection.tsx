@@ -49,6 +49,7 @@ export const SkillsSection = (props: SkillsSectionProps) => {
           />
           {/* Label */}
           <Text style={{fontSize: cvStyles.text.fontSize.small}}>
+            {/* @ts-expect-error - We know the key exists */}
             {t('cv.body.section.skills.labels.' + color[0])}
           </Text>
         </View>
