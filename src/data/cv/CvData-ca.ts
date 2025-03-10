@@ -13,7 +13,7 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: "Desenvolupador d'apps mòbil i web",
+  position: 'Desenvolupador de software augmentat amb IA',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
   website: 'https://irian.codes',
@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Fa 4 anys i mig que creo apps. I ara ha arribat l'hora d'apostar a llarg plaç en una bona empresa on pugui continuar desenvolupant apps amb gran impacte.",
+    "Sóc un desenvolupador de 4,5 anys d'experiència que s'ha reinventat amb la IA. La utilitzo per millorar la meva productivitat i crear apps fullstack amb IA integrada.",
   ],
 };
 
@@ -67,15 +67,15 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
-      id: 9,
-      name: 'React Native',
+      id: 76,
+      name: 'Next.js',
       level: 'learnt',
       category: 'library-framework',
     },
     {
-      id: 76,
-      name: 'Next.js',
-      level: 'learning',
+      id: 9,
+      name: 'React Native',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -109,6 +109,19 @@ const skillsSection: SkillsSection = {
       name: 'Material UI',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
+    },
+    {
+      id: 81,
+      name: 'LangChain',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
+      id: 85,
+      name: 'Agents IA',
+      level: 'learning',
+      category: 'ai-tool',
     },
     {
       id: 34,
@@ -119,7 +132,7 @@ const skillsSection: SkillsSection = {
     {
       id: 35,
       name: 'Tailwind CSS',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -182,10 +195,22 @@ const skillsSection: SkillsSection = {
       category: 'database',
     },
     {
-      id: 77,
-      name: 'PostgreSQL',
-      level: 'learning',
+      id: 83,
+      name: 'Chroma DB',
+      level: 'learnt',
       category: 'database',
+    },
+    {
+      id: 77,
+      name: 'SQL',
+      level: 'learning',
+      category: 'cs-language',
+    },
+    {
+      id: 80,
+      name: 'Prisma',
+      level: 'learnt',
+      category: 'library-framework',
     },
     {
       id: 21,
@@ -197,7 +222,7 @@ const skillsSection: SkillsSection = {
     {
       id: 41,
       name: 'Zod',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -210,20 +235,14 @@ const skillsSection: SkillsSection = {
     {
       id: 33,
       name: 'Node.js',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
       id: 32,
-      name: 'Jest',
+      name: 'TDD',
       level: 'learning',
-      category: 'library-framework',
-    },
-    {
-      id: 23,
-      name: 'CI/CD',
-      level: 'learning',
-      category: 'dev-tool',
+      category: 'other',
     },
     {
       id: 24,
@@ -236,6 +255,7 @@ const skillsSection: SkillsSection = {
       name: 'Git',
       level: 'learnt',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 26,
@@ -246,7 +266,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 28,
-      name: 'Github',
+      name: 'GitHub',
       level: 'learnt',
       category: 'dev-tool',
       hidden: true,
@@ -278,8 +298,20 @@ const skillsSection: SkillsSection = {
       category: 'dev-tool',
     },
     {
+      id: 84,
+      name: 'TRPC',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 36,
-      name: 'Github Copilot',
+      name: 'GitHub Copilot',
+      level: 'learnt',
+      category: 'ai-tool',
+    },
+    {
+      id: 86,
+      name: 'Cursor IDE',
       level: 'learnt',
       category: 'ai-tool',
     },
@@ -363,6 +395,7 @@ const skillsSection: SkillsSection = {
       name: 'Objectius SMART',
       level: 'learnt',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 56,
@@ -442,12 +475,6 @@ const skillsSection: SkillsSection = {
       hidden: true,
     },
     {
-      id: 68,
-      name: 'Agile',
-      level: 'learning',
-      category: 'soft-skill',
-    },
-    {
       id: 73,
       name: 'Anglès',
       level: 'learnt',
@@ -477,7 +504,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canadà (remot)',
       period: 'Set 2023 - Present',
       lines: [
-        "Aprenent DS&A i desenvolupament d'apps Full Stack amb Next.js, Tailwind CSS, PostgreSQL i Zod.",
+        'Aprenent DS&A, desenvolupament Full Stack amb Next.js i apps amb IA integrada amb LangChain.',
       ],
       iconSrc: '',
     },
@@ -500,6 +527,7 @@ const educationSection: EducationSection = {
       period: 'Set 2013 - Jun 2017',
       lines: [],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
+      hidden: true,
     },
   ],
 };
@@ -587,11 +615,30 @@ const projectSection: ProjectSection = {
   entries: [
     {
       id: 0,
+      name: 'Chatbot IA per a manuals',
+      period: '2024-2025',
+      lines: [
+        "Aplicació amb IA de tipus RAG amb optimitzacions per a documents estructurats i organitzats en seccions. Permet a l'usuari xatejar amb informes, articles científics, manuals de productes, jocs de taula, etc.",
+      ],
+      technologies: [
+        {name: 'Next.js'},
+        {name: 'Tailwind CSS'},
+        {name: 'LangChain'},
+        {name: 'Prisma'},
+        {name: 'Chroma'},
+        {name: 'TRPC'},
+      ],
+      iconSrc: '',
+      urls: new Map([
+        ['live', ''],
+        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
+      ]),
+    },
+    {
+      id: 1,
       name: 'Pàgina web personal',
       period: 'Set 2023',
-      lines: [
-        'La meva pàgina personal per mostrar els meus projectes reals i millorar les meves habilitats en HTML/CSS/JS.',
-      ],
+      lines: [],
       technologies: [
         {name: 'Astro'},
         {name: 'React'},
