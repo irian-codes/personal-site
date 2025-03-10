@@ -7,7 +7,7 @@ export const headerStyles = {
       small: 9,
       medium: 11,
       large: 12,
-      position: 18,
+      position: 16,
       name: 28,
     },
     colors: {
