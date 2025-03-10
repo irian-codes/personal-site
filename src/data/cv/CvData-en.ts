@@ -13,7 +13,7 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: 'Mobile and Web Developer',
+  position: 'AI-Powered Software Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: '',
   website: 'https://irian.codes',
@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Lifelong builder, from assembling my computer at 8 to leading a team of developers creating great apps. Now, after 4.5 years of experience, I'm seeking to step up my career in an established company to accelerate my growth and potential. I'm seeking a long-term job. Let's build together!",
+    "Lifelong builder passionate about AI. From assembling my computer at 8 to leading talented developers. Now, after 4.5 years of experience, I've become a Fullstack developer building AI apps. I'm seeking a dynamic and established company to develop great software. Let's build together!",
   ],
 };
 
@@ -69,7 +69,7 @@ const skillsSection: SkillsSection = {
     {
       id: 76,
       name: 'Next.js',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -109,6 +109,19 @@ const skillsSection: SkillsSection = {
       name: 'Material UI',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
+    },
+    {
+      id: 81,
+      name: 'LangChain',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
+      id: 85,
+      name: 'Agentic AI',
+      level: 'learning',
+      category: 'ai-tool',
     },
     {
       id: 34,
@@ -119,7 +132,7 @@ const skillsSection: SkillsSection = {
     {
       id: 35,
       name: 'Tailwind CSS',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -182,10 +195,22 @@ const skillsSection: SkillsSection = {
       category: 'database',
     },
     {
-      id: 77,
-      name: 'PostgreSQL',
-      level: 'learning',
+      id: 83,
+      name: 'Chroma DB',
+      level: 'learnt',
       category: 'database',
+    },
+    {
+      id: 77,
+      name: 'SQL',
+      level: 'learning',
+      category: 'cs-language',
+    },
+    {
+      id: 80,
+      name: 'Prisma',
+      level: 'learnt',
+      category: 'library-framework',
     },
     {
       id: 21,
@@ -197,7 +222,7 @@ const skillsSection: SkillsSection = {
     {
       id: 41,
       name: 'Zod',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
@@ -210,20 +235,14 @@ const skillsSection: SkillsSection = {
     {
       id: 33,
       name: 'Node.js',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
     },
     {
       id: 32,
-      name: 'Jest',
+      name: 'TDD',
       level: 'learning',
-      category: 'library-framework',
-    },
-    {
-      id: 23,
-      name: 'CI/CD',
-      level: 'learning',
-      category: 'dev-tool',
+      category: 'other',
     },
     {
       id: 24,
@@ -236,6 +255,7 @@ const skillsSection: SkillsSection = {
       name: 'Git',
       level: 'learnt',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 26,
@@ -246,7 +266,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 28,
-      name: 'Github',
+      name: 'GitHub',
       level: 'learnt',
       category: 'dev-tool',
       hidden: true,
@@ -278,8 +298,20 @@ const skillsSection: SkillsSection = {
       category: 'dev-tool',
     },
     {
+      id: 84,
+      name: 'TRPC',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 36,
-      name: 'Github Copilot',
+      name: 'GitHub Copilot',
+      level: 'learnt',
+      category: 'ai-tool',
+    },
+    {
+      id: 86,
+      name: 'Cursor IDE',
       level: 'learnt',
       category: 'ai-tool',
     },
@@ -363,6 +395,7 @@ const skillsSection: SkillsSection = {
       name: 'SMART goals',
       level: 'learnt',
       category: 'soft-skill',
+      hidden: true,
     },
     {
       id: 56,
@@ -442,12 +475,6 @@ const skillsSection: SkillsSection = {
       hidden: true,
     },
     {
-      id: 68,
-      name: 'Agile',
-      level: 'learning',
-      category: 'soft-skill',
-    },
-    {
       id: 69,
       name: 'Work ethic',
       level: 'learnt',
@@ -484,13 +511,13 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning DS&A and Full Stack development with Next.js, Tailwind CSS, PostgreSQL and Zod.',
+        'Learning DS&A, Full Stack development with Next.js and AI driven apps with LangChain.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
     {
       id: 1,
-      title: 'Masters in Mobile App Development',
+      title: "Master's in Mobile App Development",
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
@@ -507,6 +534,7 @@ const educationSection: EducationSection = {
       period: 'Sept 2013 - Jun 2017',
       lines: [],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/urv.jpg',
+      hidden: true,
     },
   ],
 };
@@ -594,14 +622,34 @@ const projectSection: ProjectSection = {
   entries: [
     {
       id: 0,
+      name: 'AI RAG specialized for manuals',
+      period: '2024-2025',
+      lines: [
+        'A RAG-based AI app that enables the user to directly chat with reports, research papers, product and game manuals, with chunking and retrieval specifically optimized for structured, section-based documents.',
+      ],
+      technologies: [
+        {name: 'Next.js'},
+        {name: 'Tailwind CSS'},
+        {name: 'LangChain'},
+        {name: 'Prisma'},
+        {name: 'Chroma'},
+        {name: 'TRPC'},
+      ],
+      iconSrc: '',
+      urls: new Map([
+        ['live', ''],
+        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
+      ]),
+    },
+    {
+      id: 1,
       name: 'Personal website',
       period: 'Sep 2023',
-      lines: [
-        'My portfolio website to showcase my real projects and learn Astro, which enhanced my HTML/CSS/JS skills.',
-      ],
+      lines: [],
       technologies: [
         {name: 'Astro'},
         {name: 'React'},
+        {name: 'React PDF'},
         {name: 'Typescript'},
         {name: 'PostCSS'},
       ],

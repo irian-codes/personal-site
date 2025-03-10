@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     textAlign: 'left',
     marginTop: '-0.2cm',
-    maxWidth: '8.5cm',
+    maxWidth: '9cm',
     fontFamily: headerStyles.text.fontFamily.name,
     color: cvStyles.colors.secondary,
   },
