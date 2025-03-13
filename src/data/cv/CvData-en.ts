@@ -624,7 +624,7 @@ const projectSection: ProjectSection = {
     {
       id: 0,
       name: 'AI RAG for manuals',
-      period: '2024-2025',
+      period: '2024 - 2025',
       lines: [
         'A RAG-based AI app that enables the user to directly chat with structured documents.',
       ],
@@ -645,7 +645,7 @@ const projectSection: ProjectSection = {
     {
       id: 1,
       name: 'Personal website',
-      period: 'Sep 2023',
+      period: '2023',
       lines: [
         'My website where you can find my React Native and web real projects I worked on.',
       ],
