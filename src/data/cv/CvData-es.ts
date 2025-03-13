@@ -16,7 +16,7 @@ const header: Header = {
   position: 'Desarrollador de software con herramientas IA',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
-  website: 'https://irian.codes',
+  website: 'https://irian.codes/es',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Tarragona, España',
@@ -544,6 +544,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 5,
       title: 'Desarrollador Lead',
+      titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, España (remoto)',
       period: 'Ago 2022 - Jun 2023',
@@ -571,6 +572,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 3,
       title: 'Desarrollador C# con Unity 3D',
+      titleUrl: 'https://www.ekisolid.com/trabajos/',
       company: 'Ekisolid',
       location: 'Barcelona, España (remoto)',
       period: 'Nov 2017 - Dic 2019',
@@ -622,7 +624,7 @@ const projectSection: ProjectSection = {
   entries: [
     {
       id: 0,
-      name: 'Chatbot con IA para manuales',
+      name: 'Chatbot IA para manuales',
       period: '2024-2025',
       lines: [
         'Aplicación de IA tipo RAG con optimizaciones para documentos estructurados y organizados en secciones. Permite al usuario chatear con informes, artículos científicos, manuales de productos, juegos de mesa, etc.',

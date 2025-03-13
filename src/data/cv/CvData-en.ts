@@ -544,6 +544,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 5,
       title: 'Lead Developer (Mobile Apps team)',
+      titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
@@ -570,6 +571,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 3,
       title: 'Unity 3D C# developer',
+      titleUrl: 'https://www.ekisolid.com/trabajos/',
       company: 'Ekisolid',
       location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
@@ -621,7 +623,7 @@ const projectSection: ProjectSection = {
   entries: [
     {
       id: 0,
-      name: 'AI RAG specialized for manuals',
+      name: 'AI RAG for manuals',
       period: '2024-2025',
       lines: [
         'A RAG-based AI app that enables the user to directly chat with structured documents.',

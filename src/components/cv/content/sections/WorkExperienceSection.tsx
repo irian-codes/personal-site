@@ -24,6 +24,7 @@ export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
           <SectionEntry
             key={entry.id}
             title={entry.title}
+            titleUrl={entry.titleUrl}
             place={entry.company}
             duration={entry.period}
             location={entry.location}

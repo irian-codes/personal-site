@@ -58,6 +58,7 @@ export type EducationSection = {
 export type WorkExperienceEntry = {
   id: number;
   title: string;
+  titleUrl?: string;
   company: string;
   location: string;
   period: string;
