@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "From assembling my computer at 8, to leading a React Native mobile apps team. Now, after 4.5 years of experience, I've embraced the AI revolution with new workflows and I'm seeking a dynamic company ready to challenge me.",
+    "From assembling my computer at 8, to leading a React Native mobile apps team. Now, after 7 years of coding experience, including professional work and hands-on projects, I'm seeking a dynamic company ready to challenge me.",
   ],
 };
 
@@ -543,20 +543,20 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Lead Developer',
+      title: 'Lead Software Developer',
       titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        "Led the Mobile App Development team (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
+        'Led the Mobile App Development team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 4,
-      title: 'React Native Frontend Developer',
+      title: 'React Native Frontend Software Developer',
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
@@ -570,7 +570,7 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
-      title: 'Unity 3D C# developer',
+      title: 'Unity 3D C# Software Developer',
       titleUrl: 'https://www.ekisolid.com/trabajos/',
       company: 'Ekisolid',
       location: 'Barcelona, Spain (remote)',
@@ -626,7 +626,7 @@ const projectSection: ProjectSection = {
       name: 'AI RAG for manuals',
       period: '2024 - 2025',
       lines: [
-        'A RAG-based AI app that enables the user to directly chat with structured documents.',
+        'A RAG-based AI app specifically optimized for structured documents, enabling the user to chat with them.',
       ],
       technologies: [
         {name: 'Next.js'},
