@@ -549,7 +549,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        "Led the Mobile App Development team (you can check the projects on my website). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
+        "Led the Mobile App Development team (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
