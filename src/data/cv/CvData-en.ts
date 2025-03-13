@@ -13,7 +13,7 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: 'React Native Mobile Developer',
+  position: 'React Native App Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: '',
   website: 'https://irian.codes',
@@ -386,7 +386,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 54,
-      name: 'Project management',
+      name: 'Agile project management',
       level: 'learnt',
       category: 'soft-skill',
     },
@@ -522,7 +522,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Learned mobile/web app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
+        'Learned mobile app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -543,13 +543,12 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Lead Mobile Developer',
+      title: 'Lead Developer (Mobile Apps team)',
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        "Implemented a structured development process using milestones, clear team goals, and regular code reviews. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
-        'Managed the deployment and publishing of the apps to the App Store and Google Play via Expo EAS.',
+        "Led the Mobile App Development team (you can check the projects on my website). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -561,7 +560,7 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Tarragona, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
       lines: [
-        'Developed the frontend part of several mobile apps with React Native. Learned to collab with Gitlab.',
+        'Developed the frontend part of several mobile applications with React Native. Learned to collab with Gitlab.',
         'Leveraged Firebase and Google Cloud to configure robust backends with Typescript for various projects. Contributed to development efforts with NestJS, Express, MongoDB, and Docker.',
         'Implemented an automated system to publish, manage and update apps for Android and iOS with Expo EAS.',
       ],
