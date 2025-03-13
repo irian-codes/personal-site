@@ -20,7 +20,7 @@ export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {
             {fontWeight: 'bold', textDecoration: 'none'},
           ]}
         >
-          {props.project.name}
+          {props.project.name} (link)
         </Link>
         <Text style={{marginHorizontal: '0.2cm'}}>{'\u2014'}</Text>
         {props.project.technologies.length > 0 && (
