@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Lifelong builder. From assembling my computer at 8 to leading talented developers building great React Native apps. Now, after 4.5 years of experience, I've embraced the AI revolution and implemented new workflows with AI tools. I'm seeking a dynamic company to develop useful apps.",
+    "From assembling my computer at 8, to leading a React Native mobile apps team. Now, after 4.5 years of experience, I've embraced the AI revolution with new workflows and I'm seeking a dynamic company ready to challenge me.",
   ],
 };
 
@@ -543,7 +543,7 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Lead Developer (Mobile Apps team)',
+      title: 'Lead Developer',
       titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (remote)',
@@ -647,7 +647,7 @@ const projectSection: ProjectSection = {
       name: 'Personal website',
       period: '2023',
       lines: [
-        'My website where you can find my React Native and web real projects I worked on.',
+        'My website where you can find my React Native and Web real projects I worked on.',
       ],
       technologies: [
         {name: 'Astro'},
