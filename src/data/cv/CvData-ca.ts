@@ -16,7 +16,7 @@ const header: Header = {
   position: 'Desenvolupador de software augmentat amb IA',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
-  website: 'https://irian.codes',
+  website: 'https://irian.codes/ca',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Tarragona, Espanya',
@@ -537,6 +537,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 5,
       title: 'Desenvolupador Lead',
+      titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, Espanya (remot)',
       period: 'Ago 2022 - Jun 2023',
@@ -564,6 +565,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 3,
       title: 'Desenvolupador C# amb Unity 3D',
+      titleUrl: 'https://www.ekisolid.com/trabajos/',
       company: 'Ekisolid',
       location: 'Barcelona, Espanya (remot)',
       period: 'Nov 2017 - Des 2019',
