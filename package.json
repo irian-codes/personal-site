@@ -1,7 +1,7 @@
 {
   "name": "irian-personal-page",
   "type": "module",
-  "version": "1.16.6",
+  "version": "1.17.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
