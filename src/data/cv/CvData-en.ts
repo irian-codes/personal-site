@@ -511,7 +511,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning DS&A, Full Stack development with Next.js and AI driven apps with LangChain.',
+        'Learning DS&A, Full Stack development with Next.js, PostgreSQL and AI driven apps with LangChain.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
