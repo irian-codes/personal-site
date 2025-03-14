@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Lifelong builder passionate about AI. From assembling my computer at 8 to leading talented developers. Now, after 4.5 years of experience, I've become a Fullstack developer building AI apps. I'm seeking a dynamic and established company to develop great software. Let's build together!",
+    'From childhood tech tinkerer to team leader with 7 years experience, including professional work and hands-on projects. I love to build software in this new AI era, mobile or full stack. Seeking my next challenge in a dynamic company.',
   ],
 };
 
@@ -386,7 +386,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 54,
-      name: 'Project management',
+      name: 'Agile project management',
       level: 'learnt',
       category: 'soft-skill',
     },
@@ -511,7 +511,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning DS&A, Full Stack development with Next.js and AI driven apps with LangChain.',
+        'Learning DS&A, Full Stack development with Next.js, PostgreSQL and AI driven apps with LangChain.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -522,7 +522,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Learned mobile/web app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
+        'Learned mobile app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -543,20 +543,20 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Lead developer',
+      title: 'Lead Software Developer',
+      titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        "Implemented a structured development process using milestones, clear team goals, and regular code reviews. This ensured projects met stakeholders' expectations. Made with React, React Native, Firebase and Express.",
-        'Created extensive project and onboarding documentation for the development team and new hires.',
+        'Led the Web and Mobile team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 4,
-      title: 'Frontend app developer with Typescript',
+      title: 'Frontend app developer, Mobile and Web',
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
@@ -570,7 +570,8 @@ const workExperienceSection: WorkExperienceSection = {
     },
     {
       id: 3,
-      title: 'Unity 3D C# developer',
+      title: 'Unity 3D C# Software Developer',
+      titleUrl: 'https://www.ekisolid.com/trabajos/',
       company: 'Ekisolid',
       location: 'Barcelona, Spain (remote)',
       period: 'Nov 2017 - Dec 2019',
@@ -622,8 +623,8 @@ const projectSection: ProjectSection = {
   entries: [
     {
       id: 0,
-      name: 'AI RAG specialized for manuals',
-      period: '2024-2025',
+      name: 'AI RAG for manuals',
+      period: '2024 - 2025',
       lines: [
         'A RAG-based AI app that enables the user to directly chat with reports, research papers, product and game manuals, with chunking and retrieval specifically optimized for structured, section-based documents.',
       ],
@@ -644,7 +645,7 @@ const projectSection: ProjectSection = {
     {
       id: 1,
       name: 'Personal website',
-      period: 'Sep 2023',
+      period: '2023',
       lines: [],
       technologies: [
         {name: 'Astro'},
