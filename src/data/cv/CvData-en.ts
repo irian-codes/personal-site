@@ -625,7 +625,7 @@ const projectSection: ProjectSection = {
     {
       id: 0,
       name: 'AI RAG for manuals',
-      period: '2024-2025',
+      period: '2024 - 2025',
       lines: [
         'A RAG-based AI app that enables the user to directly chat with reports, research papers, product and game manuals, with chunking and retrieval specifically optimized for structured, section-based documents.',
       ],
@@ -646,7 +646,7 @@ const projectSection: ProjectSection = {
     {
       id: 1,
       name: 'Personal website',
-      period: 'Sep 2023',
+      period: '2023',
       lines: [],
       technologies: [
         {name: 'Astro'},

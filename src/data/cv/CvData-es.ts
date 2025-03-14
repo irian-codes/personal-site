@@ -625,7 +625,7 @@ const projectSection: ProjectSection = {
     {
       id: 0,
       name: 'Chatbot IA para manuales',
-      period: '2024-2025',
+      period: '2024 - 2025',
       lines: [
         'Aplicación de IA tipo RAG con optimizaciones para documentos estructurados y organizados en secciones. Permite al usuario chatear con informes, artículos científicos, manuales de productos, juegos de mesa, etc.',
       ],
@@ -646,7 +646,7 @@ const projectSection: ProjectSection = {
     {
       id: 1,
       name: 'Página web personal',
-      period: 'Set 2023',
+      period: '2023',
       lines: [],
       technologies: [
         {name: 'Astro'},
