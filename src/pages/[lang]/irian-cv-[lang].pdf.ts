@@ -1,6 +1,7 @@
 import ReactPDF from '@react-pdf/renderer';
 import type {APIRoute} from 'astro';
 import {CvPdf} from '../../components/cv/CvPdf';
+import {cvData} from '../../data/cv/CvData';
 import type {LanguageTag} from '../../i18n/i18n';
 import {defaultLanguageTag, translations} from '../../i18n/i18n';
 
@@ -26,9 +27,13 @@ export const GET: APIRoute = async function (context) {
 };
 
 export function getStaticPaths() {
-  return Object.keys(translations)
-    .filter((key) => key !== defaultLanguageTag)
-    .map((lang) => ({
-      params: {lang},
-    }));
+  return (
+    Object.keys(translations)
+      .filter((key) => key !== defaultLanguageTag)
+      // No sense in trying to render a language that we don't have a CV data object for
+      .filter((key) => cvData.data.has(key as LanguageTag))
+      .map((lang) => ({
+        params: {lang},
+      }))
+  );
 }
