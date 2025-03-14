@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'From childhood tech tinkerer to team leader with 7 years experience, including professional work and hands-on projects. I love to build software in this new AI era, mobile or fullstack. Seeking my next challenge in a dynamic company.',
+    'From childhood tech tinkerer to team leader with 7 years experience, including professional work and hands-on projects. I love to build software in this new AI era, mobile or full stack. Seeking my next challenge in a dynamic company.',
   ],
 };
 
