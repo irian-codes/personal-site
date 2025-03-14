@@ -517,12 +517,12 @@ const educationSection: EducationSection = {
     },
     {
       id: 1,
-      title: 'Máster en Desarrollo de Aplicaciones',
+      title: 'Máster en Desarrollo de Aplicaciones Móviles',
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, España (remoto)',
       period: 'Feb 2020 - Ene 2022',
       lines: [
-        'Aprendí diseño de aplicaciones móviles y web con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También practiqué conceptos básicos de informática con C.',
+        'Aprendí diseño de aplicaciones móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También practiqué conceptos básicos de informática con C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -543,7 +543,7 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Desarrollador Lead',
+      title: 'Desarrollador Senior',
       titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, España (remoto)',
