@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'Soy un desarrollador de 4,5 años de experiencia que se ha reinventado con la IA. La utilizo para mejorar mi productividad y crear apps fullstack con IA integrada.',
+    'Soy un desarrollador de 7 años de experiencia, entre trabajo y proyectos, que se ha reinventado con la IA. Estoy buscando mi nuevo reto laboral donde crear apps móvil o web.',
   ],
 };
 
@@ -386,7 +386,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 54,
-      name: 'Gestión de proyectos',
+      name: 'Gestión proyectos Agile',
       level: 'learnt',
       category: 'soft-skill',
     },
@@ -511,18 +511,18 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canadá (remoto)',
       period: 'Set 2023 - Presente',
       lines: [
-        'Aprendiendo DS&A, desarrollo Full Stack con Next.js y apps de IA integrada con LangChain.',
+        'Aprendiendo DS&A, desarrollo Full Stack con Next.js, PostgreSQL y apps de IA integrada con LangChain.',
       ],
       iconSrc: '',
     },
     {
       id: 1,
-      title: 'Máster en Desarrollo de Aplicaciones',
+      title: 'Máster en Desarrollo de Aplicaciones Móviles',
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, España (remoto)',
       period: 'Feb 2020 - Ene 2022',
       lines: [
-        'Aprendí diseño de aplicaciones web/móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También practiqué conceptos básicos de informática con C.',
+        'Aprendí diseño de aplicaciones móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También adquirí conceptos básicos de programación con C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -543,28 +543,27 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Desarrollador Lead',
+      title: 'Desarrollador Senior',
       titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, España (remoto)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
-        'Implementé un estructurado sistema de desarrollo por objetivos, revisiones de código y reuniones periódicas para desarrollar proyectos de éxito con React, React Native, Firebase y Express.',
-        'Escribí la documentación para el equipo de desarrollo e incorporación para los nuevos integrantes el equipo.',
+        'Lideré el equipo de desarrollo móvil y web (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y feedback contínuo para desarrollar proyectos de éxito con React Native, Firebase y Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 4,
-      title: 'Desarrollador frontend de apps con Typescript',
+      title: 'Desarrollador frontend de apps móvil y web',
       company: 'Studio by Caigo',
       location: 'Tarragona, España (híbrido)',
       period: 'Jul 2021 - Ago 2022',
       lines: [
-        'Desarrollé el frontend de apps con React y React Native. Aprendí a colaborar con Gitlab.',
+        'Desarrollé el frontend de varias apps con React y React Native. Aprendí a colaborar con Gitlab.',
         'Utilicé Firebase y Google Cloud para configurar un backend robusto para varios proyectos. También ayudé con el desarrollo con NestJs, Express, MongoDB y Docker.',
-        'Implementé un sistema automatizado de publicación, gestión de versiones y actualizaciones de las apps con Expo EAS para Android y iOS.',
+        'Implementé la publicación y actualizaciones de las apps con Expo EAS para Android y iOS.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
