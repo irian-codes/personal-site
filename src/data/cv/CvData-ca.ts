@@ -16,7 +16,7 @@ const header: Header = {
   position: 'Desenvolupador de software augmentat amb IA',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
-  website: 'https://irian.codes',
+  website: 'https://irian.codes/ca',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
   location: 'Tarragona, Espanya',
@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "Sóc un desenvolupador de 4,5 anys d'experiència que s'ha reinventat amb la IA. La utilitzo per millorar la meva productivitat i crear apps fullstack amb IA integrada.",
+    "Soc un desenvolupador de software amb 7 anys d'experiència, entre treball i projectes, que s'ha reinventat amb la IA. Estic buscant un nou repte laboral on crear apps mòbils o web.",
   ],
 };
 
@@ -386,7 +386,7 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 54,
-      name: 'Gestió de projectes',
+      name: 'Gestió de projectes Agile',
       level: 'learnt',
       category: 'soft-skill',
     },
@@ -504,18 +504,18 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canadà (remot)',
       period: 'Set 2023 - Present',
       lines: [
-        'Aprenent DS&A, desenvolupament Full Stack amb Next.js i apps amb IA integrada amb LangChain.',
+        'Aprenent DS&A, desenvolupament Full Stack amb Next.js, PostgreSQL i apps amb IA integrada amb LangChain.',
       ],
       iconSrc: '',
     },
     {
       id: 1,
-      title: "Màster en Desenvolupament d'Aplicacions",
+      title: "Màster en Desenvolupament d'Aplicacions Mòbils",
       institution: 'Universitat Oberta de Catalunya',
       location: 'Barcelona, Espanya (remot)',
       period: 'Feb 2020 - Gen 2022',
       lines: [
-        "Vaig aprendre disseny d'apps web/mòbils amb Figma i desenvolupament amb Typescript, inclòs un projecte final amb una empresa. També vaig practicar conceptes bàsics d'informàtica amb C.",
+        "Vaig aprendre disseny d'apps mòbils amb Figma i desenvolupament amb Typescript, inclòs un projecte final amb una empresa. També vaig aprendre conceptes bàsics de programació amb C.",
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -536,27 +536,27 @@ const workExperienceSection: WorkExperienceSection = {
   entries: [
     {
       id: 5,
-      title: 'Desenvolupador Lead',
+      title: 'Desenvolupador Senior',
+      titleUrl: header.website,
       company: 'Studio by Caigo',
       location: 'Tarragona, Espanya (remot)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
-        "Vaig implementar un estructurat procés de desenvolupament basat en objectius, reunions periòdiques i revisions de codi per assegurar l'èxit de les apps. Fets amb React, React Native, Firebase i Express.",
-        "Vaig escriure documentació per a l'equip de desenvolupament i incorporació per als nous integrants de l'equip.",
+        "Vaig liderar l'equip de desenvolupament mòbil i web (projectes visibles a la meva web) amb un sistema basat en Agile amb objectius i feedback continu per desenvolupar projectes d'èxit amb React Native, Firebase i Express.",
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 4,
-      title: "Desenvolupador frontend d'apps amb Typescript",
+      title: "Desenvolupador frontend d'apps mòbil i web",
       company: 'Studio by Caigo',
       location: 'Tarragona, Espanya (híbrid)',
       period: 'Jul 2021 - Ago 2022',
       lines: [
-        "Desenvolupar el frontend d'apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.",
+        'Vaig desenvolupar el frontend de vàries apps amb React i React Native. Vaig aprendre a col·laborar amb Gitlab.',
         'Vaig utilitzar Firebase i Google Cloud per configurar backends robustos per varis projectes. També vaig ajudar amb el desenvolupament amb NestJs, Express, MongoDB i Docker.',
-        "Vaig implementar un sistema automatitzat de publicació, gestió de versions i actualitzacions d'apps amb Expo EAS per a Android i iOS.",
+        'Vaig implementar la publicació i actualització de les aplicacions amb Expo EAS per a Android i iOS.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -564,6 +564,7 @@ const workExperienceSection: WorkExperienceSection = {
     {
       id: 3,
       title: 'Desenvolupador C# amb Unity 3D',
+      titleUrl: 'https://www.ekisolid.com/trabajos/',
       company: 'Ekisolid',
       location: 'Barcelona, Espanya (remot)',
       period: 'Nov 2017 - Des 2019',
@@ -616,7 +617,7 @@ const projectSection: ProjectSection = {
     {
       id: 0,
       name: 'Chatbot IA per a manuals',
-      period: '2024-2025',
+      period: '2024 - 2025',
       lines: [
         "Aplicació amb IA de tipus RAG amb optimitzacions per a documents estructurats i organitzats en seccions. Permet a l'usuari xatejar amb informes, articles científics, manuals de productes, jocs de taula, etc.",
       ],
@@ -637,7 +638,7 @@ const projectSection: ProjectSection = {
     {
       id: 1,
       name: 'Pàgina web personal',
-      period: 'Set 2023',
+      period: '2023',
       lines: [],
       technologies: [
         {name: 'Astro'},

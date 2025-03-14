@@ -1,7 +1,8 @@
 import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
 import type {Style} from '@react-pdf/types';
-import React from 'react';
+import React, {useContext} from 'react';
 import type {ProjectEntry} from '../../../../../data/cv/types/CvData';
+import {LocalizedDataContext} from '../../../CvPdf';
 import {cvStyles} from '../../styles/CvStyles';
 
 type ProjectSectionEntryProps = {
@@ -10,6 +11,8 @@ type ProjectSectionEntryProps = {
 };
 
 export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {
+  const {t, data} = useContext(LocalizedDataContext);
+
   return (
     <View style={props.containerStyle}>
       <View style={styles.firstLineContainer}>
@@ -20,7 +23,7 @@ export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {
             {fontWeight: 'bold', textDecoration: 'none'},
           ]}
         >
-          {props.project.name}
+          {props.project.name} (link)
         </Link>
         <Text style={{marginHorizontal: '0.2cm'}}>{'\u2014'}</Text>
         {props.project.technologies.length > 0 && (
@@ -28,6 +31,11 @@ export const ProjectSectionEntry = (props: ProjectSectionEntryProps) => {
             {props.project.technologies.map((tech) => tech.name).join(', ')}
           </Text>
         )}
+      </View>
+
+      <View style={styles.secondLineContainer}>
+        <Text style={styles.h4}>{t('cv.project.period')}</Text>
+        <Text style={styles.h4}>{props.project.period}</Text>
       </View>
 
       <View style={styles.projectLinesContainer}>
@@ -51,10 +59,20 @@ const styles = StyleSheet.create({
     fontSize: cvStyles.text.fontSize.medium,
     textAlign: 'justify',
   },
+  h4: {
+    ...cvStyles.text.headings.h4,
+    color: cvStyles.colors.primaryGray,
+  },
   firstLineContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+  },
+  secondLineContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    marginTop: '-0.15cm',
   },
   titleLink: {
     ...cvStyles.text.headings.h2,
@@ -62,6 +80,6 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
   },
   projectLinesContainer: {
-    marginTop: '-0.1cm',
+    marginTop: '0cm',
   },
 });

@@ -1,10 +1,11 @@
-import {StyleSheet, Text, View} from '@react-pdf/renderer';
+import {Link, StyleSheet, Text, View} from '@react-pdf/renderer';
 import type {Style} from '@react-pdf/types';
 import React from 'react';
 import {cvStyles} from '../../styles/CvStyles';
 
 type SectionEntryProps = {
   title: string;
+  titleUrl?: string;
   duration: string;
   place: string;
   location: string;
@@ -17,9 +18,21 @@ export const SectionEntry = (props: SectionEntryProps) => {
     <View style={props.containerStyle}>
       <View style={styles.titleRowContainer}>
         <View style={styles.firstLineContainer}>
-          <Text style={[cvStyles.text.headings.h2, {fontWeight: 'bold'}]}>
-            {props.title}
-          </Text>
+          {props.titleUrl ? (
+            <Link
+              src={props.titleUrl}
+              style={[
+                cvStyles.text.headings.h2,
+                {fontWeight: 'bold', textDecoration: 'none'},
+              ]}
+            >
+              {props.title} (link)
+            </Link>
+          ) : (
+            <Text style={[cvStyles.text.headings.h2, {fontWeight: 'bold'}]}>
+              {props.title}
+            </Text>
+          )}
           <Text style={{marginHorizontal: '0.2cm'}}>{'\u2014'}</Text>
           <Text style={cvStyles.text.headings.h2}>{props.place}</Text>
         </View>
