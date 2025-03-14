@@ -13,7 +13,7 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: 'React Native App Developer',
+  position: 'AI-Powered Full Stack Developer',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: '',
   website: 'https://irian.codes',
@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    "From assembling my computer at 8, to leading a React Native mobile apps team. Now, after 7 years of coding experience, including professional work and hands-on projects, I'm seeking a dynamic company ready to challenge me.",
+    'From childhood tech tinkerer to team leader with 7 years experience, including professional work and hands-on projects. I love to build Full Stack software in this new AI era. Seeking my next challenge in a dynamic company.',
   ],
 };
 
@@ -549,20 +549,20 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        'Led the Mobile App Development team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
+        'Led the Web and Mobile team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 4,
-      title: 'React Native Frontend Software Developer',
+      title: 'Frontend app developer, Mobile and Web',
       company: 'Studio by Caigo',
       location: 'Tarragona, Spain (hybrid)',
       period: 'Jul 2021 - Aug 2022',
       lines: [
-        'Developed the frontend part of several mobile applications with React Native. Learned to collab with Gitlab.',
-        'Leveraged Firebase and Google Cloud to configure robust backends with Typescript for various projects. Contributed to development efforts with NestJS, Express, MongoDB, and Docker.',
+        'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
+        'Contributed to development efforts of robust backends with NestJS, Express, Firebase, MongoDB, and Docker.',
         'Implemented an automated system to publish, manage and update apps for Android and iOS with Expo EAS.',
       ],
       iconSrc:
@@ -626,7 +626,7 @@ const projectSection: ProjectSection = {
       name: 'AI RAG for manuals',
       period: '2024 - 2025',
       lines: [
-        'A RAG-based AI app specifically optimized for structured documents, enabling the user to chat with them.',
+        'A RAG-based AI Full Stack app that enables the user to directly chat with reports, research papers, product and game manuals, with chunking and retrieval specifically optimized for structured, section-based documents. Using Shadcn/ui, optimistic updates and prefetching on the frontend to achieve a great user experience (UX/UI).',
       ],
       technologies: [
         {name: 'Next.js'},
@@ -646,9 +646,7 @@ const projectSection: ProjectSection = {
       id: 1,
       name: 'Personal website',
       period: '2023',
-      lines: [
-        'My website where you can find my React Native and Web real projects I worked on.',
-      ],
+      lines: [],
       technologies: [
         {name: 'Astro'},
         {name: 'React'},

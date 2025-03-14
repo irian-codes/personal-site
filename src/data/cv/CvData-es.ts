@@ -13,7 +13,7 @@ import type {
 const header: Header = {
   name: 'Irian',
   surnames: 'Montón',
-  position: 'Desarrollador móvil con React Native',
+  position: 'Desarrollador Full Stack con herramientas IA',
   birthdate: '1993-12-10T00:00:00+01:00',
   photoSrc: getPublicFolderURL() + '/assets/images/cv/irian-cv-image.jpg',
   website: 'https://irian.codes/es',
@@ -29,7 +29,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'Con 7 años de experiencia en programación (entre trabajo y proyectos), soy capaz de desarrollar con React Native y Typescript la aplicación móvil que tu empresa necesita.',
+    'Soy un desarrollador de 7 años de experiencia, entre trabajo y proyectos, que se ha reinventado con la IA. Estoy buscando mi nuevo reto laboral donde crear apps Full Stack.',
   ],
 };
 
@@ -522,7 +522,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, España (remoto)',
       period: 'Feb 2020 - Ene 2022',
       lines: [
-        'Aprendí diseño de aplicaciones móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También practiqué conceptos básicos de informática con C.',
+        'Aprendí diseño de aplicaciones móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También adquirí conceptos básicos de programación con C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -549,20 +549,20 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Tarragona, España (remoto)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
-        'Lideré el equipo de desarrollo React Native (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y feedback contínuo para desarrollar proyectos de éxito con React Native, Firebase y Express.',
+        'Lideré el equipo de desarrollo móvil y web (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y feedback contínuo para desarrollar proyectos de éxito con React Native, Firebase y Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
     },
     {
       id: 4,
-      title: 'Desarrollador frontend React Native con Typescript',
+      title: 'Desarrollador frontend de apps móvil y web',
       company: 'Studio by Caigo',
       location: 'Tarragona, España (híbrido)',
       period: 'Jul 2021 - Ago 2022',
       lines: [
-        'Desarrollé el frontend de aplicaciones móviles con React Native. Aprendí a colaborar con Gitlab.',
-        'Utilicé Firebase y Google Cloud para configurar un backend robusto para varios proyectos. También ayudé con el desarrollo con NestJs, Express, MongoDB y Docker.',
+        'Desarrollé el frontend de varias apps con React y React Native. Aprendí a colaborar con Gitlab.',
+        'Contribuí en el desarrollo varios backends con NestJs, Express, Firebase, MongoDB y Docker.',
         'Implementé la publicación y actualizaciones de las apps con Expo EAS para Android y iOS.',
       ],
       iconSrc:
@@ -626,7 +626,7 @@ const projectSection: ProjectSection = {
       name: 'Chatbot IA para manuales',
       period: '2024 - 2025',
       lines: [
-        'Aplicación de IA tipo RAG para documentos organizados en secciones que permite al usuario chatear con ellos.',
+        'Aplicación de IA tipo RAG con optimizaciones para documentos estructurados y organizados en secciones. Permite al usuario chatear con informes, artículos científicos, manuales de productos, juegos de mesa, etc. Usa Shadcn/ui, optimistic updates y prefetching en el frontend para una experiencia de usuario (UX/UI) excelente.',
       ],
       technologies: [
         {name: 'Next.js'},
@@ -646,9 +646,7 @@ const projectSection: ProjectSection = {
       id: 1,
       name: 'Página web personal',
       period: '2023',
-      lines: [
-        'Página web portafolio donde ver mis proyectos reales con React y React Native.',
-      ],
+      lines: [],
       technologies: [
         {name: 'Astro'},
         {name: 'React'},
