@@ -19,8 +19,8 @@ const header: Header = {
   website: 'https://irian.codes/ca',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Tarragona, Espanya',
-  locationMapsUrl: 'https://maps.app.goo.gl/3soGKCQTwza9vfi97',
+  location: 'Barcelona, Espanya',
+  locationMapsUrl: 'https://maps.app.goo.gl/eSWB6QzFNFG3cR1z8',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
