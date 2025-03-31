@@ -3,11 +3,10 @@ import type {
   AboutSection,
   CvData,
   EducationSection,
+  ExperienceSection,
   Header,
   OtherSection,
-  ProjectSection,
   SkillsSection,
-  WorkExperienceSection,
 } from './types/CvData';
 
 const header: Header = {
@@ -29,7 +28,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'From childhood tech tinkerer to team leader with 7 years experience, including professional work and hands-on projects. I love to build software in this new AI era, mobile or full stack. Seeking my next challenge in a dynamic company.',
+    'From childhood tech tinkerer to team leader with 7 years of experience, including professional work and hands-on projects. I love to build software in this new AI era, mobile or full stack. Seeking my next challenge in a dynamic company.',
   ],
 };
 
@@ -511,7 +510,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning DS&A, Full Stack development with Next.js, PostgreSQL and AI driven apps with LangChain.',
+        'Learning Full Stack development with Next.js, Data Structures and Algorithms and how to integrate AI in Apps.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -539,8 +538,22 @@ const educationSection: EducationSection = {
   ],
 };
 
-const workExperienceSection: WorkExperienceSection = {
+const experienceSection: ExperienceSection = {
   entries: [
+    {
+      id: 6,
+      title: 'AI Apps Full Stack Developer (bootcamp)',
+      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
+      company: 'Zero To Mastery Academy',
+      location: 'Toronto, Canada (remote)',
+      period: 'Sep 2023 - Present',
+      lines: [
+        'Building projects with AI in Cursor IDE during a bootcamp to become a Next.js (React) AI Apps Full Stack developer. Mastering both frontend and backend (Node.js) with novel AI powered workflows.',
+        'Developed my project, Chat with Manuals, an AI RAG app to allow users to chat with organized documents by sections. Project made with Next.js, Tailwind CSS, LangChain, Prisma, PostgreSQL, Chroma and TRPC.',
+        'Developed my portfolio of projects made with React and React Native. With Astro, React and Typescript.',
+      ],
+      iconSrc: '',
+    },
     {
       id: 5,
       title: 'Lead Software Developer',
@@ -549,7 +562,8 @@ const workExperienceSection: WorkExperienceSection = {
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        'Led the Web and Mobile team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
+        'Led the Web and Mobile team where we developed many apps (see website for projects).',
+        'Implemented a structured development process using milestones and regular code reviews based on the Agile methodology that increased productivity of the team by 50%. This ensured projects shipped successfully. Apps made with React, React Native, Firebase and Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -619,50 +633,6 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
-const projectSection: ProjectSection = {
-  entries: [
-    {
-      id: 0,
-      name: 'AI RAG for manuals',
-      period: '2024 - 2025',
-      lines: [
-        'A RAG-based AI app that enables the user to directly chat with reports, research papers, product and game manuals, with chunking and retrieval specifically optimized for structured, section-based documents.',
-      ],
-      technologies: [
-        {name: 'Next.js'},
-        {name: 'Tailwind CSS'},
-        {name: 'LangChain'},
-        {name: 'Prisma'},
-        {name: 'Chroma'},
-        {name: 'TRPC'},
-      ],
-      iconSrc: '',
-      urls: new Map([
-        ['live', ''],
-        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
-      ]),
-    },
-    {
-      id: 1,
-      name: 'Personal website',
-      period: '2023',
-      lines: [],
-      technologies: [
-        {name: 'Astro'},
-        {name: 'React'},
-        {name: 'React PDF'},
-        {name: 'Typescript'},
-        {name: 'PostCSS'},
-      ],
-      urls: new Map([
-        ['live', 'https://irian.codes'],
-        ['repository', 'https://github.com/irian-codes/personal-site'],
-      ]),
-      iconSrc: '',
-    },
-  ],
-};
-
 const otherSection: OtherSection = {
   lines: ['Languages: English, Spanish, Catalan.', 'Driving License: Yes.'],
 };
@@ -672,7 +642,6 @@ export const cvData_en: CvData = {
   aboutSection,
   skillsSection,
   educationSection,
-  workExperienceSection,
-  projectSection,
+  experienceSection,
   otherSection,
 };
