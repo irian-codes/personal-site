@@ -55,7 +55,7 @@ export type EducationSection = {
   entries: EducationEntry[];
 };
 
-export type WorkExperienceEntry = {
+export type ExperienceEntry = {
   id: number;
   title: string;
   titleUrl?: string;
@@ -66,23 +66,9 @@ export type WorkExperienceEntry = {
   iconSrc: string;
 } & isHidden;
 
-export type WorkExperienceSection = {
-  entries: WorkExperienceEntry[];
+export type ExperienceSection = {
+  entries: ExperienceEntry[];
 };
-
-export type ProjectSection = {
-  entries: ProjectEntry[];
-};
-
-export type ProjectEntry = {
-  id: number;
-  name: string;
-  period: string;
-  lines: string[];
-  technologies: Technology[];
-  urls: Map<'live' | 'repository', string>;
-  iconSrc: string;
-} & isHidden;
 
 export type Technology = {
   name: string;
@@ -97,7 +83,6 @@ export type CvData = {
   aboutSection: AboutSection;
   skillsSection: SkillsSection;
   educationSection: EducationSection;
-  workExperienceSection: WorkExperienceSection;
-  projectSection: ProjectSection;
+  experienceSection: ExperienceSection;
   otherSection: OtherSection;
 };
