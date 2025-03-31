@@ -521,7 +521,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, España (remoto)',
       period: 'Feb 2020 - Ene 2022',
       lines: [
-        'Aprendí diseño de aplicaciones móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También adquirí conceptos básicos de programación con C.',
+        'Máster totalmente basado en proyectos centrado en diseño de aplicaciones móviles con Figma y desarrollo con Typescript, Kotlin, y HTML/CSS/JS, incluido un proyecto final con una empresa real con React Native.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },

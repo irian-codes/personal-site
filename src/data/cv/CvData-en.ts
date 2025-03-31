@@ -521,7 +521,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Learned mobile app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
+        'Project based program focused on mobile app design with Figma and development with Typescript, Kotlin and HTML/CSS/JS, including a real company final project built with React Native.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
