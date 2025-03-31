@@ -510,7 +510,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning DS&A, Full Stack development with Next.js, PostgreSQL and AI driven apps with LangChain.',
+        'Learning Full Stack development with Next.js, Data Structures and Algorithms and how to integrate AI in Apps.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -521,7 +521,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Learned mobile app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
+        'Project based program focused on mobile app design with Figma and development with Typescript, including a real company final project built with React Native. Also did CS fundamentals with C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -562,7 +562,8 @@ const experienceSection: ExperienceSection = {
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        'Led the Mobile App Development team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
+        'Led the Mobile and Web App Development team where we developed many apps (see website for projects).',
+        'Implemented a structured development process using milestones and regular code reviews based on the Agile methodology that increased productivity of the team by 50%. This ensured projects shipped successfully. Apps made with React, React Native, Firebase and Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -628,52 +629,6 @@ const experienceSection: ExperienceSection = {
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
       hidden: true,
-    },
-  ],
-};
-
-const projectSection: ProjectSection = {
-  entries: [
-    {
-      id: 0,
-      name: 'AI RAG for manuals',
-      period: '2024 - 2025',
-      lines: [
-        'A RAG-based AI app specifically optimized for structured documents, enabling the user to chat with them.',
-      ],
-      technologies: [
-        {name: 'Next.js'},
-        {name: 'Tailwind CSS'},
-        {name: 'LangChain'},
-        {name: 'Prisma'},
-        {name: 'Chroma'},
-        {name: 'TRPC'},
-      ],
-      iconSrc: '',
-      urls: new Map([
-        ['live', ''],
-        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
-      ]),
-    },
-    {
-      id: 1,
-      name: 'Personal website',
-      period: '2023',
-      lines: [
-        'My website where you can find my React Native and Web real projects I worked on.',
-      ],
-      technologies: [
-        {name: 'Astro'},
-        {name: 'React'},
-        {name: 'React PDF'},
-        {name: 'Typescript'},
-        {name: 'PostCSS'},
-      ],
-      urls: new Map([
-        ['live', 'https://irian.codes'],
-        ['repository', 'https://github.com/irian-codes/personal-site'],
-      ]),
-      iconSrc: '',
     },
   ],
 };
