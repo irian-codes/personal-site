@@ -5,19 +5,17 @@ import {LocalizedDataContext} from '../../CvPdf';
 import {cvStyles} from '../styles/CvStyles';
 import {SectionEntry} from './components/SectionEntry';
 
-type WorkExperienceSectionProps = {
+type ExperienceSectionProps = {
   containerStyle?: Style;
 };
 
-export const WorkExperienceSection = (props: WorkExperienceSectionProps) => {
+export const ExperienceSection = (props: ExperienceSectionProps) => {
   const {t, data} = useContext(LocalizedDataContext);
 
   return (
     <View style={props.containerStyle}>
-      <Text style={styles.h1}>
-        {t('cv.body.section.title.work-experience')}
-      </Text>
-      {data.workExperienceSection.entries
+      <Text style={styles.h1}>{t('cv.body.section.title.experience')}</Text>
+      {data.experienceSection.entries
         .filter((entry) => !entry.hidden)
         .sort((a, b) => (a.id < b.id ? 1 : -1))
         .map((entry) => (

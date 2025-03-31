@@ -3,11 +3,10 @@ import type {
   AboutSection,
   CvData,
   EducationSection,
+  ExperienceSection,
   Header,
   OtherSection,
-  ProjectSection,
   SkillsSection,
-  WorkExperienceSection,
 } from './types/CvData';
 
 const header: Header = {
@@ -19,8 +18,8 @@ const header: Header = {
   website: 'https://irian.codes',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Tarragona, Spain',
-  locationMapsUrl: 'https://maps.app.goo.gl/3soGKCQTwza9vfi97',
+  location: 'Barcelona, Spain',
+  locationMapsUrl: 'https://maps.app.goo.gl/eSWB6QzFNFG3cR1z8',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
@@ -539,8 +538,22 @@ const educationSection: EducationSection = {
   ],
 };
 
-const workExperienceSection: WorkExperienceSection = {
+const experienceSection: ExperienceSection = {
   entries: [
+    {
+      id: 6,
+      title: 'AI Apps Full Stack Developer (bootcamp)',
+      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
+      company: 'Zero To Mastery Academy',
+      location: 'Toronto, Canada (remote)',
+      period: 'Sep 2023 - Present',
+      lines: [
+        'Building projects with AI in Cursor IDE during a bootcamp to become a Next.js (React) AI Apps Full Stack developer. Mastering both frontend and backend (Node.js) with novel AI powered workflows.',
+        'Developed my project, Chat with Manuals, an AI RAG app to allow users to chat with organized documents by sections. Project made with Next.js, Tailwind CSS, LangChain, Prisma, PostgreSQL, Chroma and TRPC.',
+        'Developed my portfolio of projects made with React and React Native. With Astro, React and Typescript.',
+      ],
+      iconSrc: '',
+    },
     {
       id: 5,
       title: 'Lead Software Developer',
@@ -674,7 +687,6 @@ export const cvData_en: CvData = {
   aboutSection,
   skillsSection,
   educationSection,
-  workExperienceSection,
-  projectSection,
+  experienceSection,
   otherSection,
 };
