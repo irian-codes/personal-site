@@ -3,11 +3,10 @@ import type {
   AboutSection,
   CvData,
   EducationSection,
+  ExperienceSection,
   Header,
   OtherSection,
-  ProjectSection,
   SkillsSection,
-  WorkExperienceSection,
 } from './types/CvData';
 
 const header: Header = {
@@ -19,8 +18,8 @@ const header: Header = {
   website: 'https://irian.codes/ca',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Tarragona, Espanya',
-  locationMapsUrl: 'https://maps.app.goo.gl/3soGKCQTwza9vfi97',
+  location: 'Barcelona, Espanya',
+  locationMapsUrl: 'https://maps.app.goo.gl/eSWB6QzFNFG3cR1z8',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
@@ -532,8 +531,22 @@ const educationSection: EducationSection = {
   ],
 };
 
-const workExperienceSection: WorkExperienceSection = {
+const experienceSection: ExperienceSection = {
   entries: [
+    {
+      id: 6,
+      title: "Desenvolupador Full Stack d'Apps IA (bootcamp)",
+      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
+      company: 'Zero To Mastery Academy',
+      location: 'Toronto, Canadà (remot)',
+      period: 'Set 2023 - Present',
+      lines: [
+        "Desenvolupant projectes amb la IA de Cursor IDE en un bootcamp per transformar-me en desenvolupador Full Stack d'apps amb IA amb Next.js (React). Dominant frontend i backend (Node.js) amb nous workflows IA.",
+        "He desenvolupat el projecte Chat with Manuals, una app d'IA tipus RAG, que permet a l'usuari xatejar amb documents organitzats en seccions. Amb Next.js, Tailwind CSS, LangChain, Prisma, PostgreSQL, Chroma i TRPC.",
+        'He desenvolupat el meu portafoli de projectes amb React i React Native. Amb Astro, React i Typescript.',
+      ],
+      iconSrc: '',
+    },
     {
       id: 5,
       title: 'Desenvolupador Senior',
@@ -543,6 +556,7 @@ const workExperienceSection: WorkExperienceSection = {
       period: 'Ago 2022 - Jun 2023',
       lines: [
         "Vaig liderar l'equip de desenvolupament mòbil i web (projectes visibles a la meva web) amb un sistema basat en Agile amb objectius i feedback continu per desenvolupar projectes d'èxit amb React Native, Firebase i Express.",
+        'Amb el meu nou mètode de treball, vaig incrementar la productivitat del meu equip en un 50%.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -612,49 +626,6 @@ const workExperienceSection: WorkExperienceSection = {
   ],
 };
 
-const projectSection: ProjectSection = {
-  entries: [
-    {
-      id: 0,
-      name: 'Chatbot IA per a manuals',
-      period: '2024 - 2025',
-      lines: [
-        "Aplicació amb IA de tipus RAG amb optimitzacions per a documents estructurats i organitzats en seccions. Permet a l'usuari xatejar amb informes, articles científics, manuals de productes, jocs de taula, etc.",
-      ],
-      technologies: [
-        {name: 'Next.js'},
-        {name: 'Tailwind CSS'},
-        {name: 'LangChain'},
-        {name: 'Prisma'},
-        {name: 'Chroma'},
-        {name: 'TRPC'},
-      ],
-      iconSrc: '',
-      urls: new Map([
-        ['live', ''],
-        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
-      ]),
-    },
-    {
-      id: 1,
-      name: 'Pàgina web personal',
-      period: '2023',
-      lines: [],
-      technologies: [
-        {name: 'Astro'},
-        {name: 'React'},
-        {name: 'Typescript'},
-        {name: 'PostCSS'},
-      ],
-      urls: new Map([
-        ['live', 'https://irian.codes'],
-        ['repository', 'https://github.com/irian-codes/personal-site'],
-      ]),
-      iconSrc: '',
-    },
-  ],
-};
-
 const otherSection: OtherSection = {
   lines: ['Idiomes: Anglès, Castellà, Català.', 'Permís de conduir: Sí.'],
 };
@@ -664,7 +635,6 @@ export const cvData_ca: CvData = {
   aboutSection,
   skillsSection,
   educationSection,
-  workExperienceSection,
-  projectSection,
+  experienceSection,
   otherSection,
 };
