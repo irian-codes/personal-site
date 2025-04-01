@@ -28,7 +28,7 @@ const header: Header = {
 
 const aboutSection: AboutSection = {
   lines: [
-    'From childhood tech tinkerer to team leader with 7 years experience, including professional work and hands-on projects. I love to build Full Stack software in this new AI era. Seeking my next challenge in a dynamic company.',
+    'From childhood tech tinkerer to team leader with 7 years of experience, including professional work and hands-on projects. I love to build Full Stack software in this new AI era. Seeking my next challenge in a dynamic company.',
   ],
 };
 
@@ -510,7 +510,7 @@ const educationSection: EducationSection = {
       location: 'Toronto, Canada (remote)',
       period: 'Sep 2023 - Present',
       lines: [
-        'Learning DS&A, Full Stack development with Next.js, PostgreSQL and AI driven apps with LangChain.',
+        'Learning Full Stack development with Next.js, Data Structures and Algorithms and how to integrate AI in Apps.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -521,7 +521,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, Spain (remote)',
       period: 'Feb 2020 - Jan 2022',
       lines: [
-        'Learned mobile app design with Figma and development with Typescript, including a real company final project. Also did CS fundamentals with C.',
+        'Project based program focused on mobile app design with Figma and development with Typescript and HTML/CSS/JS, including a real company final project. Also did CS fundamentals with C.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -562,7 +562,8 @@ const experienceSection: ExperienceSection = {
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        'Led the Web and Mobile team where we developed many apps (see website for projects). Implemented a structured development process using milestones and regular code reviews based on the Agile methodology. This ensured projects shipped successfully. Made with React, React Native, Firebase and Express.',
+        'Led the Web and Mobile team where we developed many apps (see website for projects).',
+        'Implemented a structured development process using milestones and regular code reviews based on the Agile methodology that increased productivity of the team by 50%. This ensured projects shipped successfully. Apps made with React, React Native, Firebase and Express.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -575,7 +576,7 @@ const experienceSection: ExperienceSection = {
       period: 'Jul 2021 - Aug 2022',
       lines: [
         'Developed the frontend part of several apps with React and React Native. Learned to collab with Gitlab.',
-        'Contributed to development efforts of robust backends with NestJS, Express, Firebase, MongoDB, and Docker.',
+        'Leveraged Firebase and Google Cloud to configure robust backends for various projects. Contributed to development efforts with NestJS, Express, MongoDB, and Docker.',
         'Implemented an automated system to publish, manage and update apps for Android and iOS with Expo EAS.',
       ],
       iconSrc:
@@ -628,50 +629,6 @@ const experienceSection: ExperienceSection = {
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
       hidden: true,
-    },
-  ],
-};
-
-const projectSection: ProjectSection = {
-  entries: [
-    {
-      id: 0,
-      name: 'AI RAG for manuals',
-      period: '2024 - 2025',
-      lines: [
-        'A RAG-based AI Full Stack app that enables the user to directly chat with reports, research papers, product and game manuals, with chunking and retrieval specifically optimized for structured, section-based documents. Using Shadcn/ui, optimistic updates and prefetching on the frontend to achieve a great user experience (UX/UI).',
-      ],
-      technologies: [
-        {name: 'Next.js'},
-        {name: 'Tailwind CSS'},
-        {name: 'LangChain'},
-        {name: 'Prisma'},
-        {name: 'Chroma'},
-        {name: 'TRPC'},
-      ],
-      iconSrc: '',
-      urls: new Map([
-        ['live', ''],
-        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
-      ]),
-    },
-    {
-      id: 1,
-      name: 'Personal website',
-      period: '2023',
-      lines: [],
-      technologies: [
-        {name: 'Astro'},
-        {name: 'React'},
-        {name: 'React PDF'},
-        {name: 'Typescript'},
-        {name: 'PostCSS'},
-      ],
-      urls: new Map([
-        ['live', 'https://irian.codes'],
-        ['repository', 'https://github.com/irian-codes/personal-site'],
-      ]),
-      iconSrc: '',
     },
   ],
 };

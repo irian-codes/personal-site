@@ -521,7 +521,7 @@ const educationSection: EducationSection = {
       location: 'Barcelona, España (remoto)',
       period: 'Feb 2020 - Ene 2022',
       lines: [
-        'Aprendí diseño de aplicaciones móviles con Figma y desarrollo con Typescript, incluido un proyecto final con una empresa real. También adquirí conceptos básicos de programación con C.',
+        'Máster totalmente basado en proyectos centrado en diseño de aplicaciones móviles con Figma y desarrollo con Typescript y HTML/CSS/JS, incluido un proyecto final con una empresa real.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -562,7 +562,8 @@ const experienceSection: ExperienceSection = {
       location: 'Tarragona, España (remoto)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
-        'Lideré el equipo de desarrollo móvil y web (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y feedback contínuo para desarrollar proyectos de éxito con React Native, Firebase y Express.',
+        'Lideré el equipo de desarrollo móvil y web (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y feedback continuo para desarrollar proyectos de éxito con React Native, Firebase y Express.',
+        'Logré incrementar la productividad del equipo de desarrollo en un 50% gracias a mi nuevo método de trabajo.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
@@ -575,7 +576,7 @@ const experienceSection: ExperienceSection = {
       period: 'Jul 2021 - Ago 2022',
       lines: [
         'Desarrollé el frontend de varias apps con React y React Native. Aprendí a colaborar con Gitlab.',
-        'Contribuí en el desarrollo varios backends con NestJs, Express, Firebase, MongoDB y Docker.',
+        'Utilicé Firebase y Google Cloud para configurar un backend robusto para varios proyectos. También ayudé con el desarrollo con NestJs, Express, MongoDB y Docker.',
         'Implementé la publicación y actualizaciones de las apps con Expo EAS para Android y iOS.',
       ],
       iconSrc:
@@ -628,49 +629,6 @@ const experienceSection: ExperienceSection = {
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/hotelbeds.jpg',
       hidden: true,
-    },
-  ],
-};
-
-const projectSection: ProjectSection = {
-  entries: [
-    {
-      id: 0,
-      name: 'Chatbot IA para manuales',
-      period: '2024 - 2025',
-      lines: [
-        'Aplicación de IA tipo RAG con optimizaciones para documentos estructurados y organizados en secciones. Permite al usuario chatear con informes, artículos científicos, manuales de productos, juegos de mesa, etc. Usa Shadcn/ui, optimistic updates y prefetching en el frontend para una experiencia de usuario (UX/UI) excelente.',
-      ],
-      technologies: [
-        {name: 'Next.js'},
-        {name: 'Tailwind CSS'},
-        {name: 'LangChain'},
-        {name: 'Prisma'},
-        {name: 'Chroma'},
-        {name: 'TRPC'},
-      ],
-      iconSrc: '',
-      urls: new Map([
-        ['live', ''],
-        ['repository', 'https://github.com/irian-codes/chat-with-manuals'],
-      ]),
-    },
-    {
-      id: 1,
-      name: 'Página web personal',
-      period: '2023',
-      lines: [],
-      technologies: [
-        {name: 'Astro'},
-        {name: 'React'},
-        {name: 'Typescript'},
-        {name: 'PostCSS'},
-      ],
-      urls: new Map([
-        ['live', 'https://irian.codes'],
-        ['repository', 'https://github.com/irian-codes/personal-site'],
-      ]),
-      iconSrc: '',
     },
   ],
 };
