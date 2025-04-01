@@ -3,11 +3,10 @@ import type {
   AboutSection,
   CvData,
   EducationSection,
+  ExperienceSection,
   Header,
   OtherSection,
-  ProjectSection,
   SkillsSection,
-  WorkExperienceSection,
 } from './types/CvData';
 
 const header: Header = {
@@ -19,8 +18,8 @@ const header: Header = {
   website: 'https://irian.codes/es',
   websiteQrImageSrc:
     getPublicFolderURL() + '/assets/images/cv/irian-codes-qr.png',
-  location: 'Tarragona, España',
-  locationMapsUrl: 'https://maps.app.goo.gl/3soGKCQTwza9vfi97',
+  location: 'Barcelona, España',
+  locationMapsUrl: 'https://maps.app.goo.gl/eSWB6QzFNFG3cR1z8',
   email: 'irian@irian.codes',
   phone: '+34611082305',
   linkedin: 'linkedin.com/in/irian-mont%C3%B3n-0b58358a',
@@ -539,8 +538,22 @@ const educationSection: EducationSection = {
   ],
 };
 
-const workExperienceSection: WorkExperienceSection = {
+const experienceSection: ExperienceSection = {
   entries: [
+    {
+      id: 6,
+      title: 'Desarrollador Full Stack de Apps de IA (bootcamp)',
+      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
+      company: 'Zero To Mastery Academy',
+      location: 'Toronto, Canadá (remoto)',
+      period: 'Set 2023 - Presente',
+      lines: [
+        'Desarrollando proyectos con IA en Cursor IDE en un bootcamp enfocado a transformarme en desarrollador Full Stack de Apps IA con Next.js (React). Dominando frontend y backend (Node.js) integrado con modelos de IA.',
+        'Desarrollé mi proyecto, Chat with Manuals, una app de IA tipo RAG, para permitir al usuario chatear con documentos organizados en secciones. Hecho con Next.js, Tailwind CSS, LangChain, Prisma, Chroma y TRPC.',
+        'Desarrollé mi página portafolio de proyectos React y React Native. Con Astro, React, Typescript y PostCSS.',
+      ],
+      iconSrc: '',
+    },
     {
       id: 5,
       title: 'Desarrollador Senior',
@@ -671,7 +684,6 @@ export const cvData_es: CvData = {
   aboutSection,
   skillsSection,
   educationSection,
-  workExperienceSection,
-  projectSection,
+  experienceSection,
   otherSection,
 };

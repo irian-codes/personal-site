@@ -2,9 +2,8 @@ import {StyleSheet, View} from '@react-pdf/renderer';
 import React from 'react';
 import {Header} from './header/Header';
 import {EducationSection} from './sections/EducationSection';
-import {ProjectsSection} from './sections/ProjectsSection';
+import {ExperienceSection} from './sections/ExperienceSection';
 import {SkillsSection} from './sections/SkillsSection';
-import {WorkExperienceSection} from './sections/WorkExperienceSection';
 
 export function CvContent() {
   return (
@@ -12,8 +11,7 @@ export function CvContent() {
       <Header />
 
       <View>
-        <WorkExperienceSection />
-        <ProjectsSection containerStyle={styles.section} />
+        <ExperienceSection />
         <EducationSection containerStyle={styles.section} />
         <SkillsSection containerStyle={styles.section} />
       </View>
