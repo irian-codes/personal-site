@@ -562,8 +562,8 @@ const experienceSection: ExperienceSection = {
       location: 'Tarragona, España (remoto)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
-        'Lideré el equipo de desarrollo React Native (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y feedback continuo para desarrollar proyectos de éxito con React Native, Firebase y Express.',
-        'Logré incrementar la productividad del equipo de desarrollo en un 50% gracias a mi nuevo método de trabajo.',
+        'Lideré el equipo de desarrollo React Native (proyectos visibles en mi web). Implementé un sistema basado en Agile con objetivos y revisiones de código para desarrollar proyectos de éxito con React, React Native y Firebase.',
+        'Diseñé un nuevo sistema de trabajo que redujo el tiempo de desarrollo de las aplicaciones de 5-6 meses a 3-4 meses. Basado en reutilizar código usando templates y librerías junto a una clara toma de requerimientos.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
