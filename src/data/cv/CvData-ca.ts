@@ -555,8 +555,8 @@ const experienceSection: ExperienceSection = {
       location: 'Tarragona, Espanya (remot)',
       period: 'Ago 2022 - Jun 2023',
       lines: [
-        "Vaig liderar l'equip de desenvolupament mòbil i web (projectes visibles a la meva web) amb un sistema basat en Agile amb objectius i feedback continu per desenvolupar projectes d'èxit amb React Native, Firebase i Express.",
-        'Amb el meu nou mètode de treball, vaig incrementar la productivitat del meu equip en un 50%.',
+        "Vaig liderar l'equip de desenvolupament mòbil i web (projectes visibles a la meva web) amb un sistema basat en Agile amb objectius i revisions de codi per desenvolupar projectes d'èxit amb React, React Native i Firebase.",
+        'Amb el meu nou mètode de treball, vaig reduir el temps de desenvolupament de les aplicacions de 5-6 mesos a 3-4 mesos. Basat en reutilitzar codi de templates i llibreries juntament amb una clara recollida de requisits.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
