@@ -13,7 +13,7 @@ export function CvContent() {
       <View>
         <ExperienceSection />
         <EducationSection containerStyle={styles.section} />
-        <SkillsSection containerStyle={styles.section} />
+        <SkillsSection />
       </View>
     </React.Fragment>
   );
