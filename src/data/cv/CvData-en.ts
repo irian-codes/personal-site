@@ -562,8 +562,8 @@ const experienceSection: ExperienceSection = {
       location: 'Tarragona, Spain (remote)',
       period: 'Aug 2022 - Jun 2023',
       lines: [
-        'Led the Web and Mobile team where we developed many apps (see website for projects).',
-        'Implemented a structured development process using milestones and regular code reviews based on the Agile methodology that increased productivity of the team by 50%. This ensured projects shipped successfully. Apps made with React, React Native, Firebase and Express.',
+        'Led the Web and Mobile team where we developed many apps (see website for projects), with a structured development process using milestones and regular code reviews based on the Agile methodology.',
+        'Reduced the development time from 5-6 months to 3-4 months per app. Focusing on reusing code with templates and good libraries. As well as a clear requirements gathering. Apps with React, React Native, Firebase.',
       ],
       iconSrc:
         getPublicFolderURL() + '/assets/images/cv/logos/studio-by-caigo.jpg',
