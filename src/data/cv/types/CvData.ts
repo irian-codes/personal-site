@@ -24,7 +24,7 @@ export type Skill = {
   id: number;
   name: string;
   iconSrc?: string;
-  level: 'learning' | 'learnt';
+  level: 'learnt';
   category:
     | 'cs-language'
     | 'human-language'

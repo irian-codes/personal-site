@@ -25,12 +25,6 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         .range('black', {space: 'srgb'})(0.2)
         .toString(),
     },
-    learning: {
-      textColor: 'black',
-      bgColor: skillChipBaseColor
-        .range('white', {space: 'srgb'})(0.8)
-        .toString(),
-    },
     language: {
       textColor: 'black',
       bgColor: skillChipBaseColor
@@ -67,9 +61,6 @@ export const SkillsSection = (props: SkillsSectionProps) => {
         {data.skillsSection.skills
           .filter(
             (skill) => !skill.hidden && skill.category !== 'human-language'
-          )
-          .sort((skillA, skillB) =>
-            skillA.level === 'learnt' && skillB.level === 'learning' ? -1 : 1
           )
           .map((skill) => (
             <SkillChip
