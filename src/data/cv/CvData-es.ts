@@ -58,6 +58,7 @@ const skillsSection: SkillsSection = {
       name: 'C#',
       level: 'learnt',
       category: 'cs-language',
+      hidden: true,
     },
     {
       id: 8,
@@ -92,7 +93,7 @@ const skillsSection: SkillsSection = {
     {
       id: 71,
       name: 'Angular',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -119,7 +120,7 @@ const skillsSection: SkillsSection = {
     {
       id: 85,
       name: 'Agentes IA',
-      level: 'learning',
+      level: 'learnt',
       category: 'ai-tool',
     },
     {
@@ -127,6 +128,7 @@ const skillsSection: SkillsSection = {
       name: 'PostCSS',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 35,
@@ -202,7 +204,7 @@ const skillsSection: SkillsSection = {
     {
       id: 77,
       name: 'SQL',
-      level: 'learning',
+      level: 'learnt',
       category: 'cs-language',
     },
     {
@@ -214,7 +216,7 @@ const skillsSection: SkillsSection = {
     {
       id: 21,
       name: 'Express',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -227,7 +229,7 @@ const skillsSection: SkillsSection = {
     {
       id: 22,
       name: 'NestJs',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -240,7 +242,7 @@ const skillsSection: SkillsSection = {
     {
       id: 32,
       name: 'TDD',
-      level: 'learning',
+      level: 'learnt',
       category: 'other',
     },
     {
