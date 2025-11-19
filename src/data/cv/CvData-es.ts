@@ -58,6 +58,7 @@ const skillsSection: SkillsSection = {
       name: 'C#',
       level: 'learnt',
       category: 'cs-language',
+      hidden: true,
     },
     {
       id: 8,
@@ -78,6 +79,12 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 17,
+      name: 'Tanstack Start',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 10,
       name: 'Astro',
       level: 'learnt',
@@ -88,11 +95,12 @@ const skillsSection: SkillsSection = {
       name: 'Expo',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 71,
       name: 'Angular',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -118,15 +126,16 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 85,
-      name: 'Agentes IA',
-      level: 'learning',
-      category: 'ai-tool',
+      name: 'Vercel AI',
+      level: 'learnt',
+      category: 'library-framework',
     },
     {
       id: 34,
       name: 'PostCSS',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 35,
@@ -151,12 +160,6 @@ const skillsSection: SkillsSection = {
     {
       id: 16,
       name: 'MobX',
-      level: 'learnt',
-      category: 'library-framework',
-    },
-    {
-      id: 17,
-      name: 'Redux',
       level: 'learnt',
       category: 'library-framework',
     },
@@ -201,8 +204,8 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 77,
-      name: 'SQL',
-      level: 'learning',
+      name: 'Postgre SQL',
+      level: 'learnt',
       category: 'cs-language',
     },
     {
@@ -212,9 +215,15 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 87,
+      name: 'Drizzle',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 21,
       name: 'Express',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -227,7 +236,7 @@ const skillsSection: SkillsSection = {
     {
       id: 22,
       name: 'NestJs',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -240,14 +249,14 @@ const skillsSection: SkillsSection = {
     {
       id: 32,
       name: 'TDD',
-      level: 'learning',
+      level: 'learnt',
       category: 'other',
     },
     {
       id: 24,
-      name: 'Google Cloud',
+      name: 'CI/CD',
       level: 'learnt',
-      category: 'dev-tool',
+      category: 'tool',
     },
     {
       id: 25,
@@ -505,12 +514,12 @@ const educationSection: EducationSection = {
   entries: [
     {
       id: 2,
-      title: 'Desarrollo Full Stack',
+      title: 'Desarrollo Full Stack de apps IA (bootcamp)',
       institution: 'Zero To Mastery Academy',
       location: 'Toronto, Canadá (remoto)',
-      period: 'Set 2023 - Presente',
+      period: 'Set 2023 - Feb 2025',
       lines: [
-        'Aprendiendo DS&A, desarrollo Full Stack con Next.js, PostgreSQL y apps de IA integrada con LangChain.',
+        'Desarrollé mi proyecto en Next.js (React) y Cursor IDE: Chat with Manuals. Un proyecto RAG de procesamiento de documentos para que los usuarios puedan conversar con una IA con conocimiento de sus documentos.',
       ],
       iconSrc: '',
     },
@@ -542,15 +551,13 @@ const experienceSection: ExperienceSection = {
   entries: [
     {
       id: 6,
-      title: 'Desarrollador Full Stack de Apps de IA (bootcamp)',
-      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
-      company: 'Zero To Mastery Academy',
-      location: 'Toronto, Canadá (remoto)',
-      period: 'Set 2023 - Presente',
+      title: 'Desarrollador Full Stack de apps IA',
+      company: 'RapidAnd',
+      location: 'Andorra (remoto)',
+      period: 'Abr 2025 - Actualidad',
       lines: [
-        'Desarrollando proyectos con IA en Cursor IDE en un bootcamp enfocado a transformarme en desarrollador Full Stack de Apps IA con Next.js (React). Dominando frontend y backend (Node.js) integrado con modelos de IA.',
-        'Desarrollé mi proyecto, Chat with Manuals, una app de IA tipo RAG, para permitir al usuario chatear con documentos organizados en secciones. Hecho con Next.js, Tailwind CSS, LangChain, Prisma, Chroma y TRPC.',
-        'Desarrollé mi página portafolio de proyectos React y React Native. Con Astro, React, Typescript y PostCSS.',
+        'Desarrollando una aplicación centrada en el procesamiento de facturas internacionales con IA en Cursor IDE. Enfocada en agilizar el flujo de trabajo de los clientes, actualizando sus procesos de entrada manual a la entrada asistida por IA, logrando enormes ahorros de tiempo y trabajo repetitivo.',
+        'Trabajando directamente con el CTO, con feedback del cliente y asegurando la excelencia de la aplicación.',
       ],
       iconSrc: '',
     },

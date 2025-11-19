@@ -58,6 +58,7 @@ const skillsSection: SkillsSection = {
       name: 'C#',
       level: 'learnt',
       category: 'cs-language',
+      hidden: true,
     },
     {
       id: 8,
@@ -78,6 +79,12 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 17,
+      name: 'Tanstack Start',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 10,
       name: 'Astro',
       level: 'learnt',
@@ -88,11 +95,12 @@ const skillsSection: SkillsSection = {
       name: 'Expo',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 71,
       name: 'Angular',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -118,15 +126,16 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 85,
-      name: 'Agentic AI',
-      level: 'learning',
-      category: 'ai-tool',
+      name: 'Vercel AI',
+      level: 'learnt',
+      category: 'library-framework',
     },
     {
       id: 34,
       name: 'PostCSS',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 35,
@@ -155,12 +164,6 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
-      id: 17,
-      name: 'Redux',
-      level: 'learnt',
-      category: 'library-framework',
-    },
-    {
       id: 18,
       name: 'i18next',
       level: 'learnt',
@@ -172,6 +175,7 @@ const skillsSection: SkillsSection = {
       name: 'Firebase',
       level: 'learnt',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 70,
@@ -201,8 +205,8 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 77,
-      name: 'SQL',
-      level: 'learning',
+      name: 'Postgre SQL',
+      level: 'learnt',
       category: 'cs-language',
     },
     {
@@ -212,9 +216,15 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 87,
+      name: 'Drizzle',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 21,
       name: 'Express',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -227,7 +237,7 @@ const skillsSection: SkillsSection = {
     {
       id: 22,
       name: 'NestJs',
-      level: 'learning',
+      level: 'learnt',
       category: 'library-framework',
       hidden: true,
     },
@@ -240,14 +250,14 @@ const skillsSection: SkillsSection = {
     {
       id: 32,
       name: 'TDD',
-      level: 'learning',
+      level: 'learnt',
       category: 'other',
     },
     {
       id: 24,
-      name: 'Google Cloud',
+      name: 'CI/CD',
       level: 'learnt',
-      category: 'dev-tool',
+      category: 'tool',
     },
     {
       id: 25,
@@ -505,12 +515,12 @@ const educationSection: EducationSection = {
   entries: [
     {
       id: 2,
-      title: 'Full Stack Development',
+      title: 'AI Apps Full Stack Development (bootcamp)',
       institution: 'Zero To Mastery Academy',
       location: 'Toronto, Canada (remote)',
-      period: 'Sep 2023 - Present',
+      period: 'Sep 2023 - Feb 2025',
       lines: [
-        'Learning Full Stack development with Next.js, Data Structures and Algorithms and how to integrate AI in Apps.',
+        'Building my project, Chat With Manuals, with AI in Cursor IDE during a bootcamp to become a Next.js (React) AI Apps Full Stack developer. Mastering both frontend and backend (Node.js) with Cursor AI powered workflows.',
       ],
       iconSrc: getPublicFolderURL() + '/assets/images/cv/logos/uoc.jpg',
     },
@@ -542,15 +552,14 @@ const experienceSection: ExperienceSection = {
   entries: [
     {
       id: 6,
-      title: 'AI Apps Full Stack Developer (bootcamp)',
-      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
-      company: 'Zero To Mastery Academy',
-      location: 'Toronto, Canada (remote)',
-      period: 'Sep 2023 - Present',
+      title: 'AI Apps Full Stack Developer',
+      company: 'RapidAnd',
+      location: 'Andorra (remote)',
+      period: 'Apr 2025 - Present',
       lines: [
-        'Building projects with AI in Cursor IDE during a bootcamp to become a Next.js (React) AI Apps Full Stack developer. Mastering both frontend and backend (Node.js) with novel AI powered workflows.',
-        'Developed my project, Chat with Manuals, an AI RAG app to allow users to chat with organized documents by sections. Project made with Next.js, Tailwind CSS, LangChain, Prisma, PostgreSQL, Chroma and TRPC.',
-        'Developed my portfolio of projects made with React and React Native. With Astro, React and Typescript.',
+        "Developed an AI powered document processing app with AI document parser in Cursor IDE. It sped up the client's workflow massively, from 100% manual input to AI assisted input of international invoice documents.",
+        'Using Tanstack Start, Node.js and a background jobs orchestration system with BullMQ and Redis that improved processing speed and reliability by migrating away from a third-party service that did not meet our SLO.',
+        'Collaborated closely with the CTO, gathered client feedback, and ensured the product met business needs.',
       ],
       iconSrc: '',
     },
