@@ -79,6 +79,12 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
+      id: 17,
+      name: 'Tanstack Start',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
       id: 10,
       name: 'Astro',
       level: 'learnt',
@@ -89,6 +95,7 @@ const skillsSection: SkillsSection = {
       name: 'Expo',
       level: 'learnt',
       category: 'library-framework',
+      hidden: true,
     },
     {
       id: 71,
@@ -119,9 +126,9 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 85,
-      name: 'Agents IA',
+      name: 'Vercel AI',
       level: 'learnt',
-      category: 'ai-tool',
+      category: 'library-framework',
     },
     {
       id: 34,
@@ -157,12 +164,6 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
-      id: 17,
-      name: 'Redux',
-      level: 'learnt',
-      category: 'library-framework',
-    },
-    {
       id: 18,
       name: 'i18next',
       level: 'learnt',
@@ -174,6 +175,7 @@ const skillsSection: SkillsSection = {
       name: 'Firebase',
       level: 'learnt',
       category: 'dev-tool',
+      hidden: true,
     },
     {
       id: 70,
@@ -203,13 +205,19 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 77,
-      name: 'SQL',
+      name: 'Postgre SQL',
       level: 'learnt',
       category: 'cs-language',
     },
     {
       id: 80,
       name: 'Prisma',
+      level: 'learnt',
+      category: 'library-framework',
+    },
+    {
+      id: 87,
+      name: 'Drizzle',
       level: 'learnt',
       category: 'library-framework',
     },
@@ -247,9 +255,9 @@ const skillsSection: SkillsSection = {
     },
     {
       id: 24,
-      name: 'Google Cloud',
+      name: 'CI/CD',
       level: 'learnt',
-      category: 'dev-tool',
+      category: 'tool',
     },
     {
       id: 25,
@@ -500,12 +508,12 @@ const educationSection: EducationSection = {
   entries: [
     {
       id: 2,
-      title: 'Desenvolupament Full Stack',
+      title: 'Desenvolupament Full Stack apps IA (bootcamp)',
       institution: 'Zero To Mastery Academy',
       location: 'Toronto, Canadà (remot)',
-      period: 'Set 2023 - Present',
+      period: 'Set 2023 - Feb 2025',
       lines: [
-        'Aprenent DS&A, desenvolupament Full Stack amb Next.js, PostgreSQL i apps amb IA integrada amb LangChain.',
+        'Vaig desenvolupar el meu projecte en Next.js (React) i Cursor IDE: Chat with Manuals. Un RAG de processament de documents perquè els usuaris puguin conversar amb una IA amb coneixement dels seus documents.',
       ],
       iconSrc: '',
     },
@@ -537,15 +545,13 @@ const experienceSection: ExperienceSection = {
   entries: [
     {
       id: 6,
-      title: "Desenvolupador Full Stack d'Apps IA (bootcamp)",
-      titleUrl: 'https://github.com/irian-codes/chat-with-manuals',
-      company: 'Zero To Mastery Academy',
-      location: 'Toronto, Canadà (remot)',
-      period: 'Set 2023 - Present',
+      title: "Desenvolupador Full Stack d'apps IA",
+      company: 'RapidAnd',
+      location: 'Andorra (remot)',
+      period: 'Abr 2025 - Actualitat',
       lines: [
-        "Desenvolupant projectes amb la IA de Cursor IDE en un bootcamp per transformar-me en desenvolupador Full Stack d'apps amb IA amb Next.js (React). Dominant frontend i backend (Node.js) amb nous workflows IA.",
-        "He desenvolupat el projecte Chat with Manuals, una app d'IA tipus RAG, que permet a l'usuari xatejar amb documents organitzats en seccions. Amb Next.js, Tailwind CSS, LangChain, Prisma, PostgreSQL, Chroma i TRPC.",
-        'He desenvolupat el meu portafoli de projectes amb React i React Native. Amb Astro, React i Typescript.',
+        "Desenvolupant una aplicació per processar factures internacionals amb IA, feta amb Cursor IDE. Enfocada a agilitzar el flux de treball dels clients, actualitzant els seus processos d'entrada manual a l'entrada assistida per IA, aconseguint enormes estalvis de temps i treball repetitiu.",
+        "Treballant directament amb el CTO, amb feedback del client i assegurant l'excel·lència de l'aplicació.",
       ],
       iconSrc: '',
     },
