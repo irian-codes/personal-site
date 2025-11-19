@@ -216,7 +216,7 @@ const skillsSection: SkillsSection = {
       category: 'library-framework',
     },
     {
-      id: 81,
+      id: 87,
       name: 'Drizzle',
       level: 'learnt',
       category: 'library-framework',
